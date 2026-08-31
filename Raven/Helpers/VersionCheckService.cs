@@ -245,7 +245,6 @@ public static class VersionCheckService
         var unpackagedResult = await StoreEdgeFDProduct.GetUnpackagedInstall(
             productId,
             market,
-            language,
             cancellationToken
         );
 
@@ -256,7 +255,7 @@ public static class VersionCheckService
         }
 
         var bestCandidate = Utils.OrderCandidatesByVersionAndArch(
-            unpackagedResult.Value,
+            FilterByLocale(unpackagedResult.Value, language, market),
             i => i.architecture,
             i => StoreListings.Library.Version.TryParse(i.Version, null, out var v) ? v : default,
             resolvedArchRid,
@@ -276,6 +275,55 @@ public static class VersionCheckService
 
         onFailure?.Invoke(DownloadUrlFailureReason.ArchitectureIncompatible);
         return null;
+    }
+
+    private static IEnumerable<(
+        string InstallerUrl,
+        string FileName,
+        string InstallerSwitches,
+        string Version,
+        string InstallerSha256,
+        string architecture,
+        string locale
+    )> FilterByLocale(
+        IReadOnlyList<(
+            string InstallerUrl,
+            string FileName,
+            string InstallerSwitches,
+            string Version,
+            string InstallerSha256,
+            string architecture,
+            string locale
+        )> candidates,
+        Lang language,
+        Market market
+    )
+    {
+        var langStr = language.ToString().ToLowerInvariant();
+        var marketStr = market.ToString().ToLowerInvariant();
+        var targetLocale = $"{langStr}-{marketStr}";
+
+        // 1. Target locale match (exact locale like "en-us" or language prefix like "en" / "en-*")
+        var exactMatches = candidates.Where(c => c.locale == targetLocale).ToList();
+        if (exactMatches.Count > 0)
+            return exactMatches;
+
+        var langMatches = candidates.Where(c => c.locale == langStr || c.locale.StartsWith($"{langStr}-")).ToList();
+        if (langMatches.Count > 0)
+            return langMatches;
+
+        // 2. English fallback
+        var englishMatches = candidates.Where(c => c.locale == "en" || c.locale.StartsWith("en-")).ToList();
+        if (englishMatches.Count > 0)
+            return englishMatches;
+
+        // 3. Fallback to empty/unspecified locale ("")
+        var unspecified = candidates.Where(c => string.IsNullOrEmpty(c.locale)).ToList();
+        if (unspecified.Count > 0)
+            return unspecified;
+
+        // 4. Fallback to all candidates if none matched
+        return candidates;
     }
 
     /// <summary>

@@ -63,12 +63,6 @@ public sealed partial class ShellPage : Page
         if (!string.IsNullOrWhiteSpace(placeholder))
             SearchBox.PlaceholderText = placeholder;
 
-        if (NavigationViewControl.SettingsItem is NavigationViewItem settingsItem)
-        {
-            var localized = "Shell_Settings.Content".GetLocalized();
-            if (!string.IsNullOrWhiteSpace(localized))
-                settingsItem.Content = localized;
-        }
     }
 
     private void OnPaneDisplayModeChanged(
@@ -166,12 +160,6 @@ public sealed partial class ShellPage : Page
         TitleBarHelper.UpdateTitleBar(RequestedTheme);
         this.AddHandler(PointerPressedEvent, new PointerEventHandler(OnPagePointerPressed), true);
         RegisterBackForwardKeyboardAccelerators();
-
-        if (NavigationViewControl.SettingsItem is NavigationViewItem settingsItem)
-        {
-            settingsItem.PointerEntered += NavItem_PointerEntered;
-            settingsItem.PointerExited += NavItem_PointerExited;
-        }
 
         if (XamlRoot is null)
             return;

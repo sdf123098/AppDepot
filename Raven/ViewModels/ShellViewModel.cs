@@ -31,6 +31,9 @@ public partial class ShellViewModel : ObservableRecipient
     [ObservableProperty]
     private string downloadsNavigationText = "Downloads";
 
+    [ObservableProperty]
+    private string settingsNavigationText = "Settings";
+
     public INavigationService NavigationService
     {
         get;
@@ -58,6 +61,7 @@ public partial class ShellViewModel : ObservableRecipient
         InstallNavigationText = GetLocalizedOrFallback("Shell_Install.Content", "Install");
         UpdatesNavigationText = GetLocalizedOrFallback("Shell_Updates.Content", "Updates");
         DownloadsNavigationText = GetLocalizedOrFallback("Shell_Downloads.Content", "Downloads");
+        SettingsNavigationText = GetLocalizedOrFallback("Shell_Settings.Content", "Settings");
     }
 
     private static string GetLocalizedOrFallback(string resourceKey, string fallback) =>
@@ -66,12 +70,6 @@ public partial class ShellViewModel : ObservableRecipient
     private void OnNavigated(object sender, NavigationEventArgs e)
     {
         IsBackEnabled = NavigationService.CanGoBack;
-
-        if (e.SourcePageType == typeof(SettingsPage))
-        {
-            Selected = NavigationViewService.SettingsItem;
-            return;
-        }
 
         var selectedItem = NavigationViewService.GetSelectedItem(e.SourcePageType);
         if (selectedItem != null)

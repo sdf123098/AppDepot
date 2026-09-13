@@ -6,6 +6,7 @@
   <data name="Shell_Install.Content" xml:space="preserve"><value>安装</value></data>
   <data name="Shell_Updates.Content" xml:space="preserve"><value>更新</value></data>
   <data name="Shell_Downloads.Content" xml:space="preserve"><value>下载</value></data>
+  <data name="Shell_Settings.Content" xml:space="preserve"><value>设置</value></data>
   <data name="Shell_App.Content" xml:space="preserve"><value>应用</value></data>
   <data name="Shell_SearchBox.PlaceholderText" xml:space="preserve"><value>搜索</value></data>
   <data name="Shell_AppTitleBarText.Text" xml:space="preserve"><value>Raven</value></data>

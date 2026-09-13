@@ -33,6 +33,8 @@ public sealed partial class ShellPage : Page
 
         ViewModel.NavigationService.Frame = NavigationFrame;
         ViewModel.NavigationViewService.Initialize(NavigationViewControl);
+        _localeService.LocaleChanged += OnLocaleChanged;
+        RefreshShellLocalization();
         App.MainWindow.ExtendsContentIntoTitleBar = true;
         App.MainWindow.AppWindow.TitleBar.PreferredHeightOption = TitleBarHeightOption.Tall;
         App.MainWindow.SetTitleBar(AppTitleBar);
@@ -41,6 +43,24 @@ public sealed partial class ShellPage : Page
         AppTitleBar.SizeChanged += AppTitleBar_SizeChanged;
         AppTitleBar.Loaded += AppTitleBar_Loaded;
         Loaded += OnLoaded;
+    }
+
+    private void OnLocaleChanged(object? sender, EventArgs e)
+    {
+        _ = NavigationViewControl.DispatcherQueue.TryEnqueue(RefreshShellLocalization);
+    }
+
+    private void RefreshShellLocalization()
+    {
+        MainNavigationItem.Content = "Shell_Main.Content".GetLocalized();
+        AdvancedSearchNavigationItem.Content = "Shell_Advanced_Search.Content".GetLocalized();
+        InstallNavigationItem.Content = "Shell_Install.Content".GetLocalized();
+        UpdatesNavigationItem.Content = "Shell_Updates.Content".GetLocalized();
+        DownloadsNavigationItem.Content = "Shell_Downloads.Content".GetLocalized();
+        SearchBox.PlaceholderText = "Shell_SearchBox.PlaceholderText".GetLocalized();
+
+        if (NavigationViewControl.SettingsItem is NavigationViewItem settingsItem)
+            settingsItem.Content = "Shell_Settings.Content".GetLocalized();
     }
 
     private void OnPaneDisplayModeChanged(

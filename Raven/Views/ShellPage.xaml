@@ -393,19 +393,19 @@
                 <Thickness x:Key="NavigationViewContentMargin">0,0,0,0</Thickness>
             </NavigationView.Resources>
             <NavigationView.MenuItems>
-                <NavigationViewItem x:Uid="Shell_Main" helpers:NavigationHelper.NavigateTo="Raven.ViewModels.MainViewModel"
+                <NavigationViewItem x:Name="MainNavigationItem" x:Uid="Shell_Main" helpers:NavigationHelper.NavigateTo="Raven.ViewModels.MainViewModel"
                                     PointerEntered="NavItem_PointerEntered" PointerExited="NavItem_PointerExited">
                     <NavigationViewItem.Icon>
                         <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="" />
                     </NavigationViewItem.Icon>
                 </NavigationViewItem>
-                <NavigationViewItem x:Uid="Shell_Advanced_Search" helpers:NavigationHelper.NavigateTo="Raven.ViewModels.Advanced_SearchViewModel"
+                <NavigationViewItem x:Name="AdvancedSearchNavigationItem" x:Uid="Shell_Advanced_Search" helpers:NavigationHelper.NavigateTo="Raven.ViewModels.Advanced_SearchViewModel"
                                     PointerEntered="NavItem_PointerEntered" PointerExited="NavItem_PointerExited">
                     <NavigationViewItem.Icon>
                         <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="" />
                     </NavigationViewItem.Icon>
                 </NavigationViewItem>
-                <NavigationViewItem x:Uid="Shell_Install" helpers:NavigationHelper.NavigateTo="Raven.ViewModels.InstallationsViewModel"
+                <NavigationViewItem x:Name="InstallNavigationItem" x:Uid="Shell_Install" helpers:NavigationHelper.NavigateTo="Raven.ViewModels.InstallationsViewModel"
                                     PointerEntered="NavItem_PointerEntered" PointerExited="NavItem_PointerExited">
                     <NavigationViewItem.Icon>
                         <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="" />
@@ -413,13 +413,13 @@
                 </NavigationViewItem>
             </NavigationView.MenuItems>
             <NavigationView.FooterMenuItems>  
-                <NavigationViewItem x:Uid="Shell_Updates" helpers:NavigationHelper.NavigateTo="Raven.ViewModels.UpdatesViewModel"
+                <NavigationViewItem x:Name="UpdatesNavigationItem" x:Uid="Shell_Updates" helpers:NavigationHelper.NavigateTo="Raven.ViewModels.UpdatesViewModel"
                                     PointerEntered="NavItem_PointerEntered" PointerExited="NavItem_PointerExited">
                     <NavigationViewItem.Icon>
                         <SymbolIcon Symbol="Sync" />
                     </NavigationViewItem.Icon>
                 </NavigationViewItem>
-                <NavigationViewItem x:Uid="Shell_Downloads" helpers:NavigationHelper.NavigateTo="Raven.ViewModels.DownloadsViewModel"
+                <NavigationViewItem x:Name="DownloadsNavigationItem" x:Uid="Shell_Downloads" helpers:NavigationHelper.NavigateTo="Raven.ViewModels.DownloadsViewModel"
                                     PointerEntered="NavItem_PointerEntered" PointerExited="NavItem_PointerExited">
                     <NavigationViewItem.Icon>
                         <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="" />

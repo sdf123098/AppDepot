@@ -374,7 +374,7 @@ public partial class SettingsViewModel : ObservableRecipient
     {
         try
         {
-            return new CultureInfo(lang.ToString()).DisplayName;
+            return new CultureInfo(lang.ToString()).NativeName;
         }
         catch
         {

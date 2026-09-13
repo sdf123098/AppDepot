@@ -91,10 +91,10 @@ public class LocaleService : ILocaleService
     private static string GetResourceLanguage(Lang lang) =>
         lang switch
         {
-            Lang.zh => "zh-CN",
-            Lang.ko => "ko-KR",
+            Lang.zh => "zh-cn",
+            Lang.ko => "ko-kr",
             Lang.hu => "hu-HU",
-            _ => "en-US",
+            _ => "en-us",
         };
 
     private static void ApplyDotNetCulture(Lang lang)

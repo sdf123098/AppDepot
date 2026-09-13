@@ -33,6 +33,7 @@ public sealed partial class ShellPage : Page
 
         ViewModel.NavigationService.Frame = NavigationFrame;
         ViewModel.NavigationViewService.Initialize(NavigationViewControl);
+        ViewModel.RefreshLocalization();
         _localeService.LocaleChanged += OnLocaleChanged;
         App.MainWindow.ExtendsContentIntoTitleBar = true;
         App.MainWindow.AppWindow.TitleBar.PreferredHeightOption = TitleBarHeightOption.Tall;
@@ -48,6 +49,7 @@ public sealed partial class ShellPage : Page
     {
         _ = NavigationViewControl.DispatcherQueue.TryEnqueue(() =>
         {
+            ViewModel.RefreshLocalization();
             RefreshShellLocalization();
             App.MainWindow.Title = "AppDisplayName".GetLocalized();
             AppTitleBarText.Text = "Shell_AppTitleBarText.Text".GetLocalized();
@@ -57,25 +59,16 @@ public sealed partial class ShellPage : Page
 
     private void RefreshShellLocalization()
     {
-        SetLocalizedContent(MainNavigationItem, "Shell_Main.Content");
-        SetLocalizedContent(AdvancedSearchNavigationItem, "Shell_Advanced_Search.Content");
-        SetLocalizedContent(InstallNavigationItem, "Shell_Install.Content");
-        SetLocalizedContent(UpdatesNavigationItem, "Shell_Updates.Content");
-        SetLocalizedContent(DownloadsNavigationItem, "Shell_Downloads.Content");
-
         var placeholder = "Shell_SearchBox.PlaceholderText".GetLocalized();
         if (!string.IsNullOrWhiteSpace(placeholder))
             SearchBox.PlaceholderText = placeholder;
 
         if (NavigationViewControl.SettingsItem is NavigationViewItem settingsItem)
-            SetLocalizedContent(settingsItem, "Shell_Settings.Content");
-    }
-
-    private static void SetLocalizedContent(Control control, string resourceKey)
-    {
-        var localized = resourceKey.GetLocalized();
-        if (!string.IsNullOrWhiteSpace(localized))
-            control.SetValue(ContentControl.ContentProperty, localized);
+        {
+            var localized = "Shell_Settings.Content".GetLocalized();
+            if (!string.IsNullOrWhiteSpace(localized))
+                settingsItem.Content = localized;
+        }
     }
 
     private void OnPaneDisplayModeChanged(

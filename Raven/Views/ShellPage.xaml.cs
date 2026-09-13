@@ -34,7 +34,6 @@ public sealed partial class ShellPage : Page
         ViewModel.NavigationService.Frame = NavigationFrame;
         ViewModel.NavigationViewService.Initialize(NavigationViewControl);
         _localeService.LocaleChanged += OnLocaleChanged;
-        RefreshShellLocalization();
         App.MainWindow.ExtendsContentIntoTitleBar = true;
         App.MainWindow.AppWindow.TitleBar.PreferredHeightOption = TitleBarHeightOption.Tall;
         App.MainWindow.SetTitleBar(AppTitleBar);
@@ -47,20 +46,36 @@ public sealed partial class ShellPage : Page
 
     private void OnLocaleChanged(object? sender, EventArgs e)
     {
-        _ = NavigationViewControl.DispatcherQueue.TryEnqueue(RefreshShellLocalization);
+        _ = NavigationViewControl.DispatcherQueue.TryEnqueue(() =>
+        {
+            RefreshShellLocalization();
+            App.MainWindow.Title = "AppDisplayName".GetLocalized();
+            AppTitleBarText.Text = "Shell_AppTitleBarText.Text".GetLocalized();
+            ViewModel.NavigationService.RefreshCurrentPage();
+        });
     }
 
     private void RefreshShellLocalization()
     {
-        MainNavigationItem.Content = "Shell_Main.Content".GetLocalized();
-        AdvancedSearchNavigationItem.Content = "Shell_Advanced_Search.Content".GetLocalized();
-        InstallNavigationItem.Content = "Shell_Install.Content".GetLocalized();
-        UpdatesNavigationItem.Content = "Shell_Updates.Content".GetLocalized();
-        DownloadsNavigationItem.Content = "Shell_Downloads.Content".GetLocalized();
-        SearchBox.PlaceholderText = "Shell_SearchBox.PlaceholderText".GetLocalized();
+        SetLocalizedContent(MainNavigationItem, "Shell_Main.Content");
+        SetLocalizedContent(AdvancedSearchNavigationItem, "Shell_Advanced_Search.Content");
+        SetLocalizedContent(InstallNavigationItem, "Shell_Install.Content");
+        SetLocalizedContent(UpdatesNavigationItem, "Shell_Updates.Content");
+        SetLocalizedContent(DownloadsNavigationItem, "Shell_Downloads.Content");
+
+        var placeholder = "Shell_SearchBox.PlaceholderText".GetLocalized();
+        if (!string.IsNullOrWhiteSpace(placeholder))
+            SearchBox.PlaceholderText = placeholder;
 
         if (NavigationViewControl.SettingsItem is NavigationViewItem settingsItem)
-            settingsItem.Content = "Shell_Settings.Content".GetLocalized();
+            SetLocalizedContent(settingsItem, "Shell_Settings.Content");
+    }
+
+    private static void SetLocalizedContent(Control control, string resourceKey)
+    {
+        var localized = resourceKey.GetLocalized();
+        if (!string.IsNullOrWhiteSpace(localized))
+            control.SetValue(ContentControl.ContentProperty, localized);
     }
 
     private void OnPaneDisplayModeChanged(
@@ -154,6 +169,7 @@ public sealed partial class ShellPage : Page
 
     private async void OnLoaded(object sender, Microsoft.UI.Xaml.RoutedEventArgs e)
     {
+        RefreshShellLocalization();
         TitleBarHelper.UpdateTitleBar(RequestedTheme);
         this.AddHandler(PointerPressedEvent, new PointerEventHandler(OnPagePointerPressed), true);
         RegisterBackForwardKeyboardAccelerators();

@@ -53,14 +53,6 @@ public partial class SettingsViewModel : ObservableRecipient
     [ObservableProperty]
     private string _proxyValidationMessage = string.Empty;
 
-    [ObservableProperty]
-    private bool _showRelaunchPrompt;
-
-    // Language/Market that were active when the app started. A relaunch is needed only when the
-    // current selection differs from these, because already-loaded XAML strings don't re-localize.
-    private readonly Lang _initialLanguage;
-    private readonly Market _initialMarket;
-
     private readonly List<(string DisplayName, Market Value)> _marketItems;
     private readonly List<(string DisplayName, Lang Value)> _languageItems;
     private readonly List<(string DisplayName, StoreEdgeFDArch Value)> _architectureItems;
@@ -100,11 +92,6 @@ public partial class SettingsViewModel : ObservableRecipient
         get;
     }
 
-    public ICommand RelaunchCommand
-    {
-        get;
-    }
-
     public SettingsViewModel(
         IThemeSelectorService themeSelectorService,
         ILocaleService localeService,
@@ -118,9 +105,6 @@ public partial class SettingsViewModel : ObservableRecipient
         _localSettingsService = localSettingsService;
         _elementTheme = _themeSelectorService.Theme;
         _versionDescription = GetVersionDescription();
-
-        _initialLanguage = _localeService.Language;
-        _initialMarket = _localeService.Market;
 
         _marketItems = Enum.GetValues<Market>()
             .Select(m => (GetMarketDisplayName(m), m))
@@ -174,19 +158,10 @@ public partial class SettingsViewModel : ObservableRecipient
             }
         );
 
-        RelaunchCommand = new RelayCommand(() =>
-            Microsoft.Windows.AppLifecycle.AppInstance.Restart(string.Empty)
-        );
-
         _isInitialized = true;
         _ = LoadDownloadConnectionModeAsync();
         _ = LoadProxySettingsAsync();
     }
-
-    // Show the relaunch prompt whenever the live language differs from what was active at
-    // startup; hide it again if the user reverts to the original values.
-    private void UpdateRelaunchPrompt() =>
-        ShowRelaunchPrompt = _localeService.Language != _initialLanguage;
 
     partial void OnSelectedMarketIndexChanged(int value)
     {
@@ -195,7 +170,6 @@ public partial class SettingsViewModel : ObservableRecipient
         var market = _marketItems[value].Value;
         if (market != _localeService.Market)
             _ = _localeService.SetMarketAsync(market);
-        UpdateRelaunchPrompt();
     }
 
     partial void OnSelectedLanguageIndexChanged(int value)
@@ -205,7 +179,6 @@ public partial class SettingsViewModel : ObservableRecipient
         var lang = _languageItems[value].Value;
         if (lang != _localeService.Language)
             _ = _localeService.SetLanguageAsync(lang);
-        UpdateRelaunchPrompt();
     }
 
     partial void OnSelectedArchitectureIndexChanged(int value)

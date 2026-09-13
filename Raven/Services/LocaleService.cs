@@ -1,3 +1,4 @@
+using System.Globalization;
 using StoreListings.Library;
 using Raven.Contracts.Services;
 
@@ -82,8 +83,31 @@ public class LocaleService : ILocaleService
         {
             Microsoft.Windows.Globalization.ApplicationLanguages.PrimaryLanguageOverride =
                 $"{lang.ToString().ToLowerInvariant()}-{market.ToString().ToUpperInvariant()}";
+            ApplyDotNetCulture(lang, market);
         }
         catch { }
+    }
+
+    private static void ApplyDotNetCulture(Lang lang, Market market)
+    {
+        var culture = TryGetCulture($"{lang}-{market}") ?? TryGetCulture(lang.ToString());
+        if (culture is null)
+            return;
+
+        CultureInfo.CurrentUICulture = culture;
+        CultureInfo.DefaultThreadCurrentUICulture = culture;
+    }
+
+    private static CultureInfo? TryGetCulture(string name)
+    {
+        try
+        {
+            return CultureInfo.GetCultureInfo(name);
+        }
+        catch (CultureNotFoundException)
+        {
+            return null;
+        }
     }
 
     private static Market DetectMarketFromSystem()

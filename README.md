@@ -1,26 +1,26 @@
 <p align="center">
-  <img src="Raven/Assets/Raven.ico" alt="Raven Logo" width="128" height="128">
+  <img src="Raven/Assets/AppDepot.ico" alt="AppDepot Logo" width="128" height="128">
 </p>
 
-<h1 align="center">Raven</h1>
+<h1 align="center">AppDepot</h1>
 
 <p align="center">
   <b>A free, open-source alternative Microsoft Store client for Windows</b>
 </p>
 
 <p align="center">
-  <a href="https://github.com/mjishnu/Raven/releases"><img src="https://img.shields.io/github/v/release/mjishnu/Raven?style=flat-square&color=blue" alt="GitHub Release"></a>
-  <a href="https://github.com/mjishnu/Raven/blob/main/LICENSE"><img src="https://img.shields.io/github/license/mjishnu/Raven?style=flat-square&color=green" alt="License"></a>
-  <a href="https://github.com/mjishnu/Raven/stargazers"><img src="https://img.shields.io/github/stars/mjishnu/Raven?style=flat-square" alt="Stars"></a>
-  <a href="https://github.com/mjishnu/Raven/issues"><img src="https://img.shields.io/github/issues/mjishnu/Raven?style=flat-square" alt="Issues"></a>
+  <a href="https://github.com/sdf123098/AppDepot/releases"><img src="https://img.shields.io/github/v/release/sdf123098/AppDepot?style=flat-square&color=blue" alt="GitHub Release"></a>
+  <a href="https://github.com/sdf123098/AppDepot/blob/main/LICENSE"><img src="https://img.shields.io/github/license/sdf123098/AppDepot?style=flat-square&color=green" alt="License"></a>
+  <a href="https://github.com/sdf123098/AppDepot/stargazers"><img src="https://img.shields.io/github/stars/sdf123098/AppDepot?style=flat-square" alt="Stars"></a>
+  <a href="https://github.com/sdf123098/AppDepot/issues"><img src="https://img.shields.io/github/issues/sdf123098/AppDepot?style=flat-square" alt="Issues"></a>
   <a href="https://discord.gg/9eeN2Wve4T"><img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fdiscord.com%2Fapi%2Fv10%2Finvites%2F9eeN2Wve4T%3Fwith_counts%3Dtrue&query=%24.approximate_member_count&label=Discord&logo=discord&logoColor=white&color=5865F2&style=flat-square&suffix=%20members&cacheSeconds=3600" alt="Discord"></a>
 </p>
 
 ---
 
-Raven is a modern, native Windows application that serves as a fully-featured alternative to the Microsoft Store. It can do everything the official store does — **search, download, install, and update apps** — while also adding powerful capabilities like **sideloading external UWP/MSIX packages**, **exporting Store apps for offline use**, and **bandwidth-saving delta downloads**.
+AppDepot is a modern, native Windows application that serves as a fully-featured alternative to the Microsoft Store. It can do everything the official store does — **search, download, install, and update apps** — while also adding powerful capabilities like **sideloading external UWP/MSIX packages**, **exporting Store apps for offline use**, and **bandwidth-saving delta downloads**.
 
-Built with **WinUI 3** and **.NET 10**, Raven delivers a clean, fluent UI that feels right at home on Windows 10 and 11.
+Built with **WinUI 3** and **.NET 10**, AppDepot delivers a clean, fluent UI that feels right at home on Windows 10 and 11.
 
 <img width="996" height="543" alt="raven" src="https://github.com/user-attachments/assets/40229b36-df5e-419d-aea7-ca374f6e2108" />
 
@@ -55,7 +55,8 @@ Built with **WinUI 3** and **.NET 10**, Raven delivers a clean, fluent UI that f
 - **Theme Support** — light, dark, and system-default themes with seamless switching.
 - **Structured Logging** — separate log files for runtime events, installations, and crashes via Serilog.
 - **Localization-Ready** — UI strings use a resource-based localization system (`x:Uid`).
-- **Self-Update Check** — checks GitHub for newer releases of Raven itself.
+- **Self-Update Check** — checks GitHub for newer releases of AppDepot itself.
+- **Custom App Icon** — choose the AppDepot icon, the bundled owl icon, or another local ICO file.
 
 ##  🛑 System requirements
 
@@ -66,17 +67,17 @@ Built with **WinUI 3** and **.NET 10**, Raven delivers a clean, fluent UI that f
 ## 🌐 How to Run
 #### 1. Releases
 - Statisfy all [system requirements](#-system-requirements) (excluding runtimes if running self contained version)
-- Download the latest version of Raven from [releases](https://github.com/mjishnu/Raven/releases) according to your system architecture.
-- Extract the contents of the zip and run `raven.exe`.
-- If you encounter a false antivirus positive, download `raven_cert.zip` from [releases](https://github.com/mjishnu/Raven/releases), extract the contents and install `raven.cer` or run `install_raven_cert.bat`.
+- Download the latest version of AppDepot from [releases](https://github.com/sdf123098/AppDepot/releases) according to your system architecture.
+- Extract the contents of the zip and run `AppDepot.exe`.
+- If you encounter a false antivirus positive, download `raven_cert.zip` from [releases](https://github.com/sdf123098/AppDepot/releases), extract the contents and install `raven.cer` or run `install_raven_cert.bat`.
 
 #### 2. Winget
 - Install [winget](https://learn.microsoft.com/en-us/windows/package-manager/winget/) and run
 ```ps1
-winget install mjishnu.raven
+winget install sdf123098.AppDepot
 ```
-- If you encounter a false antivirus positive, download `raven_cert.zip` from [releases](https://github.com/mjishnu/Raven/releases), extract the contents and install `raven.cer` or run `install_raven_cert.bat`.
-- Search for the `raven` in startmenu and run
+- If you encounter a false antivirus positive, download `raven_cert.zip` from [releases](https://github.com/sdf123098/AppDepot/releases), extract the contents and install `raven.cer` or run `install_raven_cert.bat`.
+- Search for `AppDepot` in the start menu and run it.
 
 ### ▶️ Video Guide
 [<img width="996" height="543" alt="IMM-WZsVCt5_E" src="https://github.com/user-attachments/assets/80fd984c-8587-49a0-ae13-07bee72d9a9d" />
@@ -85,11 +86,11 @@ winget install mjishnu.raven
 
 ## 🏗️ Architecture
 
-Raven follows the **MVVM pattern** and uses dependency injection via `Microsoft.Extensions.Hosting`.
+AppDepot follows the **MVVM pattern** and uses dependency injection via `Microsoft.Extensions.Hosting`.
 
 ```
 Raven.sln
-├── Raven/                    # WinUI 3 Application (UI layer)
+├── Raven/                    # AppDepot WinUI 3 Application (UI layer)
 │   ├── Views/                # XAML pages: Shell, Search, App Details,
 │   │                         #   Downloads, Installations, Updates, Settings
 │   ├── ViewModels/           # MVVM view models (CommunityToolkit.Mvvm)
@@ -104,7 +105,7 @@ Raven.sln
 │   └── Strings/              # Localized string resources (en-us)
 │
 ├── Raven.Updater/            # Self-update helper executable
-│   └── Program.cs            # Copies update payload and relaunches Raven
+│   └── Program.cs            # Copies update payload and relaunches AppDepot
 │
 └── StoreListings/            # Git submodule — Microsoft Store API wrapper
     └── StoreListings.Library/
@@ -138,8 +139,8 @@ Raven.sln
 ### 1. Clone the Repository
 
 ```bash
-git clone --recurse-submodules https://github.com/mjishnu/Raven.git
-cd Raven
+git clone --recurse-submodules https://github.com/sdf123098/AppDepot.git
+cd AppDepot
 ```
 
 > If you've already cloned without `--recurse-submodules`, initialize the submodule manually:
@@ -151,7 +152,7 @@ cd Raven
 
 **From Visual Studio:**
 1. Open `Raven.sln`
-2. Set `Raven` as the startup project
+2. Set `AppDepot` as the startup project
 3. Select your target platform (`x64`, `x86`, or `arm64`)
 4. Press **F5** to build and run
 

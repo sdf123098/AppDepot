@@ -111,6 +111,7 @@ public sealed partial class AppPage : Page
     {
         base.OnNavigatedFrom(e);
         _navigatedAway = true;
+        _translationCts?.Cancel();
 
         _productLoadCts?.Cancel();
         _productLoadCts?.Dispose();

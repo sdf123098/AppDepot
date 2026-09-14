@@ -224,8 +224,8 @@ jobs:
         shell: pwsh
         run: |
           Get-ChildItem -Path ./publish_output, ./publish_output_full -Include *.cer,*.pfx -Recurse -File -ErrorAction SilentlyContinue | Remove-Item -Force -ErrorAction SilentlyContinue
-          Compress-Archive -Path ./publish_output/* -DestinationPath "Raven-$($env:RELEASE_TAG)-win-$($env:ARCH).zip"
-          Compress-Archive -Path ./publish_output_full/* -DestinationPath "Raven-$($env:RELEASE_TAG)-win-$($env:ARCH)-self-contained.zip"
+          Compress-Archive -Path ./publish_output/* -DestinationPath "AppDepot-$($env:RELEASE_TAG)-win-$($env:ARCH).zip"
+          Compress-Archive -Path ./publish_output_full/* -DestinationPath "AppDepot-$($env:RELEASE_TAG)-win-$($env:ARCH)-self-contained.zip"
 
       - name: Create Auto Install Certificate Zip
         if: matrix.arch == 'x64'
@@ -240,10 +240,10 @@ jobs:
       - name: Upload App Artifact
         uses: actions/upload-artifact@v7
         with:
-          name: Raven-${{ matrix.arch }}
+          name: AppDepot-${{ matrix.arch }}
           path: |
-            Raven-${{ needs.prepare.outputs.release_tag }}-win-${{ matrix.arch }}.zip
-            Raven-${{ needs.prepare.outputs.release_tag }}-win-${{ matrix.arch }}-self-contained.zip
+            AppDepot-${{ needs.prepare.outputs.release_tag }}-win-${{ matrix.arch }}.zip
+            AppDepot-${{ needs.prepare.outputs.release_tag }}-win-${{ matrix.arch }}-self-contained.zip
 
       - name: Upload Auto Install Certificate Artifact
         if: matrix.arch == 'x64'
@@ -270,18 +270,18 @@ jobs:
         uses: softprops/action-gh-release@v3
         with:
           tag_name: ${{ needs.prepare.outputs.release_tag }}
-          name: Raven ${{ needs.prepare.outputs.release_tag }}
+          name: AppDepot ${{ needs.prepare.outputs.release_tag }}
           draft: true
           prerelease: ${{ needs.prepare.outputs.release_version != needs.prepare.outputs.numeric_version }}
           generate_release_notes: true
           body: |
-            > Note: [Read installation instruction](https://github.com/mjishnu/Raven/blob/main/README.md#-how-to-run)
+            > Note: [Read installation instruction](https://github.com/sdf123098/AppDepot/blob/main/README.md#-how-to-run)
             > 
             > - Normal version you need to download the runtimes (runtimes are usually shared by multiple apps)
             > - Self-contained version contains all the runtimes inbuild (larger size, runtimes can't be shared with other apps)
           files: |
-            ./artifacts/Raven-*-win-x64.zip
-            ./artifacts/Raven-*-win-x86.zip
-            ./artifacts/Raven-*-win-arm64.zip
+            ./artifacts/AppDepot-*-win-x64.zip
+            ./artifacts/AppDepot-*-win-x86.zip
+            ./artifacts/AppDepot-*-win-arm64.zip
             ./artifacts/*-self-contained.zip
             ./artifacts/raven_cert.zip

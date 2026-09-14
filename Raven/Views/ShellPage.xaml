@@ -343,11 +343,12 @@
                 <FontIcon Glyph="&#xE830;" />
             </Button>
             <Image
+                x:Name="AppIconImage"
                 Grid.Column="3"
                 Width="16"
                 Height="16"
                 Margin="12,0,0,0"
-                Source="/Assets/Raven.ico"/>
+                Source="/Assets/AppDepot.ico"/>
             <TextBlock
                 x:Name="AppTitleBarText"
                 x:Uid="Shell_AppTitleBarText"

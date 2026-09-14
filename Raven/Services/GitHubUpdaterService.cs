@@ -13,7 +13,7 @@ public sealed class GitHubUpdaterService
     public static async Task<GitHubReleaseInfo> GetLatestReleaseAsync(CancellationToken cancellationToken = default)
     {
         using var response = await HttpClient.GetAsync(
-            $"https://api.github.com/repos/mjishnu/raven/releases/latest",
+            $"https://api.github.com/repos/sdf123098/AppDepot/releases/latest",
             cancellationToken
         );
 
@@ -79,7 +79,7 @@ public sealed class GitHubUpdaterService
         if (!File.Exists(installedUpdaterExecutablePath))
             throw new FileNotFoundException("Updater executable was not found.", installedUpdaterExecutablePath);
 
-        var updateRoot = Path.Combine(Path.GetTempPath(), "RavenUpdater", Guid.NewGuid().ToString("N"));
+        var updateRoot = Path.Combine(Path.GetTempPath(), "AppDepotUpdater", Guid.NewGuid().ToString("N"));
         var zipPath = Path.Combine(updateRoot, release.AssetName);
         var extractPath = Path.Combine(updateRoot, "extract");
         var runnerRoot = Path.Combine(updateRoot, "runner");
@@ -276,7 +276,7 @@ public sealed class GitHubUpdaterService
     private static HttpClient CreateHttpClient()
     {
         var client = new HttpClient();
-        client.DefaultRequestHeaders.UserAgent.ParseAdd("Raven-Updater");
+        client.DefaultRequestHeaders.UserAgent.ParseAdd("AppDepot-Updater");
         client.DefaultRequestHeaders.Accept.ParseAdd("application/vnd.github+json");
         return client;
     }

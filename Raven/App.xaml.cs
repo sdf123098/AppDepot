@@ -96,8 +96,10 @@ public partial class App : Application
 
                     // Services
                     services.AddSingleton<ILocalSettingsService, LocalSettingsService>();
+                    services.AddSingleton<AppIconService>();
                     services.AddSingleton<IThemeSelectorService, ThemeSelectorService>();
                     services.AddSingleton<ILocaleService, LocaleService>();
+                    services.AddSingleton<DescriptionTranslationService>();
                     services.AddSingleton<IArchitectureSelectorService, ArchitectureSelectorService>();
                     services.AddTransient<INavigationViewService, NavigationViewService>();
 
@@ -240,6 +242,8 @@ public partial class App : Application
         base.OnLaunched(args);
 
         MainWindow = new MainWindow();
+
+        await App.GetService<AppIconService>().InitializeAsync();
 
         LogStartupDetails();
 

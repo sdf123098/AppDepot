@@ -121,947 +121,929 @@
     <value>AppDepot</value>
   </data>
   <data name="Shell_Main.Content" xml:space="preserve">
-    <value>Home</value>
+    <value>首頁</value>
   </data>
   <data name="Shell_Advanced_Search.Content" xml:space="preserve">
-    <value>Advanced Search</value>
+    <value>進階搜尋</value>
   </data>
   <data name="Shell_Install.Content" xml:space="preserve">
-    <value>Install</value>
+    <value>安裝</value>
   </data>
   <data name="Shell_Updates.Content" xml:space="preserve">
-    <value>Updates</value>
+    <value>更新</value>
   </data>
   <data name="Shell_Downloads.Content" xml:space="preserve">
-    <value>Downloads</value>
+    <value>下載</value>
   </data>
   <data name="Shell_Settings.Content" xml:space="preserve">
-    <value>Settings</value>
+    <value>設定</value>
   </data>
   <data name="Shell_App.Content" xml:space="preserve">
-    <value>Apps</value>
+    <value>應用程式</value>
   </data>
   <data name="Shell_SearchBox.PlaceholderText" xml:space="preserve">
-    <value>Search</value>
+    <value>搜尋</value>
   </data>
   <data name="Shell_AppTitleBarText.Text" xml:space="preserve">
     <value>AppDepot</value>
   </data>
   <data name="Settings_Title.Text" xml:space="preserve">
-    <value>Settings</value>
+    <value>設定</value>
   </data>
   <data name="Settings_Theme.Text" xml:space="preserve">
-    <value>Theme</value>
+    <value>佈景主題</value>
   </data>
   <data name="Settings_Theme_Light.Content" xml:space="preserve">
-    <value>Light</value>
+    <value>淺色</value>
   </data>
   <data name="Settings_Theme_Dark.Content" xml:space="preserve">
-    <value>Dark</value>
+    <value>深色</value>
   </data>
   <data name="Settings_Theme_Default.Content" xml:space="preserve">
-    <value>System Default</value>
+    <value>系統預設</value>
   </data>
-  <data name="Settings_Icon.Text" xml:space="preserve">
-    <value>App icon</value>
-  </data>
-  <data name="Settings_IconDescription.Text" xml:space="preserve">
-    <value>Choose the AppDepot icon. Custom icons must be ICO files.</value>
-  </data>
-  <data name="Settings_IconDefaultButton.Content" xml:space="preserve">
-    <value>AppDepot</value>
-  </data>
-  <data name="Settings_IconOwlButton.Content" xml:space="preserve">
-    <value>Owl</value>
-  </data>
-  <data name="Settings_IconCustomButton.Content" xml:space="preserve">
-    <value>Choose ICO</value>
-  </data>
-  <data name="Settings_IconPickerTitle" xml:space="preserve">
-    <value>Select a custom ICO file</value>
-  </data>
-  <data name="Settings_IconApplied" xml:space="preserve">
-    <value>Icon applied.</value>
-  </data>
-  <data name="Settings_IconInvalid" xml:space="preserve">
-    <value>That ICO file could not be applied.</value>
-  </data>
-  <data name="Settings_IconLoadFailed" xml:space="preserve">
-    <value>Unable to preview the icon.</value>
-  </data>
+  <data name="Settings_Icon.Text" xml:space="preserve"><value>App icon</value></data>
+  <data name="Settings_IconDescription.Text" xml:space="preserve"><value>Choose the AppDepot icon. Custom icons must be ICO files.</value></data>
+  <data name="Settings_IconDefaultButton.Content" xml:space="preserve"><value>AppDepot</value></data>
+  <data name="Settings_IconOwlButton.Content" xml:space="preserve"><value>Owl</value></data>
+  <data name="Settings_IconCustomButton.Content" xml:space="preserve"><value>Choose ICO</value></data>
+  <data name="Settings_IconPickerTitle" xml:space="preserve"><value>Select a custom ICO file</value></data>
+  <data name="Settings_IconApplied" xml:space="preserve"><value>Icon applied.</value></data>
+  <data name="Settings_IconInvalid" xml:space="preserve"><value>That ICO file could not be applied.</value></data>
+  <data name="Settings_IconLoadFailed" xml:space="preserve"><value>Unable to preview the icon.</value></data>
   <data name="Settings_LocaleAndRegion.Text" xml:space="preserve">
-    <value>Language &amp; Region</value>
+    <value>語言與地區</value>
   </data>
   <data name="Settings_Language.Text" xml:space="preserve">
-    <value>Language</value>
+    <value>語言</value>
   </data>
   <data name="Settings_Market.Text" xml:space="preserve">
-    <value>Market (Region)</value>
+    <value>市集 (地區)</value>
   </data>
   <data name="Settings_RelaunchInfoBar.Title" xml:space="preserve">
-    <value>Restart required</value>
+    <value>需要重新啟動</value>
   </data>
   <data name="Settings_RelaunchInfoBar.Message" xml:space="preserve">
-    <value>Relaunch AppDepot to apply your language changes.</value>
+    <value>重新啟動 AppDepot 以套用您的語言變更。</value>
   </data>
   <data name="Settings_RelaunchButton.Content" xml:space="preserve">
-    <value>Relaunch</value>
+    <value>重新啟動</value>
   </data>
   <data name="Settings_Architecture.Text" xml:space="preserve">
-    <value>Architecture</value>
+    <value>架構</value>
   </data>
   <data name="Settings_ArchitectureDescription.Text" xml:space="preserve">
-    <value>Select your system architecture</value>
+    <value>選取您的系統架構</value>
   </data>
   <data name="Settings_Downloads.Text" xml:space="preserve">
-    <value>Downloads</value>
+    <value>下載</value>
   </data>
   <data name="Settings_ParallelConnections.Header" xml:space="preserve">
-    <value>Parallel download connections</value>
+    <value>平行下載連線</value>
   </data>
   <data name="Settings_ParallelConnectionsDescription.Text" xml:space="preserve">
-    <value>Using multiple connections may improve download speeds for large packages. If the server does not support segmented downloads, AppDepot will automatically use a single connection.</value>
+    <value>使用多個連線可提升大型套件的下載速度。若伺服器不支援分段下載，AppDepot 會自動改用單一連線。</value>
   </data>
   <data name="Settings_ParallelConnections_Auto" xml:space="preserve">
-    <value>Auto</value>
+    <value>自動</value>
   </data>
   <data name="Settings_ParallelConnections_One" xml:space="preserve">
-    <value>1 connection</value>
+    <value>1 個連線</value>
   </data>
   <data name="Settings_ParallelConnections_Two" xml:space="preserve">
-    <value>2 connections</value>
+    <value>2 個連線</value>
   </data>
   <data name="Settings_ParallelConnections_Four" xml:space="preserve">
-    <value>4 connections</value>
+    <value>4 個連線</value>
   </data>
   <data name="Settings_ParallelConnections_Eight" xml:space="preserve">
-    <value>8 connections</value>
+    <value>8 個連線</value>
   </data>
   <data name="Settings_Network.Text" xml:space="preserve">
-    <value>Network</value>
+    <value>網路</value>
   </data>
   <data name="Settings_ProxyDescription.Text" xml:space="preserve">
-    <value>Choose how AppDepot connects to Microsoft package download servers.</value>
+    <value>選擇 AppDepot 連線至 Microsoft 套件下載伺服器的方式。</value>
   </data>
   <data name="Settings_ProxyMode.Header" xml:space="preserve">
-    <value>Proxy</value>
+    <value>Proxy 伺服器</value>
   </data>
   <data name="Settings_ProxyMode_System" xml:space="preserve">
-    <value>Use system proxy</value>
+    <value>使用系統 Proxy</value>
   </data>
   <data name="Settings_ProxyMode_Direct" xml:space="preserve">
-    <value>Direct connection</value>
+    <value>直接連線</value>
   </data>
   <data name="Settings_ProxyMode_Custom" xml:space="preserve">
-    <value>Custom proxy</value>
+    <value>自訂 Proxy</value>
   </data>
   <data name="Settings_ProxyUri.Header" xml:space="preserve">
-    <value>Proxy address</value>
+    <value>Proxy 位址</value>
   </data>
   <data name="Settings_ProxyUri.PlaceholderText" xml:space="preserve">
     <value>http://127.0.0.1:7890</value>
   </data>
   <data name="Settings_ProxyInvalidUri" xml:space="preserve">
-    <value>The custom proxy address must be a valid HTTP or HTTPS URI.</value>
+    <value>自訂 Proxy 位址必須是有效的 HTTP 或 HTTPS URI。</value>
   </data>
   <data name="Settings_Reset.Text" xml:space="preserve">
-    <value>Reset</value>
+    <value>重設</value>
   </data>
   <data name="Settings_ResetDescription.Text" xml:space="preserve">
-    <value>Reset AppDepot to default settings.</value>
+    <value>將 AppDepot 重設為預設設定。</value>
   </data>
   <data name="Settings_ResetButton.Content" xml:space="preserve">
-    <value>Reset app</value>
+    <value>重設應用程式</value>
   </data>
   <data name="Settings_ResetDialogTitle" xml:space="preserve">
-    <value>Reset app data?</value>
+    <value>要重設應用程式資料嗎？</value>
   </data>
   <data name="Settings_ResetDialogContent" xml:space="preserve">
-    <value>This will remove all downloaded files and cached download data, and restore language, region, and architecture to defaults. The app will restart automatically. This action cannot be undone.</value>
+    <value>這會移除所有已下載的檔案與快取的下載資料，並將語言、地區及架構還原為預設值。應用程式會自動重新啟動。此動作無法復原。</value>
   </data>
   <data name="Settings_ResetDialogPrimary" xml:space="preserve">
-    <value>Reset</value>
+    <value>重設</value>
   </data>
   <data name="Settings_ResetDialogCancel" xml:space="preserve">
-    <value>Cancel</value>
+    <value>取消</value>
   </data>
   <data name="Settings_About.Text" xml:space="preserve">
-    <value>About this application</value>
+    <value>關於此應用程式</value>
   </data>
   <data name="Settings_AboutDescription.Text" xml:space="preserve">
-    <value>An open-source, privacy-oriented alternative client for the Microsoft Store to browse, download, install, and update Store apps.</value>
+    <value>一款開放原始碼、以隱私為重的 Microsoft Store 替代用戶端，可瀏覽、下載、安裝及更新 Store 應用程式。</value>
   </data>
   <data name="SettingsPage_GitHubRepoLink.Content" xml:space="preserve">
-    <value>GitHub repository</value>
+    <value>GitHub 儲存庫</value>
   </data>
   <data name="SettingsPage_DiscordLink.Content" xml:space="preserve">
-    <value>Discord community</value>
+    <value>Discord 社群</value>
   </data>
   <data name="SettingsPage_LicenseLink.Content" xml:space="preserve">
-    <value>License</value>
+    <value>授權</value>
   </data>
   <data name="Settings_DiagnosticsLogs.Text" xml:space="preserve">
-    <value>Diagnostics logs</value>
+    <value>診斷記錄</value>
   </data>
   <data name="Settings_DiagnosticsLogsDescription.Text" xml:space="preserve">
-    <value>Open the logs folder for troubleshooting.</value>
+    <value>開啟記錄資料夾以進行疑難排解。</value>
   </data>
   <data name="Settings_DiagnosticsLogsButton.Content" xml:space="preserve">
-    <value>Open logs folder</value>
+    <value>開啟記錄資料夾</value>
   </data>
   <data name="Settings_AppUpdates.Text" xml:space="preserve">
-    <value>Application updates</value>
+    <value>應用程式更新</value>
   </data>
   <data name="Settings_AppUpdatesButton.Content" xml:space="preserve">
-    <value>Check for updates</value>
+    <value>檢查更新</value>
   </data>
   <data name="Settings_UpdaterConfirmTitle" xml:space="preserve">
-    <value>Update available</value>
+    <value>有可用更新</value>
   </data>
   <data name="Settings_UpdaterConfirmContent" xml:space="preserve">
-    <value>Version {0} is ready to install. The app will restart to apply the update.</value>
+    <value>版本 {0} 已可安裝。應用程式會重新啟動以套用更新。</value>
   </data>
   <data name="Settings_UpdaterConfirmPrimary" xml:space="preserve">
-    <value>Install</value>
+    <value>安裝</value>
   </data>
   <data name="Settings_UpdaterAlreadyLatestTitle" xml:space="preserve">
-    <value>You're up to date</value>
+    <value>您已是最新版本</value>
   </data>
   <data name="Settings_UpdaterAlreadyLatestContent" xml:space="preserve">
-    <value>latest version already installed.</value>
+    <value>已安裝最新版本。</value>
   </data>
   <data name="Settings_UpdaterErrorTitle" xml:space="preserve">
-    <value>Something went wrong</value>
+    <value>發生錯誤</value>
   </data>
   <data name="Settings_UpdaterErrorContent" xml:space="preserve">
-    <value>The update could not be completed. {0}</value>
+    <value>無法完成更新。{0}</value>
   </data>
   <data name="Settings_UpdaterDialogClose" xml:space="preserve">
-    <value>Close</value>
+    <value>關閉</value>
   </data>
   <data name="Settings_UpdaterDialogCancel" xml:space="preserve">
-    <value>Cancel</value>
+    <value>取消</value>
   </data>
   <data name="Settings_UpdaterCheckingTitle" xml:space="preserve">
-    <value>Checking for updates</value>
+    <value>正在檢查更新</value>
   </data>
   <data name="Settings_UpdaterCheckingContent" xml:space="preserve">
-    <value>Looking for the latest version.</value>
+    <value>正在尋找最新版本。</value>
   </data>
   <data name="Settings_UpdaterCheckCanceledContent" xml:space="preserve">
-    <value>Check canceled. Try again anytime.</value>
+    <value>已取消檢查。您隨時可以再試一次。</value>
   </data>
   <data name="Settings_UpdaterStartupCheckbox" xml:space="preserve">
-    <value>Check for updates on startup</value>
+    <value>啟動時檢查更新</value>
   </data>
   <data name="Settings_UpdaterProgressPercent" xml:space="preserve">
     <value>{0}%</value>
   </data>
   <data name="Settings_UpdaterInstallingTitle" xml:space="preserve">
-    <value>Installing update</value>
+    <value>正在安裝更新</value>
   </data>
   <data name="CardView_Loading.Text" xml:space="preserve">
-    <value>Loading</value>
+    <value>載入中</value>
   </data>
   <data name="CardView_Filters.Text" xml:space="preserve">
-    <value>Filters</value>
+    <value>篩選條件</value>
   </data>
   <data name="CardView_ApplyBtn.Content" xml:space="preserve">
-    <value>Apply</value>
+    <value>套用</value>
   </data>
   <data name="CardView_NoResults_Title.Text" xml:space="preserve">
-    <value>No results found</value>
+    <value>找不到結果</value>
   </data>
   <data name="CardView_NoResults_Subtitle.Text" xml:space="preserve">
-    <value>Try different keywords or remove search filters</value>
+    <value>請嘗試其他關鍵字，或移除搜尋篩選條件</value>
   </data>
   <data name="CardView_Error_LoadFailed" xml:space="preserve">
-    <value>Failed to load cards: {0}</value>
+    <value>無法載入卡片：{0}</value>
   </data>
   <data name="CardView_Error_OpenFailed" xml:space="preserve">
-    <value>Failed to open item: {0}</value>
+    <value>無法開啟項目：{0}</value>
   </data>
   <data name="Filter_Apps" xml:space="preserve">
-    <value>Apps</value>
+    <value>應用程式</value>
   </data>
   <data name="Filter_Games" xml:space="preserve">
-    <value>Games</value>
+    <value>遊戲</value>
   </data>
   <data name="Filter_TopFree" xml:space="preserve">
-    <value>Top Free</value>
+    <value>免費排行</value>
   </data>
   <data name="Filter_TopPaid" xml:space="preserve">
-    <value>Top Paid</value>
+    <value>付費排行</value>
   </data>
   <data name="Filter_TopTrending" xml:space="preserve">
-    <value>Top Trending</value>
+    <value>熱門排行</value>
   </data>
   <data name="Filter_Specials" xml:space="preserve">
-    <value>Specials</value>
+    <value>特價</value>
   </data>
   <data name="Filter_BestSelling" xml:space="preserve">
-    <value>Best Selling</value>
+    <value>暢銷排行</value>
   </data>
   <data name="AdvancedSearch_Header.Text" xml:space="preserve">
-    <value>Advanced Search</value>
+    <value>進階搜尋</value>
   </data>
   <data name="AdvancedSearch_SearchHint.Text" xml:space="preserve">
-    <value>Search by URL, product ID, or package family name</value>
+    <value>依 URL、產品識別碼或套件系列名稱搜尋</value>
   </data>
   <data name="AdvancedSearch_TypeUrl.Content" xml:space="preserve">
     <value>URL</value>
   </data>
   <data name="AdvancedSearch_TypeProductId.Content" xml:space="preserve">
-    <value>Product ID</value>
+    <value>產品識別碼</value>
   </data>
   <data name="AdvancedSearch_TypePfn.Content" xml:space="preserve">
-    <value>Package Family Name</value>
+    <value>套件系列名稱</value>
   </data>
   <data name="AdvancedSearch_SearchBtn.Text" xml:space="preserve">
-    <value>Search</value>
+    <value>搜尋</value>
   </data>
   <data name="AdvancedSearch_LookingUp.Text" xml:space="preserve">
-    <value>Looking up product</value>
+    <value>正在查詢產品</value>
   </data>
   <data name="AdvancedSearch_UrlCard_Title.Text" xml:space="preserve">
     <value>URL</value>
   </data>
   <data name="AdvancedSearch_UrlCard_Desc.Text" xml:space="preserve">
-    <value>Paste a Microsoft Store product URL to automatically extract and look up the product.</value>
+    <value>貼上 Microsoft Store 產品 URL，即可自動擷取並查詢該產品。</value>
   </data>
   <data name="AdvancedSearch_UrlCard_Example.Text" xml:space="preserve">
-    <value>e.g. https://apps.microsoft.com/detail/9WZDNCRFHVJL</value>
+    <value>例如 https://apps.microsoft.com/detail/9WZDNCRFHVJL</value>
   </data>
   <data name="AdvancedSearch_ProductIdCard_Title.Text" xml:space="preserve">
-    <value>Product ID</value>
+    <value>產品識別碼</value>
   </data>
   <data name="AdvancedSearch_ProductIdCard_Desc.Text" xml:space="preserve">
-    <value>Enter the product's alphanumeric store ID to navigate directly to its page.</value>
+    <value>輸入產品的英數字商店識別碼，即可直接前往其頁面。</value>
   </data>
   <data name="AdvancedSearch_ProductIdCard_Example.Text" xml:space="preserve">
-    <value>e.g. 9WZDNCRFHVJL</value>
+    <value>例如 9WZDNCRFHVJL</value>
   </data>
   <data name="AdvancedSearch_PfnCard_Title.Text" xml:space="preserve">
-    <value>Package Family Name</value>
+    <value>套件系列名稱</value>
   </data>
   <data name="AdvancedSearch_PfnCard_Desc.Text" xml:space="preserve">
-    <value>Enter the app's package family name to look up its store page.</value>
+    <value>輸入應用程式的套件系列名稱，即可查詢其商店頁面。</value>
   </data>
   <data name="AdvancedSearch_PfnCard_Example.Text" xml:space="preserve">
-    <value>e.g. Microsoft.WindowsTerminal_8wekyb3d8bbwe</value>
+    <value>例如 Microsoft.WindowsTerminal_8wekyb3d8bbwe</value>
   </data>
   <data name="AdvancedSearch_Placeholder_Url" xml:space="preserve">
     <value>https://apps.microsoft.com/detail/...</value>
   </data>
   <data name="AdvancedSearch_Placeholder_ProductId" xml:space="preserve">
-    <value>e.g. 9WZDNCRFHVJL</value>
+    <value>例如 9WZDNCRFHVJL</value>
   </data>
   <data name="AdvancedSearch_Placeholder_Pfn" xml:space="preserve">
-    <value>e.g. Microsoft.WindowsTerminal_8wekyb3d8bbwe</value>
+    <value>例如 Microsoft.WindowsTerminal_8wekyb3d8bbwe</value>
   </data>
   <data name="AdvancedSearch_Placeholder_Default" xml:space="preserve">
-    <value>Enter a value to search</value>
+    <value>輸入要搜尋的值</value>
   </data>
   <data name="AdvancedSearch_Error_EmptyQuery" xml:space="preserve">
-    <value>Please enter a value to search.</value>
+    <value>請輸入要搜尋的值。</value>
   </data>
   <data name="AdvancedSearch_Error_InvalidUrl" xml:space="preserve">
-    <value>Could not extract a product ID from this URL. Make sure it is a valid Microsoft Store URL.</value>
+    <value>無法從此 URL 擷取產品識別碼。請確認它是有效的 Microsoft Store URL。</value>
   </data>
   <data name="AdvancedSearch_Error_NoPfnResult" xml:space="preserve">
-    <value>No product found for this Package Family Name.</value>
+    <value>找不到此套件系列名稱的產品。</value>
   </data>
   <data name="AdvancedSearch_Error_FailedLookup" xml:space="preserve">
-    <value>Failed to find product: {0}</value>
+    <value>找不到產品：{0}</value>
   </data>
   <data name="AppPage_Loading.Text" xml:space="preserve">
-    <value>Loading</value>
+    <value>載入中</value>
   </data>
   <data name="AppPage_BypassFilters.Text" xml:space="preserve">
-    <value>Bypass Filters</value>
+    <value>略過篩選條件</value>
   </data>
   <data name="AppPage_CheckUpdates.Text" xml:space="preserve">
-    <value>Check Updates</value>
+    <value>檢查更新</value>
   </data>
   <data name="AppPage_Screenshots.Text" xml:space="preserve">
-    <value>Screenshots</value>
+    <value>螢幕擷取畫面</value>
   </data>
   <data name="AppPage_Description.Text" xml:space="preserve">
-    <value>Description</value>
+    <value>描述</value>
   </data>
   <data name="AppPage_MoreDetails.Text" xml:space="preserve">
-    <value>More Details</value>
+    <value>更多詳細資料</value>
   </data>
   <data name="AppPage_AppSize.Text" xml:space="preserve">
-    <value>App Size:</value>
+    <value>應用程式大小：</value>
   </data>
   <data name="AppPage_Version.Text" xml:space="preserve">
-    <value>Version:</value>
+    <value>版本：</value>
   </data>
   <data name="AppPage_LastUpdated.Text" xml:space="preserve">
-    <value>Last Updated:</value>
+    <value>上次更新：</value>
   </data>
   <data name="AppPage_Error_LoadTitle" xml:space="preserve">
-    <value>Error loading app</value>
+    <value>載入應用程式時發生錯誤</value>
   </data>
   <data name="AppPage_Error_LoadMessage" xml:space="preserve">
-    <value>Could not load app details: {0}</value>
+    <value>無法載入應用程式詳細資料：{0}</value>
   </data>
   <data name="AppPage_Error_CheckUpdatesTitle" xml:space="preserve">
-    <value>Check Updates</value>
+    <value>檢查更新</value>
   </data>
   <data name="AppPage_Error_VersionCheckMsg" xml:space="preserve">
-    <value>Could not retrieve the latest version. The app may not be available or the check failed.</value>
+    <value>無法取得最新版本。此應用程式可能無法使用，或檢查失敗。</value>
   </data>
   <data name="AppPage_Error_UpdateCheckFailed" xml:space="preserve">
-    <value>Failed to check for updates: {0}</value>
+    <value>檢查更新失敗：{0}</value>
   </data>
   <data name="AppPage_Error_OperationCanceled" xml:space="preserve">
-    <value>Operation canceled.</value>
+    <value>作業已取消。</value>
   </data>
   <data name="AppPage_Error_NotSupportedTitle" xml:space="preserve">
-    <value>App not supported</value>
+    <value>不支援應用程式</value>
   </data>
   <data name="AppPage_Error_NotSupportedMsg" xml:space="preserve">
-    <value>This app isn't supported. Try a different app or check again later.</value>
+    <value>不支援此應用程式。請嘗試其他應用程式，或稍後再檢查一次。</value>
   </data>
   <data name="AppPage_Error_StoreQueryFailedTitle" xml:space="preserve">
-    <value>Couldn't reach the Store</value>
+    <value>無法連線至 Store</value>
   </data>
   <data name="AppPage_Error_StoreQueryFailedMsg" xml:space="preserve">
-    <value>We couldn't retrieve this app's download details right now. Check your internet connection and try again.</value>
+    <value>我們目前無法取得此應用程式的下載詳細資料。請檢查您的網際網路連線，然後再試一次。</value>
   </data>
   <data name="AppPage_Error_OsIncompatibleTitle" xml:space="preserve">
-    <value>App not supported</value>
+    <value>不支援應用程式</value>
   </data>
   <data name="AppPage_Error_OsIncompatibleMsg" xml:space="preserve">
-    <value>This app requires a newer version of Windows than this device is running.</value>
+    <value>此應用程式需要比此裝置目前執行版本更新的 Windows。</value>
   </data>
   <data name="AppPage_Error_ArchIncompatibleTitle" xml:space="preserve">
-    <value>App not supported</value>
+    <value>不支援應用程式</value>
   </data>
   <data name="AppPage_Error_ArchIncompatibleMsg" xml:space="preserve">
-    <value>This app doesn't offer a build compatible with your device's processor (CPU architecture).</value>
+    <value>此應用程式未提供與您裝置處理器 (CPU 架構) 相容的組建。</value>
   </data>
   <data name="AppPage_Error_NoInstallerTitle" xml:space="preserve">
-    <value>App not available</value>
+    <value>應用程式無法使用</value>
   </data>
   <data name="AppPage_Error_NoInstallerMsg" xml:space="preserve">
-    <value>No installable package is published for this app right now. Check again later.</value>
+    <value>目前未發佈此應用程式可安裝的套件。請稍後再檢查一次。</value>
   </data>
   <data name="AppPage_Error_DownloadInfoTitle" xml:space="preserve">
-    <value>Download unavailable</value>
+    <value>無法下載</value>
   </data>
   <data name="AppPage_Error_DownloadInfoMsg" xml:space="preserve">
-    <value>We couldn't get a download link for this app right now. Try again later.</value>
+    <value>我們目前無法取得此應用程式的下載連結。請稍後再試一次。</value>
   </data>
   <data name="AppPage_Error_UnsupportedTypeTitle" xml:space="preserve">
-    <value>App not supported</value>
+    <value>不支援應用程式</value>
   </data>
   <data name="AppPage_Error_UnsupportedTypeMsg" xml:space="preserve">
-    <value>This app uses an installer type that AppDepot doesn't support yet.</value>
+    <value>此應用程式使用的安裝程式類型，AppDepot 目前尚不支援。</value>
   </data>
   <data name="AppPage_Error_FailedToInstall" xml:space="preserve">
-    <value>Failed to install.</value>
+    <value>安裝失敗。</value>
   </data>
   <data name="AppPage_Error_UnableToOpenTitle" xml:space="preserve">
-    <value>Unable to open app</value>
+    <value>無法開啟應用程式</value>
   </data>
   <data name="AppPage_Error_NotInstalledPackaged" xml:space="preserve">
-    <value>This app package was not found in the Windows package manager. It may not be installed.</value>
+    <value>在 Windows 套件管理員中找不到此應用程式套件。它可能尚未安裝。</value>
   </data>
   <data name="AppPage_Error_NoAppEntries" xml:space="preserve">
-    <value>The app package is installed, but no launchable app entries were found.</value>
+    <value>已安裝應用程式套件，但找不到可啟動的應用程式項目。</value>
   </data>
   <data name="AppPage_Error_CantOpen" xml:space="preserve">
-    <value>The app couldn't be opened. Try reinstalling the app.</value>
+    <value>無法開啟應用程式。請嘗試重新安裝此應用程式。</value>
   </data>
   <data name="AppPage_Error_NotInstalledWin32" xml:space="preserve">
-    <value>This app was not found in the Windows uninstall registry. It may not be installed.</value>
+    <value>在 Windows 解除安裝登錄中找不到此應用程式。它可能尚未安裝。</value>
   </data>
   <data name="AppPage_Error_MissingLaunchTarget" xml:space="preserve">
-    <value>The app appears to be installed, but a launch target couldn't be found (Start Menu/DisplayIcon). The app may have been installed incorrectly.</value>
+    <value>此應用程式似乎已安裝，但找不到啟動目標 (開始功能表/DisplayIcon)。此應用程式可能未正確安裝。</value>
   </data>
   <data name="AppPage_Error_MissingLaunchFile" xml:space="preserve">
-    <value>The app appears to be installed, but its launch file couldn't be found on disk. The app may have been moved or installed incorrectly.</value>
+    <value>此應用程式似乎已安裝，但在磁碟上找不到其啟動檔案。此應用程式可能已遭移動或未正確安裝。</value>
   </data>
   <data name="AppPage_Error_InstalledVersion" xml:space="preserve">
     <value>
 
-Installed version: {0}</value>
+已安裝版本: {0}</value>
   </data>
   <data name="AppPage_Error_InstallerMissingTitle" xml:space="preserve">
-    <value>Installer missing</value>
+    <value>缺少安裝程式</value>
   </data>
   <data name="AppPage_Error_InstallerMissingMsg" xml:space="preserve">
-    <value>The unpackaged installer (EXE/MSI) could not be found on disk.</value>
+    <value>在磁碟上找不到未封裝的安裝程式 (EXE/MSI)。</value>
   </data>
   <data name="AppPage_Manual_Install_Title" xml:space="preserve">
-    <value>Manual installation required</value>
+    <value>需要手動安裝</value>
   </data>
   <data name="AppPage_Manual_Install_Msg" xml:space="preserve">
-    <value>This app uses an unpackaged installer (EXE/MSI). It will open now and may require additional steps to finish installing.</value>
+    <value>此應用程式使用未封裝的安裝程式 (EXE/MSI)。它現在會開啟，且可能需要其他步驟才能完成安裝。</value>
   </data>
   <data name="AppPage_Btn_OpenInstaller" xml:space="preserve">
-    <value>Open installer</value>
+    <value>開啟安裝程式</value>
   </data>
   <data name="AppPage_Error_UnableToOpenInstallerTitle" xml:space="preserve">
-    <value>Unable to open installer</value>
+    <value>無法開啟安裝程式</value>
   </data>
   <data name="Common_Cancel" xml:space="preserve">
-    <value>Cancel</value>
+    <value>取消</value>
   </data>
   <data name="Common_NoInternetConnectionTitle" xml:space="preserve">
-    <value>No internet connection</value>
+    <value>沒有網際網路連線</value>
   </data>
   <data name="Common_NoInternetConnectionMessage" xml:space="preserve">
-    <value>Check your network settings and try again.</value>
+    <value>請檢查您的網路設定，然後再試一次。</value>
   </data>
   <data name="Common_ProgressPercent" xml:space="preserve">
     <value>{0}%</value>
   </data>
   <data name="Status_Pending" xml:space="preserve">
-    <value>Pending</value>
+    <value>待處理</value>
   </data>
   <data name="Status_Downloading" xml:space="preserve">
-    <value>Downloading</value>
+    <value>下載中</value>
   </data>
   <data name="Status_Installing" xml:space="preserve">
-    <value>Installing</value>
+    <value>安裝中</value>
   </data>
   <data name="Status_Cancelling" xml:space="preserve">
-    <value>Cancelling</value>
+    <value>取消中</value>
   </data>
   <data name="Status_Failed" xml:space="preserve">
-    <value>Failed</value>
+    <value>失敗</value>
   </data>
   <data name="Status_Cancelled" xml:space="preserve">
-    <value>Cancelled</value>
+    <value>已取消</value>
   </data>
   <data name="Status_Completed" xml:space="preserve">
-    <value>Completed</value>
+    <value>已完成</value>
   </data>
   <data name="Status_Unknown" xml:space="preserve">
-    <value>Unknown</value>
+    <value>不明</value>
   </data>
   <data name="Status_Updated" xml:space="preserve">
-    <value>Updated</value>
+    <value>已更新</value>
   </data>
   <data name="Download_File" xml:space="preserve">
-    <value>file</value>
+    <value>個檔案</value>
   </data>
   <data name="Download_Files" xml:space="preserve">
-    <value>files</value>
+    <value>個檔案</value>
   </data>
   <data name="Download_Status_DownloadingFiles" xml:space="preserve">
-    <value>Downloading ({0}/{1}) {2}</value>
+    <value>正在下載 ({0}/{1}) {2}</value>
   </data>
   <data name="Download_Status_Retry" xml:space="preserve">
-    <value>Retry ({0}/{1})</value>
+    <value>重試 ({0}/{1})</value>
   </data>
   <data name="Download_Status_NoProgress" xml:space="preserve">
-    <value>No progress detected. Restarting...</value>
+    <value>未偵測到進度。正在重新啟動...</value>
   </data>
   <data name="Download_Status_Stalled" xml:space="preserve">
-    <value>Error: Download stalled and exhausted retries.</value>
+    <value>錯誤：下載停滯且已用盡重試次數。</value>
   </data>
   <data name="Download_Status_FailedRetries" xml:space="preserve">
-    <value>Error: Download failed after retries.</value>
+    <value>錯誤：重試後下載失敗。</value>
   </data>
   <data name="Download_Status_Canceled" xml:space="preserve">
-    <value>Download canceled.</value>
+    <value>已取消下載。</value>
   </data>
   <data name="Download_Status_Completed" xml:space="preserve">
-    <value>Download completed.</value>
+    <value>下載完成。</value>
   </data>
   <data name="Download_Status_MissingPackage" xml:space="preserve">
-    <value>Install failed: main package missing.</value>
+    <value>安裝失敗：缺少主要套件。</value>
   </data>
   <data name="Install_Error_ConflictingVersion" xml:space="preserve">
-    <value>A newer or the same version is already installed.</value>
+    <value>已安裝較新或相同版本。</value>
   </data>
   <data name="Install_Error_DeploymentInProgress" xml:space="preserve">
-    <value>Another installation is in progress. Wait for it to finish and try again.</value>
+    <value>另一個安裝正在進行中。請等待它完成後再試一次。</value>
   </data>
   <data name="Install_Error_InvalidPackage" xml:space="preserve">
-    <value>Invalid or unsupported package. Ensure the package and dependencies are supported for your system.</value>
+    <value>套件無效或不受支援。請確認套件與相依性均支援您的系統。</value>
   </data>
   <data name="Install_Error_PackageNotFound" xml:space="preserve">
-    <value>Package not found. Check the selected/downloaded file path.</value>
+    <value>找不到套件。請檢查選取/下載的檔案路徑。</value>
   </data>
   <data name="Install_Error_DeploymentFailure" xml:space="preserve">
-    <value>Windows deployment failed. {0}</value>
+    <value>Windows 部署失敗。{0}</value>
   </data>
   <data name="Install_Error_AdminRequired" xml:space="preserve">
-    <value>This package includes a packaged service and must be installed with administrator privileges. Relaunch the app as administrator and try again.</value>
+    <value>此套件包含封裝服務，必須以系統管理員權限安裝。請以系統管理員身分重新啟動應用程式，然後再試一次。</value>
   </data>
   <data name="Install_Error_GenericDeployment" xml:space="preserve">
-    <value>Windows deployment error (0x{0:X8}). {1}</value>
+    <value>Windows 部署錯誤 (0x{0:X8})。{1}</value>
   </data>
   <data name="Install_Error_PackageCorrupt" xml:space="preserve">
-    <value>The package file is corrupt or incomplete. Try re-downloading it.</value>
+    <value>套件檔案已損毀或不完整。請嘗試重新下載。</value>
   </data>
   <data name="Install_Error_MissingDependency" xml:space="preserve">
-    <value>A required component or dependency is missing. Try installing the app from the Microsoft Store instead.</value>
+    <value>缺少必要的元件或相依性。請改為從 Microsoft Store 安裝此應用程式。</value>
   </data>
   <data name="Install_Error_InvalidManifest" xml:space="preserve">
-    <value>The package manifest (AppxManifest.xml) is invalid or malformed.</value>
+    <value>套件資訊清單 (AppxManifest.xml) 無效或格式錯誤。</value>
   </data>
   <data name="Install_Error_UntrustedRoot" xml:space="preserve">
-    <value>The package signature root certificate is not trusted by this system.</value>
+    <value>此系統不信任套件簽章的根憑證。</value>
   </data>
   <data name="Install_Error_SignatureInvalid" xml:space="preserve">
-    <value>The package signature is invalid or untrusted.</value>
+    <value>套件簽章無效或不受信任。</value>
   </data>
   <data name="Install_Error_SignatureVerificationHint" xml:space="preserve">
-    <value>Signature verification failed. Try enabling the "Remove signature verification" option and try again.</value>
+    <value>簽章驗證失敗。請嘗試啟用「移除簽章驗證」選項，然後再試一次。</value>
   </data>
   <data name="Install_Error_NotSigned" xml:space="preserve">
-    <value>The package is not digitally signed.</value>
+    <value>套件未經過數位簽章。</value>
   </data>
   <data name="Install_Error_NotSupported" xml:space="preserve">
-    <value>This operation is not supported on your system.</value>
+    <value>您的系統不支援此作業。</value>
   </data>
   <data name="Install_Error_AccessDenied" xml:space="preserve">
-    <value>Failed: Access denied. Try running as administrator or ensure sideloading policy allows app packages. {0}</value>
+    <value>失敗：存取被拒。請嘗試以系統管理員身分執行，或確認側載原則允許應用程式套件。{0}</value>
   </data>
   <data name="Install_Error_Generic" xml:space="preserve">
-    <value>Failed: {0}</value>
+    <value>失敗：{0}</value>
   </data>
   <data name="Install_Btn_ForceInstall" xml:space="preserve">
-    <value>Force install</value>
+    <value>強制安裝</value>
   </data>
   <data name="Install_Btn_RunAsAdmin" xml:space="preserve">
-    <value>Run as administrator</value>
+    <value>以系統管理員身分執行</value>
   </data>
   <data name="Common_OK" xml:space="preserve">
     <value>OK</value>
   </data>
   <data name="DownloadsPage_Header.Text" xml:space="preserve">
-    <value>Downloads</value>
+    <value>下載</value>
   </data>
   <data name="DownloadsPage_OpenFolder.Content" xml:space="preserve">
-    <value>Open folder</value>
+    <value>開啟資料夾</value>
   </data>
   <data name="DownloadsPage_Delete.Text" xml:space="preserve">
-    <value>Delete</value>
+    <value>刪除</value>
   </data>
   <data name="DownloadsPage_CancelBtn.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Cancel download</value>
+    <value>取消下載</value>
   </data>
   <data name="Download_Status_Fetching" xml:space="preserve">
-    <value>Fetching download URLs</value>
+    <value>正在擷取下載 URL</value>
   </data>
   <data name="Download_Status_Downloading" xml:space="preserve">
-    <value>Downloading</value>
+    <value>下載中</value>
   </data>
   <data name="Download_Status_Installing" xml:space="preserve">
-    <value>Installing</value>
+    <value>安裝中</value>
   </data>
   <data name="Download_Status_Cancelling" xml:space="preserve">
-    <value>Cancelling</value>
+    <value>取消中</value>
   </data>
   <data name="InstallationsPage_Header.Text" xml:space="preserve">
-    <value>Install package</value>
+    <value>安裝套件</value>
   </data>
   <data name="InstallationsPage_Installing.Text" xml:space="preserve">
-    <value>Installing...</value>
+    <value>安裝中...</value>
   </data>
   <data name="InstallationsPage_FileText.PlaceholderText" xml:space="preserve">
-    <value>No file selected</value>
+    <value>未選取檔案</value>
   </data>
   <data name="InstallationsPage_InstallBtn.Content" xml:space="preserve">
-    <value>Install</value>
+    <value>安裝</value>
   </data>
   <data name="InstallationsPage_InstallLabel" xml:space="preserve">
-    <value>Install</value>
+    <value>安裝</value>
   </data>
   <data name="InstallationsPage_DropZone.Text" xml:space="preserve">
-    <value>Select a package or drag it here</value>
+    <value>選取套件或將其拖曳到這裡</value>
   </data>
   <data name="InstallationsPage_FilePicker_Title" xml:space="preserve">
-    <value>Select an app package</value>
+    <value>選取應用程式套件</value>
   </data>
   <data name="InstallationsPage_DragCaption" xml:space="preserve">
-    <value>Drop to select package</value>
+    <value>放開以選取套件</value>
   </data>
   <data name="Install_Status_Installing" xml:space="preserve">
-    <value>Installing</value>
+    <value>安裝中</value>
   </data>
   <data name="Install_Dialog_Title" xml:space="preserve">
-    <value>Installation failed</value>
+    <value>安裝失敗</value>
   </data>
   <data name="InstallationsPage_FilePicker_Error" xml:space="preserve">
-    <value>File picker error</value>
+    <value>檔案挑選器錯誤</value>
   </data>
   <data name="InstallationsPage_Filter_AppPackages" xml:space="preserve">
-    <value>App packages (*.msix;*.appx;*.msixbundle;*.appxbundle)</value>
+    <value>應用程式套件 (*.msix;*.appx;*.msixbundle;*.appxbundle)</value>
   </data>
   <data name="InstallationsPage_Filter_AllFiles" xml:space="preserve">
-    <value>All files (*.*)</value>
+    <value>所有檔案 (*.*)</value>
   </data>
   <data name="UpdatesPage_Header.Text" xml:space="preserve">
-    <value>Updates</value>
+    <value>更新</value>
   </data>
   <data name="UpdatesPage_Stop.Text" xml:space="preserve">
-    <value>Stop</value>
+    <value>停止</value>
   </data>
   <data name="UpdatesPage_SelectAll.Content" xml:space="preserve">
-    <value>Select all</value>
+    <value>全選</value>
   </data>
   <data name="UpdatesPage_NoUpdates.Text" xml:space="preserve">
-    <value>No new updates</value>
+    <value>沒有新的更新</value>
   </data>
   <data name="UpdatesPage_Completed.Text" xml:space="preserve">
-    <value>Completed</value>
+    <value>已完成</value>
   </data>
   <data name="UpdatesPage_VersionSeparator.Text" xml:space="preserve">
     <value>→</value>
   </data>
   <data name="UpdatesPage_CancelBtn.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Cancel update</value>
+    <value>取消更新</value>
   </data>
   <data name="Updates_ButtonCheck" xml:space="preserve">
-    <value>Check for updates</value>
+    <value>檢查更新</value>
   </data>
   <data name="Updates_ButtonChecking" xml:space="preserve">
-    <value>Checking...</value>
+    <value>檢查中...</value>
   </data>
   <data name="Updates_ButtonUpdate" xml:space="preserve">
-    <value>Update selected ({0})</value>
+    <value>更新所選項目 ({0})</value>
   </data>
   <data name="Updates_CheckingBase" xml:space="preserve">
-    <value>Checking</value>
+    <value>檢查中</value>
   </data>
   <data name="Updates_CheckingProgress" xml:space="preserve">
-    <value>Checking ({0}/{1})</value>
+    <value>檢查中 ({0}/{1})</value>
   </data>
   <data name="Search_Filter_AllDepartments" xml:space="preserve">
-    <value>All departments</value>
+    <value>所有部門</value>
   </data>
   <data name="Search_Filter_Fonts" xml:space="preserve">
-    <value>Fonts</value>
+    <value>字型</value>
   </data>
   <data name="Search_Filter_Themes" xml:space="preserve">
-    <value>Themes</value>
+    <value>佈景主題</value>
   </data>
   <data name="Search_Filter_AllTypes" xml:space="preserve">
-    <value>All Types</value>
+    <value>所有類型</value>
   </data>
   <data name="Search_Filter_Free" xml:space="preserve">
-    <value>Free</value>
+    <value>免費</value>
   </data>
   <data name="Search_Filter_Paid" xml:space="preserve">
-    <value>Paid</value>
+    <value>付費</value>
   </data>
   <data name="BundlesPage_Loading.Text" xml:space="preserve">
-    <value>Loading...</value>
+    <value>載入中...</value>
   </data>
   <data name="BundlesPage_Error.Text" xml:space="preserve">
-    <value>An Unexpected Error Occured!</value>
+    <value>發生未預期的錯誤！</value>
   </data>
   <data name="BundlesPage_InBundle.Text" xml:space="preserve">
-    <value>In this bundle</value>
+    <value>此套件組合中</value>
   </data>
   <data name="AppPage_StopBtn.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Stop</value>
+    <value>停止</value>
   </data>
   <data name="AppPage_MoreOptionsBtn.ToolTipService.ToolTip" xml:space="preserve">
-    <value>More options</value>
+    <value>更多選項</value>
   </data>
   <data name="AppPage_ShareBtn.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Share</value>
+    <value>分享</value>
   </data>
   <data name="AppPage_Share_CopyLink.Text" xml:space="preserve">
-    <value>Copy link</value>
+    <value>複製連結</value>
   </data>
   <data name="AppPage_Share_CopyProductId.Text" xml:space="preserve">
-    <value>Copy product ID</value>
+    <value>複製產品識別碼</value>
   </data>
   <data name="AppPage_Share_CopyPackageFamilyName.Text" xml:space="preserve">
-    <value>Copy PFN</value>
+    <value>複製 PFN</value>
   </data>
   <data name="AppPage_LightboxClose.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Close</value>
+    <value>關閉</value>
   </data>
   <data name="AppPage_LightboxPrev.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Previous</value>
+    <value>上一個</value>
   </data>
   <data name="AppPage_LightboxNext.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Next</value>
+    <value>下一個</value>
   </data>
   <data name="AppPage_ScreenshotsPrev.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Previous screenshot</value>
+    <value>上一張螢幕擷取畫面</value>
   </data>
   <data name="AppPage_ScreenshotsNext.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Next screenshot</value>
+    <value>下一張螢幕擷取畫面</value>
   </data>
   <data name="AppPage_LightboxCounter_Format" xml:space="preserve">
     <value>{0} / {1}</value>
   </data>
   <data name="DownloadsPage_MoreOptionsBtn.ToolTipService.ToolTip" xml:space="preserve">
-    <value>More options</value>
+    <value>更多選項</value>
   </data>
   <data name="AppPage_Btn_Install" xml:space="preserve">
-    <value>Install</value>
+    <value>安裝</value>
   </data>
   <data name="AppPage_Btn_Update" xml:space="preserve">
-    <value>Update</value>
+    <value>更新</value>
   </data>
   <data name="AppPage_Btn_Open" xml:space="preserve">
-    <value>Open</value>
+    <value>開啟</value>
   </data>
   <data name="AppPage_Btn_Retry" xml:space="preserve">
-    <value>Retry</value>
+    <value>重試</value>
   </data>
   <data name="AppPage_Btn_Download" xml:space="preserve">
-    <value>Download</value>
+    <value>下載</value>
   </data>
   <data name="InstallationsPage_ClearBtn.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Clear</value>
+    <value>清除</value>
   </data>
   <data name="Settings_LicenseDialogTitle.Text" xml:space="preserve">
-    <value>License</value>
+    <value>授權</value>
   </data>
   <data name="Settings_LicenseDialogClose.Content" xml:space="preserve">
-    <value>Close</value>
+    <value>關閉</value>
   </data>
   <data name="Sideloading_DisabledTitle" xml:space="preserve">
-    <value>Sideloading is disabled</value>
+    <value>已停用側載</value>
   </data>
   <data name="Sideloading_DisabledMessage" xml:space="preserve">
-    <value>Sideloading is currently disabled on this device. You won't be able to install app packages until it's enabled.
+    <value>此裝置目前已停用側載。在啟用之前，您將無法安裝應用程式套件。
 
-You can enable it by turning on Developer Mode in Windows Settings.</value>
+您可以在 Windows 設定中開啟開發人員模式來啟用它。</value>
   </data>
   <data name="Sideloading_EnableButton" xml:space="preserve">
-    <value>Open Settings</value>
+    <value>開啟設定</value>
   </data>
   <data name="Sideloading_CancelButton" xml:space="preserve">
-    <value>Not now</value>
+    <value>現在不要</value>
   </data>
   <data name="InstallationsPage_MoreOptionsBtn.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Advanced options</value>
+    <value>進階選項</value>
   </data>
   <data name="InstallationsPage_AdvancedInstall.Text" xml:space="preserve">
-    <value>Unpackaged Mode</value>
+    <value>未封裝模式</value>
   </data>
   <data name="InstallationsPage_CustomFolder.PlaceholderText" xml:space="preserve">
-    <value>Choose install folder</value>
+    <value>選擇安裝資料夾</value>
   </data>
   <data name="InstallationsPage_BrowseFolderBtn.Content" xml:space="preserve">
-    <value>Browse</value>
+    <value>瀏覽</value>
   </data>
   <data name="InstallationsPage_RemoveSignature.Content" xml:space="preserve">
-    <value>Remove signature verification</value>
+    <value>移除簽章驗證</value>
   </data>
   <data name="InstallationsPage_BypassRegistration.Content" xml:space="preserve">
-    <value>Bypass package registration</value>
+    <value>略過套件註冊</value>
   </data>
   <data name="InstallationsPage_CreateStartMenuShortcut.Content" xml:space="preserve">
-    <value>Create Start Menu shortcut</value>
+    <value>建立開始功能表捷徑</value>
   </data>
   <data name="InstallationsPage_CreateDesktopShortcut.Content" xml:space="preserve">
-    <value>Create Desktop shortcut</value>
+    <value>建立桌面捷徑</value>
   </data>
   <data name="InstallationsPage_SelectDependenciesBtn.Content" xml:space="preserve">
-    <value>Select dependencies</value>
+    <value>選取相依性</value>
   </data>
   <data name="InstallationsPage_FolderPicker_Title" xml:space="preserve">
-    <value>Choose the install location</value>
+    <value>選擇安裝位置</value>
   </data>
   <data name="InstallationsPage_DependencyPicker_Title" xml:space="preserve">
-    <value>Select dependency packages</value>
+    <value>選取相依性套件</value>
   </data>
   <data name="InstallationsPage_Dependencies_Count" xml:space="preserve">
-    <value>{0} selected</value>
+    <value>已選取 {0} 個</value>
   </data>
   <data name="Install_Error_NoFolderSelected" xml:space="preserve">
-    <value>Choose an install folder before installing.</value>
+    <value>安裝前請先選擇安裝資料夾。</value>
   </data>
   <data name="Install_Error_FolderExists" xml:space="preserve">
-    <value>A folder named "{0}" already exists in the chosen location. Choose another location or remove the existing folder.</value>
+    <value>選擇的位置中已存在名為 "{0}" 的資料夾。請選擇其他位置，或移除現有的資料夾。</value>
   </data>
   <data name="Install_Error_NoInstallableArch" xml:space="preserve">
-    <value>This bundle has no package compatible with your selected architecture.</value>
+    <value>此套件組合沒有與您所選架構相容的套件。</value>
   </data>
   <data name="Install_Error_ManifestMissing" xml:space="preserve">
-    <value>Could not find AppxManifest.xml in the package.</value>
+    <value>在套件中找不到 AppxManifest.xml。</value>
   </data>
   <data name="Install_Error_ExecutableNotFound" xml:space="preserve">
-    <value>Unable to find executable. This app might not be able to run unregistered.</value>
+    <value>找不到可執行檔。此應用程式可能無法在未註冊的情況下執行。</value>
   </data>
   <data name="DeveloperMode_DisabledTitle" xml:space="preserve">
-    <value>Developer Mode is required</value>
+    <value>需要開發人員模式</value>
   </data>
   <data name="DeveloperMode_DisabledMessage" xml:space="preserve">
-    <value>Custom (loose) install registers an app from unpackaged files, which requires Developer Mode.
+    <value>自訂 (鬆散) 安裝會從未封裝的檔案註冊應用程式，這需要開發人員模式。
 
-You can enable it by turning on Developer Mode in Windows Settings.</value>
+您可以在 Windows 設定中開啟開發人員模式來啟用它。</value>
   </data>
   <data name="DeveloperMode_EnableButton" xml:space="preserve">
-    <value>Open Settings</value>
+    <value>開啟設定</value>
   </data>
   <data name="DeveloperMode_CancelButton" xml:space="preserve">
-    <value>Not now</value>
+    <value>現在不要</value>
   </data>
   <data name="InstallationsPage_ClearFolderBtn.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Clear install location</value>
+    <value>清除安裝位置</value>
   </data>
   <data name="InstallationsPage_ClearDepsBtn.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Clear selected dependencies</value>
+    <value>清除選取的相依性</value>
   </data>
   <data name="Updates_FailedBanner_Title.Text" xml:space="preserve">
-    <value>Some updates failed</value>
+    <value>部分更新失敗</value>
   </data>
   <data name="Install_Error_AppInUse" xml:space="preserve">
-    <value>The App couldn't be installed because it's resources are currently being used. Close them and try again.</value>
+    <value>因為應用程式的資源目前正在使用中，所以無法安裝。請關閉它們後再試一次。</value>
   </data>
   <data name="Install_Error_AppInUse_Processes" xml:space="preserve">
-    <value>The following apps need to be closed before the app can be installed:</value>
+    <value>必須先關閉下列應用程式，才能安裝此應用程式：</value>
   </data>
   <data name="Install_Btn_Retry" xml:space="preserve">
-    <value>Retry</value>
+    <value>重試</value>
   </data>
   <data name="Install_Btn_DeferredInstall" xml:space="preserve">
-    <value>Deferred Install</value>
+    <value>延後安裝</value>
   </data>
   <data name="Install_Error_DeferredInstallDescription" xml:space="preserve">
-    <value>Deferred Install will prepare the app now, and it will be installed automatically when its resources are released or the system is restarted.</value>
+    <value>延後安裝會立即準備應用程式，並在其資源釋放或系統重新啟動時自動安裝。</value>
   </data>
   <data name="Install_Error_DependencyProvidedButNotUsed" xml:space="preserve">
-    <value>One or more dependencies provided were not required by the main package. You can try installing only the main package.</value>
+    <value>提供的一或多個相依性並非主要套件所需。您可以嘗試只安裝主要套件。</value>
   </data>
   <data name="Install_Btn_InstallDependenciesSeparately" xml:space="preserve">
-    <value>Install dependencies separately</value>
+    <value>分別安裝相依性</value>
   </data>
   <data name="AppPage_InstallDependenciesSeparately.Text" xml:space="preserve">
-    <value>Separate Install</value>
+    <value>個別安裝</value>
   </data>
   <data name="InstallationsPage_InstallDependenciesSeparately.Content" xml:space="preserve">
-    <value>Install dependencies separately</value>
+    <value>分別安裝相依性</value>
   </data>
   <data name="Program_AlreadyRunningTitle" xml:space="preserve">
     <value>AppDepot</value>
   </data>
   <data name="Program_AlreadyRunningMessage" xml:space="preserve">
-    <value>Another instance of AppDepot is already running.
-Please close it before launching this one.</value>
+    <value>另一個 AppDepot 執行個體已在執行中。
+請先關閉它，再啟動這個執行個體。</value>
   </data>
-  <data name="AI_Title.Text" xml:space="preserve"><value>AI translation</value></data>
-  <data name="AI_Privacy.Text" xml:space="preserve"><value>When you click Translate, the app description is sent to your configured service. Your provider may charge for requests. The original text is preserved.</value></data>
-  <data name="AI_Endpoint.Header" xml:space="preserve"><value>API base URL (OpenAI-compatible)</value></data>
-  <data name="AI_Model.Header" xml:space="preserve"><value>Model</value></data>
-  <data name="AI_Key.Header" xml:space="preserve"><value>API key (stored securely for this Windows user)</value></data>
-  <data name="AI_Prompt.Header" xml:space="preserve"><value>Translation instructions (optional)</value></data>
-  <data name="AI_Save.Content" xml:space="preserve"><value>Save translation settings</value></data>
-  <data name="AI_Saved" xml:space="preserve"><value>Translation settings saved.</value></data>
-  <data name="AI_InvalidSettings" xml:space="preserve"><value>Enter a valid API base URL and model. Use HTTPS, or HTTP for a local server.</value></data>
-  <data name="AI_Translate.Content" xml:space="preserve"><value>Translate description</value></data>
-  <data name="AI_Original.Content" xml:space="preserve"><value>Show original</value></data>
-  <data name="AI_Cancel.Content" xml:space="preserve"><value>Cancel translation</value></data>
-  <data name="AI_Working" xml:space="preserve"><value>Translating…</value></data>
-  <data name="AI_Failed" xml:space="preserve"><value>Translation failed. Check your endpoint, model, API key and network, then try again.</value></data>
-  <data name="AI_NotConfigured" xml:space="preserve"><value>Configure AI translation in Settings first.</value></data>
-  <data name="AI_TooLong" xml:space="preserve"><value>This description is too long to translate in one request.</value></data>
+  <data name="AI_Title.Text" xml:space="preserve"><value>AI 翻譯</value></data>
+  <data name="AI_Privacy.Text" xml:space="preserve"><value>當您按一下「翻譯」時，應用程式描述會傳送至您設定的服務。您的服務提供者可能會對要求收費。原始文字會保留。</value></data>
+  <data name="AI_Endpoint.Header" xml:space="preserve"><value>API 基底 URL (與 OpenAI 相容)</value></data>
+  <data name="AI_Model.Header" xml:space="preserve"><value>模型</value></data>
+  <data name="AI_Key.Header" xml:space="preserve"><value>API 金鑰 (為此 Windows 使用者安全地儲存)</value></data>
+  <data name="AI_Prompt.Header" xml:space="preserve"><value>翻譯指示 (選用)</value></data>
+  <data name="AI_Save.Content" xml:space="preserve"><value>儲存翻譯設定</value></data>
+  <data name="AI_Saved" xml:space="preserve"><value>已儲存翻譯設定。</value></data>
+  <data name="AI_InvalidSettings" xml:space="preserve"><value>請輸入有效的 API 基底 URL 與模型。請使用 HTTPS，若為本機伺服器則可使用 HTTP。</value></data>
+  <data name="AI_Translate.Content" xml:space="preserve"><value>翻譯描述</value></data>
+  <data name="AI_Original.Content" xml:space="preserve"><value>顯示原文</value></data>
+  <data name="AI_Cancel.Content" xml:space="preserve"><value>取消翻譯</value></data>
+  <data name="AI_Working" xml:space="preserve"><value>正在翻譯…</value></data>
+  <data name="AI_Failed" xml:space="preserve"><value>翻譯失敗。請檢查您的端點、模型、API 金鑰與網路，然後再試一次。</value></data>
+  <data name="AI_NotConfigured" xml:space="preserve"><value>請先在設定中設定 AI 翻譯。</value></data>
+  <data name="AI_TooLong" xml:space="preserve"><value>此描述太長，無法在單一要求中翻譯。</value></data>
 </root>

@@ -18,6 +18,7 @@ public partial class SettingsViewModel : ObservableRecipient
     private readonly ILocaleService _localeService;
     private readonly IArchitectureSelectorService _architectureSelectorService;
     private readonly ILocalSettingsService _localSettingsService;
+    private readonly AppIconService _appIconService;
     private bool _isInitialized;
     private bool _downloadConnectionModeLoaded;
     private bool _proxySettingsLoaded;
@@ -54,7 +55,7 @@ public partial class SettingsViewModel : ObservableRecipient
     private string _proxyValidationMessage = string.Empty;
 
     private readonly List<(string DisplayName, Market Value)> _marketItems;
-    private readonly List<(string DisplayName, Lang Value)> _languageItems;
+    private readonly List<(string DisplayName, string Value)> _languageItems;
     private readonly List<(string DisplayName, StoreEdgeFDArch Value)> _architectureItems;
     private readonly List<(string DisplayName, DownloadConnectionMode Value)> _downloadConnectionItems;
     private readonly List<(string DisplayName, ProxyMode Value)> _proxyModeItems;
@@ -96,13 +97,15 @@ public partial class SettingsViewModel : ObservableRecipient
         IThemeSelectorService themeSelectorService,
         ILocaleService localeService,
         IArchitectureSelectorService architectureSelectorService,
-        ILocalSettingsService localSettingsService
+        ILocalSettingsService localSettingsService,
+        AppIconService appIconService
     )
     {
         _themeSelectorService = themeSelectorService;
         _localeService = localeService;
         _architectureSelectorService = architectureSelectorService;
         _localSettingsService = localSettingsService;
+        _appIconService = appIconService;
         _elementTheme = _themeSelectorService.Theme;
         _versionDescription = GetVersionDescription();
 
@@ -116,14 +119,13 @@ public partial class SettingsViewModel : ObservableRecipient
             _marketItems.FindIndex(x => x.Value == _localeService.Market)
         );
 
-        _languageItems = Enum.GetValues<Lang>()
-            .Select(l => (GetLanguageDisplayName(l), l))
-            .OrderBy(x => x.Item1, StringComparer.OrdinalIgnoreCase)
+        _languageItems = LanguageCatalog.Entries
+            .Select(l => (l.NativeName, l.Tag))
             .ToList();
         AllLanguageNames = _languageItems.Select(x => x.DisplayName).ToList();
         _selectedLanguageIndex = Math.Max(
             0,
-            _languageItems.FindIndex(x => x.Value == _localeService.Language)
+            _languageItems.FindIndex(x => x.Value == _localeService.UiLanguageTag)
         );
 
         _architectureItems = Enum.GetValues<StoreEdgeFDArch>()
@@ -177,8 +179,8 @@ public partial class SettingsViewModel : ObservableRecipient
         if (!_isInitialized || value < 0 || value >= _languageItems.Count)
             return;
         var lang = _languageItems[value].Value;
-        if (lang != _localeService.Language)
-            _ = _localeService.SetLanguageAsync(lang);
+        if (lang != _localeService.UiLanguageTag)
+            _ = _localeService.SetUiLanguageAsync(lang);
     }
 
     partial void OnSelectedArchitectureIndexChanged(int value)
@@ -343,18 +345,6 @@ public partial class SettingsViewModel : ObservableRecipient
         }
     }
 
-    private static string GetLanguageDisplayName(Lang lang)
-    {
-        try
-        {
-            return new CultureInfo(lang.ToString()).NativeName;
-        }
-        catch
-        {
-            return lang.ToString();
-        }
-    }
-
     public async Task ResetAppToDefaultAsync()
     {
         DownloadManagerService.Instance.ResetAllDownloads(deleteFiles: true);
@@ -364,6 +354,7 @@ public partial class SettingsViewModel : ObservableRecipient
 
         await _localeService.ResetToDefaultAsync();
         await _architectureSelectorService.ResetToDefaultAsync();
+        await _appIconService.UseDefaultIconAsync();
         await _localSettingsService.SaveSettingAsync(
             DownloadConnectionModeSettingsKey,
             DownloadConnectionMode.Auto.ToString()
@@ -380,7 +371,7 @@ public partial class SettingsViewModel : ObservableRecipient
         );
         SelectedLanguageIndex = Math.Max(
             0,
-            _languageItems.FindIndex(x => x.Value == _localeService.Language)
+            _languageItems.FindIndex(x => x.Value == _localeService.UiLanguageTag)
         );
         SelectedArchitectureIndex = Math.Max(
             0,

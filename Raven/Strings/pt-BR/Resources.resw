@@ -121,947 +121,929 @@
     <value>AppDepot</value>
   </data>
   <data name="Shell_Main.Content" xml:space="preserve">
-    <value>Home</value>
+    <value>Início</value>
   </data>
   <data name="Shell_Advanced_Search.Content" xml:space="preserve">
-    <value>Advanced Search</value>
+    <value>Pesquisa avançada</value>
   </data>
   <data name="Shell_Install.Content" xml:space="preserve">
-    <value>Install</value>
+    <value>Instalar</value>
   </data>
   <data name="Shell_Updates.Content" xml:space="preserve">
-    <value>Updates</value>
+    <value>Atualizações</value>
   </data>
   <data name="Shell_Downloads.Content" xml:space="preserve">
-    <value>Downloads</value>
+    <value>Transferências</value>
   </data>
   <data name="Shell_Settings.Content" xml:space="preserve">
-    <value>Settings</value>
+    <value>Configurações</value>
   </data>
   <data name="Shell_App.Content" xml:space="preserve">
-    <value>Apps</value>
+    <value>Aplicativos</value>
   </data>
   <data name="Shell_SearchBox.PlaceholderText" xml:space="preserve">
-    <value>Search</value>
+    <value>Pesquisar</value>
   </data>
   <data name="Shell_AppTitleBarText.Text" xml:space="preserve">
     <value>AppDepot</value>
   </data>
   <data name="Settings_Title.Text" xml:space="preserve">
-    <value>Settings</value>
+    <value>Configurações</value>
   </data>
   <data name="Settings_Theme.Text" xml:space="preserve">
-    <value>Theme</value>
+    <value>Tema</value>
   </data>
   <data name="Settings_Theme_Light.Content" xml:space="preserve">
-    <value>Light</value>
+    <value>Claro</value>
   </data>
   <data name="Settings_Theme_Dark.Content" xml:space="preserve">
-    <value>Dark</value>
+    <value>Escuro</value>
   </data>
   <data name="Settings_Theme_Default.Content" xml:space="preserve">
-    <value>System Default</value>
+    <value>Padrão do sistema</value>
   </data>
-  <data name="Settings_Icon.Text" xml:space="preserve">
-    <value>App icon</value>
-  </data>
-  <data name="Settings_IconDescription.Text" xml:space="preserve">
-    <value>Choose the AppDepot icon. Custom icons must be ICO files.</value>
-  </data>
-  <data name="Settings_IconDefaultButton.Content" xml:space="preserve">
-    <value>AppDepot</value>
-  </data>
-  <data name="Settings_IconOwlButton.Content" xml:space="preserve">
-    <value>Owl</value>
-  </data>
-  <data name="Settings_IconCustomButton.Content" xml:space="preserve">
-    <value>Choose ICO</value>
-  </data>
-  <data name="Settings_IconPickerTitle" xml:space="preserve">
-    <value>Select a custom ICO file</value>
-  </data>
-  <data name="Settings_IconApplied" xml:space="preserve">
-    <value>Icon applied.</value>
-  </data>
-  <data name="Settings_IconInvalid" xml:space="preserve">
-    <value>That ICO file could not be applied.</value>
-  </data>
-  <data name="Settings_IconLoadFailed" xml:space="preserve">
-    <value>Unable to preview the icon.</value>
-  </data>
+  <data name="Settings_Icon.Text" xml:space="preserve"><value>App icon</value></data>
+  <data name="Settings_IconDescription.Text" xml:space="preserve"><value>Choose the AppDepot icon. Custom icons must be ICO files.</value></data>
+  <data name="Settings_IconDefaultButton.Content" xml:space="preserve"><value>AppDepot</value></data>
+  <data name="Settings_IconOwlButton.Content" xml:space="preserve"><value>Owl</value></data>
+  <data name="Settings_IconCustomButton.Content" xml:space="preserve"><value>Choose ICO</value></data>
+  <data name="Settings_IconPickerTitle" xml:space="preserve"><value>Select a custom ICO file</value></data>
+  <data name="Settings_IconApplied" xml:space="preserve"><value>Icon applied.</value></data>
+  <data name="Settings_IconInvalid" xml:space="preserve"><value>That ICO file could not be applied.</value></data>
+  <data name="Settings_IconLoadFailed" xml:space="preserve"><value>Unable to preview the icon.</value></data>
   <data name="Settings_LocaleAndRegion.Text" xml:space="preserve">
-    <value>Language &amp; Region</value>
+    <value>Idioma e região</value>
   </data>
   <data name="Settings_Language.Text" xml:space="preserve">
-    <value>Language</value>
+    <value>Idioma</value>
   </data>
   <data name="Settings_Market.Text" xml:space="preserve">
-    <value>Market (Region)</value>
+    <value>Mercado (região)</value>
   </data>
   <data name="Settings_RelaunchInfoBar.Title" xml:space="preserve">
-    <value>Restart required</value>
+    <value>Reinicialização necessária</value>
   </data>
   <data name="Settings_RelaunchInfoBar.Message" xml:space="preserve">
-    <value>Relaunch AppDepot to apply your language changes.</value>
+    <value>Reinicie o AppDepot para aplicar as alterações de idioma.</value>
   </data>
   <data name="Settings_RelaunchButton.Content" xml:space="preserve">
-    <value>Relaunch</value>
+    <value>Reiniciar</value>
   </data>
   <data name="Settings_Architecture.Text" xml:space="preserve">
-    <value>Architecture</value>
+    <value>Arquitetura</value>
   </data>
   <data name="Settings_ArchitectureDescription.Text" xml:space="preserve">
-    <value>Select your system architecture</value>
+    <value>Selecione a arquitetura do seu sistema</value>
   </data>
   <data name="Settings_Downloads.Text" xml:space="preserve">
-    <value>Downloads</value>
+    <value>Transferências</value>
   </data>
   <data name="Settings_ParallelConnections.Header" xml:space="preserve">
-    <value>Parallel download connections</value>
+    <value>Conexões de download em paralelo</value>
   </data>
   <data name="Settings_ParallelConnectionsDescription.Text" xml:space="preserve">
-    <value>Using multiple connections may improve download speeds for large packages. If the server does not support segmented downloads, AppDepot will automatically use a single connection.</value>
+    <value>Usar várias conexões pode melhorar a velocidade de download de pacotes grandes. Se o servidor não oferecer suporte a downloads segmentados, o AppDepot usará automaticamente uma única conexão.</value>
   </data>
   <data name="Settings_ParallelConnections_Auto" xml:space="preserve">
-    <value>Auto</value>
+    <value>Automático</value>
   </data>
   <data name="Settings_ParallelConnections_One" xml:space="preserve">
-    <value>1 connection</value>
+    <value>1 conexão</value>
   </data>
   <data name="Settings_ParallelConnections_Two" xml:space="preserve">
-    <value>2 connections</value>
+    <value>2 conexões</value>
   </data>
   <data name="Settings_ParallelConnections_Four" xml:space="preserve">
-    <value>4 connections</value>
+    <value>4 conexões</value>
   </data>
   <data name="Settings_ParallelConnections_Eight" xml:space="preserve">
-    <value>8 connections</value>
+    <value>8 conexões</value>
   </data>
   <data name="Settings_Network.Text" xml:space="preserve">
-    <value>Network</value>
+    <value>Rede</value>
   </data>
   <data name="Settings_ProxyDescription.Text" xml:space="preserve">
-    <value>Choose how AppDepot connects to Microsoft package download servers.</value>
+    <value>Escolha como o AppDepot se conecta aos servidores de download de pacotes da Microsoft.</value>
   </data>
   <data name="Settings_ProxyMode.Header" xml:space="preserve">
-    <value>Proxy</value>
+    <value>Servidor proxy</value>
   </data>
   <data name="Settings_ProxyMode_System" xml:space="preserve">
-    <value>Use system proxy</value>
+    <value>Usar proxy do sistema</value>
   </data>
   <data name="Settings_ProxyMode_Direct" xml:space="preserve">
-    <value>Direct connection</value>
+    <value>Conexão direta</value>
   </data>
   <data name="Settings_ProxyMode_Custom" xml:space="preserve">
-    <value>Custom proxy</value>
+    <value>Proxy personalizado</value>
   </data>
   <data name="Settings_ProxyUri.Header" xml:space="preserve">
-    <value>Proxy address</value>
+    <value>Endereço do proxy</value>
   </data>
   <data name="Settings_ProxyUri.PlaceholderText" xml:space="preserve">
     <value>http://127.0.0.1:7890</value>
   </data>
   <data name="Settings_ProxyInvalidUri" xml:space="preserve">
-    <value>The custom proxy address must be a valid HTTP or HTTPS URI.</value>
+    <value>O endereço de proxy personalizado deve ser um URI HTTP ou HTTPS válido.</value>
   </data>
   <data name="Settings_Reset.Text" xml:space="preserve">
-    <value>Reset</value>
+    <value>Redefinir</value>
   </data>
   <data name="Settings_ResetDescription.Text" xml:space="preserve">
-    <value>Reset AppDepot to default settings.</value>
+    <value>Redefinir o AppDepot para as configurações padrão.</value>
   </data>
   <data name="Settings_ResetButton.Content" xml:space="preserve">
-    <value>Reset app</value>
+    <value>Redefinir aplicativo</value>
   </data>
   <data name="Settings_ResetDialogTitle" xml:space="preserve">
-    <value>Reset app data?</value>
+    <value>Redefinir dados do aplicativo?</value>
   </data>
   <data name="Settings_ResetDialogContent" xml:space="preserve">
-    <value>This will remove all downloaded files and cached download data, and restore language, region, and architecture to defaults. The app will restart automatically. This action cannot be undone.</value>
+    <value>Isso removerá todos os arquivos baixados e os dados de download em cache, e restaurará idioma, região e arquitetura para os padrões. O aplicativo será reiniciado automaticamente. Esta ação não pode ser desfeita.</value>
   </data>
   <data name="Settings_ResetDialogPrimary" xml:space="preserve">
-    <value>Reset</value>
+    <value>Redefinir</value>
   </data>
   <data name="Settings_ResetDialogCancel" xml:space="preserve">
-    <value>Cancel</value>
+    <value>Cancelar</value>
   </data>
   <data name="Settings_About.Text" xml:space="preserve">
-    <value>About this application</value>
+    <value>Sobre este aplicativo</value>
   </data>
   <data name="Settings_AboutDescription.Text" xml:space="preserve">
-    <value>An open-source, privacy-oriented alternative client for the Microsoft Store to browse, download, install, and update Store apps.</value>
+    <value>Um cliente alternativo de código aberto e focado em privacidade para a Microsoft Store, para navegar, baixar, instalar e atualizar aplicativos da Store.</value>
   </data>
   <data name="SettingsPage_GitHubRepoLink.Content" xml:space="preserve">
-    <value>GitHub repository</value>
+    <value>Repositório do GitHub</value>
   </data>
   <data name="SettingsPage_DiscordLink.Content" xml:space="preserve">
-    <value>Discord community</value>
+    <value>Comunidade do Discord</value>
   </data>
   <data name="SettingsPage_LicenseLink.Content" xml:space="preserve">
-    <value>License</value>
+    <value>Licença</value>
   </data>
   <data name="Settings_DiagnosticsLogs.Text" xml:space="preserve">
-    <value>Diagnostics logs</value>
+    <value>Logs de diagnóstico</value>
   </data>
   <data name="Settings_DiagnosticsLogsDescription.Text" xml:space="preserve">
-    <value>Open the logs folder for troubleshooting.</value>
+    <value>Abra a pasta de logs para solução de problemas.</value>
   </data>
   <data name="Settings_DiagnosticsLogsButton.Content" xml:space="preserve">
-    <value>Open logs folder</value>
+    <value>Abrir pasta de logs</value>
   </data>
   <data name="Settings_AppUpdates.Text" xml:space="preserve">
-    <value>Application updates</value>
+    <value>Atualizações do aplicativo</value>
   </data>
   <data name="Settings_AppUpdatesButton.Content" xml:space="preserve">
-    <value>Check for updates</value>
+    <value>Verificar atualizações</value>
   </data>
   <data name="Settings_UpdaterConfirmTitle" xml:space="preserve">
-    <value>Update available</value>
+    <value>Atualização disponível</value>
   </data>
   <data name="Settings_UpdaterConfirmContent" xml:space="preserve">
-    <value>Version {0} is ready to install. The app will restart to apply the update.</value>
+    <value>A versão {0} está pronta para instalar. O aplicativo será reiniciado para aplicar a atualização.</value>
   </data>
   <data name="Settings_UpdaterConfirmPrimary" xml:space="preserve">
-    <value>Install</value>
+    <value>Instalar</value>
   </data>
   <data name="Settings_UpdaterAlreadyLatestTitle" xml:space="preserve">
-    <value>You're up to date</value>
+    <value>Você está atualizado</value>
   </data>
   <data name="Settings_UpdaterAlreadyLatestContent" xml:space="preserve">
-    <value>latest version already installed.</value>
+    <value>a versão mais recente já está instalada.</value>
   </data>
   <data name="Settings_UpdaterErrorTitle" xml:space="preserve">
-    <value>Something went wrong</value>
+    <value>Algo deu errado</value>
   </data>
   <data name="Settings_UpdaterErrorContent" xml:space="preserve">
-    <value>The update could not be completed. {0}</value>
+    <value>Não foi possível concluir a atualização. {0}</value>
   </data>
   <data name="Settings_UpdaterDialogClose" xml:space="preserve">
-    <value>Close</value>
+    <value>Fechar</value>
   </data>
   <data name="Settings_UpdaterDialogCancel" xml:space="preserve">
-    <value>Cancel</value>
+    <value>Cancelar</value>
   </data>
   <data name="Settings_UpdaterCheckingTitle" xml:space="preserve">
-    <value>Checking for updates</value>
+    <value>Verificando atualizações</value>
   </data>
   <data name="Settings_UpdaterCheckingContent" xml:space="preserve">
-    <value>Looking for the latest version.</value>
+    <value>Procurando a versão mais recente.</value>
   </data>
   <data name="Settings_UpdaterCheckCanceledContent" xml:space="preserve">
-    <value>Check canceled. Try again anytime.</value>
+    <value>Verificação cancelada. Tente novamente quando quiser.</value>
   </data>
   <data name="Settings_UpdaterStartupCheckbox" xml:space="preserve">
-    <value>Check for updates on startup</value>
+    <value>Verificar atualizações na inicialização</value>
   </data>
   <data name="Settings_UpdaterProgressPercent" xml:space="preserve">
     <value>{0}%</value>
   </data>
   <data name="Settings_UpdaterInstallingTitle" xml:space="preserve">
-    <value>Installing update</value>
+    <value>Instalando atualização</value>
   </data>
   <data name="CardView_Loading.Text" xml:space="preserve">
-    <value>Loading</value>
+    <value>Carregando</value>
   </data>
   <data name="CardView_Filters.Text" xml:space="preserve">
-    <value>Filters</value>
+    <value>Filtros</value>
   </data>
   <data name="CardView_ApplyBtn.Content" xml:space="preserve">
-    <value>Apply</value>
+    <value>Aplicar</value>
   </data>
   <data name="CardView_NoResults_Title.Text" xml:space="preserve">
-    <value>No results found</value>
+    <value>Nenhum resultado encontrado</value>
   </data>
   <data name="CardView_NoResults_Subtitle.Text" xml:space="preserve">
-    <value>Try different keywords or remove search filters</value>
+    <value>Tente palavras-chave diferentes ou remova os filtros de pesquisa</value>
   </data>
   <data name="CardView_Error_LoadFailed" xml:space="preserve">
-    <value>Failed to load cards: {0}</value>
+    <value>Falha ao carregar os cartões: {0}</value>
   </data>
   <data name="CardView_Error_OpenFailed" xml:space="preserve">
-    <value>Failed to open item: {0}</value>
+    <value>Falha ao abrir o item: {0}</value>
   </data>
   <data name="Filter_Apps" xml:space="preserve">
-    <value>Apps</value>
+    <value>Aplicativos</value>
   </data>
   <data name="Filter_Games" xml:space="preserve">
-    <value>Games</value>
+    <value>Jogos</value>
   </data>
   <data name="Filter_TopFree" xml:space="preserve">
-    <value>Top Free</value>
+    <value>Grátis mais populares</value>
   </data>
   <data name="Filter_TopPaid" xml:space="preserve">
-    <value>Top Paid</value>
+    <value>Pagos mais populares</value>
   </data>
   <data name="Filter_TopTrending" xml:space="preserve">
-    <value>Top Trending</value>
+    <value>Tendências</value>
   </data>
   <data name="Filter_Specials" xml:space="preserve">
-    <value>Specials</value>
+    <value>Especiais</value>
   </data>
   <data name="Filter_BestSelling" xml:space="preserve">
-    <value>Best Selling</value>
+    <value>Mais vendidos</value>
   </data>
   <data name="AdvancedSearch_Header.Text" xml:space="preserve">
-    <value>Advanced Search</value>
+    <value>Pesquisa avançada</value>
   </data>
   <data name="AdvancedSearch_SearchHint.Text" xml:space="preserve">
-    <value>Search by URL, product ID, or package family name</value>
+    <value>Pesquise por URL, ID do produto ou nome da família de pacotes</value>
   </data>
   <data name="AdvancedSearch_TypeUrl.Content" xml:space="preserve">
     <value>URL</value>
   </data>
   <data name="AdvancedSearch_TypeProductId.Content" xml:space="preserve">
-    <value>Product ID</value>
+    <value>ID do produto</value>
   </data>
   <data name="AdvancedSearch_TypePfn.Content" xml:space="preserve">
-    <value>Package Family Name</value>
+    <value>Nome da família de pacotes</value>
   </data>
   <data name="AdvancedSearch_SearchBtn.Text" xml:space="preserve">
-    <value>Search</value>
+    <value>Pesquisar</value>
   </data>
   <data name="AdvancedSearch_LookingUp.Text" xml:space="preserve">
-    <value>Looking up product</value>
+    <value>Procurando produto</value>
   </data>
   <data name="AdvancedSearch_UrlCard_Title.Text" xml:space="preserve">
     <value>URL</value>
   </data>
   <data name="AdvancedSearch_UrlCard_Desc.Text" xml:space="preserve">
-    <value>Paste a Microsoft Store product URL to automatically extract and look up the product.</value>
+    <value>Cole a URL de um produto da Microsoft Store para extrair e procurar o produto automaticamente.</value>
   </data>
   <data name="AdvancedSearch_UrlCard_Example.Text" xml:space="preserve">
-    <value>e.g. https://apps.microsoft.com/detail/9WZDNCRFHVJL</value>
+    <value>ex.: https://apps.microsoft.com/detail/9WZDNCRFHVJL</value>
   </data>
   <data name="AdvancedSearch_ProductIdCard_Title.Text" xml:space="preserve">
-    <value>Product ID</value>
+    <value>ID do produto</value>
   </data>
   <data name="AdvancedSearch_ProductIdCard_Desc.Text" xml:space="preserve">
-    <value>Enter the product's alphanumeric store ID to navigate directly to its page.</value>
+    <value>Digite o ID alfanumérico do produto na Store para ir diretamente à página dele.</value>
   </data>
   <data name="AdvancedSearch_ProductIdCard_Example.Text" xml:space="preserve">
-    <value>e.g. 9WZDNCRFHVJL</value>
+    <value>ex.: 9WZDNCRFHVJL</value>
   </data>
   <data name="AdvancedSearch_PfnCard_Title.Text" xml:space="preserve">
-    <value>Package Family Name</value>
+    <value>Nome da família de pacotes</value>
   </data>
   <data name="AdvancedSearch_PfnCard_Desc.Text" xml:space="preserve">
-    <value>Enter the app's package family name to look up its store page.</value>
+    <value>Digite o nome da família de pacotes do aplicativo para procurar a página dele na Store.</value>
   </data>
   <data name="AdvancedSearch_PfnCard_Example.Text" xml:space="preserve">
-    <value>e.g. Microsoft.WindowsTerminal_8wekyb3d8bbwe</value>
+    <value>ex.: Microsoft.WindowsTerminal_8wekyb3d8bbwe</value>
   </data>
   <data name="AdvancedSearch_Placeholder_Url" xml:space="preserve">
     <value>https://apps.microsoft.com/detail/...</value>
   </data>
   <data name="AdvancedSearch_Placeholder_ProductId" xml:space="preserve">
-    <value>e.g. 9WZDNCRFHVJL</value>
+    <value>ex.: 9WZDNCRFHVJL</value>
   </data>
   <data name="AdvancedSearch_Placeholder_Pfn" xml:space="preserve">
-    <value>e.g. Microsoft.WindowsTerminal_8wekyb3d8bbwe</value>
+    <value>ex.: Microsoft.WindowsTerminal_8wekyb3d8bbwe</value>
   </data>
   <data name="AdvancedSearch_Placeholder_Default" xml:space="preserve">
-    <value>Enter a value to search</value>
+    <value>Digite um valor para pesquisar</value>
   </data>
   <data name="AdvancedSearch_Error_EmptyQuery" xml:space="preserve">
-    <value>Please enter a value to search.</value>
+    <value>Digite um valor para pesquisar.</value>
   </data>
   <data name="AdvancedSearch_Error_InvalidUrl" xml:space="preserve">
-    <value>Could not extract a product ID from this URL. Make sure it is a valid Microsoft Store URL.</value>
+    <value>Não foi possível extrair um ID de produto desta URL. Verifique se é uma URL válida da Microsoft Store.</value>
   </data>
   <data name="AdvancedSearch_Error_NoPfnResult" xml:space="preserve">
-    <value>No product found for this Package Family Name.</value>
+    <value>Nenhum produto encontrado para este nome de família de pacotes.</value>
   </data>
   <data name="AdvancedSearch_Error_FailedLookup" xml:space="preserve">
-    <value>Failed to find product: {0}</value>
+    <value>Falha ao encontrar o produto: {0}</value>
   </data>
   <data name="AppPage_Loading.Text" xml:space="preserve">
-    <value>Loading</value>
+    <value>Carregando</value>
   </data>
   <data name="AppPage_BypassFilters.Text" xml:space="preserve">
-    <value>Bypass Filters</value>
+    <value>Ignorar filtros</value>
   </data>
   <data name="AppPage_CheckUpdates.Text" xml:space="preserve">
-    <value>Check Updates</value>
+    <value>Verificar atualizações</value>
   </data>
   <data name="AppPage_Screenshots.Text" xml:space="preserve">
-    <value>Screenshots</value>
+    <value>Capturas de tela</value>
   </data>
   <data name="AppPage_Description.Text" xml:space="preserve">
-    <value>Description</value>
+    <value>Descrição</value>
   </data>
   <data name="AppPage_MoreDetails.Text" xml:space="preserve">
-    <value>More Details</value>
+    <value>Mais detalhes</value>
   </data>
   <data name="AppPage_AppSize.Text" xml:space="preserve">
-    <value>App Size:</value>
+    <value>Tamanho do aplicativo:</value>
   </data>
   <data name="AppPage_Version.Text" xml:space="preserve">
-    <value>Version:</value>
+    <value>Versão:</value>
   </data>
   <data name="AppPage_LastUpdated.Text" xml:space="preserve">
-    <value>Last Updated:</value>
+    <value>Última atualização:</value>
   </data>
   <data name="AppPage_Error_LoadTitle" xml:space="preserve">
-    <value>Error loading app</value>
+    <value>Erro ao carregar o aplicativo</value>
   </data>
   <data name="AppPage_Error_LoadMessage" xml:space="preserve">
-    <value>Could not load app details: {0}</value>
+    <value>Não foi possível carregar os detalhes do aplicativo: {0}</value>
   </data>
   <data name="AppPage_Error_CheckUpdatesTitle" xml:space="preserve">
-    <value>Check Updates</value>
+    <value>Verificar atualizações</value>
   </data>
   <data name="AppPage_Error_VersionCheckMsg" xml:space="preserve">
-    <value>Could not retrieve the latest version. The app may not be available or the check failed.</value>
+    <value>Não foi possível obter a versão mais recente. O aplicativo pode não estar disponível ou a verificação falhou.</value>
   </data>
   <data name="AppPage_Error_UpdateCheckFailed" xml:space="preserve">
-    <value>Failed to check for updates: {0}</value>
+    <value>Falha ao verificar atualizações: {0}</value>
   </data>
   <data name="AppPage_Error_OperationCanceled" xml:space="preserve">
-    <value>Operation canceled.</value>
+    <value>Operação cancelada.</value>
   </data>
   <data name="AppPage_Error_NotSupportedTitle" xml:space="preserve">
-    <value>App not supported</value>
+    <value>Aplicativo não compatível</value>
   </data>
   <data name="AppPage_Error_NotSupportedMsg" xml:space="preserve">
-    <value>This app isn't supported. Try a different app or check again later.</value>
+    <value>Este aplicativo não é compatível. Tente outro aplicativo ou verifique novamente mais tarde.</value>
   </data>
   <data name="AppPage_Error_StoreQueryFailedTitle" xml:space="preserve">
-    <value>Couldn't reach the Store</value>
+    <value>Não foi possível acessar a Store</value>
   </data>
   <data name="AppPage_Error_StoreQueryFailedMsg" xml:space="preserve">
-    <value>We couldn't retrieve this app's download details right now. Check your internet connection and try again.</value>
+    <value>Não conseguimos obter os detalhes de download deste aplicativo agora. Verifique sua conexão com a internet e tente novamente.</value>
   </data>
   <data name="AppPage_Error_OsIncompatibleTitle" xml:space="preserve">
-    <value>App not supported</value>
+    <value>Aplicativo não compatível</value>
   </data>
   <data name="AppPage_Error_OsIncompatibleMsg" xml:space="preserve">
-    <value>This app requires a newer version of Windows than this device is running.</value>
+    <value>Este aplicativo requer uma versão do Windows mais recente do que a deste dispositivo.</value>
   </data>
   <data name="AppPage_Error_ArchIncompatibleTitle" xml:space="preserve">
-    <value>App not supported</value>
+    <value>Aplicativo não compatível</value>
   </data>
   <data name="AppPage_Error_ArchIncompatibleMsg" xml:space="preserve">
-    <value>This app doesn't offer a build compatible with your device's processor (CPU architecture).</value>
+    <value>Este aplicativo não oferece uma versão compatível com o processador do seu dispositivo (arquitetura de CPU).</value>
   </data>
   <data name="AppPage_Error_NoInstallerTitle" xml:space="preserve">
-    <value>App not available</value>
+    <value>Aplicativo indisponível</value>
   </data>
   <data name="AppPage_Error_NoInstallerMsg" xml:space="preserve">
-    <value>No installable package is published for this app right now. Check again later.</value>
+    <value>Nenhum pacote instalável está publicado para este aplicativo no momento. Verifique novamente mais tarde.</value>
   </data>
   <data name="AppPage_Error_DownloadInfoTitle" xml:space="preserve">
-    <value>Download unavailable</value>
+    <value>Download indisponível</value>
   </data>
   <data name="AppPage_Error_DownloadInfoMsg" xml:space="preserve">
-    <value>We couldn't get a download link for this app right now. Try again later.</value>
+    <value>Não conseguimos obter um link de download para este aplicativo agora. Tente novamente mais tarde.</value>
   </data>
   <data name="AppPage_Error_UnsupportedTypeTitle" xml:space="preserve">
-    <value>App not supported</value>
+    <value>Aplicativo não compatível</value>
   </data>
   <data name="AppPage_Error_UnsupportedTypeMsg" xml:space="preserve">
-    <value>This app uses an installer type that AppDepot doesn't support yet.</value>
+    <value>Este aplicativo usa um tipo de instalador que o AppDepot ainda não oferece suporte.</value>
   </data>
   <data name="AppPage_Error_FailedToInstall" xml:space="preserve">
-    <value>Failed to install.</value>
+    <value>Falha na instalação.</value>
   </data>
   <data name="AppPage_Error_UnableToOpenTitle" xml:space="preserve">
-    <value>Unable to open app</value>
+    <value>Não foi possível abrir o aplicativo</value>
   </data>
   <data name="AppPage_Error_NotInstalledPackaged" xml:space="preserve">
-    <value>This app package was not found in the Windows package manager. It may not be installed.</value>
+    <value>Este pacote de aplicativo não foi encontrado no gerenciador de pacotes do Windows. Ele pode não estar instalado.</value>
   </data>
   <data name="AppPage_Error_NoAppEntries" xml:space="preserve">
-    <value>The app package is installed, but no launchable app entries were found.</value>
+    <value>O pacote de aplicativo está instalado, mas nenhuma entrada de aplicativo inicializável foi encontrada.</value>
   </data>
   <data name="AppPage_Error_CantOpen" xml:space="preserve">
-    <value>The app couldn't be opened. Try reinstalling the app.</value>
+    <value>Não foi possível abrir o aplicativo. Tente reinstalá-lo.</value>
   </data>
   <data name="AppPage_Error_NotInstalledWin32" xml:space="preserve">
-    <value>This app was not found in the Windows uninstall registry. It may not be installed.</value>
+    <value>Este aplicativo não foi encontrado no registro de desinstalação do Windows. Ele pode não estar instalado.</value>
   </data>
   <data name="AppPage_Error_MissingLaunchTarget" xml:space="preserve">
-    <value>The app appears to be installed, but a launch target couldn't be found (Start Menu/DisplayIcon). The app may have been installed incorrectly.</value>
+    <value>O aplicativo parece estar instalado, mas não foi possível encontrar um destino de inicialização (Menu Iniciar/DisplayIcon). O aplicativo pode ter sido instalado incorretamente.</value>
   </data>
   <data name="AppPage_Error_MissingLaunchFile" xml:space="preserve">
-    <value>The app appears to be installed, but its launch file couldn't be found on disk. The app may have been moved or installed incorrectly.</value>
+    <value>O aplicativo parece estar instalado, mas não foi possível encontrar seu arquivo de inicialização no disco. O aplicativo pode ter sido movido ou instalado incorretamente.</value>
   </data>
   <data name="AppPage_Error_InstalledVersion" xml:space="preserve">
     <value>
 
-Installed version: {0}</value>
+Versão instalada: {0}</value>
   </data>
   <data name="AppPage_Error_InstallerMissingTitle" xml:space="preserve">
-    <value>Installer missing</value>
+    <value>Instalador ausente</value>
   </data>
   <data name="AppPage_Error_InstallerMissingMsg" xml:space="preserve">
-    <value>The unpackaged installer (EXE/MSI) could not be found on disk.</value>
+    <value>O instalador não empacotado (EXE/MSI) não pôde ser encontrado no disco.</value>
   </data>
   <data name="AppPage_Manual_Install_Title" xml:space="preserve">
-    <value>Manual installation required</value>
+    <value>Instalação manual necessária</value>
   </data>
   <data name="AppPage_Manual_Install_Msg" xml:space="preserve">
-    <value>This app uses an unpackaged installer (EXE/MSI). It will open now and may require additional steps to finish installing.</value>
+    <value>Este aplicativo usa um instalador não empacotado (EXE/MSI). Ele será aberto agora e pode exigir etapas adicionais para concluir a instalação.</value>
   </data>
   <data name="AppPage_Btn_OpenInstaller" xml:space="preserve">
-    <value>Open installer</value>
+    <value>Abrir instalador</value>
   </data>
   <data name="AppPage_Error_UnableToOpenInstallerTitle" xml:space="preserve">
-    <value>Unable to open installer</value>
+    <value>Não foi possível abrir o instalador</value>
   </data>
   <data name="Common_Cancel" xml:space="preserve">
-    <value>Cancel</value>
+    <value>Cancelar</value>
   </data>
   <data name="Common_NoInternetConnectionTitle" xml:space="preserve">
-    <value>No internet connection</value>
+    <value>Sem conexão com a internet</value>
   </data>
   <data name="Common_NoInternetConnectionMessage" xml:space="preserve">
-    <value>Check your network settings and try again.</value>
+    <value>Verifique as configurações de rede e tente novamente.</value>
   </data>
   <data name="Common_ProgressPercent" xml:space="preserve">
     <value>{0}%</value>
   </data>
   <data name="Status_Pending" xml:space="preserve">
-    <value>Pending</value>
+    <value>Pendente</value>
   </data>
   <data name="Status_Downloading" xml:space="preserve">
-    <value>Downloading</value>
+    <value>Baixando</value>
   </data>
   <data name="Status_Installing" xml:space="preserve">
-    <value>Installing</value>
+    <value>Instalando</value>
   </data>
   <data name="Status_Cancelling" xml:space="preserve">
-    <value>Cancelling</value>
+    <value>Cancelando</value>
   </data>
   <data name="Status_Failed" xml:space="preserve">
-    <value>Failed</value>
+    <value>Falhou</value>
   </data>
   <data name="Status_Cancelled" xml:space="preserve">
-    <value>Cancelled</value>
+    <value>Cancelado</value>
   </data>
   <data name="Status_Completed" xml:space="preserve">
-    <value>Completed</value>
+    <value>Concluído</value>
   </data>
   <data name="Status_Unknown" xml:space="preserve">
-    <value>Unknown</value>
+    <value>Desconhecido</value>
   </data>
   <data name="Status_Updated" xml:space="preserve">
-    <value>Updated</value>
+    <value>Atualizado</value>
   </data>
   <data name="Download_File" xml:space="preserve">
-    <value>file</value>
+    <value>arquivo</value>
   </data>
   <data name="Download_Files" xml:space="preserve">
-    <value>files</value>
+    <value>arquivos</value>
   </data>
   <data name="Download_Status_DownloadingFiles" xml:space="preserve">
-    <value>Downloading ({0}/{1}) {2}</value>
+    <value>Baixando ({0}/{1}) {2}</value>
   </data>
   <data name="Download_Status_Retry" xml:space="preserve">
-    <value>Retry ({0}/{1})</value>
+    <value>Tentar novamente ({0}/{1})</value>
   </data>
   <data name="Download_Status_NoProgress" xml:space="preserve">
-    <value>No progress detected. Restarting...</value>
+    <value>Nenhum progresso detectado. Reiniciando...</value>
   </data>
   <data name="Download_Status_Stalled" xml:space="preserve">
-    <value>Error: Download stalled and exhausted retries.</value>
+    <value>Erro: o download parou e as tentativas se esgotaram.</value>
   </data>
   <data name="Download_Status_FailedRetries" xml:space="preserve">
-    <value>Error: Download failed after retries.</value>
+    <value>Erro: o download falhou após as tentativas.</value>
   </data>
   <data name="Download_Status_Canceled" xml:space="preserve">
-    <value>Download canceled.</value>
+    <value>Download cancelado.</value>
   </data>
   <data name="Download_Status_Completed" xml:space="preserve">
-    <value>Download completed.</value>
+    <value>Download concluído.</value>
   </data>
   <data name="Download_Status_MissingPackage" xml:space="preserve">
-    <value>Install failed: main package missing.</value>
+    <value>Falha na instalação: pacote principal ausente.</value>
   </data>
   <data name="Install_Error_ConflictingVersion" xml:space="preserve">
-    <value>A newer or the same version is already installed.</value>
+    <value>Uma versão mais recente ou igual já está instalada.</value>
   </data>
   <data name="Install_Error_DeploymentInProgress" xml:space="preserve">
-    <value>Another installation is in progress. Wait for it to finish and try again.</value>
+    <value>Outra instalação está em andamento. Aguarde a conclusão e tente novamente.</value>
   </data>
   <data name="Install_Error_InvalidPackage" xml:space="preserve">
-    <value>Invalid or unsupported package. Ensure the package and dependencies are supported for your system.</value>
+    <value>Pacote inválido ou não compatível. Verifique se o pacote e as dependências são compatíveis com o seu sistema.</value>
   </data>
   <data name="Install_Error_PackageNotFound" xml:space="preserve">
-    <value>Package not found. Check the selected/downloaded file path.</value>
+    <value>Pacote não encontrado. Verifique o caminho do arquivo selecionado/baixado.</value>
   </data>
   <data name="Install_Error_DeploymentFailure" xml:space="preserve">
-    <value>Windows deployment failed. {0}</value>
+    <value>Falha na implantação do Windows. {0}</value>
   </data>
   <data name="Install_Error_AdminRequired" xml:space="preserve">
-    <value>This package includes a packaged service and must be installed with administrator privileges. Relaunch the app as administrator and try again.</value>
+    <value>Este pacote inclui um serviço empacotado e deve ser instalado com privilégios de administrador. Reinicie o aplicativo como administrador e tente novamente.</value>
   </data>
   <data name="Install_Error_GenericDeployment" xml:space="preserve">
-    <value>Windows deployment error (0x{0:X8}). {1}</value>
+    <value>Erro de implantação do Windows (0x{0:X8}). {1}</value>
   </data>
   <data name="Install_Error_PackageCorrupt" xml:space="preserve">
-    <value>The package file is corrupt or incomplete. Try re-downloading it.</value>
+    <value>O arquivo do pacote está corrompido ou incompleto. Tente baixá-lo novamente.</value>
   </data>
   <data name="Install_Error_MissingDependency" xml:space="preserve">
-    <value>A required component or dependency is missing. Try installing the app from the Microsoft Store instead.</value>
+    <value>Um componente ou dependência necessário está ausente. Em vez disso, tente instalar o aplicativo pela Microsoft Store.</value>
   </data>
   <data name="Install_Error_InvalidManifest" xml:space="preserve">
-    <value>The package manifest (AppxManifest.xml) is invalid or malformed.</value>
+    <value>O manifesto do pacote (AppxManifest.xml) é inválido ou malformado.</value>
   </data>
   <data name="Install_Error_UntrustedRoot" xml:space="preserve">
-    <value>The package signature root certificate is not trusted by this system.</value>
+    <value>O certificado raiz da assinatura do pacote não é confiável para este sistema.</value>
   </data>
   <data name="Install_Error_SignatureInvalid" xml:space="preserve">
-    <value>The package signature is invalid or untrusted.</value>
+    <value>A assinatura do pacote é inválida ou não confiável.</value>
   </data>
   <data name="Install_Error_SignatureVerificationHint" xml:space="preserve">
-    <value>Signature verification failed. Try enabling the "Remove signature verification" option and try again.</value>
+    <value>Falha na verificação de assinatura. Tente ativar a opção "Remover verificação de assinatura" e tente novamente.</value>
   </data>
   <data name="Install_Error_NotSigned" xml:space="preserve">
-    <value>The package is not digitally signed.</value>
+    <value>O pacote não está assinado digitalmente.</value>
   </data>
   <data name="Install_Error_NotSupported" xml:space="preserve">
-    <value>This operation is not supported on your system.</value>
+    <value>Esta operação não é compatível com o seu sistema.</value>
   </data>
   <data name="Install_Error_AccessDenied" xml:space="preserve">
-    <value>Failed: Access denied. Try running as administrator or ensure sideloading policy allows app packages. {0}</value>
+    <value>Falha: acesso negado. Tente executar como administrador ou verifique se a política de sideload permite pacotes de aplicativos. {0}</value>
   </data>
   <data name="Install_Error_Generic" xml:space="preserve">
-    <value>Failed: {0}</value>
+    <value>Falha: {0}</value>
   </data>
   <data name="Install_Btn_ForceInstall" xml:space="preserve">
-    <value>Force install</value>
+    <value>Forçar instalação</value>
   </data>
   <data name="Install_Btn_RunAsAdmin" xml:space="preserve">
-    <value>Run as administrator</value>
+    <value>Executar como administrador</value>
   </data>
   <data name="Common_OK" xml:space="preserve">
     <value>OK</value>
   </data>
   <data name="DownloadsPage_Header.Text" xml:space="preserve">
-    <value>Downloads</value>
+    <value>Transferências</value>
   </data>
   <data name="DownloadsPage_OpenFolder.Content" xml:space="preserve">
-    <value>Open folder</value>
+    <value>Abrir pasta</value>
   </data>
   <data name="DownloadsPage_Delete.Text" xml:space="preserve">
-    <value>Delete</value>
+    <value>Excluir</value>
   </data>
   <data name="DownloadsPage_CancelBtn.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Cancel download</value>
+    <value>Cancelar download</value>
   </data>
   <data name="Download_Status_Fetching" xml:space="preserve">
-    <value>Fetching download URLs</value>
+    <value>Obtendo URLs de download</value>
   </data>
   <data name="Download_Status_Downloading" xml:space="preserve">
-    <value>Downloading</value>
+    <value>Baixando</value>
   </data>
   <data name="Download_Status_Installing" xml:space="preserve">
-    <value>Installing</value>
+    <value>Instalando</value>
   </data>
   <data name="Download_Status_Cancelling" xml:space="preserve">
-    <value>Cancelling</value>
+    <value>Cancelando</value>
   </data>
   <data name="InstallationsPage_Header.Text" xml:space="preserve">
-    <value>Install package</value>
+    <value>Instalar pacote</value>
   </data>
   <data name="InstallationsPage_Installing.Text" xml:space="preserve">
-    <value>Installing...</value>
+    <value>Instalando...</value>
   </data>
   <data name="InstallationsPage_FileText.PlaceholderText" xml:space="preserve">
-    <value>No file selected</value>
+    <value>Nenhum arquivo selecionado</value>
   </data>
   <data name="InstallationsPage_InstallBtn.Content" xml:space="preserve">
-    <value>Install</value>
+    <value>Instalar</value>
   </data>
   <data name="InstallationsPage_InstallLabel" xml:space="preserve">
-    <value>Install</value>
+    <value>Instalar</value>
   </data>
   <data name="InstallationsPage_DropZone.Text" xml:space="preserve">
-    <value>Select a package or drag it here</value>
+    <value>Selecione um pacote ou arraste-o para cá</value>
   </data>
   <data name="InstallationsPage_FilePicker_Title" xml:space="preserve">
-    <value>Select an app package</value>
+    <value>Selecione um pacote de aplicativo</value>
   </data>
   <data name="InstallationsPage_DragCaption" xml:space="preserve">
-    <value>Drop to select package</value>
+    <value>Solte para selecionar o pacote</value>
   </data>
   <data name="Install_Status_Installing" xml:space="preserve">
-    <value>Installing</value>
+    <value>Instalando</value>
   </data>
   <data name="Install_Dialog_Title" xml:space="preserve">
-    <value>Installation failed</value>
+    <value>Falha na instalação</value>
   </data>
   <data name="InstallationsPage_FilePicker_Error" xml:space="preserve">
-    <value>File picker error</value>
+    <value>Erro no seletor de arquivos</value>
   </data>
   <data name="InstallationsPage_Filter_AppPackages" xml:space="preserve">
-    <value>App packages (*.msix;*.appx;*.msixbundle;*.appxbundle)</value>
+    <value>Pacotes de aplicativo (*.msix;*.appx;*.msixbundle;*.appxbundle)</value>
   </data>
   <data name="InstallationsPage_Filter_AllFiles" xml:space="preserve">
-    <value>All files (*.*)</value>
+    <value>Todos os arquivos (*.*)</value>
   </data>
   <data name="UpdatesPage_Header.Text" xml:space="preserve">
-    <value>Updates</value>
+    <value>Atualizações</value>
   </data>
   <data name="UpdatesPage_Stop.Text" xml:space="preserve">
-    <value>Stop</value>
+    <value>Parar</value>
   </data>
   <data name="UpdatesPage_SelectAll.Content" xml:space="preserve">
-    <value>Select all</value>
+    <value>Selecionar tudo</value>
   </data>
   <data name="UpdatesPage_NoUpdates.Text" xml:space="preserve">
-    <value>No new updates</value>
+    <value>Nenhuma atualização nova</value>
   </data>
   <data name="UpdatesPage_Completed.Text" xml:space="preserve">
-    <value>Completed</value>
+    <value>Concluído</value>
   </data>
   <data name="UpdatesPage_VersionSeparator.Text" xml:space="preserve">
     <value>→</value>
   </data>
   <data name="UpdatesPage_CancelBtn.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Cancel update</value>
+    <value>Cancelar atualização</value>
   </data>
   <data name="Updates_ButtonCheck" xml:space="preserve">
-    <value>Check for updates</value>
+    <value>Verificar atualizações</value>
   </data>
   <data name="Updates_ButtonChecking" xml:space="preserve">
-    <value>Checking...</value>
+    <value>Verificando...</value>
   </data>
   <data name="Updates_ButtonUpdate" xml:space="preserve">
-    <value>Update selected ({0})</value>
+    <value>Atualizar selecionados ({0})</value>
   </data>
   <data name="Updates_CheckingBase" xml:space="preserve">
-    <value>Checking</value>
+    <value>Verificando</value>
   </data>
   <data name="Updates_CheckingProgress" xml:space="preserve">
-    <value>Checking ({0}/{1})</value>
+    <value>Verificando ({0}/{1})</value>
   </data>
   <data name="Search_Filter_AllDepartments" xml:space="preserve">
-    <value>All departments</value>
+    <value>Todos os departamentos</value>
   </data>
   <data name="Search_Filter_Fonts" xml:space="preserve">
-    <value>Fonts</value>
+    <value>Fontes</value>
   </data>
   <data name="Search_Filter_Themes" xml:space="preserve">
-    <value>Themes</value>
+    <value>Temas</value>
   </data>
   <data name="Search_Filter_AllTypes" xml:space="preserve">
-    <value>All Types</value>
+    <value>Todos os tipos</value>
   </data>
   <data name="Search_Filter_Free" xml:space="preserve">
-    <value>Free</value>
+    <value>Grátis</value>
   </data>
   <data name="Search_Filter_Paid" xml:space="preserve">
-    <value>Paid</value>
+    <value>Pago</value>
   </data>
   <data name="BundlesPage_Loading.Text" xml:space="preserve">
-    <value>Loading...</value>
+    <value>Carregando...</value>
   </data>
   <data name="BundlesPage_Error.Text" xml:space="preserve">
-    <value>An Unexpected Error Occured!</value>
+    <value>Ocorreu um erro inesperado!</value>
   </data>
   <data name="BundlesPage_InBundle.Text" xml:space="preserve">
-    <value>In this bundle</value>
+    <value>Neste pacote</value>
   </data>
   <data name="AppPage_StopBtn.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Stop</value>
+    <value>Parar</value>
   </data>
   <data name="AppPage_MoreOptionsBtn.ToolTipService.ToolTip" xml:space="preserve">
-    <value>More options</value>
+    <value>Mais opções</value>
   </data>
   <data name="AppPage_ShareBtn.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Share</value>
+    <value>Compartilhar</value>
   </data>
   <data name="AppPage_Share_CopyLink.Text" xml:space="preserve">
-    <value>Copy link</value>
+    <value>Copiar link</value>
   </data>
   <data name="AppPage_Share_CopyProductId.Text" xml:space="preserve">
-    <value>Copy product ID</value>
+    <value>Copiar ID do produto</value>
   </data>
   <data name="AppPage_Share_CopyPackageFamilyName.Text" xml:space="preserve">
-    <value>Copy PFN</value>
+    <value>Copiar PFN</value>
   </data>
   <data name="AppPage_LightboxClose.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Close</value>
+    <value>Fechar</value>
   </data>
   <data name="AppPage_LightboxPrev.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Previous</value>
+    <value>Anterior</value>
   </data>
   <data name="AppPage_LightboxNext.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Next</value>
+    <value>Próximo</value>
   </data>
   <data name="AppPage_ScreenshotsPrev.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Previous screenshot</value>
+    <value>Captura de tela anterior</value>
   </data>
   <data name="AppPage_ScreenshotsNext.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Next screenshot</value>
+    <value>Próxima captura de tela</value>
   </data>
   <data name="AppPage_LightboxCounter_Format" xml:space="preserve">
     <value>{0} / {1}</value>
   </data>
   <data name="DownloadsPage_MoreOptionsBtn.ToolTipService.ToolTip" xml:space="preserve">
-    <value>More options</value>
+    <value>Mais opções</value>
   </data>
   <data name="AppPage_Btn_Install" xml:space="preserve">
-    <value>Install</value>
+    <value>Instalar</value>
   </data>
   <data name="AppPage_Btn_Update" xml:space="preserve">
-    <value>Update</value>
+    <value>Atualizar</value>
   </data>
   <data name="AppPage_Btn_Open" xml:space="preserve">
-    <value>Open</value>
+    <value>Abrir</value>
   </data>
   <data name="AppPage_Btn_Retry" xml:space="preserve">
-    <value>Retry</value>
+    <value>Tentar novamente</value>
   </data>
   <data name="AppPage_Btn_Download" xml:space="preserve">
-    <value>Download</value>
+    <value>Baixar</value>
   </data>
   <data name="InstallationsPage_ClearBtn.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Clear</value>
+    <value>Limpar</value>
   </data>
   <data name="Settings_LicenseDialogTitle.Text" xml:space="preserve">
-    <value>License</value>
+    <value>Licença</value>
   </data>
   <data name="Settings_LicenseDialogClose.Content" xml:space="preserve">
-    <value>Close</value>
+    <value>Fechar</value>
   </data>
   <data name="Sideloading_DisabledTitle" xml:space="preserve">
-    <value>Sideloading is disabled</value>
+    <value>O sideload está desativado</value>
   </data>
   <data name="Sideloading_DisabledMessage" xml:space="preserve">
-    <value>Sideloading is currently disabled on this device. You won't be able to install app packages until it's enabled.
+    <value>O sideload está desativado no momento neste dispositivo. Você não poderá instalar pacotes de aplicativos até que ele seja ativado.
 
-You can enable it by turning on Developer Mode in Windows Settings.</value>
+Você pode ativá-lo ligando o Modo de desenvolvedor nas Configurações do Windows.</value>
   </data>
   <data name="Sideloading_EnableButton" xml:space="preserve">
-    <value>Open Settings</value>
+    <value>Abrir Configurações</value>
   </data>
   <data name="Sideloading_CancelButton" xml:space="preserve">
-    <value>Not now</value>
+    <value>Agora não</value>
   </data>
   <data name="InstallationsPage_MoreOptionsBtn.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Advanced options</value>
+    <value>Opções avançadas</value>
   </data>
   <data name="InstallationsPage_AdvancedInstall.Text" xml:space="preserve">
-    <value>Unpackaged Mode</value>
+    <value>Modo não empacotado</value>
   </data>
   <data name="InstallationsPage_CustomFolder.PlaceholderText" xml:space="preserve">
-    <value>Choose install folder</value>
+    <value>Escolher pasta de instalação</value>
   </data>
   <data name="InstallationsPage_BrowseFolderBtn.Content" xml:space="preserve">
-    <value>Browse</value>
+    <value>Procurar</value>
   </data>
   <data name="InstallationsPage_RemoveSignature.Content" xml:space="preserve">
-    <value>Remove signature verification</value>
+    <value>Remover verificação de assinatura</value>
   </data>
   <data name="InstallationsPage_BypassRegistration.Content" xml:space="preserve">
-    <value>Bypass package registration</value>
+    <value>Ignorar registro do pacote</value>
   </data>
   <data name="InstallationsPage_CreateStartMenuShortcut.Content" xml:space="preserve">
-    <value>Create Start Menu shortcut</value>
+    <value>Criar atalho no Menu Iniciar</value>
   </data>
   <data name="InstallationsPage_CreateDesktopShortcut.Content" xml:space="preserve">
-    <value>Create Desktop shortcut</value>
+    <value>Criar atalho na área de trabalho</value>
   </data>
   <data name="InstallationsPage_SelectDependenciesBtn.Content" xml:space="preserve">
-    <value>Select dependencies</value>
+    <value>Selecionar dependências</value>
   </data>
   <data name="InstallationsPage_FolderPicker_Title" xml:space="preserve">
-    <value>Choose the install location</value>
+    <value>Escolha o local de instalação</value>
   </data>
   <data name="InstallationsPage_DependencyPicker_Title" xml:space="preserve">
-    <value>Select dependency packages</value>
+    <value>Selecione os pacotes de dependência</value>
   </data>
   <data name="InstallationsPage_Dependencies_Count" xml:space="preserve">
-    <value>{0} selected</value>
+    <value>{0} selecionados</value>
   </data>
   <data name="Install_Error_NoFolderSelected" xml:space="preserve">
-    <value>Choose an install folder before installing.</value>
+    <value>Escolha uma pasta de instalação antes de instalar.</value>
   </data>
   <data name="Install_Error_FolderExists" xml:space="preserve">
-    <value>A folder named "{0}" already exists in the chosen location. Choose another location or remove the existing folder.</value>
+    <value>Já existe uma pasta chamada "{0}" no local escolhido. Escolha outro local ou remova a pasta existente.</value>
   </data>
   <data name="Install_Error_NoInstallableArch" xml:space="preserve">
-    <value>This bundle has no package compatible with your selected architecture.</value>
+    <value>Este pacote não tem nenhum pacote compatível com a arquitetura selecionada.</value>
   </data>
   <data name="Install_Error_ManifestMissing" xml:space="preserve">
-    <value>Could not find AppxManifest.xml in the package.</value>
+    <value>Não foi possível encontrar AppxManifest.xml no pacote.</value>
   </data>
   <data name="Install_Error_ExecutableNotFound" xml:space="preserve">
-    <value>Unable to find executable. This app might not be able to run unregistered.</value>
+    <value>Não foi possível encontrar o executável. Este aplicativo pode não conseguir ser executado sem registro.</value>
   </data>
   <data name="DeveloperMode_DisabledTitle" xml:space="preserve">
-    <value>Developer Mode is required</value>
+    <value>O Modo de desenvolvedor é necessário</value>
   </data>
   <data name="DeveloperMode_DisabledMessage" xml:space="preserve">
-    <value>Custom (loose) install registers an app from unpackaged files, which requires Developer Mode.
+    <value>A instalação personalizada (não empacotada) registra um aplicativo a partir de arquivos não empacotados, o que requer o Modo de desenvolvedor.
 
-You can enable it by turning on Developer Mode in Windows Settings.</value>
+Você pode ativá-lo ligando o Modo de desenvolvedor nas Configurações do Windows.</value>
   </data>
   <data name="DeveloperMode_EnableButton" xml:space="preserve">
-    <value>Open Settings</value>
+    <value>Abrir Configurações</value>
   </data>
   <data name="DeveloperMode_CancelButton" xml:space="preserve">
-    <value>Not now</value>
+    <value>Agora não</value>
   </data>
   <data name="InstallationsPage_ClearFolderBtn.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Clear install location</value>
+    <value>Limpar local de instalação</value>
   </data>
   <data name="InstallationsPage_ClearDepsBtn.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Clear selected dependencies</value>
+    <value>Limpar dependências selecionadas</value>
   </data>
   <data name="Updates_FailedBanner_Title.Text" xml:space="preserve">
-    <value>Some updates failed</value>
+    <value>Algumas atualizações falharam</value>
   </data>
   <data name="Install_Error_AppInUse" xml:space="preserve">
-    <value>The App couldn't be installed because it's resources are currently being used. Close them and try again.</value>
+    <value>O aplicativo não pôde ser instalado porque seus recursos estão em uso no momento. Feche-os e tente novamente.</value>
   </data>
   <data name="Install_Error_AppInUse_Processes" xml:space="preserve">
-    <value>The following apps need to be closed before the app can be installed:</value>
+    <value>Os seguintes aplicativos precisam ser fechados antes que o aplicativo possa ser instalado:</value>
   </data>
   <data name="Install_Btn_Retry" xml:space="preserve">
-    <value>Retry</value>
+    <value>Tentar novamente</value>
   </data>
   <data name="Install_Btn_DeferredInstall" xml:space="preserve">
-    <value>Deferred Install</value>
+    <value>Instalação adiada</value>
   </data>
   <data name="Install_Error_DeferredInstallDescription" xml:space="preserve">
-    <value>Deferred Install will prepare the app now, and it will be installed automatically when its resources are released or the system is restarted.</value>
+    <value>A Instalação adiada preparará o aplicativo agora, e ele será instalado automaticamente quando seus recursos forem liberados ou o sistema for reiniciado.</value>
   </data>
   <data name="Install_Error_DependencyProvidedButNotUsed" xml:space="preserve">
-    <value>One or more dependencies provided were not required by the main package. You can try installing only the main package.</value>
+    <value>Uma ou mais dependências fornecidas não eram exigidas pelo pacote principal. Você pode tentar instalar apenas o pacote principal.</value>
   </data>
   <data name="Install_Btn_InstallDependenciesSeparately" xml:space="preserve">
-    <value>Install dependencies separately</value>
+    <value>Instalar dependências separadamente</value>
   </data>
   <data name="AppPage_InstallDependenciesSeparately.Text" xml:space="preserve">
-    <value>Separate Install</value>
+    <value>Instalação separada</value>
   </data>
   <data name="InstallationsPage_InstallDependenciesSeparately.Content" xml:space="preserve">
-    <value>Install dependencies separately</value>
+    <value>Instalar dependências separadamente</value>
   </data>
   <data name="Program_AlreadyRunningTitle" xml:space="preserve">
     <value>AppDepot</value>
   </data>
   <data name="Program_AlreadyRunningMessage" xml:space="preserve">
-    <value>Another instance of AppDepot is already running.
-Please close it before launching this one.</value>
+    <value>Outra instância do AppDepot já está em execução.
+Feche-a antes de iniciar esta.</value>
   </data>
-  <data name="AI_Title.Text" xml:space="preserve"><value>AI translation</value></data>
-  <data name="AI_Privacy.Text" xml:space="preserve"><value>When you click Translate, the app description is sent to your configured service. Your provider may charge for requests. The original text is preserved.</value></data>
-  <data name="AI_Endpoint.Header" xml:space="preserve"><value>API base URL (OpenAI-compatible)</value></data>
-  <data name="AI_Model.Header" xml:space="preserve"><value>Model</value></data>
-  <data name="AI_Key.Header" xml:space="preserve"><value>API key (stored securely for this Windows user)</value></data>
-  <data name="AI_Prompt.Header" xml:space="preserve"><value>Translation instructions (optional)</value></data>
-  <data name="AI_Save.Content" xml:space="preserve"><value>Save translation settings</value></data>
-  <data name="AI_Saved" xml:space="preserve"><value>Translation settings saved.</value></data>
-  <data name="AI_InvalidSettings" xml:space="preserve"><value>Enter a valid API base URL and model. Use HTTPS, or HTTP for a local server.</value></data>
-  <data name="AI_Translate.Content" xml:space="preserve"><value>Translate description</value></data>
-  <data name="AI_Original.Content" xml:space="preserve"><value>Show original</value></data>
-  <data name="AI_Cancel.Content" xml:space="preserve"><value>Cancel translation</value></data>
-  <data name="AI_Working" xml:space="preserve"><value>Translating…</value></data>
-  <data name="AI_Failed" xml:space="preserve"><value>Translation failed. Check your endpoint, model, API key and network, then try again.</value></data>
-  <data name="AI_NotConfigured" xml:space="preserve"><value>Configure AI translation in Settings first.</value></data>
-  <data name="AI_TooLong" xml:space="preserve"><value>This description is too long to translate in one request.</value></data>
+  <data name="AI_Title.Text" xml:space="preserve"><value>Tradução com IA</value></data>
+  <data name="AI_Privacy.Text" xml:space="preserve"><value>Ao clicar em Traduzir, a descrição do aplicativo é enviada ao serviço configurado. Seu provedor pode cobrar pelas solicitações. O texto original é preservado.</value></data>
+  <data name="AI_Endpoint.Header" xml:space="preserve"><value>URL base da API (compatível com OpenAI)</value></data>
+  <data name="AI_Model.Header" xml:space="preserve"><value>Modelo</value></data>
+  <data name="AI_Key.Header" xml:space="preserve"><value>Chave de API (armazenada com segurança para este usuário do Windows)</value></data>
+  <data name="AI_Prompt.Header" xml:space="preserve"><value>Instruções de tradução (opcional)</value></data>
+  <data name="AI_Save.Content" xml:space="preserve"><value>Salvar configurações de tradução</value></data>
+  <data name="AI_Saved" xml:space="preserve"><value>Configurações de tradução salvas.</value></data>
+  <data name="AI_InvalidSettings" xml:space="preserve"><value>Insira uma URL base de API e um modelo válidos. Use HTTPS, ou HTTP para um servidor local.</value></data>
+  <data name="AI_Translate.Content" xml:space="preserve"><value>Traduzir descrição</value></data>
+  <data name="AI_Original.Content" xml:space="preserve"><value>Mostrar original</value></data>
+  <data name="AI_Cancel.Content" xml:space="preserve"><value>Cancelar tradução</value></data>
+  <data name="AI_Working" xml:space="preserve"><value>Traduzindo…</value></data>
+  <data name="AI_Failed" xml:space="preserve"><value>Falha na tradução. Verifique seu endpoint, modelo, chave de API e rede e tente novamente.</value></data>
+  <data name="AI_NotConfigured" xml:space="preserve"><value>Configure a tradução com IA nas Configurações primeiro.</value></data>
+  <data name="AI_TooLong" xml:space="preserve"><value>Esta descrição é longa demais para ser traduzida em uma única solicitação.</value></data>
 </root>

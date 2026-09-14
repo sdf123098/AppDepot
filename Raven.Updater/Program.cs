@@ -80,7 +80,7 @@ internal sealed record UpdateOptions(
 
 /// <summary>
 /// Minimal append-only file logger so update failures are diagnosable. Writes to
-/// %LOCALAPPDATA%\Raven\logs\updater.log (falls back to the temp folder). Never throws.
+/// %LOCALAPPDATA%\AppDepot\logs\updater.log (falls back to the temp folder). Never throws.
 /// </summary>
 internal static class Log
 {
@@ -92,7 +92,7 @@ internal static class Log
         {
             var baseDir = Path.Combine(
                 Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
-                "Raven",
+                "AppDepot",
                 "logs"
             );
             Directory.CreateDirectory(baseDir);
@@ -102,7 +102,7 @@ internal static class Log
         {
             try
             {
-                _logPath = Path.Combine(Path.GetTempPath(), "raven-updater.log");
+                _logPath = Path.Combine(Path.GetTempPath(), "appdepot-updater.log");
             }
             catch
             {

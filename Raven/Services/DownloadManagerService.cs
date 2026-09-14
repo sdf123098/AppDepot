@@ -61,7 +61,7 @@ public class DownloadManagerService
 
     public static string GetDownloadsRootFolder() => Path.Combine(
         Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
-        "Raven",
+        "AppDepot",
         "Downloads"
     );
 
@@ -169,7 +169,7 @@ public class DownloadManagerService
     {
         var appDataDir = Path.Combine(
             Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
-            "Raven/ApplicationData"
+            "AppDepot/ApplicationData"
         );
 
         _downloadDataPath = Path.Combine(appDataDir, "Downloads.json");

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <root>
-  <data name="AppDisplayName" xml:space="preserve"><value>Raven</value></data>
+  <data name="AppDisplayName" xml:space="preserve"><value>AppDepot</value></data>
   <data name="Shell_Main.Content" xml:space="preserve"><value>主页</value></data>
   <data name="Shell_Advanced_Search.Content" xml:space="preserve"><value>高级搜索</value></data>
   <data name="Shell_Install.Content" xml:space="preserve"><value>安装</value></data>
@@ -9,30 +9,39 @@
   <data name="Shell_Settings.Content" xml:space="preserve"><value>设置</value></data>
   <data name="Shell_App.Content" xml:space="preserve"><value>应用</value></data>
   <data name="Shell_SearchBox.PlaceholderText" xml:space="preserve"><value>搜索</value></data>
-  <data name="Shell_AppTitleBarText.Text" xml:space="preserve"><value>Raven</value></data>
+  <data name="Shell_AppTitleBarText.Text" xml:space="preserve"><value>AppDepot</value></data>
   <data name="Settings_Title.Text" xml:space="preserve"><value>设置</value></data>
   <data name="Settings_Theme.Text" xml:space="preserve"><value>主题</value></data>
   <data name="Settings_Theme_Light.Content" xml:space="preserve"><value>浅色</value></data>
   <data name="Settings_Theme_Dark.Content" xml:space="preserve"><value>深色</value></data>
   <data name="Settings_Theme_Default.Content" xml:space="preserve"><value>系统默认</value></data>
+  <data name="Settings_Icon.Text" xml:space="preserve"><value>应用图标</value></data>
+  <data name="Settings_IconDescription.Text" xml:space="preserve"><value>选择 AppDepot 图标。自定义图标必须是 ICO 文件。</value></data>
+  <data name="Settings_IconDefaultButton.Content" xml:space="preserve"><value>AppDepot</value></data>
+  <data name="Settings_IconOwlButton.Content" xml:space="preserve"><value>猫头鹰</value></data>
+  <data name="Settings_IconCustomButton.Content" xml:space="preserve"><value>选择 ICO</value></data>
+  <data name="Settings_IconPickerTitle" xml:space="preserve"><value>选择自定义 ICO 文件</value></data>
+  <data name="Settings_IconApplied" xml:space="preserve"><value>图标已应用。</value></data>
+  <data name="Settings_IconInvalid" xml:space="preserve"><value>无法应用此 ICO 文件。</value></data>
+  <data name="Settings_IconLoadFailed" xml:space="preserve"><value>无法预览图标。</value></data>
   <data name="Settings_LocaleAndRegion.Text" xml:space="preserve"><value>语言和区域</value></data>
   <data name="Settings_Language.Text" xml:space="preserve"><value>语言</value></data>
   <data name="Settings_Market.Text" xml:space="preserve"><value>市场（区域）</value></data>
   <data name="Settings_RelaunchInfoBar.Title" xml:space="preserve"><value>需要重启</value></data>
-  <data name="Settings_RelaunchInfoBar.Message" xml:space="preserve"><value>重新启动 Raven 以应用语言更改。</value></data>
+  <data name="Settings_RelaunchInfoBar.Message" xml:space="preserve"><value>重新启动 AppDepot 以应用语言更改。</value></data>
   <data name="Settings_RelaunchButton.Content" xml:space="preserve"><value>重新启动</value></data>
   <data name="Settings_Architecture.Text" xml:space="preserve"><value>体系结构</value></data>
   <data name="Settings_ArchitectureDescription.Text" xml:space="preserve"><value>选择系统体系结构</value></data>
   <data name="Settings_Downloads.Text" xml:space="preserve"><value>下载</value></data>
   <data name="Settings_ParallelConnections.Header" xml:space="preserve"><value>并行下载连接数</value></data>
-  <data name="Settings_ParallelConnectionsDescription.Text" xml:space="preserve"><value>使用多个连接可能会提高大型程序包的下载速度。如果服务器不支持分段下载，Raven 将自动使用单连接。</value></data>
+  <data name="Settings_ParallelConnectionsDescription.Text" xml:space="preserve"><value>使用多个连接可能会提高大型程序包的下载速度。如果服务器不支持分段下载，AppDepot 将自动使用单连接。</value></data>
   <data name="Settings_ParallelConnections_Auto" xml:space="preserve"><value>自动</value></data>
   <data name="Settings_ParallelConnections_One" xml:space="preserve"><value>1 个连接</value></data>
   <data name="Settings_ParallelConnections_Two" xml:space="preserve"><value>2 个连接</value></data>
   <data name="Settings_ParallelConnections_Four" xml:space="preserve"><value>4 个连接</value></data>
   <data name="Settings_ParallelConnections_Eight" xml:space="preserve"><value>8 个连接</value></data>
   <data name="Settings_Network.Text" xml:space="preserve"><value>网络</value></data>
-  <data name="Settings_ProxyDescription.Text" xml:space="preserve"><value>选择 Raven 连接 Microsoft 程序包下载服务器的方式。</value></data>
+  <data name="Settings_ProxyDescription.Text" xml:space="preserve"><value>选择 AppDepot 连接 Microsoft 程序包下载服务器的方式。</value></data>
   <data name="Settings_ProxyMode.Header" xml:space="preserve"><value>代理</value></data>
   <data name="Settings_ProxyMode_System" xml:space="preserve"><value>使用系统代理</value></data>
   <data name="Settings_ProxyMode_Direct" xml:space="preserve"><value>直连</value></data>
@@ -41,7 +50,7 @@
   <data name="Settings_ProxyUri.PlaceholderText" xml:space="preserve"><value>http://127.0.0.1:7890</value></data>
   <data name="Settings_ProxyInvalidUri" xml:space="preserve"><value>自定义代理地址必须是有效的 HTTP 或 HTTPS URI。</value></data>
   <data name="Settings_Reset.Text" xml:space="preserve"><value>重置</value></data>
-  <data name="Settings_ResetDescription.Text" xml:space="preserve"><value>将 Raven 重置为默认设置。</value></data>
+  <data name="Settings_ResetDescription.Text" xml:space="preserve"><value>将 AppDepot 重置为默认设置。</value></data>
   <data name="Settings_ResetButton.Content" xml:space="preserve"><value>重置应用</value></data>
   <data name="Settings_ResetDialogTitle" xml:space="preserve"><value>重置应用数据？</value></data>
   <data name="Settings_ResetDialogContent" xml:space="preserve"><value>这将删除所有已下载的文件和缓存下载数据，并将语言、区域和体系结构恢复为默认值。应用将自动重启。此操作无法撤销。</value></data>
@@ -138,7 +147,7 @@
   <data name="AppPage_Error_DownloadInfoTitle" xml:space="preserve"><value>下载不可用</value></data>
   <data name="AppPage_Error_DownloadInfoMsg" xml:space="preserve"><value>暂时无法获取此应用的下载链接。请稍后重试。</value></data>
   <data name="AppPage_Error_UnsupportedTypeTitle" xml:space="preserve"><value>不支持此应用</value></data>
-  <data name="AppPage_Error_UnsupportedTypeMsg" xml:space="preserve"><value>此应用使用 Raven 尚不支持的安装程序类型。</value></data>
+  <data name="AppPage_Error_UnsupportedTypeMsg" xml:space="preserve"><value>此应用使用 AppDepot 尚不支持的安装程序类型。</value></data>
   <data name="AppPage_Error_FailedToInstall" xml:space="preserve"><value>安装失败。</value></data>
   <data name="AppPage_Error_UnableToOpenTitle" xml:space="preserve"><value>无法打开应用</value></data>
   <data name="AppPage_Error_NotInstalledPackaged" xml:space="preserve"><value>Windows 程序包管理器中未找到此应用程序包。它可能尚未安装。</value></data>
@@ -301,7 +310,23 @@
   <data name="Install_Btn_InstallDependenciesSeparately" xml:space="preserve"><value>单独安装依赖项</value></data>
   <data name="AppPage_InstallDependenciesSeparately.Text" xml:space="preserve"><value>单独安装</value></data>
   <data name="InstallationsPage_InstallDependenciesSeparately.Content" xml:space="preserve"><value>单独安装依赖项</value></data>
-  <data name="Program_AlreadyRunningTitle" xml:space="preserve"><value>Raven</value></data>
-  <data name="Program_AlreadyRunningMessage" xml:space="preserve"><value>Raven 的另一个实例正在运行。
+  <data name="Program_AlreadyRunningTitle" xml:space="preserve"><value>AppDepot</value></data>
+  <data name="Program_AlreadyRunningMessage" xml:space="preserve"><value>AppDepot 的另一个实例正在运行。
 请先关闭它，然后再启动此应用。</value></data>
+  <data name="AI_Title.Text" xml:space="preserve"><value>AI 翻译</value></data>
+  <data name="AI_Privacy.Text" xml:space="preserve"><value>点击“翻译”后，应用说明会发送到你配置的服务。服务提供商可能会收取费用。原文会保留。</value></data>
+  <data name="AI_Endpoint.Header" xml:space="preserve"><value>API 基础 URL（兼容 OpenAI）</value></data>
+  <data name="AI_Model.Header" xml:space="preserve"><value>模型</value></data>
+  <data name="AI_Key.Header" xml:space="preserve"><value>API 密钥（为此 Windows 用户安全存储）</value></data>
+  <data name="AI_Prompt.Header" xml:space="preserve"><value>翻译指令（可选）</value></data>
+  <data name="AI_Save.Content" xml:space="preserve"><value>保存翻译设置</value></data>
+  <data name="AI_Saved" xml:space="preserve"><value>翻译设置已保存。</value></data>
+  <data name="AI_InvalidSettings" xml:space="preserve"><value>请输入有效的 API 基础 URL 和模型。请使用 HTTPS；本地服务器可使用 HTTP。</value></data>
+  <data name="AI_Translate.Content" xml:space="preserve"><value>翻译说明</value></data>
+  <data name="AI_Original.Content" xml:space="preserve"><value>显示原文</value></data>
+  <data name="AI_Cancel.Content" xml:space="preserve"><value>取消翻译</value></data>
+  <data name="AI_Working" xml:space="preserve"><value>正在翻译…</value></data>
+  <data name="AI_Failed" xml:space="preserve"><value>翻译失败。请检查终结点、模型、API 密钥和网络，然后重试。</value></data>
+  <data name="AI_NotConfigured" xml:space="preserve"><value>请先在“设置”中配置 AI 翻译。</value></data>
+  <data name="AI_TooLong" xml:space="preserve"><value>此说明过长，无法在一次请求中翻译。</value></data>
 </root>

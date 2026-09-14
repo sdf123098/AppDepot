@@ -17,7 +17,7 @@ jobs:
       - name: Submit update to WinGet
         uses: vedantmgoyal9/winget-releaser@main
         with:
-          identifier: mjishnu.raven
+          identifier: sdf123098.AppDepot
           installers-regex: '-self-contained\.zip$'
           release-tag: ${{ inputs.tag || github.event.release.tag_name }}
           token: ${{ secrets.WINGET_TOKEN }}

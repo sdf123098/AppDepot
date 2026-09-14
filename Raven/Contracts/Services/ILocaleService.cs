@@ -7,6 +7,7 @@ public interface ILocaleService
     Market Market { get; }
 
     Lang Language { get; }
+    string UiLanguageTag { get; }
 
     event EventHandler? LocaleChanged;
 
@@ -15,6 +16,7 @@ public interface ILocaleService
     Task SetMarketAsync(Market market);
 
     Task SetLanguageAsync(Lang language);
+    Task SetUiLanguageAsync(string languageTag);
 
     Task ResetToDefaultAsync();
 }

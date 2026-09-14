@@ -206,20 +206,84 @@ public sealed partial class SettingsPage : Page
 
     private readonly ILogger _runtimeLogger;
     private readonly AppUpdatePromptService _appUpdatePromptService;
+    private readonly AppIconService _appIconService;
 
     public SettingsViewModel ViewModel { get; }
 
     public SettingsPage()
-        : this(App.GetService<ILoggerFactory>(), App.GetService<AppUpdatePromptService>())
+        : this(
+            App.GetService<ILoggerFactory>(),
+            App.GetService<AppUpdatePromptService>(),
+            App.GetService<AppIconService>()
+        )
     {
     }
 
-    public SettingsPage(ILoggerFactory loggerFactory, AppUpdatePromptService appUpdatePromptService)
+    public SettingsPage(
+        ILoggerFactory loggerFactory,
+        AppUpdatePromptService appUpdatePromptService,
+        AppIconService appIconService
+    )
     {
         ViewModel = App.GetService<SettingsViewModel>();
-        _runtimeLogger = loggerFactory.CreateLogger("Raven.Runtime");
+        _runtimeLogger = loggerFactory.CreateLogger("AppDepot.Runtime");
         _appUpdatePromptService = appUpdatePromptService;
+        _appIconService = appIconService;
         InitializeComponent();
+        UpdateIconPreview();
+        _appIconService.IconChanged += AppIconService_IconChanged;
+    }
+
+    private void AppIconService_IconChanged(object? sender, EventArgs e)
+    {
+        _ = DispatcherQueue.TryEnqueue(UpdateIconPreview);
+    }
+
+    private void UpdateIconPreview()
+    {
+        try
+        {
+            AppIconPreview.Source = new Microsoft.UI.Xaml.Media.Imaging.BitmapImage(
+                new Uri(_appIconService.CurrentIconPath, UriKind.Absolute)
+            );
+        }
+        catch
+        {
+            IconStatus.Text = "Settings_IconLoadFailed".GetLocalized();
+        }
+    }
+
+    private async void DefaultIconButton_Click(object sender, RoutedEventArgs e)
+    {
+        await _appIconService.UseDefaultIconAsync();
+        IconStatus.Text = "Settings_IconApplied".GetLocalized();
+    }
+
+    private async void OwlIconButton_Click(object sender, RoutedEventArgs e)
+    {
+        await _appIconService.UseOwlIconAsync();
+        IconStatus.Text = "Settings_IconApplied".GetLocalized();
+    }
+
+    private async void CustomIconButton_Click(object sender, RoutedEventArgs e)
+    {
+        var owner = WinRT.Interop.WindowNative.GetWindowHandle(App.MainWindow);
+        var path = NativeFilePicker.PickIcon(owner, "Settings_IconPickerTitle".GetLocalized());
+        if (string.IsNullOrWhiteSpace(path))
+            return;
+
+        try
+        {
+            var applied = await _appIconService.SetCustomIconAsync(path);
+            IconStatus.Text = applied
+                ? "Settings_IconApplied".GetLocalized()
+                : "Settings_IconInvalid".GetLocalized();
+        }
+        catch (Exception ex)
+        {
+            _runtimeLogger.LogError(ex, "Failed to apply custom app icon");
+            IconStatus.Text = "Settings_IconInvalid".GetLocalized();
+        }
     }
 
     private async void ResetButton_Click(object sender, RoutedEventArgs e)

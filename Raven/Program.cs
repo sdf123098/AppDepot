@@ -42,7 +42,7 @@ public static partial class Program
         if (isRedirect)
             return;
 
-        var mutex = new Mutex(true, "Raven_SingleInstance_Mutex", out var isNewInstance);
+        var mutex = new Mutex(true, "AppDepot_SingleInstance_Mutex", out var isNewInstance);
         if (!isNewInstance)
         {
             _ = MessageBoxW(
@@ -76,7 +76,7 @@ public static partial class Program
     /// </summary>
     private static bool DecideRedirection()
     {
-        var keyInstance = AppInstance.FindOrRegisterForKey("raven_main_instance");
+        var keyInstance = AppInstance.FindOrRegisterForKey("appdepot_main_instance");
 
         if (!keyInstance.IsCurrent)
         {

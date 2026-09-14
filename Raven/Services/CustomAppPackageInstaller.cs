@@ -67,7 +67,7 @@ public static class CustomAppPackageInstaller
         var isBundle = BundleExtensions.Contains(ext);
 
         var workRoot = Path.Combine(
-            Path.GetTempPath(), "Raven", "custom-install", Guid.NewGuid().ToString("N"));
+            Path.GetTempPath(), "AppDepot", "custom-install", Guid.NewGuid().ToString("N"));
         var outerDir = Path.Combine(workRoot, "outer");
         Directory.CreateDirectory(outerDir);
 

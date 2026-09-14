@@ -7,11 +7,11 @@
 		<Platforms>x86;x64;arm64</Platforms>
 		<RuntimeIdentifiers>win-x86;win-x64;win-arm64</RuntimeIdentifiers>
 		<RootNamespace>Raven</RootNamespace>
-		<AssemblyName>Raven</AssemblyName>
-		<AssemblyTitle>Raven</AssemblyTitle>
+		<AssemblyName>AppDepot</AssemblyName>
+		<AssemblyTitle>AppDepot</AssemblyTitle>
 		<FileVersion>1.0.0.0</FileVersion>
 		<AssemblyVersion>1.0.0.0</AssemblyVersion>
-		<ApplicationIcon>Assets\Raven.ico</ApplicationIcon>
+		<ApplicationIcon>Assets\AppDepot.ico</ApplicationIcon>
 		<ApplicationManifest>app.manifest</ApplicationManifest>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
@@ -47,6 +47,8 @@
 	</ItemGroup>
 	<ItemGroup>
 		<Manifest Include="$(ApplicationManifest)" />
+        <!-- The same files drive PRI generation and the selectable UI languages. -->
+        <RavenLanguageFile Include="Strings\*\Resources.resw" />
 		<None Update="appsettings.json">
 			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
 		</None>
@@ -56,4 +58,16 @@
 			<CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
 		</Content>
 	</ItemGroup>
+	<!-- LanguageCatalog reads one metadata entry per shipped language file. The batching has to
+	     happen inside a target: a top-level ItemGroup never expands %(RavenLanguageFile.Identity).
+	     The hook must be GetAssemblyAttributes, which is what the assembly-info hash target
+	     depends on - hooking GenerateAssemblyInfo is too late and the attributes get skipped. -->
+	<Target Name="AddLanguageMetadata" BeforeTargets="GetAssemblyAttributes">
+		<ItemGroup>
+			<AssemblyAttribute Include="System.Reflection.AssemblyMetadataAttribute">
+				<_Parameter1>Raven.LanguageDirectory</_Parameter1>
+				<_Parameter2>%(RavenLanguageFile.Identity)</_Parameter2>
+			</AssemblyAttribute>
+		</ItemGroup>
+	</Target>
 </Project>

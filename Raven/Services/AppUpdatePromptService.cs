@@ -12,7 +12,7 @@ public sealed class AppUpdatePromptService
     private const string CheckUpdatesOnStartupKey = "CheckForAppUpdatesOnStartup";
     private const string LastUpdateCheckKey = "LastAppUpdateCheckUtc";
     private static readonly TimeSpan StartupCheckInterval = TimeSpan.FromHours(24);
-    private const string RuntimeLoggerCategory = "Raven.Runtime";
+    private const string RuntimeLoggerCategory = "AppDepot.Runtime";
     private readonly GitHubUpdaterService _gitHubUpdaterService;
     private readonly ILocalSettingsService _localSettingsService;
     private readonly ILogger _logger;

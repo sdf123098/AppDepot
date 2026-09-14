@@ -121,947 +121,929 @@
     <value>AppDepot</value>
   </data>
   <data name="Shell_Main.Content" xml:space="preserve">
-    <value>Home</value>
+    <value>Главная</value>
   </data>
   <data name="Shell_Advanced_Search.Content" xml:space="preserve">
-    <value>Advanced Search</value>
+    <value>Расширенный поиск</value>
   </data>
   <data name="Shell_Install.Content" xml:space="preserve">
-    <value>Install</value>
+    <value>Установка</value>
   </data>
   <data name="Shell_Updates.Content" xml:space="preserve">
-    <value>Updates</value>
+    <value>Обновления</value>
   </data>
   <data name="Shell_Downloads.Content" xml:space="preserve">
-    <value>Downloads</value>
+    <value>Загрузки</value>
   </data>
   <data name="Shell_Settings.Content" xml:space="preserve">
-    <value>Settings</value>
+    <value>Параметры</value>
   </data>
   <data name="Shell_App.Content" xml:space="preserve">
-    <value>Apps</value>
+    <value>Приложения</value>
   </data>
   <data name="Shell_SearchBox.PlaceholderText" xml:space="preserve">
-    <value>Search</value>
+    <value>Поиск</value>
   </data>
   <data name="Shell_AppTitleBarText.Text" xml:space="preserve">
     <value>AppDepot</value>
   </data>
   <data name="Settings_Title.Text" xml:space="preserve">
-    <value>Settings</value>
+    <value>Параметры</value>
   </data>
   <data name="Settings_Theme.Text" xml:space="preserve">
-    <value>Theme</value>
+    <value>Тема</value>
   </data>
   <data name="Settings_Theme_Light.Content" xml:space="preserve">
-    <value>Light</value>
+    <value>Светлая</value>
   </data>
   <data name="Settings_Theme_Dark.Content" xml:space="preserve">
-    <value>Dark</value>
+    <value>Тёмная</value>
   </data>
   <data name="Settings_Theme_Default.Content" xml:space="preserve">
-    <value>System Default</value>
+    <value>Системная</value>
   </data>
-  <data name="Settings_Icon.Text" xml:space="preserve">
-    <value>App icon</value>
-  </data>
-  <data name="Settings_IconDescription.Text" xml:space="preserve">
-    <value>Choose the AppDepot icon. Custom icons must be ICO files.</value>
-  </data>
-  <data name="Settings_IconDefaultButton.Content" xml:space="preserve">
-    <value>AppDepot</value>
-  </data>
-  <data name="Settings_IconOwlButton.Content" xml:space="preserve">
-    <value>Owl</value>
-  </data>
-  <data name="Settings_IconCustomButton.Content" xml:space="preserve">
-    <value>Choose ICO</value>
-  </data>
-  <data name="Settings_IconPickerTitle" xml:space="preserve">
-    <value>Select a custom ICO file</value>
-  </data>
-  <data name="Settings_IconApplied" xml:space="preserve">
-    <value>Icon applied.</value>
-  </data>
-  <data name="Settings_IconInvalid" xml:space="preserve">
-    <value>That ICO file could not be applied.</value>
-  </data>
-  <data name="Settings_IconLoadFailed" xml:space="preserve">
-    <value>Unable to preview the icon.</value>
-  </data>
+  <data name="Settings_Icon.Text" xml:space="preserve"><value>App icon</value></data>
+  <data name="Settings_IconDescription.Text" xml:space="preserve"><value>Choose the AppDepot icon. Custom icons must be ICO files.</value></data>
+  <data name="Settings_IconDefaultButton.Content" xml:space="preserve"><value>AppDepot</value></data>
+  <data name="Settings_IconOwlButton.Content" xml:space="preserve"><value>Owl</value></data>
+  <data name="Settings_IconCustomButton.Content" xml:space="preserve"><value>Choose ICO</value></data>
+  <data name="Settings_IconPickerTitle" xml:space="preserve"><value>Select a custom ICO file</value></data>
+  <data name="Settings_IconApplied" xml:space="preserve"><value>Icon applied.</value></data>
+  <data name="Settings_IconInvalid" xml:space="preserve"><value>That ICO file could not be applied.</value></data>
+  <data name="Settings_IconLoadFailed" xml:space="preserve"><value>Unable to preview the icon.</value></data>
   <data name="Settings_LocaleAndRegion.Text" xml:space="preserve">
-    <value>Language &amp; Region</value>
+    <value>Язык и регион</value>
   </data>
   <data name="Settings_Language.Text" xml:space="preserve">
-    <value>Language</value>
+    <value>Язык</value>
   </data>
   <data name="Settings_Market.Text" xml:space="preserve">
-    <value>Market (Region)</value>
+    <value>Магазин (регион)</value>
   </data>
   <data name="Settings_RelaunchInfoBar.Title" xml:space="preserve">
-    <value>Restart required</value>
+    <value>Требуется перезапуск</value>
   </data>
   <data name="Settings_RelaunchInfoBar.Message" xml:space="preserve">
-    <value>Relaunch AppDepot to apply your language changes.</value>
+    <value>Перезапустите AppDepot, чтобы применить изменения языка.</value>
   </data>
   <data name="Settings_RelaunchButton.Content" xml:space="preserve">
-    <value>Relaunch</value>
+    <value>Перезапустить</value>
   </data>
   <data name="Settings_Architecture.Text" xml:space="preserve">
-    <value>Architecture</value>
+    <value>Архитектура</value>
   </data>
   <data name="Settings_ArchitectureDescription.Text" xml:space="preserve">
-    <value>Select your system architecture</value>
+    <value>Выберите архитектуру вашей системы</value>
   </data>
   <data name="Settings_Downloads.Text" xml:space="preserve">
-    <value>Downloads</value>
+    <value>Загрузки</value>
   </data>
   <data name="Settings_ParallelConnections.Header" xml:space="preserve">
-    <value>Parallel download connections</value>
+    <value>Параллельные подключения для загрузки</value>
   </data>
   <data name="Settings_ParallelConnectionsDescription.Text" xml:space="preserve">
-    <value>Using multiple connections may improve download speeds for large packages. If the server does not support segmented downloads, AppDepot will automatically use a single connection.</value>
+    <value>Несколько подключений могут ускорить загрузку больших пакетов. Если сервер не поддерживает сегментированную загрузку, AppDepot автоматически использует одно подключение.</value>
   </data>
   <data name="Settings_ParallelConnections_Auto" xml:space="preserve">
-    <value>Auto</value>
+    <value>Автоматически</value>
   </data>
   <data name="Settings_ParallelConnections_One" xml:space="preserve">
-    <value>1 connection</value>
+    <value>1 подключение</value>
   </data>
   <data name="Settings_ParallelConnections_Two" xml:space="preserve">
-    <value>2 connections</value>
+    <value>2 подключения</value>
   </data>
   <data name="Settings_ParallelConnections_Four" xml:space="preserve">
-    <value>4 connections</value>
+    <value>4 подключения</value>
   </data>
   <data name="Settings_ParallelConnections_Eight" xml:space="preserve">
-    <value>8 connections</value>
+    <value>8 подключений</value>
   </data>
   <data name="Settings_Network.Text" xml:space="preserve">
-    <value>Network</value>
+    <value>Сеть</value>
   </data>
   <data name="Settings_ProxyDescription.Text" xml:space="preserve">
-    <value>Choose how AppDepot connects to Microsoft package download servers.</value>
+    <value>Выберите, как AppDepot подключается к серверам загрузки пакетов Microsoft.</value>
   </data>
   <data name="Settings_ProxyMode.Header" xml:space="preserve">
-    <value>Proxy</value>
+    <value>Прокси</value>
   </data>
   <data name="Settings_ProxyMode_System" xml:space="preserve">
-    <value>Use system proxy</value>
+    <value>Использовать системный прокси</value>
   </data>
   <data name="Settings_ProxyMode_Direct" xml:space="preserve">
-    <value>Direct connection</value>
+    <value>Прямое подключение</value>
   </data>
   <data name="Settings_ProxyMode_Custom" xml:space="preserve">
-    <value>Custom proxy</value>
+    <value>Пользовательский прокси</value>
   </data>
   <data name="Settings_ProxyUri.Header" xml:space="preserve">
-    <value>Proxy address</value>
+    <value>Адрес прокси</value>
   </data>
   <data name="Settings_ProxyUri.PlaceholderText" xml:space="preserve">
     <value>http://127.0.0.1:7890</value>
   </data>
   <data name="Settings_ProxyInvalidUri" xml:space="preserve">
-    <value>The custom proxy address must be a valid HTTP or HTTPS URI.</value>
+    <value>Адрес пользовательского прокси должен быть допустимым URI HTTP или HTTPS.</value>
   </data>
   <data name="Settings_Reset.Text" xml:space="preserve">
-    <value>Reset</value>
+    <value>Сбросить</value>
   </data>
   <data name="Settings_ResetDescription.Text" xml:space="preserve">
-    <value>Reset AppDepot to default settings.</value>
+    <value>Сбросить AppDepot к настройкам по умолчанию.</value>
   </data>
   <data name="Settings_ResetButton.Content" xml:space="preserve">
-    <value>Reset app</value>
+    <value>Сбросить приложение</value>
   </data>
   <data name="Settings_ResetDialogTitle" xml:space="preserve">
-    <value>Reset app data?</value>
+    <value>Сбросить данные приложения?</value>
   </data>
   <data name="Settings_ResetDialogContent" xml:space="preserve">
-    <value>This will remove all downloaded files and cached download data, and restore language, region, and architecture to defaults. The app will restart automatically. This action cannot be undone.</value>
+    <value>Это удалит все загруженные файлы и кэшированные данные загрузок, а также вернёт язык, регион и архитектуру к значениям по умолчанию. Приложение перезапустится автоматически. Это действие нельзя отменить.</value>
   </data>
   <data name="Settings_ResetDialogPrimary" xml:space="preserve">
-    <value>Reset</value>
+    <value>Сбросить</value>
   </data>
   <data name="Settings_ResetDialogCancel" xml:space="preserve">
-    <value>Cancel</value>
+    <value>Отмена</value>
   </data>
   <data name="Settings_About.Text" xml:space="preserve">
-    <value>About this application</value>
+    <value>Об этом приложении</value>
   </data>
   <data name="Settings_AboutDescription.Text" xml:space="preserve">
-    <value>An open-source, privacy-oriented alternative client for the Microsoft Store to browse, download, install, and update Store apps.</value>
+    <value>Альтернативный клиент Microsoft Store с открытым исходным кодом, ориентированный на конфиденциальность, для просмотра, загрузки, установки и обновления приложений Магазина.</value>
   </data>
   <data name="SettingsPage_GitHubRepoLink.Content" xml:space="preserve">
-    <value>GitHub repository</value>
+    <value>Репозиторий GitHub</value>
   </data>
   <data name="SettingsPage_DiscordLink.Content" xml:space="preserve">
-    <value>Discord community</value>
+    <value>Сообщество Discord</value>
   </data>
   <data name="SettingsPage_LicenseLink.Content" xml:space="preserve">
-    <value>License</value>
+    <value>Лицензия</value>
   </data>
   <data name="Settings_DiagnosticsLogs.Text" xml:space="preserve">
-    <value>Diagnostics logs</value>
+    <value>Журналы диагностики</value>
   </data>
   <data name="Settings_DiagnosticsLogsDescription.Text" xml:space="preserve">
-    <value>Open the logs folder for troubleshooting.</value>
+    <value>Откройте папку журналов для устранения неполадок.</value>
   </data>
   <data name="Settings_DiagnosticsLogsButton.Content" xml:space="preserve">
-    <value>Open logs folder</value>
+    <value>Открыть папку журналов</value>
   </data>
   <data name="Settings_AppUpdates.Text" xml:space="preserve">
-    <value>Application updates</value>
+    <value>Обновления приложения</value>
   </data>
   <data name="Settings_AppUpdatesButton.Content" xml:space="preserve">
-    <value>Check for updates</value>
+    <value>Проверить обновления</value>
   </data>
   <data name="Settings_UpdaterConfirmTitle" xml:space="preserve">
-    <value>Update available</value>
+    <value>Доступно обновление</value>
   </data>
   <data name="Settings_UpdaterConfirmContent" xml:space="preserve">
-    <value>Version {0} is ready to install. The app will restart to apply the update.</value>
+    <value>Версия {0} готова к установке. Приложение будет перезапущено для применения обновления.</value>
   </data>
   <data name="Settings_UpdaterConfirmPrimary" xml:space="preserve">
-    <value>Install</value>
+    <value>Установить</value>
   </data>
   <data name="Settings_UpdaterAlreadyLatestTitle" xml:space="preserve">
-    <value>You're up to date</value>
+    <value>У вас последняя версия</value>
   </data>
   <data name="Settings_UpdaterAlreadyLatestContent" xml:space="preserve">
-    <value>latest version already installed.</value>
+    <value>последняя версия уже установлена.</value>
   </data>
   <data name="Settings_UpdaterErrorTitle" xml:space="preserve">
-    <value>Something went wrong</value>
+    <value>Что-то пошло не так</value>
   </data>
   <data name="Settings_UpdaterErrorContent" xml:space="preserve">
-    <value>The update could not be completed. {0}</value>
+    <value>Не удалось завершить обновление. {0}</value>
   </data>
   <data name="Settings_UpdaterDialogClose" xml:space="preserve">
-    <value>Close</value>
+    <value>Закрыть</value>
   </data>
   <data name="Settings_UpdaterDialogCancel" xml:space="preserve">
-    <value>Cancel</value>
+    <value>Отмена</value>
   </data>
   <data name="Settings_UpdaterCheckingTitle" xml:space="preserve">
-    <value>Checking for updates</value>
+    <value>Проверка обновлений</value>
   </data>
   <data name="Settings_UpdaterCheckingContent" xml:space="preserve">
-    <value>Looking for the latest version.</value>
+    <value>Поиск последней версии.</value>
   </data>
   <data name="Settings_UpdaterCheckCanceledContent" xml:space="preserve">
-    <value>Check canceled. Try again anytime.</value>
+    <value>Проверка отменена. Повторите попытку в любое время.</value>
   </data>
   <data name="Settings_UpdaterStartupCheckbox" xml:space="preserve">
-    <value>Check for updates on startup</value>
+    <value>Проверять обновления при запуске</value>
   </data>
   <data name="Settings_UpdaterProgressPercent" xml:space="preserve">
     <value>{0}%</value>
   </data>
   <data name="Settings_UpdaterInstallingTitle" xml:space="preserve">
-    <value>Installing update</value>
+    <value>Установка обновления</value>
   </data>
   <data name="CardView_Loading.Text" xml:space="preserve">
-    <value>Loading</value>
+    <value>Загрузка</value>
   </data>
   <data name="CardView_Filters.Text" xml:space="preserve">
-    <value>Filters</value>
+    <value>Фильтры</value>
   </data>
   <data name="CardView_ApplyBtn.Content" xml:space="preserve">
-    <value>Apply</value>
+    <value>Применить</value>
   </data>
   <data name="CardView_NoResults_Title.Text" xml:space="preserve">
-    <value>No results found</value>
+    <value>Ничего не найдено</value>
   </data>
   <data name="CardView_NoResults_Subtitle.Text" xml:space="preserve">
-    <value>Try different keywords or remove search filters</value>
+    <value>Попробуйте другие ключевые слова или снимите фильтры поиска</value>
   </data>
   <data name="CardView_Error_LoadFailed" xml:space="preserve">
-    <value>Failed to load cards: {0}</value>
+    <value>Не удалось загрузить карточки: {0}</value>
   </data>
   <data name="CardView_Error_OpenFailed" xml:space="preserve">
-    <value>Failed to open item: {0}</value>
+    <value>Не удалось открыть элемент: {0}</value>
   </data>
   <data name="Filter_Apps" xml:space="preserve">
-    <value>Apps</value>
+    <value>Приложения</value>
   </data>
   <data name="Filter_Games" xml:space="preserve">
-    <value>Games</value>
+    <value>Игры</value>
   </data>
   <data name="Filter_TopFree" xml:space="preserve">
-    <value>Top Free</value>
+    <value>Популярное бесплатное</value>
   </data>
   <data name="Filter_TopPaid" xml:space="preserve">
-    <value>Top Paid</value>
+    <value>Популярное платное</value>
   </data>
   <data name="Filter_TopTrending" xml:space="preserve">
-    <value>Top Trending</value>
+    <value>В тренде</value>
   </data>
   <data name="Filter_Specials" xml:space="preserve">
-    <value>Specials</value>
+    <value>Акции</value>
   </data>
   <data name="Filter_BestSelling" xml:space="preserve">
-    <value>Best Selling</value>
+    <value>Бестселлеры</value>
   </data>
   <data name="AdvancedSearch_Header.Text" xml:space="preserve">
-    <value>Advanced Search</value>
+    <value>Расширенный поиск</value>
   </data>
   <data name="AdvancedSearch_SearchHint.Text" xml:space="preserve">
-    <value>Search by URL, product ID, or package family name</value>
+    <value>Поиск по URL, идентификатору продукта или имени семейства пакетов</value>
   </data>
   <data name="AdvancedSearch_TypeUrl.Content" xml:space="preserve">
     <value>URL</value>
   </data>
   <data name="AdvancedSearch_TypeProductId.Content" xml:space="preserve">
-    <value>Product ID</value>
+    <value>Идентификатор продукта</value>
   </data>
   <data name="AdvancedSearch_TypePfn.Content" xml:space="preserve">
-    <value>Package Family Name</value>
+    <value>Имя семейства пакетов</value>
   </data>
   <data name="AdvancedSearch_SearchBtn.Text" xml:space="preserve">
-    <value>Search</value>
+    <value>Поиск</value>
   </data>
   <data name="AdvancedSearch_LookingUp.Text" xml:space="preserve">
-    <value>Looking up product</value>
+    <value>Поиск продукта</value>
   </data>
   <data name="AdvancedSearch_UrlCard_Title.Text" xml:space="preserve">
     <value>URL</value>
   </data>
   <data name="AdvancedSearch_UrlCard_Desc.Text" xml:space="preserve">
-    <value>Paste a Microsoft Store product URL to automatically extract and look up the product.</value>
+    <value>Вставьте URL продукта из Microsoft Store, чтобы автоматически извлечь и найти продукт.</value>
   </data>
   <data name="AdvancedSearch_UrlCard_Example.Text" xml:space="preserve">
-    <value>e.g. https://apps.microsoft.com/detail/9WZDNCRFHVJL</value>
+    <value>напр. https://apps.microsoft.com/detail/9WZDNCRFHVJL</value>
   </data>
   <data name="AdvancedSearch_ProductIdCard_Title.Text" xml:space="preserve">
-    <value>Product ID</value>
+    <value>Идентификатор продукта</value>
   </data>
   <data name="AdvancedSearch_ProductIdCard_Desc.Text" xml:space="preserve">
-    <value>Enter the product's alphanumeric store ID to navigate directly to its page.</value>
+    <value>Введите буквенно-цифровой идентификатор продукта в Магазине, чтобы перейти непосредственно на его страницу.</value>
   </data>
   <data name="AdvancedSearch_ProductIdCard_Example.Text" xml:space="preserve">
-    <value>e.g. 9WZDNCRFHVJL</value>
+    <value>напр. 9WZDNCRFHVJL</value>
   </data>
   <data name="AdvancedSearch_PfnCard_Title.Text" xml:space="preserve">
-    <value>Package Family Name</value>
+    <value>Имя семейства пакетов</value>
   </data>
   <data name="AdvancedSearch_PfnCard_Desc.Text" xml:space="preserve">
-    <value>Enter the app's package family name to look up its store page.</value>
+    <value>Введите имя семейства пакетов приложения, чтобы найти его страницу в Магазине.</value>
   </data>
   <data name="AdvancedSearch_PfnCard_Example.Text" xml:space="preserve">
-    <value>e.g. Microsoft.WindowsTerminal_8wekyb3d8bbwe</value>
+    <value>напр. Microsoft.WindowsTerminal_8wekyb3d8bbwe</value>
   </data>
   <data name="AdvancedSearch_Placeholder_Url" xml:space="preserve">
     <value>https://apps.microsoft.com/detail/...</value>
   </data>
   <data name="AdvancedSearch_Placeholder_ProductId" xml:space="preserve">
-    <value>e.g. 9WZDNCRFHVJL</value>
+    <value>напр. 9WZDNCRFHVJL</value>
   </data>
   <data name="AdvancedSearch_Placeholder_Pfn" xml:space="preserve">
-    <value>e.g. Microsoft.WindowsTerminal_8wekyb3d8bbwe</value>
+    <value>напр. Microsoft.WindowsTerminal_8wekyb3d8bbwe</value>
   </data>
   <data name="AdvancedSearch_Placeholder_Default" xml:space="preserve">
-    <value>Enter a value to search</value>
+    <value>Введите значение для поиска</value>
   </data>
   <data name="AdvancedSearch_Error_EmptyQuery" xml:space="preserve">
-    <value>Please enter a value to search.</value>
+    <value>Введите значение для поиска.</value>
   </data>
   <data name="AdvancedSearch_Error_InvalidUrl" xml:space="preserve">
-    <value>Could not extract a product ID from this URL. Make sure it is a valid Microsoft Store URL.</value>
+    <value>Не удалось извлечь идентификатор продукта из этого URL. Убедитесь, что это допустимый URL Microsoft Store.</value>
   </data>
   <data name="AdvancedSearch_Error_NoPfnResult" xml:space="preserve">
-    <value>No product found for this Package Family Name.</value>
+    <value>Продукт с таким именем семейства пакетов не найден.</value>
   </data>
   <data name="AdvancedSearch_Error_FailedLookup" xml:space="preserve">
-    <value>Failed to find product: {0}</value>
+    <value>Не удалось найти продукт: {0}</value>
   </data>
   <data name="AppPage_Loading.Text" xml:space="preserve">
-    <value>Loading</value>
+    <value>Загрузка</value>
   </data>
   <data name="AppPage_BypassFilters.Text" xml:space="preserve">
-    <value>Bypass Filters</value>
+    <value>Обойти фильтры</value>
   </data>
   <data name="AppPage_CheckUpdates.Text" xml:space="preserve">
-    <value>Check Updates</value>
+    <value>Проверить обновления</value>
   </data>
   <data name="AppPage_Screenshots.Text" xml:space="preserve">
-    <value>Screenshots</value>
+    <value>Снимки экрана</value>
   </data>
   <data name="AppPage_Description.Text" xml:space="preserve">
-    <value>Description</value>
+    <value>Описание</value>
   </data>
   <data name="AppPage_MoreDetails.Text" xml:space="preserve">
-    <value>More Details</value>
+    <value>Подробнее</value>
   </data>
   <data name="AppPage_AppSize.Text" xml:space="preserve">
-    <value>App Size:</value>
+    <value>Размер приложения:</value>
   </data>
   <data name="AppPage_Version.Text" xml:space="preserve">
-    <value>Version:</value>
+    <value>Версия:</value>
   </data>
   <data name="AppPage_LastUpdated.Text" xml:space="preserve">
-    <value>Last Updated:</value>
+    <value>Последнее обновление:</value>
   </data>
   <data name="AppPage_Error_LoadTitle" xml:space="preserve">
-    <value>Error loading app</value>
+    <value>Ошибка загрузки приложения</value>
   </data>
   <data name="AppPage_Error_LoadMessage" xml:space="preserve">
-    <value>Could not load app details: {0}</value>
+    <value>Не удалось загрузить сведения о приложении: {0}</value>
   </data>
   <data name="AppPage_Error_CheckUpdatesTitle" xml:space="preserve">
-    <value>Check Updates</value>
+    <value>Проверить обновления</value>
   </data>
   <data name="AppPage_Error_VersionCheckMsg" xml:space="preserve">
-    <value>Could not retrieve the latest version. The app may not be available or the check failed.</value>
+    <value>Не удалось получить последнюю версию. Возможно, приложение недоступно или проверка не удалась.</value>
   </data>
   <data name="AppPage_Error_UpdateCheckFailed" xml:space="preserve">
-    <value>Failed to check for updates: {0}</value>
+    <value>Не удалось проверить обновления: {0}</value>
   </data>
   <data name="AppPage_Error_OperationCanceled" xml:space="preserve">
-    <value>Operation canceled.</value>
+    <value>Операция отменена.</value>
   </data>
   <data name="AppPage_Error_NotSupportedTitle" xml:space="preserve">
-    <value>App not supported</value>
+    <value>Приложение не поддерживается</value>
   </data>
   <data name="AppPage_Error_NotSupportedMsg" xml:space="preserve">
-    <value>This app isn't supported. Try a different app or check again later.</value>
+    <value>Это приложение не поддерживается. Попробуйте другое приложение или повторите попытку позже.</value>
   </data>
   <data name="AppPage_Error_StoreQueryFailedTitle" xml:space="preserve">
-    <value>Couldn't reach the Store</value>
+    <value>Не удалось связаться с Магазином</value>
   </data>
   <data name="AppPage_Error_StoreQueryFailedMsg" xml:space="preserve">
-    <value>We couldn't retrieve this app's download details right now. Check your internet connection and try again.</value>
+    <value>Сейчас не удалось получить сведения о загрузке этого приложения. Проверьте подключение к интернету и повторите попытку.</value>
   </data>
   <data name="AppPage_Error_OsIncompatibleTitle" xml:space="preserve">
-    <value>App not supported</value>
+    <value>Приложение не поддерживается</value>
   </data>
   <data name="AppPage_Error_OsIncompatibleMsg" xml:space="preserve">
-    <value>This app requires a newer version of Windows than this device is running.</value>
+    <value>Для этого приложения требуется более новая версия Windows, чем установлена на этом устройстве.</value>
   </data>
   <data name="AppPage_Error_ArchIncompatibleTitle" xml:space="preserve">
-    <value>App not supported</value>
+    <value>Приложение не поддерживается</value>
   </data>
   <data name="AppPage_Error_ArchIncompatibleMsg" xml:space="preserve">
-    <value>This app doesn't offer a build compatible with your device's processor (CPU architecture).</value>
+    <value>Это приложение не предлагает сборку, совместимую с процессором вашего устройства (архитектурой ЦП).</value>
   </data>
   <data name="AppPage_Error_NoInstallerTitle" xml:space="preserve">
-    <value>App not available</value>
+    <value>Приложение недоступно</value>
   </data>
   <data name="AppPage_Error_NoInstallerMsg" xml:space="preserve">
-    <value>No installable package is published for this app right now. Check again later.</value>
+    <value>Сейчас для этого приложения не опубликован устанавливаемый пакет. Повторите попытку позже.</value>
   </data>
   <data name="AppPage_Error_DownloadInfoTitle" xml:space="preserve">
-    <value>Download unavailable</value>
+    <value>Загрузка недоступна</value>
   </data>
   <data name="AppPage_Error_DownloadInfoMsg" xml:space="preserve">
-    <value>We couldn't get a download link for this app right now. Try again later.</value>
+    <value>Сейчас не удалось получить ссылку для загрузки этого приложения. Повторите попытку позже.</value>
   </data>
   <data name="AppPage_Error_UnsupportedTypeTitle" xml:space="preserve">
-    <value>App not supported</value>
+    <value>Приложение не поддерживается</value>
   </data>
   <data name="AppPage_Error_UnsupportedTypeMsg" xml:space="preserve">
-    <value>This app uses an installer type that AppDepot doesn't support yet.</value>
+    <value>В этом приложении используется тип установщика, который AppDepot пока не поддерживает.</value>
   </data>
   <data name="AppPage_Error_FailedToInstall" xml:space="preserve">
-    <value>Failed to install.</value>
+    <value>Не удалось установить.</value>
   </data>
   <data name="AppPage_Error_UnableToOpenTitle" xml:space="preserve">
-    <value>Unable to open app</value>
+    <value>Не удалось открыть приложение</value>
   </data>
   <data name="AppPage_Error_NotInstalledPackaged" xml:space="preserve">
-    <value>This app package was not found in the Windows package manager. It may not be installed.</value>
+    <value>Этот пакет приложения не найден в диспетчере пакетов Windows. Возможно, он не установлен.</value>
   </data>
   <data name="AppPage_Error_NoAppEntries" xml:space="preserve">
-    <value>The app package is installed, but no launchable app entries were found.</value>
+    <value>Пакет приложения установлен, но запускаемые записи приложения не найдены.</value>
   </data>
   <data name="AppPage_Error_CantOpen" xml:space="preserve">
-    <value>The app couldn't be opened. Try reinstalling the app.</value>
+    <value>Не удалось открыть приложение. Попробуйте переустановить его.</value>
   </data>
   <data name="AppPage_Error_NotInstalledWin32" xml:space="preserve">
-    <value>This app was not found in the Windows uninstall registry. It may not be installed.</value>
+    <value>Это приложение не найдено в реестре удаления программ Windows. Возможно, оно не установлено.</value>
   </data>
   <data name="AppPage_Error_MissingLaunchTarget" xml:space="preserve">
-    <value>The app appears to be installed, but a launch target couldn't be found (Start Menu/DisplayIcon). The app may have been installed incorrectly.</value>
+    <value>Приложение, по-видимому, установлено, но не удалось найти цель запуска (меню "Пуск"/DisplayIcon). Возможно, приложение установлено неправильно.</value>
   </data>
   <data name="AppPage_Error_MissingLaunchFile" xml:space="preserve">
-    <value>The app appears to be installed, but its launch file couldn't be found on disk. The app may have been moved or installed incorrectly.</value>
+    <value>Приложение, по-видимому, установлено, но не удалось найти его файл запуска на диске. Возможно, приложение было перемещено или установлено неправильно.</value>
   </data>
   <data name="AppPage_Error_InstalledVersion" xml:space="preserve">
     <value>
 
-Installed version: {0}</value>
+Установленная версия: {0}</value>
   </data>
   <data name="AppPage_Error_InstallerMissingTitle" xml:space="preserve">
-    <value>Installer missing</value>
+    <value>Установщик отсутствует</value>
   </data>
   <data name="AppPage_Error_InstallerMissingMsg" xml:space="preserve">
-    <value>The unpackaged installer (EXE/MSI) could not be found on disk.</value>
+    <value>Не удалось найти неупакованный установщик (EXE/MSI) на диске.</value>
   </data>
   <data name="AppPage_Manual_Install_Title" xml:space="preserve">
-    <value>Manual installation required</value>
+    <value>Требуется установка вручную</value>
   </data>
   <data name="AppPage_Manual_Install_Msg" xml:space="preserve">
-    <value>This app uses an unpackaged installer (EXE/MSI). It will open now and may require additional steps to finish installing.</value>
+    <value>В этом приложении используется неупакованный установщик (EXE/MSI). Он откроется сейчас, и для завершения установки могут потребоваться дополнительные действия.</value>
   </data>
   <data name="AppPage_Btn_OpenInstaller" xml:space="preserve">
-    <value>Open installer</value>
+    <value>Открыть установщик</value>
   </data>
   <data name="AppPage_Error_UnableToOpenInstallerTitle" xml:space="preserve">
-    <value>Unable to open installer</value>
+    <value>Не удалось открыть установщик</value>
   </data>
   <data name="Common_Cancel" xml:space="preserve">
-    <value>Cancel</value>
+    <value>Отмена</value>
   </data>
   <data name="Common_NoInternetConnectionTitle" xml:space="preserve">
-    <value>No internet connection</value>
+    <value>Нет подключения к интернету</value>
   </data>
   <data name="Common_NoInternetConnectionMessage" xml:space="preserve">
-    <value>Check your network settings and try again.</value>
+    <value>Проверьте параметры сети и повторите попытку.</value>
   </data>
   <data name="Common_ProgressPercent" xml:space="preserve">
     <value>{0}%</value>
   </data>
   <data name="Status_Pending" xml:space="preserve">
-    <value>Pending</value>
+    <value>Ожидание</value>
   </data>
   <data name="Status_Downloading" xml:space="preserve">
-    <value>Downloading</value>
+    <value>Загрузка</value>
   </data>
   <data name="Status_Installing" xml:space="preserve">
-    <value>Installing</value>
+    <value>Установка</value>
   </data>
   <data name="Status_Cancelling" xml:space="preserve">
-    <value>Cancelling</value>
+    <value>Отмена</value>
   </data>
   <data name="Status_Failed" xml:space="preserve">
-    <value>Failed</value>
+    <value>Сбой</value>
   </data>
   <data name="Status_Cancelled" xml:space="preserve">
-    <value>Cancelled</value>
+    <value>Отменено</value>
   </data>
   <data name="Status_Completed" xml:space="preserve">
-    <value>Completed</value>
+    <value>Завершено</value>
   </data>
   <data name="Status_Unknown" xml:space="preserve">
-    <value>Unknown</value>
+    <value>Неизвестно</value>
   </data>
   <data name="Status_Updated" xml:space="preserve">
-    <value>Updated</value>
+    <value>Обновлено</value>
   </data>
   <data name="Download_File" xml:space="preserve">
-    <value>file</value>
+    <value>файл</value>
   </data>
   <data name="Download_Files" xml:space="preserve">
-    <value>files</value>
+    <value>файлов</value>
   </data>
   <data name="Download_Status_DownloadingFiles" xml:space="preserve">
-    <value>Downloading ({0}/{1}) {2}</value>
+    <value>Загрузка ({0}/{1}) {2}</value>
   </data>
   <data name="Download_Status_Retry" xml:space="preserve">
-    <value>Retry ({0}/{1})</value>
+    <value>Повтор ({0}/{1})</value>
   </data>
   <data name="Download_Status_NoProgress" xml:space="preserve">
-    <value>No progress detected. Restarting...</value>
+    <value>Прогресс не обнаружен. Перезапуск...</value>
   </data>
   <data name="Download_Status_Stalled" xml:space="preserve">
-    <value>Error: Download stalled and exhausted retries.</value>
+    <value>Ошибка: загрузка остановилась, попытки исчерпаны.</value>
   </data>
   <data name="Download_Status_FailedRetries" xml:space="preserve">
-    <value>Error: Download failed after retries.</value>
+    <value>Ошибка: загрузка не удалась после нескольких попыток.</value>
   </data>
   <data name="Download_Status_Canceled" xml:space="preserve">
-    <value>Download canceled.</value>
+    <value>Загрузка отменена.</value>
   </data>
   <data name="Download_Status_Completed" xml:space="preserve">
-    <value>Download completed.</value>
+    <value>Загрузка завершена.</value>
   </data>
   <data name="Download_Status_MissingPackage" xml:space="preserve">
-    <value>Install failed: main package missing.</value>
+    <value>Не удалось установить: отсутствует основной пакет.</value>
   </data>
   <data name="Install_Error_ConflictingVersion" xml:space="preserve">
-    <value>A newer or the same version is already installed.</value>
+    <value>Уже установлена более новая или такая же версия.</value>
   </data>
   <data name="Install_Error_DeploymentInProgress" xml:space="preserve">
-    <value>Another installation is in progress. Wait for it to finish and try again.</value>
+    <value>Выполняется другая установка. Дождитесь её завершения и повторите попытку.</value>
   </data>
   <data name="Install_Error_InvalidPackage" xml:space="preserve">
-    <value>Invalid or unsupported package. Ensure the package and dependencies are supported for your system.</value>
+    <value>Недопустимый или неподдерживаемый пакет. Убедитесь, что пакет и зависимости поддерживаются вашей системой.</value>
   </data>
   <data name="Install_Error_PackageNotFound" xml:space="preserve">
-    <value>Package not found. Check the selected/downloaded file path.</value>
+    <value>Пакет не найден. Проверьте путь к выбранному или загруженному файлу.</value>
   </data>
   <data name="Install_Error_DeploymentFailure" xml:space="preserve">
-    <value>Windows deployment failed. {0}</value>
+    <value>Сбой развёртывания Windows. {0}</value>
   </data>
   <data name="Install_Error_AdminRequired" xml:space="preserve">
-    <value>This package includes a packaged service and must be installed with administrator privileges. Relaunch the app as administrator and try again.</value>
+    <value>Этот пакет включает упакованную службу и должен устанавливаться с правами администратора. Перезапустите приложение от имени администратора и повторите попытку.</value>
   </data>
   <data name="Install_Error_GenericDeployment" xml:space="preserve">
-    <value>Windows deployment error (0x{0:X8}). {1}</value>
+    <value>Ошибка развёртывания Windows (0x{0:X8}). {1}</value>
   </data>
   <data name="Install_Error_PackageCorrupt" xml:space="preserve">
-    <value>The package file is corrupt or incomplete. Try re-downloading it.</value>
+    <value>Файл пакета повреждён или неполный. Попробуйте загрузить его заново.</value>
   </data>
   <data name="Install_Error_MissingDependency" xml:space="preserve">
-    <value>A required component or dependency is missing. Try installing the app from the Microsoft Store instead.</value>
+    <value>Отсутствует необходимый компонент или зависимость. Вместо этого попробуйте установить приложение из Microsoft Store.</value>
   </data>
   <data name="Install_Error_InvalidManifest" xml:space="preserve">
-    <value>The package manifest (AppxManifest.xml) is invalid or malformed.</value>
+    <value>Манифест пакета (AppxManifest.xml) недопустим или повреждён.</value>
   </data>
   <data name="Install_Error_UntrustedRoot" xml:space="preserve">
-    <value>The package signature root certificate is not trusted by this system.</value>
+    <value>Корневой сертификат подписи пакета не является доверенным для этой системы.</value>
   </data>
   <data name="Install_Error_SignatureInvalid" xml:space="preserve">
-    <value>The package signature is invalid or untrusted.</value>
+    <value>Подпись пакета недопустима или не является доверенной.</value>
   </data>
   <data name="Install_Error_SignatureVerificationHint" xml:space="preserve">
-    <value>Signature verification failed. Try enabling the "Remove signature verification" option and try again.</value>
+    <value>Не удалось проверить подпись. Попробуйте включить параметр "Удалить проверку подписи" и повторите попытку.</value>
   </data>
   <data name="Install_Error_NotSigned" xml:space="preserve">
-    <value>The package is not digitally signed.</value>
+    <value>Пакет не подписан цифровой подписью.</value>
   </data>
   <data name="Install_Error_NotSupported" xml:space="preserve">
-    <value>This operation is not supported on your system.</value>
+    <value>Эта операция не поддерживается в вашей системе.</value>
   </data>
   <data name="Install_Error_AccessDenied" xml:space="preserve">
-    <value>Failed: Access denied. Try running as administrator or ensure sideloading policy allows app packages. {0}</value>
+    <value>Сбой: доступ запрещён. Попробуйте запустить от имени администратора или убедитесь, что политика нестрогой загрузки разрешает пакеты приложений. {0}</value>
   </data>
   <data name="Install_Error_Generic" xml:space="preserve">
-    <value>Failed: {0}</value>
+    <value>Сбой: {0}</value>
   </data>
   <data name="Install_Btn_ForceInstall" xml:space="preserve">
-    <value>Force install</value>
+    <value>Принудительная установка</value>
   </data>
   <data name="Install_Btn_RunAsAdmin" xml:space="preserve">
-    <value>Run as administrator</value>
+    <value>Запуск от имени администратора</value>
   </data>
   <data name="Common_OK" xml:space="preserve">
     <value>OK</value>
   </data>
   <data name="DownloadsPage_Header.Text" xml:space="preserve">
-    <value>Downloads</value>
+    <value>Загрузки</value>
   </data>
   <data name="DownloadsPage_OpenFolder.Content" xml:space="preserve">
-    <value>Open folder</value>
+    <value>Открыть папку</value>
   </data>
   <data name="DownloadsPage_Delete.Text" xml:space="preserve">
-    <value>Delete</value>
+    <value>Удалить</value>
   </data>
   <data name="DownloadsPage_CancelBtn.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Cancel download</value>
+    <value>Отменить загрузку</value>
   </data>
   <data name="Download_Status_Fetching" xml:space="preserve">
-    <value>Fetching download URLs</value>
+    <value>Получение URL-адресов загрузки</value>
   </data>
   <data name="Download_Status_Downloading" xml:space="preserve">
-    <value>Downloading</value>
+    <value>Загрузка</value>
   </data>
   <data name="Download_Status_Installing" xml:space="preserve">
-    <value>Installing</value>
+    <value>Установка</value>
   </data>
   <data name="Download_Status_Cancelling" xml:space="preserve">
-    <value>Cancelling</value>
+    <value>Отмена</value>
   </data>
   <data name="InstallationsPage_Header.Text" xml:space="preserve">
-    <value>Install package</value>
+    <value>Установить пакет</value>
   </data>
   <data name="InstallationsPage_Installing.Text" xml:space="preserve">
-    <value>Installing...</value>
+    <value>Установка...</value>
   </data>
   <data name="InstallationsPage_FileText.PlaceholderText" xml:space="preserve">
-    <value>No file selected</value>
+    <value>Файл не выбран</value>
   </data>
   <data name="InstallationsPage_InstallBtn.Content" xml:space="preserve">
-    <value>Install</value>
+    <value>Установить</value>
   </data>
   <data name="InstallationsPage_InstallLabel" xml:space="preserve">
-    <value>Install</value>
+    <value>Установить</value>
   </data>
   <data name="InstallationsPage_DropZone.Text" xml:space="preserve">
-    <value>Select a package or drag it here</value>
+    <value>Выберите пакет или перетащите его сюда</value>
   </data>
   <data name="InstallationsPage_FilePicker_Title" xml:space="preserve">
-    <value>Select an app package</value>
+    <value>Выберите пакет приложения</value>
   </data>
   <data name="InstallationsPage_DragCaption" xml:space="preserve">
-    <value>Drop to select package</value>
+    <value>Отпустите, чтобы выбрать пакет</value>
   </data>
   <data name="Install_Status_Installing" xml:space="preserve">
-    <value>Installing</value>
+    <value>Установка</value>
   </data>
   <data name="Install_Dialog_Title" xml:space="preserve">
-    <value>Installation failed</value>
+    <value>Не удалось установить</value>
   </data>
   <data name="InstallationsPage_FilePicker_Error" xml:space="preserve">
-    <value>File picker error</value>
+    <value>Ошибка выбора файла</value>
   </data>
   <data name="InstallationsPage_Filter_AppPackages" xml:space="preserve">
-    <value>App packages (*.msix;*.appx;*.msixbundle;*.appxbundle)</value>
+    <value>Пакеты приложений (*.msix;*.appx;*.msixbundle;*.appxbundle)</value>
   </data>
   <data name="InstallationsPage_Filter_AllFiles" xml:space="preserve">
-    <value>All files (*.*)</value>
+    <value>Все файлы (*.*)</value>
   </data>
   <data name="UpdatesPage_Header.Text" xml:space="preserve">
-    <value>Updates</value>
+    <value>Обновления</value>
   </data>
   <data name="UpdatesPage_Stop.Text" xml:space="preserve">
-    <value>Stop</value>
+    <value>Остановить</value>
   </data>
   <data name="UpdatesPage_SelectAll.Content" xml:space="preserve">
-    <value>Select all</value>
+    <value>Выбрать все</value>
   </data>
   <data name="UpdatesPage_NoUpdates.Text" xml:space="preserve">
-    <value>No new updates</value>
+    <value>Нет новых обновлений</value>
   </data>
   <data name="UpdatesPage_Completed.Text" xml:space="preserve">
-    <value>Completed</value>
+    <value>Завершено</value>
   </data>
   <data name="UpdatesPage_VersionSeparator.Text" xml:space="preserve">
     <value>→</value>
   </data>
   <data name="UpdatesPage_CancelBtn.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Cancel update</value>
+    <value>Отменить обновление</value>
   </data>
   <data name="Updates_ButtonCheck" xml:space="preserve">
-    <value>Check for updates</value>
+    <value>Проверить обновления</value>
   </data>
   <data name="Updates_ButtonChecking" xml:space="preserve">
-    <value>Checking...</value>
+    <value>Проверка...</value>
   </data>
   <data name="Updates_ButtonUpdate" xml:space="preserve">
-    <value>Update selected ({0})</value>
+    <value>Обновить выбранные ({0})</value>
   </data>
   <data name="Updates_CheckingBase" xml:space="preserve">
-    <value>Checking</value>
+    <value>Проверка</value>
   </data>
   <data name="Updates_CheckingProgress" xml:space="preserve">
-    <value>Checking ({0}/{1})</value>
+    <value>Проверка ({0}/{1})</value>
   </data>
   <data name="Search_Filter_AllDepartments" xml:space="preserve">
-    <value>All departments</value>
+    <value>Все разделы</value>
   </data>
   <data name="Search_Filter_Fonts" xml:space="preserve">
-    <value>Fonts</value>
+    <value>Шрифты</value>
   </data>
   <data name="Search_Filter_Themes" xml:space="preserve">
-    <value>Themes</value>
+    <value>Темы</value>
   </data>
   <data name="Search_Filter_AllTypes" xml:space="preserve">
-    <value>All Types</value>
+    <value>Все типы</value>
   </data>
   <data name="Search_Filter_Free" xml:space="preserve">
-    <value>Free</value>
+    <value>Бесплатные</value>
   </data>
   <data name="Search_Filter_Paid" xml:space="preserve">
-    <value>Paid</value>
+    <value>Платные</value>
   </data>
   <data name="BundlesPage_Loading.Text" xml:space="preserve">
-    <value>Loading...</value>
+    <value>Загрузка...</value>
   </data>
   <data name="BundlesPage_Error.Text" xml:space="preserve">
-    <value>An Unexpected Error Occured!</value>
+    <value>Произошла непредвиденная ошибка!</value>
   </data>
   <data name="BundlesPage_InBundle.Text" xml:space="preserve">
-    <value>In this bundle</value>
+    <value>В этом наборе</value>
   </data>
   <data name="AppPage_StopBtn.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Stop</value>
+    <value>Остановить</value>
   </data>
   <data name="AppPage_MoreOptionsBtn.ToolTipService.ToolTip" xml:space="preserve">
-    <value>More options</value>
+    <value>Дополнительные параметры</value>
   </data>
   <data name="AppPage_ShareBtn.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Share</value>
+    <value>Поделиться</value>
   </data>
   <data name="AppPage_Share_CopyLink.Text" xml:space="preserve">
-    <value>Copy link</value>
+    <value>Копировать ссылку</value>
   </data>
   <data name="AppPage_Share_CopyProductId.Text" xml:space="preserve">
-    <value>Copy product ID</value>
+    <value>Копировать идентификатор продукта</value>
   </data>
   <data name="AppPage_Share_CopyPackageFamilyName.Text" xml:space="preserve">
-    <value>Copy PFN</value>
+    <value>Копировать PFN</value>
   </data>
   <data name="AppPage_LightboxClose.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Close</value>
+    <value>Закрыть</value>
   </data>
   <data name="AppPage_LightboxPrev.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Previous</value>
+    <value>Назад</value>
   </data>
   <data name="AppPage_LightboxNext.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Next</value>
+    <value>Вперёд</value>
   </data>
   <data name="AppPage_ScreenshotsPrev.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Previous screenshot</value>
+    <value>Предыдущий снимок экрана</value>
   </data>
   <data name="AppPage_ScreenshotsNext.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Next screenshot</value>
+    <value>Следующий снимок экрана</value>
   </data>
   <data name="AppPage_LightboxCounter_Format" xml:space="preserve">
     <value>{0} / {1}</value>
   </data>
   <data name="DownloadsPage_MoreOptionsBtn.ToolTipService.ToolTip" xml:space="preserve">
-    <value>More options</value>
+    <value>Дополнительные параметры</value>
   </data>
   <data name="AppPage_Btn_Install" xml:space="preserve">
-    <value>Install</value>
+    <value>Установить</value>
   </data>
   <data name="AppPage_Btn_Update" xml:space="preserve">
-    <value>Update</value>
+    <value>Обновить</value>
   </data>
   <data name="AppPage_Btn_Open" xml:space="preserve">
-    <value>Open</value>
+    <value>Открыть</value>
   </data>
   <data name="AppPage_Btn_Retry" xml:space="preserve">
-    <value>Retry</value>
+    <value>Повторить</value>
   </data>
   <data name="AppPage_Btn_Download" xml:space="preserve">
-    <value>Download</value>
+    <value>Загрузить</value>
   </data>
   <data name="InstallationsPage_ClearBtn.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Clear</value>
+    <value>Очистить</value>
   </data>
   <data name="Settings_LicenseDialogTitle.Text" xml:space="preserve">
-    <value>License</value>
+    <value>Лицензия</value>
   </data>
   <data name="Settings_LicenseDialogClose.Content" xml:space="preserve">
-    <value>Close</value>
+    <value>Закрыть</value>
   </data>
   <data name="Sideloading_DisabledTitle" xml:space="preserve">
-    <value>Sideloading is disabled</value>
+    <value>Нестрогая загрузка отключена</value>
   </data>
   <data name="Sideloading_DisabledMessage" xml:space="preserve">
-    <value>Sideloading is currently disabled on this device. You won't be able to install app packages until it's enabled.
+    <value>Нестрогая загрузка сейчас отключена на этом устройстве. Вы не сможете устанавливать пакеты приложений, пока она не будет включена.
 
-You can enable it by turning on Developer Mode in Windows Settings.</value>
+Включить её можно, активировав режим разработчика в параметрах Windows.</value>
   </data>
   <data name="Sideloading_EnableButton" xml:space="preserve">
-    <value>Open Settings</value>
+    <value>Открыть параметры</value>
   </data>
   <data name="Sideloading_CancelButton" xml:space="preserve">
-    <value>Not now</value>
+    <value>Не сейчас</value>
   </data>
   <data name="InstallationsPage_MoreOptionsBtn.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Advanced options</value>
+    <value>Дополнительные параметры</value>
   </data>
   <data name="InstallationsPage_AdvancedInstall.Text" xml:space="preserve">
-    <value>Unpackaged Mode</value>
+    <value>Неупакованный режим</value>
   </data>
   <data name="InstallationsPage_CustomFolder.PlaceholderText" xml:space="preserve">
-    <value>Choose install folder</value>
+    <value>Выбрать папку установки</value>
   </data>
   <data name="InstallationsPage_BrowseFolderBtn.Content" xml:space="preserve">
-    <value>Browse</value>
+    <value>Обзор</value>
   </data>
   <data name="InstallationsPage_RemoveSignature.Content" xml:space="preserve">
-    <value>Remove signature verification</value>
+    <value>Удалить проверку подписи</value>
   </data>
   <data name="InstallationsPage_BypassRegistration.Content" xml:space="preserve">
-    <value>Bypass package registration</value>
+    <value>Обойти регистрацию пакета</value>
   </data>
   <data name="InstallationsPage_CreateStartMenuShortcut.Content" xml:space="preserve">
-    <value>Create Start Menu shortcut</value>
+    <value>Создать ярлык в меню "Пуск"</value>
   </data>
   <data name="InstallationsPage_CreateDesktopShortcut.Content" xml:space="preserve">
-    <value>Create Desktop shortcut</value>
+    <value>Создать ярлык на рабочем столе</value>
   </data>
   <data name="InstallationsPage_SelectDependenciesBtn.Content" xml:space="preserve">
-    <value>Select dependencies</value>
+    <value>Выбрать зависимости</value>
   </data>
   <data name="InstallationsPage_FolderPicker_Title" xml:space="preserve">
-    <value>Choose the install location</value>
+    <value>Выберите папку установки</value>
   </data>
   <data name="InstallationsPage_DependencyPicker_Title" xml:space="preserve">
-    <value>Select dependency packages</value>
+    <value>Выберите пакеты зависимостей</value>
   </data>
   <data name="InstallationsPage_Dependencies_Count" xml:space="preserve">
-    <value>{0} selected</value>
+    <value>Выбрано: {0}</value>
   </data>
   <data name="Install_Error_NoFolderSelected" xml:space="preserve">
-    <value>Choose an install folder before installing.</value>
+    <value>Перед установкой выберите папку установки.</value>
   </data>
   <data name="Install_Error_FolderExists" xml:space="preserve">
-    <value>A folder named "{0}" already exists in the chosen location. Choose another location or remove the existing folder.</value>
+    <value>В выбранном расположении уже существует папка с именем "{0}". Выберите другое расположение или удалите существующую папку.</value>
   </data>
   <data name="Install_Error_NoInstallableArch" xml:space="preserve">
-    <value>This bundle has no package compatible with your selected architecture.</value>
+    <value>В этом наборе нет пакета, совместимого с выбранной архитектурой.</value>
   </data>
   <data name="Install_Error_ManifestMissing" xml:space="preserve">
-    <value>Could not find AppxManifest.xml in the package.</value>
+    <value>Не удалось найти AppxManifest.xml в пакете.</value>
   </data>
   <data name="Install_Error_ExecutableNotFound" xml:space="preserve">
-    <value>Unable to find executable. This app might not be able to run unregistered.</value>
+    <value>Не удалось найти исполняемый файл. Возможно, это приложение не сможет работать без регистрации.</value>
   </data>
   <data name="DeveloperMode_DisabledTitle" xml:space="preserve">
-    <value>Developer Mode is required</value>
+    <value>Требуется режим разработчика</value>
   </data>
   <data name="DeveloperMode_DisabledMessage" xml:space="preserve">
-    <value>Custom (loose) install registers an app from unpackaged files, which requires Developer Mode.
+    <value>Пользовательская (неупакованная) установка регистрирует приложение из неупакованных файлов, для чего требуется режим разработчика.
 
-You can enable it by turning on Developer Mode in Windows Settings.</value>
+Включить его можно, активировав режим разработчика в параметрах Windows.</value>
   </data>
   <data name="DeveloperMode_EnableButton" xml:space="preserve">
-    <value>Open Settings</value>
+    <value>Открыть параметры</value>
   </data>
   <data name="DeveloperMode_CancelButton" xml:space="preserve">
-    <value>Not now</value>
+    <value>Не сейчас</value>
   </data>
   <data name="InstallationsPage_ClearFolderBtn.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Clear install location</value>
+    <value>Очистить папку установки</value>
   </data>
   <data name="InstallationsPage_ClearDepsBtn.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Clear selected dependencies</value>
+    <value>Очистить выбранные зависимости</value>
   </data>
   <data name="Updates_FailedBanner_Title.Text" xml:space="preserve">
-    <value>Some updates failed</value>
+    <value>Некоторые обновления не удались</value>
   </data>
   <data name="Install_Error_AppInUse" xml:space="preserve">
-    <value>The App couldn't be installed because it's resources are currently being used. Close them and try again.</value>
+    <value>Не удалось установить приложение, так как его ресурсы сейчас используются. Закройте их и повторите попытку.</value>
   </data>
   <data name="Install_Error_AppInUse_Processes" xml:space="preserve">
-    <value>The following apps need to be closed before the app can be installed:</value>
+    <value>Перед установкой приложения необходимо закрыть следующие приложения:</value>
   </data>
   <data name="Install_Btn_Retry" xml:space="preserve">
-    <value>Retry</value>
+    <value>Повторить</value>
   </data>
   <data name="Install_Btn_DeferredInstall" xml:space="preserve">
-    <value>Deferred Install</value>
+    <value>Отложенная установка</value>
   </data>
   <data name="Install_Error_DeferredInstallDescription" xml:space="preserve">
-    <value>Deferred Install will prepare the app now, and it will be installed automatically when its resources are released or the system is restarted.</value>
+    <value>Отложенная установка подготовит приложение сейчас, и оно будет установлено автоматически, когда его ресурсы будут освобождены или система будет перезапущена.</value>
   </data>
   <data name="Install_Error_DependencyProvidedButNotUsed" xml:space="preserve">
-    <value>One or more dependencies provided were not required by the main package. You can try installing only the main package.</value>
+    <value>Одна или несколько предоставленных зависимостей не требуются основным пакетом. Можно попробовать установить только основной пакет.</value>
   </data>
   <data name="Install_Btn_InstallDependenciesSeparately" xml:space="preserve">
-    <value>Install dependencies separately</value>
+    <value>Установить зависимости отдельно</value>
   </data>
   <data name="AppPage_InstallDependenciesSeparately.Text" xml:space="preserve">
-    <value>Separate Install</value>
+    <value>Отдельная установка</value>
   </data>
   <data name="InstallationsPage_InstallDependenciesSeparately.Content" xml:space="preserve">
-    <value>Install dependencies separately</value>
+    <value>Установить зависимости отдельно</value>
   </data>
   <data name="Program_AlreadyRunningTitle" xml:space="preserve">
     <value>AppDepot</value>
   </data>
   <data name="Program_AlreadyRunningMessage" xml:space="preserve">
-    <value>Another instance of AppDepot is already running.
-Please close it before launching this one.</value>
+    <value>Другой экземпляр AppDepot уже запущен.
+Закройте его перед запуском этого.</value>
   </data>
-  <data name="AI_Title.Text" xml:space="preserve"><value>AI translation</value></data>
-  <data name="AI_Privacy.Text" xml:space="preserve"><value>When you click Translate, the app description is sent to your configured service. Your provider may charge for requests. The original text is preserved.</value></data>
-  <data name="AI_Endpoint.Header" xml:space="preserve"><value>API base URL (OpenAI-compatible)</value></data>
-  <data name="AI_Model.Header" xml:space="preserve"><value>Model</value></data>
-  <data name="AI_Key.Header" xml:space="preserve"><value>API key (stored securely for this Windows user)</value></data>
-  <data name="AI_Prompt.Header" xml:space="preserve"><value>Translation instructions (optional)</value></data>
-  <data name="AI_Save.Content" xml:space="preserve"><value>Save translation settings</value></data>
-  <data name="AI_Saved" xml:space="preserve"><value>Translation settings saved.</value></data>
-  <data name="AI_InvalidSettings" xml:space="preserve"><value>Enter a valid API base URL and model. Use HTTPS, or HTTP for a local server.</value></data>
-  <data name="AI_Translate.Content" xml:space="preserve"><value>Translate description</value></data>
-  <data name="AI_Original.Content" xml:space="preserve"><value>Show original</value></data>
-  <data name="AI_Cancel.Content" xml:space="preserve"><value>Cancel translation</value></data>
-  <data name="AI_Working" xml:space="preserve"><value>Translating…</value></data>
-  <data name="AI_Failed" xml:space="preserve"><value>Translation failed. Check your endpoint, model, API key and network, then try again.</value></data>
-  <data name="AI_NotConfigured" xml:space="preserve"><value>Configure AI translation in Settings first.</value></data>
-  <data name="AI_TooLong" xml:space="preserve"><value>This description is too long to translate in one request.</value></data>
+  <data name="AI_Title.Text" xml:space="preserve"><value>Перевод с помощью ИИ</value></data>
+  <data name="AI_Privacy.Text" xml:space="preserve"><value>При нажатии кнопки "Перевести" описание приложения отправляется в настроенную службу. Ваш поставщик может взимать плату за запросы. Исходный текст сохраняется.</value></data>
+  <data name="AI_Endpoint.Header" xml:space="preserve"><value>Базовый URL API (совместимый с OpenAI)</value></data>
+  <data name="AI_Model.Header" xml:space="preserve"><value>Модель</value></data>
+  <data name="AI_Key.Header" xml:space="preserve"><value>Ключ API (хранится безопасно для этого пользователя Windows)</value></data>
+  <data name="AI_Prompt.Header" xml:space="preserve"><value>Инструкции по переводу (необязательно)</value></data>
+  <data name="AI_Save.Content" xml:space="preserve"><value>Сохранить параметры перевода</value></data>
+  <data name="AI_Saved" xml:space="preserve"><value>Параметры перевода сохранены.</value></data>
+  <data name="AI_InvalidSettings" xml:space="preserve"><value>Введите допустимый базовый URL API и модель. Используйте HTTPS или HTTP для локального сервера.</value></data>
+  <data name="AI_Translate.Content" xml:space="preserve"><value>Перевести описание</value></data>
+  <data name="AI_Original.Content" xml:space="preserve"><value>Показать оригинал</value></data>
+  <data name="AI_Cancel.Content" xml:space="preserve"><value>Отменить перевод</value></data>
+  <data name="AI_Working" xml:space="preserve"><value>Перевод…</value></data>
+  <data name="AI_Failed" xml:space="preserve"><value>Не удалось выполнить перевод. Проверьте конечную точку, модель, ключ API и сеть, затем повторите попытку.</value></data>
+  <data name="AI_NotConfigured" xml:space="preserve"><value>Сначала настройте перевод с помощью ИИ в параметрах.</value></data>
+  <data name="AI_TooLong" xml:space="preserve"><value>Это описание слишком длинное для перевода в одном запросе.</value></data>
 </root>

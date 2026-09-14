@@ -23,7 +23,9 @@ public static class ResourceExtensions
     {
         try
         {
-            return _resourceMap.GetValue(resourceKey, GetContext())?.ValueAsString ?? string.Empty;
+            // RESW property names (Shell_Main.Content) become PRI paths
+            // (Shell_Main/Content). Apply the conversion for all code callers.
+            return _resourceMap.GetValue(resourceKey.Replace('.', '/'), GetContext())?.ValueAsString ?? string.Empty;
         }
         catch
         {
@@ -62,12 +64,12 @@ public static class ResourceExtensions
     {
         var context = _resourceManager.CreateResourceContext();
         context.QualifierValues["Language"] = language;
-        return _resourceMap.GetValue(resourceKey, context)?.ValueAsString ?? string.Empty;
+        return _resourceMap.GetValue(resourceKey.Replace('.', '/'), context)?.ValueAsString ?? string.Empty;
     }
 
     private static ResourceContext GetContext()
     {
-        var language = NormalizeLanguageTag(ApplicationLanguages.PrimaryLanguageOverride);
+        var language = ApplicationLanguages.PrimaryLanguageOverride;
 
         lock (_contextLock)
         {
@@ -85,22 +87,4 @@ public static class ResourceExtensions
         }
     }
 
-    private static string? NormalizeLanguageTag(string? language)
-    {
-        if (string.IsNullOrWhiteSpace(language))
-            return null;
-
-        // Keep the tag shape used by the generated PRI resource folders. MRT's
-        // language qualifier is case-insensitive in principle, but using the
-        // exact shipped tag avoids falling back to the default candidate on
-        // unpackaged WinUI apps.
-        return language.ToLowerInvariant() switch
-        {
-            "zh-cn" => "zh-cn",
-            "ko-kr" => "ko-kr",
-            "hu-hu" => "hu-HU",
-            "en-us" => "en-us",
-            _ => language,
-        };
-    }
 }

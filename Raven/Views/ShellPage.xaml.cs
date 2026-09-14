@@ -31,6 +31,10 @@ public sealed partial class ShellPage : Page
         _logger = logger;
         InitializeComponent();
 
+        var appIconService = App.GetService<AppIconService>();
+        UpdateAppIcon(appIconService.CurrentIconPath);
+        appIconService.IconChanged += AppIconService_IconChanged;
+
         ViewModel.NavigationService.Frame = NavigationFrame;
         ViewModel.NavigationViewService.Initialize(NavigationViewControl);
         ViewModel.RefreshLocalization();
@@ -43,6 +47,31 @@ public sealed partial class ShellPage : Page
         AppTitleBar.SizeChanged += AppTitleBar_SizeChanged;
         AppTitleBar.Loaded += AppTitleBar_Loaded;
         Loaded += OnLoaded;
+    }
+
+    private void AppIconService_IconChanged(object? sender, EventArgs e)
+    {
+        _ = DispatcherQueue.TryEnqueue(() =>
+        {
+            if (sender is AppIconService appIconService)
+                UpdateAppIcon(appIconService.CurrentIconPath);
+        });
+    }
+
+    private void UpdateAppIcon(string iconPath)
+    {
+        try
+        {
+            AppIconImage.Source = new Microsoft.UI.Xaml.Media.Imaging.BitmapImage(
+                new Uri(iconPath, UriKind.Absolute)
+            );
+        }
+        catch
+        {
+            AppIconImage.Source = new Microsoft.UI.Xaml.Media.Imaging.BitmapImage(
+                new Uri(AppIconService.GetBuiltInIconPath(AppIconService.DefaultIconFileName), UriKind.Absolute)
+            );
+        }
     }
 
     private void OnLocaleChanged(object? sender, EventArgs e)

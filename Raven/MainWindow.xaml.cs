@@ -1,4 +1,5 @@
 ﻿using Raven.Helpers;
+using Raven.Services;
 using Windows.UI.ViewManagement;
 
 namespace Raven;
@@ -13,7 +14,7 @@ public sealed partial class MainWindow : WindowEx
     {
         InitializeComponent();
 
-        AppWindow.SetIcon(Path.Combine(AppContext.BaseDirectory, "Assets/Raven.ico"));
+        AppWindow.SetIcon(AppIconService.GetBuiltInIconPath(AppIconService.DefaultIconFileName));
         Content = null;
         Title = "AppDisplayName".GetLocalized();
         dispatcherQueue = Microsoft.UI.Dispatching.DispatcherQueue.GetForCurrentThread();

@@ -32,6 +32,17 @@ public static class NativeFilePicker
         return ShowOpenDialog(owner, title, filters, flags);
     }
 
+    public static string? PickIcon(IntPtr owner, string title)
+    {
+        var filters = new[]
+        {
+            new FilterSpec("ICO files", "*.ico"),
+        };
+
+        var results = ShowOpenDialog(owner, title, filters, FOS_FILEMUSTEXIST | FOS_FORCEFILESYSTEM | FOS_NOCHANGEDIR);
+        return results.Count > 0 ? results[0] : null;
+    }
+
     /// <summary>
     /// Shows a folder-picker dialog.
     /// Returns the selected folder path, or <c>null</c> if cancelled.

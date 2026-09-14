@@ -121,947 +121,929 @@
     <value>AppDepot</value>
   </data>
   <data name="Shell_Main.Content" xml:space="preserve">
-    <value>Home</value>
+    <value>الرئيسية</value>
   </data>
   <data name="Shell_Advanced_Search.Content" xml:space="preserve">
-    <value>Advanced Search</value>
+    <value>البحث المتقدم</value>
   </data>
   <data name="Shell_Install.Content" xml:space="preserve">
-    <value>Install</value>
+    <value>تثبيت</value>
   </data>
   <data name="Shell_Updates.Content" xml:space="preserve">
-    <value>Updates</value>
+    <value>التحديثات</value>
   </data>
   <data name="Shell_Downloads.Content" xml:space="preserve">
-    <value>Downloads</value>
+    <value>التنزيلات</value>
   </data>
   <data name="Shell_Settings.Content" xml:space="preserve">
-    <value>Settings</value>
+    <value>الإعدادات</value>
   </data>
   <data name="Shell_App.Content" xml:space="preserve">
-    <value>Apps</value>
+    <value>التطبيقات</value>
   </data>
   <data name="Shell_SearchBox.PlaceholderText" xml:space="preserve">
-    <value>Search</value>
+    <value>بحث</value>
   </data>
   <data name="Shell_AppTitleBarText.Text" xml:space="preserve">
     <value>AppDepot</value>
   </data>
   <data name="Settings_Title.Text" xml:space="preserve">
-    <value>Settings</value>
+    <value>الإعدادات</value>
   </data>
   <data name="Settings_Theme.Text" xml:space="preserve">
-    <value>Theme</value>
+    <value>المظهر</value>
   </data>
   <data name="Settings_Theme_Light.Content" xml:space="preserve">
-    <value>Light</value>
+    <value>فاتح</value>
   </data>
   <data name="Settings_Theme_Dark.Content" xml:space="preserve">
-    <value>Dark</value>
+    <value>داكن</value>
   </data>
   <data name="Settings_Theme_Default.Content" xml:space="preserve">
-    <value>System Default</value>
+    <value>افتراضي النظام</value>
   </data>
-  <data name="Settings_Icon.Text" xml:space="preserve">
-    <value>App icon</value>
-  </data>
-  <data name="Settings_IconDescription.Text" xml:space="preserve">
-    <value>Choose the AppDepot icon. Custom icons must be ICO files.</value>
-  </data>
-  <data name="Settings_IconDefaultButton.Content" xml:space="preserve">
-    <value>AppDepot</value>
-  </data>
-  <data name="Settings_IconOwlButton.Content" xml:space="preserve">
-    <value>Owl</value>
-  </data>
-  <data name="Settings_IconCustomButton.Content" xml:space="preserve">
-    <value>Choose ICO</value>
-  </data>
-  <data name="Settings_IconPickerTitle" xml:space="preserve">
-    <value>Select a custom ICO file</value>
-  </data>
-  <data name="Settings_IconApplied" xml:space="preserve">
-    <value>Icon applied.</value>
-  </data>
-  <data name="Settings_IconInvalid" xml:space="preserve">
-    <value>That ICO file could not be applied.</value>
-  </data>
-  <data name="Settings_IconLoadFailed" xml:space="preserve">
-    <value>Unable to preview the icon.</value>
-  </data>
+  <data name="Settings_Icon.Text" xml:space="preserve"><value>App icon</value></data>
+  <data name="Settings_IconDescription.Text" xml:space="preserve"><value>Choose the AppDepot icon. Custom icons must be ICO files.</value></data>
+  <data name="Settings_IconDefaultButton.Content" xml:space="preserve"><value>AppDepot</value></data>
+  <data name="Settings_IconOwlButton.Content" xml:space="preserve"><value>Owl</value></data>
+  <data name="Settings_IconCustomButton.Content" xml:space="preserve"><value>Choose ICO</value></data>
+  <data name="Settings_IconPickerTitle" xml:space="preserve"><value>Select a custom ICO file</value></data>
+  <data name="Settings_IconApplied" xml:space="preserve"><value>Icon applied.</value></data>
+  <data name="Settings_IconInvalid" xml:space="preserve"><value>That ICO file could not be applied.</value></data>
+  <data name="Settings_IconLoadFailed" xml:space="preserve"><value>Unable to preview the icon.</value></data>
   <data name="Settings_LocaleAndRegion.Text" xml:space="preserve">
-    <value>Language &amp; Region</value>
+    <value>اللغة والمنطقة</value>
   </data>
   <data name="Settings_Language.Text" xml:space="preserve">
-    <value>Language</value>
+    <value>اللغة</value>
   </data>
   <data name="Settings_Market.Text" xml:space="preserve">
-    <value>Market (Region)</value>
+    <value>المتجر (المنطقة)</value>
   </data>
   <data name="Settings_RelaunchInfoBar.Title" xml:space="preserve">
-    <value>Restart required</value>
+    <value>إعادة التشغيل مطلوبة</value>
   </data>
   <data name="Settings_RelaunchInfoBar.Message" xml:space="preserve">
-    <value>Relaunch AppDepot to apply your language changes.</value>
+    <value>أعد تشغيل AppDepot لتطبيق تغييرات اللغة.</value>
   </data>
   <data name="Settings_RelaunchButton.Content" xml:space="preserve">
-    <value>Relaunch</value>
+    <value>إعادة التشغيل</value>
   </data>
   <data name="Settings_Architecture.Text" xml:space="preserve">
-    <value>Architecture</value>
+    <value>البنية</value>
   </data>
   <data name="Settings_ArchitectureDescription.Text" xml:space="preserve">
-    <value>Select your system architecture</value>
+    <value>حدد بنية نظامك</value>
   </data>
   <data name="Settings_Downloads.Text" xml:space="preserve">
-    <value>Downloads</value>
+    <value>التنزيلات</value>
   </data>
   <data name="Settings_ParallelConnections.Header" xml:space="preserve">
-    <value>Parallel download connections</value>
+    <value>اتصالات التنزيل المتوازية</value>
   </data>
   <data name="Settings_ParallelConnectionsDescription.Text" xml:space="preserve">
-    <value>Using multiple connections may improve download speeds for large packages. If the server does not support segmented downloads, AppDepot will automatically use a single connection.</value>
+    <value>قد يؤدي استخدام عدة اتصالات إلى تحسين سرعات التنزيل للحزم الكبيرة. إذا كان الخادم لا يدعم التنزيلات المجزأة، فسيستخدم AppDepot اتصالاً واحداً تلقائياً.</value>
   </data>
   <data name="Settings_ParallelConnections_Auto" xml:space="preserve">
-    <value>Auto</value>
+    <value>تلقائي</value>
   </data>
   <data name="Settings_ParallelConnections_One" xml:space="preserve">
-    <value>1 connection</value>
+    <value>اتصال واحد</value>
   </data>
   <data name="Settings_ParallelConnections_Two" xml:space="preserve">
-    <value>2 connections</value>
+    <value>اتصالان</value>
   </data>
   <data name="Settings_ParallelConnections_Four" xml:space="preserve">
-    <value>4 connections</value>
+    <value>4 اتصالات</value>
   </data>
   <data name="Settings_ParallelConnections_Eight" xml:space="preserve">
-    <value>8 connections</value>
+    <value>8 اتصالات</value>
   </data>
   <data name="Settings_Network.Text" xml:space="preserve">
-    <value>Network</value>
+    <value>الشبكة</value>
   </data>
   <data name="Settings_ProxyDescription.Text" xml:space="preserve">
-    <value>Choose how AppDepot connects to Microsoft package download servers.</value>
+    <value>اختر كيفية اتصال AppDepot بخوادم تنزيل حزم Microsoft.</value>
   </data>
   <data name="Settings_ProxyMode.Header" xml:space="preserve">
-    <value>Proxy</value>
+    <value>الوكيل</value>
   </data>
   <data name="Settings_ProxyMode_System" xml:space="preserve">
-    <value>Use system proxy</value>
+    <value>استخدام وكيل النظام</value>
   </data>
   <data name="Settings_ProxyMode_Direct" xml:space="preserve">
-    <value>Direct connection</value>
+    <value>اتصال مباشر</value>
   </data>
   <data name="Settings_ProxyMode_Custom" xml:space="preserve">
-    <value>Custom proxy</value>
+    <value>وكيل مخصص</value>
   </data>
   <data name="Settings_ProxyUri.Header" xml:space="preserve">
-    <value>Proxy address</value>
+    <value>عنوان الوكيل</value>
   </data>
   <data name="Settings_ProxyUri.PlaceholderText" xml:space="preserve">
     <value>http://127.0.0.1:7890</value>
   </data>
   <data name="Settings_ProxyInvalidUri" xml:space="preserve">
-    <value>The custom proxy address must be a valid HTTP or HTTPS URI.</value>
+    <value>يجب أن يكون عنوان الوكيل المخصص عنوان URI صالحاً عبر HTTP أو HTTPS.</value>
   </data>
   <data name="Settings_Reset.Text" xml:space="preserve">
-    <value>Reset</value>
+    <value>إعادة تعيين</value>
   </data>
   <data name="Settings_ResetDescription.Text" xml:space="preserve">
-    <value>Reset AppDepot to default settings.</value>
+    <value>إعادة تعيين AppDepot إلى الإعدادات الافتراضية.</value>
   </data>
   <data name="Settings_ResetButton.Content" xml:space="preserve">
-    <value>Reset app</value>
+    <value>إعادة تعيين التطبيق</value>
   </data>
   <data name="Settings_ResetDialogTitle" xml:space="preserve">
-    <value>Reset app data?</value>
+    <value>هل تريد إعادة تعيين بيانات التطبيق؟</value>
   </data>
   <data name="Settings_ResetDialogContent" xml:space="preserve">
-    <value>This will remove all downloaded files and cached download data, and restore language, region, and architecture to defaults. The app will restart automatically. This action cannot be undone.</value>
+    <value>سيؤدي هذا إلى حذف جميع الملفات التي تم تنزيلها وبيانات التنزيل المخزنة مؤقتاً، وإعادة اللغة والمنطقة والبنية إلى الإعدادات الافتراضية. سيُعاد تشغيل التطبيق تلقائياً. لا يمكن التراجع عن هذا الإجراء.</value>
   </data>
   <data name="Settings_ResetDialogPrimary" xml:space="preserve">
-    <value>Reset</value>
+    <value>إعادة تعيين</value>
   </data>
   <data name="Settings_ResetDialogCancel" xml:space="preserve">
-    <value>Cancel</value>
+    <value>إلغاء</value>
   </data>
   <data name="Settings_About.Text" xml:space="preserve">
-    <value>About this application</value>
+    <value>حول هذا التطبيق</value>
   </data>
   <data name="Settings_AboutDescription.Text" xml:space="preserve">
-    <value>An open-source, privacy-oriented alternative client for the Microsoft Store to browse, download, install, and update Store apps.</value>
+    <value>عميل بديل مفتوح المصدر يركز على الخصوصية لمتجر Microsoft، لتصفح تطبيقات المتجر وتنزيلها وتثبيتها وتحديثها.</value>
   </data>
   <data name="SettingsPage_GitHubRepoLink.Content" xml:space="preserve">
-    <value>GitHub repository</value>
+    <value>مستودع GitHub</value>
   </data>
   <data name="SettingsPage_DiscordLink.Content" xml:space="preserve">
-    <value>Discord community</value>
+    <value>مجتمع Discord</value>
   </data>
   <data name="SettingsPage_LicenseLink.Content" xml:space="preserve">
-    <value>License</value>
+    <value>الترخيص</value>
   </data>
   <data name="Settings_DiagnosticsLogs.Text" xml:space="preserve">
-    <value>Diagnostics logs</value>
+    <value>سجلات التشخيص</value>
   </data>
   <data name="Settings_DiagnosticsLogsDescription.Text" xml:space="preserve">
-    <value>Open the logs folder for troubleshooting.</value>
+    <value>افتح مجلد السجلات لاستكشاف الأخطاء وإصلاحها.</value>
   </data>
   <data name="Settings_DiagnosticsLogsButton.Content" xml:space="preserve">
-    <value>Open logs folder</value>
+    <value>فتح مجلد السجلات</value>
   </data>
   <data name="Settings_AppUpdates.Text" xml:space="preserve">
-    <value>Application updates</value>
+    <value>تحديثات التطبيق</value>
   </data>
   <data name="Settings_AppUpdatesButton.Content" xml:space="preserve">
-    <value>Check for updates</value>
+    <value>البحث عن تحديثات</value>
   </data>
   <data name="Settings_UpdaterConfirmTitle" xml:space="preserve">
-    <value>Update available</value>
+    <value>يتوفر تحديث</value>
   </data>
   <data name="Settings_UpdaterConfirmContent" xml:space="preserve">
-    <value>Version {0} is ready to install. The app will restart to apply the update.</value>
+    <value>الإصدار {0} جاهز للتثبيت. سيُعاد تشغيل التطبيق لتطبيق التحديث.</value>
   </data>
   <data name="Settings_UpdaterConfirmPrimary" xml:space="preserve">
-    <value>Install</value>
+    <value>تثبيت</value>
   </data>
   <data name="Settings_UpdaterAlreadyLatestTitle" xml:space="preserve">
-    <value>You're up to date</value>
+    <value>أنت تستخدم أحدث إصدار</value>
   </data>
   <data name="Settings_UpdaterAlreadyLatestContent" xml:space="preserve">
-    <value>latest version already installed.</value>
+    <value>أحدث إصدار مثبّت بالفعل.</value>
   </data>
   <data name="Settings_UpdaterErrorTitle" xml:space="preserve">
-    <value>Something went wrong</value>
+    <value>حدث خطأ ما</value>
   </data>
   <data name="Settings_UpdaterErrorContent" xml:space="preserve">
-    <value>The update could not be completed. {0}</value>
+    <value>تعذّر إكمال التحديث. {0}</value>
   </data>
   <data name="Settings_UpdaterDialogClose" xml:space="preserve">
-    <value>Close</value>
+    <value>إغلاق</value>
   </data>
   <data name="Settings_UpdaterDialogCancel" xml:space="preserve">
-    <value>Cancel</value>
+    <value>إلغاء</value>
   </data>
   <data name="Settings_UpdaterCheckingTitle" xml:space="preserve">
-    <value>Checking for updates</value>
+    <value>البحث عن تحديثات</value>
   </data>
   <data name="Settings_UpdaterCheckingContent" xml:space="preserve">
-    <value>Looking for the latest version.</value>
+    <value>جارٍ البحث عن أحدث إصدار.</value>
   </data>
   <data name="Settings_UpdaterCheckCanceledContent" xml:space="preserve">
-    <value>Check canceled. Try again anytime.</value>
+    <value>تم إلغاء البحث. يمكنك المحاولة مرة أخرى في أي وقت.</value>
   </data>
   <data name="Settings_UpdaterStartupCheckbox" xml:space="preserve">
-    <value>Check for updates on startup</value>
+    <value>البحث عن تحديثات عند بدء التشغيل</value>
   </data>
   <data name="Settings_UpdaterProgressPercent" xml:space="preserve">
     <value>{0}%</value>
   </data>
   <data name="Settings_UpdaterInstallingTitle" xml:space="preserve">
-    <value>Installing update</value>
+    <value>جارٍ تثبيت التحديث</value>
   </data>
   <data name="CardView_Loading.Text" xml:space="preserve">
-    <value>Loading</value>
+    <value>جارٍ التحميل</value>
   </data>
   <data name="CardView_Filters.Text" xml:space="preserve">
-    <value>Filters</value>
+    <value>عوامل التصفية</value>
   </data>
   <data name="CardView_ApplyBtn.Content" xml:space="preserve">
-    <value>Apply</value>
+    <value>تطبيق</value>
   </data>
   <data name="CardView_NoResults_Title.Text" xml:space="preserve">
-    <value>No results found</value>
+    <value>لم يتم العثور على نتائج</value>
   </data>
   <data name="CardView_NoResults_Subtitle.Text" xml:space="preserve">
-    <value>Try different keywords or remove search filters</value>
+    <value>جرّب كلمات مفتاحية مختلفة أو أزل عوامل تصفية البحث</value>
   </data>
   <data name="CardView_Error_LoadFailed" xml:space="preserve">
-    <value>Failed to load cards: {0}</value>
+    <value>تعذّر تحميل البطاقات: {0}</value>
   </data>
   <data name="CardView_Error_OpenFailed" xml:space="preserve">
-    <value>Failed to open item: {0}</value>
+    <value>تعذّر فتح العنصر: {0}</value>
   </data>
   <data name="Filter_Apps" xml:space="preserve">
-    <value>Apps</value>
+    <value>التطبيقات</value>
   </data>
   <data name="Filter_Games" xml:space="preserve">
-    <value>Games</value>
+    <value>الألعاب</value>
   </data>
   <data name="Filter_TopFree" xml:space="preserve">
-    <value>Top Free</value>
+    <value>الأفضل مجاناً</value>
   </data>
   <data name="Filter_TopPaid" xml:space="preserve">
-    <value>Top Paid</value>
+    <value>الأعلى دفعاً</value>
   </data>
   <data name="Filter_TopTrending" xml:space="preserve">
-    <value>Top Trending</value>
+    <value>الأكثر رواجاً</value>
   </data>
   <data name="Filter_Specials" xml:space="preserve">
-    <value>Specials</value>
+    <value>العروض الخاصة</value>
   </data>
   <data name="Filter_BestSelling" xml:space="preserve">
-    <value>Best Selling</value>
+    <value>الأكثر مبيعاً</value>
   </data>
   <data name="AdvancedSearch_Header.Text" xml:space="preserve">
-    <value>Advanced Search</value>
+    <value>البحث المتقدم</value>
   </data>
   <data name="AdvancedSearch_SearchHint.Text" xml:space="preserve">
-    <value>Search by URL, product ID, or package family name</value>
+    <value>ابحث حسب URL أو معرّف المنتج أو اسم عائلة الحزمة</value>
   </data>
   <data name="AdvancedSearch_TypeUrl.Content" xml:space="preserve">
     <value>URL</value>
   </data>
   <data name="AdvancedSearch_TypeProductId.Content" xml:space="preserve">
-    <value>Product ID</value>
+    <value>معرّف المنتج</value>
   </data>
   <data name="AdvancedSearch_TypePfn.Content" xml:space="preserve">
-    <value>Package Family Name</value>
+    <value>اسم عائلة الحزمة</value>
   </data>
   <data name="AdvancedSearch_SearchBtn.Text" xml:space="preserve">
-    <value>Search</value>
+    <value>بحث</value>
   </data>
   <data name="AdvancedSearch_LookingUp.Text" xml:space="preserve">
-    <value>Looking up product</value>
+    <value>جارٍ البحث عن المنتج</value>
   </data>
   <data name="AdvancedSearch_UrlCard_Title.Text" xml:space="preserve">
     <value>URL</value>
   </data>
   <data name="AdvancedSearch_UrlCard_Desc.Text" xml:space="preserve">
-    <value>Paste a Microsoft Store product URL to automatically extract and look up the product.</value>
+    <value>الصق عنوان URL لمنتج في متجر Microsoft لاستخراج المنتج والبحث عنه تلقائياً.</value>
   </data>
   <data name="AdvancedSearch_UrlCard_Example.Text" xml:space="preserve">
-    <value>e.g. https://apps.microsoft.com/detail/9WZDNCRFHVJL</value>
+    <value>مثال: https://apps.microsoft.com/detail/9WZDNCRFHVJL</value>
   </data>
   <data name="AdvancedSearch_ProductIdCard_Title.Text" xml:space="preserve">
-    <value>Product ID</value>
+    <value>معرّف المنتج</value>
   </data>
   <data name="AdvancedSearch_ProductIdCard_Desc.Text" xml:space="preserve">
-    <value>Enter the product's alphanumeric store ID to navigate directly to its page.</value>
+    <value>أدخل معرّف المتجر الأبجدي الرقمي للمنتج للانتقال مباشرةً إلى صفحته.</value>
   </data>
   <data name="AdvancedSearch_ProductIdCard_Example.Text" xml:space="preserve">
-    <value>e.g. 9WZDNCRFHVJL</value>
+    <value>مثال: 9WZDNCRFHVJL</value>
   </data>
   <data name="AdvancedSearch_PfnCard_Title.Text" xml:space="preserve">
-    <value>Package Family Name</value>
+    <value>اسم عائلة الحزمة</value>
   </data>
   <data name="AdvancedSearch_PfnCard_Desc.Text" xml:space="preserve">
-    <value>Enter the app's package family name to look up its store page.</value>
+    <value>أدخل اسم عائلة حزمة التطبيق للبحث عن صفحته في المتجر.</value>
   </data>
   <data name="AdvancedSearch_PfnCard_Example.Text" xml:space="preserve">
-    <value>e.g. Microsoft.WindowsTerminal_8wekyb3d8bbwe</value>
+    <value>مثال: Microsoft.WindowsTerminal_8wekyb3d8bbwe</value>
   </data>
   <data name="AdvancedSearch_Placeholder_Url" xml:space="preserve">
     <value>https://apps.microsoft.com/detail/...</value>
   </data>
   <data name="AdvancedSearch_Placeholder_ProductId" xml:space="preserve">
-    <value>e.g. 9WZDNCRFHVJL</value>
+    <value>مثال: 9WZDNCRFHVJL</value>
   </data>
   <data name="AdvancedSearch_Placeholder_Pfn" xml:space="preserve">
-    <value>e.g. Microsoft.WindowsTerminal_8wekyb3d8bbwe</value>
+    <value>مثال: Microsoft.WindowsTerminal_8wekyb3d8bbwe</value>
   </data>
   <data name="AdvancedSearch_Placeholder_Default" xml:space="preserve">
-    <value>Enter a value to search</value>
+    <value>أدخل قيمة للبحث</value>
   </data>
   <data name="AdvancedSearch_Error_EmptyQuery" xml:space="preserve">
-    <value>Please enter a value to search.</value>
+    <value>الرجاء إدخال قيمة للبحث.</value>
   </data>
   <data name="AdvancedSearch_Error_InvalidUrl" xml:space="preserve">
-    <value>Could not extract a product ID from this URL. Make sure it is a valid Microsoft Store URL.</value>
+    <value>تعذّر استخراج معرّف المنتج من عنوان URL هذا. تأكد من أنه عنوان URL صالح لمتجر Microsoft.</value>
   </data>
   <data name="AdvancedSearch_Error_NoPfnResult" xml:space="preserve">
-    <value>No product found for this Package Family Name.</value>
+    <value>لم يتم العثور على منتج لاسم عائلة الحزمة هذا.</value>
   </data>
   <data name="AdvancedSearch_Error_FailedLookup" xml:space="preserve">
-    <value>Failed to find product: {0}</value>
+    <value>تعذّر العثور على المنتج: {0}</value>
   </data>
   <data name="AppPage_Loading.Text" xml:space="preserve">
-    <value>Loading</value>
+    <value>جارٍ التحميل</value>
   </data>
   <data name="AppPage_BypassFilters.Text" xml:space="preserve">
-    <value>Bypass Filters</value>
+    <value>تجاوز عوامل التصفية</value>
   </data>
   <data name="AppPage_CheckUpdates.Text" xml:space="preserve">
-    <value>Check Updates</value>
+    <value>البحث عن تحديثات</value>
   </data>
   <data name="AppPage_Screenshots.Text" xml:space="preserve">
-    <value>Screenshots</value>
+    <value>لقطات الشاشة</value>
   </data>
   <data name="AppPage_Description.Text" xml:space="preserve">
-    <value>Description</value>
+    <value>الوصف</value>
   </data>
   <data name="AppPage_MoreDetails.Text" xml:space="preserve">
-    <value>More Details</value>
+    <value>مزيد من التفاصيل</value>
   </data>
   <data name="AppPage_AppSize.Text" xml:space="preserve">
-    <value>App Size:</value>
+    <value>حجم التطبيق:</value>
   </data>
   <data name="AppPage_Version.Text" xml:space="preserve">
-    <value>Version:</value>
+    <value>الإصدار:</value>
   </data>
   <data name="AppPage_LastUpdated.Text" xml:space="preserve">
-    <value>Last Updated:</value>
+    <value>آخر تحديث:</value>
   </data>
   <data name="AppPage_Error_LoadTitle" xml:space="preserve">
-    <value>Error loading app</value>
+    <value>خطأ في تحميل التطبيق</value>
   </data>
   <data name="AppPage_Error_LoadMessage" xml:space="preserve">
-    <value>Could not load app details: {0}</value>
+    <value>تعذّر تحميل تفاصيل التطبيق: {0}</value>
   </data>
   <data name="AppPage_Error_CheckUpdatesTitle" xml:space="preserve">
-    <value>Check Updates</value>
+    <value>البحث عن تحديثات</value>
   </data>
   <data name="AppPage_Error_VersionCheckMsg" xml:space="preserve">
-    <value>Could not retrieve the latest version. The app may not be available or the check failed.</value>
+    <value>تعذّر استرداد أحدث إصدار. قد لا يكون التطبيق متاحاً أو فشل الفحص.</value>
   </data>
   <data name="AppPage_Error_UpdateCheckFailed" xml:space="preserve">
-    <value>Failed to check for updates: {0}</value>
+    <value>تعذّر البحث عن تحديثات: {0}</value>
   </data>
   <data name="AppPage_Error_OperationCanceled" xml:space="preserve">
-    <value>Operation canceled.</value>
+    <value>تم إلغاء العملية.</value>
   </data>
   <data name="AppPage_Error_NotSupportedTitle" xml:space="preserve">
-    <value>App not supported</value>
+    <value>التطبيق غير مدعوم</value>
   </data>
   <data name="AppPage_Error_NotSupportedMsg" xml:space="preserve">
-    <value>This app isn't supported. Try a different app or check again later.</value>
+    <value>هذا التطبيق غير مدعوم. جرّب تطبيقاً آخر أو تحقق مرة أخرى لاحقاً.</value>
   </data>
   <data name="AppPage_Error_StoreQueryFailedTitle" xml:space="preserve">
-    <value>Couldn't reach the Store</value>
+    <value>تعذّر الوصول إلى المتجر</value>
   </data>
   <data name="AppPage_Error_StoreQueryFailedMsg" xml:space="preserve">
-    <value>We couldn't retrieve this app's download details right now. Check your internet connection and try again.</value>
+    <value>تعذّر علينا استرداد تفاصيل تنزيل هذا التطبيق الآن. تحقق من اتصالك بالإنترنت وحاول مرة أخرى.</value>
   </data>
   <data name="AppPage_Error_OsIncompatibleTitle" xml:space="preserve">
-    <value>App not supported</value>
+    <value>التطبيق غير مدعوم</value>
   </data>
   <data name="AppPage_Error_OsIncompatibleMsg" xml:space="preserve">
-    <value>This app requires a newer version of Windows than this device is running.</value>
+    <value>يتطلب هذا التطبيق إصداراً أحدث من Windows مما يعمل على هذا الجهاز.</value>
   </data>
   <data name="AppPage_Error_ArchIncompatibleTitle" xml:space="preserve">
-    <value>App not supported</value>
+    <value>التطبيق غير مدعوم</value>
   </data>
   <data name="AppPage_Error_ArchIncompatibleMsg" xml:space="preserve">
-    <value>This app doesn't offer a build compatible with your device's processor (CPU architecture).</value>
+    <value>لا يوفّر هذا التطبيق إصداراً متوافقاً مع معالج جهازك (بنية CPU).</value>
   </data>
   <data name="AppPage_Error_NoInstallerTitle" xml:space="preserve">
-    <value>App not available</value>
+    <value>التطبيق غير متاح</value>
   </data>
   <data name="AppPage_Error_NoInstallerMsg" xml:space="preserve">
-    <value>No installable package is published for this app right now. Check again later.</value>
+    <value>لا توجد حزمة قابلة للتثبيت منشورة لهذا التطبيق الآن. تحقق مرة أخرى لاحقاً.</value>
   </data>
   <data name="AppPage_Error_DownloadInfoTitle" xml:space="preserve">
-    <value>Download unavailable</value>
+    <value>التنزيل غير متاح</value>
   </data>
   <data name="AppPage_Error_DownloadInfoMsg" xml:space="preserve">
-    <value>We couldn't get a download link for this app right now. Try again later.</value>
+    <value>تعذّر علينا الحصول على رابط تنزيل لهذا التطبيق الآن. حاول مرة أخرى لاحقاً.</value>
   </data>
   <data name="AppPage_Error_UnsupportedTypeTitle" xml:space="preserve">
-    <value>App not supported</value>
+    <value>التطبيق غير مدعوم</value>
   </data>
   <data name="AppPage_Error_UnsupportedTypeMsg" xml:space="preserve">
-    <value>This app uses an installer type that AppDepot doesn't support yet.</value>
+    <value>يستخدم هذا التطبيق نوع مثبّت لا يدعمه AppDepot حتى الآن.</value>
   </data>
   <data name="AppPage_Error_FailedToInstall" xml:space="preserve">
-    <value>Failed to install.</value>
+    <value>فشل التثبيت.</value>
   </data>
   <data name="AppPage_Error_UnableToOpenTitle" xml:space="preserve">
-    <value>Unable to open app</value>
+    <value>تعذّر فتح التطبيق</value>
   </data>
   <data name="AppPage_Error_NotInstalledPackaged" xml:space="preserve">
-    <value>This app package was not found in the Windows package manager. It may not be installed.</value>
+    <value>لم يتم العثور على حزمة هذا التطبيق في مدير حزم Windows. قد لا تكون مثبّتة.</value>
   </data>
   <data name="AppPage_Error_NoAppEntries" xml:space="preserve">
-    <value>The app package is installed, but no launchable app entries were found.</value>
+    <value>حزمة التطبيق مثبّتة، ولكن لم يتم العثور على إدخالات تطبيق قابلة للتشغيل.</value>
   </data>
   <data name="AppPage_Error_CantOpen" xml:space="preserve">
-    <value>The app couldn't be opened. Try reinstalling the app.</value>
+    <value>تعذّر فتح التطبيق. جرّب إعادة تثبيت التطبيق.</value>
   </data>
   <data name="AppPage_Error_NotInstalledWin32" xml:space="preserve">
-    <value>This app was not found in the Windows uninstall registry. It may not be installed.</value>
+    <value>لم يتم العثور على هذا التطبيق في سجل إلغاء التثبيت في Windows. قد لا يكون مثبّتاً.</value>
   </data>
   <data name="AppPage_Error_MissingLaunchTarget" xml:space="preserve">
-    <value>The app appears to be installed, but a launch target couldn't be found (Start Menu/DisplayIcon). The app may have been installed incorrectly.</value>
+    <value>يبدو أن التطبيق مثبّت، ولكن تعذّر العثور على هدف تشغيل (قائمة ابدأ/DisplayIcon). ربما تم تثبيت التطبيق بشكل غير صحيح.</value>
   </data>
   <data name="AppPage_Error_MissingLaunchFile" xml:space="preserve">
-    <value>The app appears to be installed, but its launch file couldn't be found on disk. The app may have been moved or installed incorrectly.</value>
+    <value>يبدو أن التطبيق مثبّت، ولكن تعذّر العثور على ملف التشغيل الخاص به على القرص. ربما تم نقل التطبيق أو تثبيته بشكل غير صحيح.</value>
   </data>
   <data name="AppPage_Error_InstalledVersion" xml:space="preserve">
     <value>
 
-Installed version: {0}</value>
+الإصدار المثبّت: {0}</value>
   </data>
   <data name="AppPage_Error_InstallerMissingTitle" xml:space="preserve">
-    <value>Installer missing</value>
+    <value>المثبّت مفقود</value>
   </data>
   <data name="AppPage_Error_InstallerMissingMsg" xml:space="preserve">
-    <value>The unpackaged installer (EXE/MSI) could not be found on disk.</value>
+    <value>تعذّر العثور على المثبّت غير المعبأ (EXE/MSI) على القرص.</value>
   </data>
   <data name="AppPage_Manual_Install_Title" xml:space="preserve">
-    <value>Manual installation required</value>
+    <value>يلزم التثبيت اليدوي</value>
   </data>
   <data name="AppPage_Manual_Install_Msg" xml:space="preserve">
-    <value>This app uses an unpackaged installer (EXE/MSI). It will open now and may require additional steps to finish installing.</value>
+    <value>يستخدم هذا التطبيق مثبّتاً غير معبأ (EXE/MSI). سيُفتح الآن وقد يتطلب خطوات إضافية لإكمال التثبيت.</value>
   </data>
   <data name="AppPage_Btn_OpenInstaller" xml:space="preserve">
-    <value>Open installer</value>
+    <value>فتح المثبّت</value>
   </data>
   <data name="AppPage_Error_UnableToOpenInstallerTitle" xml:space="preserve">
-    <value>Unable to open installer</value>
+    <value>تعذّر فتح المثبّت</value>
   </data>
   <data name="Common_Cancel" xml:space="preserve">
-    <value>Cancel</value>
+    <value>إلغاء</value>
   </data>
   <data name="Common_NoInternetConnectionTitle" xml:space="preserve">
-    <value>No internet connection</value>
+    <value>لا يوجد اتصال بالإنترنت</value>
   </data>
   <data name="Common_NoInternetConnectionMessage" xml:space="preserve">
-    <value>Check your network settings and try again.</value>
+    <value>تحقق من إعدادات الشبكة وحاول مرة أخرى.</value>
   </data>
   <data name="Common_ProgressPercent" xml:space="preserve">
     <value>{0}%</value>
   </data>
   <data name="Status_Pending" xml:space="preserve">
-    <value>Pending</value>
+    <value>قيد الانتظار</value>
   </data>
   <data name="Status_Downloading" xml:space="preserve">
-    <value>Downloading</value>
+    <value>جارٍ التنزيل</value>
   </data>
   <data name="Status_Installing" xml:space="preserve">
-    <value>Installing</value>
+    <value>جارٍ التثبيت</value>
   </data>
   <data name="Status_Cancelling" xml:space="preserve">
-    <value>Cancelling</value>
+    <value>جارٍ الإلغاء</value>
   </data>
   <data name="Status_Failed" xml:space="preserve">
-    <value>Failed</value>
+    <value>فشل</value>
   </data>
   <data name="Status_Cancelled" xml:space="preserve">
-    <value>Cancelled</value>
+    <value>ملغى</value>
   </data>
   <data name="Status_Completed" xml:space="preserve">
-    <value>Completed</value>
+    <value>مكتمل</value>
   </data>
   <data name="Status_Unknown" xml:space="preserve">
-    <value>Unknown</value>
+    <value>غير معروف</value>
   </data>
   <data name="Status_Updated" xml:space="preserve">
-    <value>Updated</value>
+    <value>محدّث</value>
   </data>
   <data name="Download_File" xml:space="preserve">
-    <value>file</value>
+    <value>ملف</value>
   </data>
   <data name="Download_Files" xml:space="preserve">
-    <value>files</value>
+    <value>ملفات</value>
   </data>
   <data name="Download_Status_DownloadingFiles" xml:space="preserve">
-    <value>Downloading ({0}/{1}) {2}</value>
+    <value>جارٍ التنزيل ({0}/{1}) {2}</value>
   </data>
   <data name="Download_Status_Retry" xml:space="preserve">
-    <value>Retry ({0}/{1})</value>
+    <value>إعادة المحاولة ({0}/{1})</value>
   </data>
   <data name="Download_Status_NoProgress" xml:space="preserve">
-    <value>No progress detected. Restarting...</value>
+    <value>لم يُكتشف أي تقدّم. جارٍ إعادة التشغيل...</value>
   </data>
   <data name="Download_Status_Stalled" xml:space="preserve">
-    <value>Error: Download stalled and exhausted retries.</value>
+    <value>خطأ: توقّف التنزيل واستُنفدت محاولات إعادة المحاولة.</value>
   </data>
   <data name="Download_Status_FailedRetries" xml:space="preserve">
-    <value>Error: Download failed after retries.</value>
+    <value>خطأ: فشل التنزيل بعد محاولات إعادة المحاولة.</value>
   </data>
   <data name="Download_Status_Canceled" xml:space="preserve">
-    <value>Download canceled.</value>
+    <value>تم إلغاء التنزيل.</value>
   </data>
   <data name="Download_Status_Completed" xml:space="preserve">
-    <value>Download completed.</value>
+    <value>اكتمل التنزيل.</value>
   </data>
   <data name="Download_Status_MissingPackage" xml:space="preserve">
-    <value>Install failed: main package missing.</value>
+    <value>فشل التثبيت: الحزمة الرئيسية مفقودة.</value>
   </data>
   <data name="Install_Error_ConflictingVersion" xml:space="preserve">
-    <value>A newer or the same version is already installed.</value>
+    <value>إصدار أحدث أو نفس الإصدار مثبّت بالفعل.</value>
   </data>
   <data name="Install_Error_DeploymentInProgress" xml:space="preserve">
-    <value>Another installation is in progress. Wait for it to finish and try again.</value>
+    <value>هناك تثبيت آخر قيد التقدّم. انتظر حتى يكتمل ثم حاول مرة أخرى.</value>
   </data>
   <data name="Install_Error_InvalidPackage" xml:space="preserve">
-    <value>Invalid or unsupported package. Ensure the package and dependencies are supported for your system.</value>
+    <value>حزمة غير صالحة أو غير مدعومة. تأكد من أن الحزمة والتبعيات مدعومة لنظامك.</value>
   </data>
   <data name="Install_Error_PackageNotFound" xml:space="preserve">
-    <value>Package not found. Check the selected/downloaded file path.</value>
+    <value>لم يتم العثور على الحزمة. تحقق من مسار الملف المحدّد/المنزّل.</value>
   </data>
   <data name="Install_Error_DeploymentFailure" xml:space="preserve">
-    <value>Windows deployment failed. {0}</value>
+    <value>فشل نشر Windows. {0}</value>
   </data>
   <data name="Install_Error_AdminRequired" xml:space="preserve">
-    <value>This package includes a packaged service and must be installed with administrator privileges. Relaunch the app as administrator and try again.</value>
+    <value>تتضمن هذه الحزمة خدمة معبأة ويجب تثبيتها بامتيازات المسؤول. أعد تشغيل التطبيق كمسؤول وحاول مرة أخرى.</value>
   </data>
   <data name="Install_Error_GenericDeployment" xml:space="preserve">
-    <value>Windows deployment error (0x{0:X8}). {1}</value>
+    <value>خطأ في نشر Windows (0x{0:X8}). {1}</value>
   </data>
   <data name="Install_Error_PackageCorrupt" xml:space="preserve">
-    <value>The package file is corrupt or incomplete. Try re-downloading it.</value>
+    <value>ملف الحزمة تالف أو غير مكتمل. جرّب إعادة تنزيله.</value>
   </data>
   <data name="Install_Error_MissingDependency" xml:space="preserve">
-    <value>A required component or dependency is missing. Try installing the app from the Microsoft Store instead.</value>
+    <value>أحد المكوّنات أو التبعيات المطلوبة مفقود. جرّب تثبيت التطبيق من متجر Microsoft بدلاً من ذلك.</value>
   </data>
   <data name="Install_Error_InvalidManifest" xml:space="preserve">
-    <value>The package manifest (AppxManifest.xml) is invalid or malformed.</value>
+    <value>بيان الحزمة (AppxManifest.xml) غير صالح أو مشوّه.</value>
   </data>
   <data name="Install_Error_UntrustedRoot" xml:space="preserve">
-    <value>The package signature root certificate is not trusted by this system.</value>
+    <value>الشهادة الجذرية لتوقيع الحزمة غير موثوقة من قِبل هذا النظام.</value>
   </data>
   <data name="Install_Error_SignatureInvalid" xml:space="preserve">
-    <value>The package signature is invalid or untrusted.</value>
+    <value>توقيع الحزمة غير صالح أو غير موثوق.</value>
   </data>
   <data name="Install_Error_SignatureVerificationHint" xml:space="preserve">
-    <value>Signature verification failed. Try enabling the "Remove signature verification" option and try again.</value>
+    <value>فشل التحقق من التوقيع. جرّب تمكين خيار "إزالة التحقق من التوقيع" وحاول مرة أخرى.</value>
   </data>
   <data name="Install_Error_NotSigned" xml:space="preserve">
-    <value>The package is not digitally signed.</value>
+    <value>الحزمة غير موقّعة رقمياً.</value>
   </data>
   <data name="Install_Error_NotSupported" xml:space="preserve">
-    <value>This operation is not supported on your system.</value>
+    <value>هذه العملية غير مدعومة على نظامك.</value>
   </data>
   <data name="Install_Error_AccessDenied" xml:space="preserve">
-    <value>Failed: Access denied. Try running as administrator or ensure sideloading policy allows app packages. {0}</value>
+    <value>فشل: تم رفض الوصول. جرّب التشغيل كمسؤول أو تأكد من أن سياسة التحميل الجانبي تسمح بحزم التطبيقات. {0}</value>
   </data>
   <data name="Install_Error_Generic" xml:space="preserve">
-    <value>Failed: {0}</value>
+    <value>فشل: {0}</value>
   </data>
   <data name="Install_Btn_ForceInstall" xml:space="preserve">
-    <value>Force install</value>
+    <value>فرض التثبيت</value>
   </data>
   <data name="Install_Btn_RunAsAdmin" xml:space="preserve">
-    <value>Run as administrator</value>
+    <value>التشغيل كمسؤول</value>
   </data>
   <data name="Common_OK" xml:space="preserve">
     <value>OK</value>
   </data>
   <data name="DownloadsPage_Header.Text" xml:space="preserve">
-    <value>Downloads</value>
+    <value>التنزيلات</value>
   </data>
   <data name="DownloadsPage_OpenFolder.Content" xml:space="preserve">
-    <value>Open folder</value>
+    <value>فتح المجلد</value>
   </data>
   <data name="DownloadsPage_Delete.Text" xml:space="preserve">
-    <value>Delete</value>
+    <value>حذف</value>
   </data>
   <data name="DownloadsPage_CancelBtn.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Cancel download</value>
+    <value>إلغاء التنزيل</value>
   </data>
   <data name="Download_Status_Fetching" xml:space="preserve">
-    <value>Fetching download URLs</value>
+    <value>جارٍ جلب روابط التنزيل</value>
   </data>
   <data name="Download_Status_Downloading" xml:space="preserve">
-    <value>Downloading</value>
+    <value>جارٍ التنزيل</value>
   </data>
   <data name="Download_Status_Installing" xml:space="preserve">
-    <value>Installing</value>
+    <value>جارٍ التثبيت</value>
   </data>
   <data name="Download_Status_Cancelling" xml:space="preserve">
-    <value>Cancelling</value>
+    <value>جارٍ الإلغاء</value>
   </data>
   <data name="InstallationsPage_Header.Text" xml:space="preserve">
-    <value>Install package</value>
+    <value>تثبيت حزمة</value>
   </data>
   <data name="InstallationsPage_Installing.Text" xml:space="preserve">
-    <value>Installing...</value>
+    <value>جارٍ التثبيت...</value>
   </data>
   <data name="InstallationsPage_FileText.PlaceholderText" xml:space="preserve">
-    <value>No file selected</value>
+    <value>لم يتم تحديد أي ملف</value>
   </data>
   <data name="InstallationsPage_InstallBtn.Content" xml:space="preserve">
-    <value>Install</value>
+    <value>تثبيت</value>
   </data>
   <data name="InstallationsPage_InstallLabel" xml:space="preserve">
-    <value>Install</value>
+    <value>تثبيت</value>
   </data>
   <data name="InstallationsPage_DropZone.Text" xml:space="preserve">
-    <value>Select a package or drag it here</value>
+    <value>حدد حزمة أو اسحبها إلى هنا</value>
   </data>
   <data name="InstallationsPage_FilePicker_Title" xml:space="preserve">
-    <value>Select an app package</value>
+    <value>تحديد حزمة تطبيق</value>
   </data>
   <data name="InstallationsPage_DragCaption" xml:space="preserve">
-    <value>Drop to select package</value>
+    <value>أفلت لتحديد الحزمة</value>
   </data>
   <data name="Install_Status_Installing" xml:space="preserve">
-    <value>Installing</value>
+    <value>جارٍ التثبيت</value>
   </data>
   <data name="Install_Dialog_Title" xml:space="preserve">
-    <value>Installation failed</value>
+    <value>فشل التثبيت</value>
   </data>
   <data name="InstallationsPage_FilePicker_Error" xml:space="preserve">
-    <value>File picker error</value>
+    <value>خطأ في منتقي الملفات</value>
   </data>
   <data name="InstallationsPage_Filter_AppPackages" xml:space="preserve">
-    <value>App packages (*.msix;*.appx;*.msixbundle;*.appxbundle)</value>
+    <value>حزم التطبيقات (*.msix;*.appx;*.msixbundle;*.appxbundle)</value>
   </data>
   <data name="InstallationsPage_Filter_AllFiles" xml:space="preserve">
-    <value>All files (*.*)</value>
+    <value>كل الملفات (*.*)</value>
   </data>
   <data name="UpdatesPage_Header.Text" xml:space="preserve">
-    <value>Updates</value>
+    <value>التحديثات</value>
   </data>
   <data name="UpdatesPage_Stop.Text" xml:space="preserve">
-    <value>Stop</value>
+    <value>إيقاف</value>
   </data>
   <data name="UpdatesPage_SelectAll.Content" xml:space="preserve">
-    <value>Select all</value>
+    <value>تحديد الكل</value>
   </data>
   <data name="UpdatesPage_NoUpdates.Text" xml:space="preserve">
-    <value>No new updates</value>
+    <value>لا توجد تحديثات جديدة</value>
   </data>
   <data name="UpdatesPage_Completed.Text" xml:space="preserve">
-    <value>Completed</value>
+    <value>مكتمل</value>
   </data>
   <data name="UpdatesPage_VersionSeparator.Text" xml:space="preserve">
     <value>→</value>
   </data>
   <data name="UpdatesPage_CancelBtn.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Cancel update</value>
+    <value>إلغاء التحديث</value>
   </data>
   <data name="Updates_ButtonCheck" xml:space="preserve">
-    <value>Check for updates</value>
+    <value>البحث عن تحديثات</value>
   </data>
   <data name="Updates_ButtonChecking" xml:space="preserve">
-    <value>Checking...</value>
+    <value>جارٍ الفحص...</value>
   </data>
   <data name="Updates_ButtonUpdate" xml:space="preserve">
-    <value>Update selected ({0})</value>
+    <value>تحديث المحدد ({0})</value>
   </data>
   <data name="Updates_CheckingBase" xml:space="preserve">
-    <value>Checking</value>
+    <value>جارٍ الفحص</value>
   </data>
   <data name="Updates_CheckingProgress" xml:space="preserve">
-    <value>Checking ({0}/{1})</value>
+    <value>جارٍ الفحص ({0}/{1})</value>
   </data>
   <data name="Search_Filter_AllDepartments" xml:space="preserve">
-    <value>All departments</value>
+    <value>كل الأقسام</value>
   </data>
   <data name="Search_Filter_Fonts" xml:space="preserve">
-    <value>Fonts</value>
+    <value>الخطوط</value>
   </data>
   <data name="Search_Filter_Themes" xml:space="preserve">
-    <value>Themes</value>
+    <value>السمات</value>
   </data>
   <data name="Search_Filter_AllTypes" xml:space="preserve">
-    <value>All Types</value>
+    <value>كل الأنواع</value>
   </data>
   <data name="Search_Filter_Free" xml:space="preserve">
-    <value>Free</value>
+    <value>مجاني</value>
   </data>
   <data name="Search_Filter_Paid" xml:space="preserve">
-    <value>Paid</value>
+    <value>مدفوع</value>
   </data>
   <data name="BundlesPage_Loading.Text" xml:space="preserve">
-    <value>Loading...</value>
+    <value>جارٍ التحميل...</value>
   </data>
   <data name="BundlesPage_Error.Text" xml:space="preserve">
-    <value>An Unexpected Error Occured!</value>
+    <value>حدث خطأ غير متوقع!</value>
   </data>
   <data name="BundlesPage_InBundle.Text" xml:space="preserve">
-    <value>In this bundle</value>
+    <value>في هذه الحزمة</value>
   </data>
   <data name="AppPage_StopBtn.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Stop</value>
+    <value>إيقاف</value>
   </data>
   <data name="AppPage_MoreOptionsBtn.ToolTipService.ToolTip" xml:space="preserve">
-    <value>More options</value>
+    <value>مزيد من الخيارات</value>
   </data>
   <data name="AppPage_ShareBtn.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Share</value>
+    <value>مشاركة</value>
   </data>
   <data name="AppPage_Share_CopyLink.Text" xml:space="preserve">
-    <value>Copy link</value>
+    <value>نسخ الرابط</value>
   </data>
   <data name="AppPage_Share_CopyProductId.Text" xml:space="preserve">
-    <value>Copy product ID</value>
+    <value>نسخ معرّف المنتج</value>
   </data>
   <data name="AppPage_Share_CopyPackageFamilyName.Text" xml:space="preserve">
-    <value>Copy PFN</value>
+    <value>نسخ PFN</value>
   </data>
   <data name="AppPage_LightboxClose.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Close</value>
+    <value>إغلاق</value>
   </data>
   <data name="AppPage_LightboxPrev.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Previous</value>
+    <value>السابق</value>
   </data>
   <data name="AppPage_LightboxNext.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Next</value>
+    <value>التالي</value>
   </data>
   <data name="AppPage_ScreenshotsPrev.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Previous screenshot</value>
+    <value>لقطة الشاشة السابقة</value>
   </data>
   <data name="AppPage_ScreenshotsNext.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Next screenshot</value>
+    <value>لقطة الشاشة التالية</value>
   </data>
   <data name="AppPage_LightboxCounter_Format" xml:space="preserve">
     <value>{0} / {1}</value>
   </data>
   <data name="DownloadsPage_MoreOptionsBtn.ToolTipService.ToolTip" xml:space="preserve">
-    <value>More options</value>
+    <value>مزيد من الخيارات</value>
   </data>
   <data name="AppPage_Btn_Install" xml:space="preserve">
-    <value>Install</value>
+    <value>تثبيت</value>
   </data>
   <data name="AppPage_Btn_Update" xml:space="preserve">
-    <value>Update</value>
+    <value>تحديث</value>
   </data>
   <data name="AppPage_Btn_Open" xml:space="preserve">
-    <value>Open</value>
+    <value>فتح</value>
   </data>
   <data name="AppPage_Btn_Retry" xml:space="preserve">
-    <value>Retry</value>
+    <value>إعادة المحاولة</value>
   </data>
   <data name="AppPage_Btn_Download" xml:space="preserve">
-    <value>Download</value>
+    <value>تنزيل</value>
   </data>
   <data name="InstallationsPage_ClearBtn.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Clear</value>
+    <value>مسح</value>
   </data>
   <data name="Settings_LicenseDialogTitle.Text" xml:space="preserve">
-    <value>License</value>
+    <value>الترخيص</value>
   </data>
   <data name="Settings_LicenseDialogClose.Content" xml:space="preserve">
-    <value>Close</value>
+    <value>إغلاق</value>
   </data>
   <data name="Sideloading_DisabledTitle" xml:space="preserve">
-    <value>Sideloading is disabled</value>
+    <value>التحميل الجانبي معطّل</value>
   </data>
   <data name="Sideloading_DisabledMessage" xml:space="preserve">
-    <value>Sideloading is currently disabled on this device. You won't be able to install app packages until it's enabled.
+    <value>التحميل الجانبي معطّل حالياً على هذا الجهاز. لن تتمكن من تثبيت حزم التطبيقات حتى يتم تمكينه.
 
-You can enable it by turning on Developer Mode in Windows Settings.</value>
+يمكنك تمكينه بتشغيل وضع المطوّر في إعدادات Windows.</value>
   </data>
   <data name="Sideloading_EnableButton" xml:space="preserve">
-    <value>Open Settings</value>
+    <value>فتح الإعدادات</value>
   </data>
   <data name="Sideloading_CancelButton" xml:space="preserve">
-    <value>Not now</value>
+    <value>ليس الآن</value>
   </data>
   <data name="InstallationsPage_MoreOptionsBtn.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Advanced options</value>
+    <value>خيارات متقدمة</value>
   </data>
   <data name="InstallationsPage_AdvancedInstall.Text" xml:space="preserve">
-    <value>Unpackaged Mode</value>
+    <value>الوضع غير المعبأ</value>
   </data>
   <data name="InstallationsPage_CustomFolder.PlaceholderText" xml:space="preserve">
-    <value>Choose install folder</value>
+    <value>اختيار مجلد التثبيت</value>
   </data>
   <data name="InstallationsPage_BrowseFolderBtn.Content" xml:space="preserve">
-    <value>Browse</value>
+    <value>استعراض</value>
   </data>
   <data name="InstallationsPage_RemoveSignature.Content" xml:space="preserve">
-    <value>Remove signature verification</value>
+    <value>إزالة التحقق من التوقيع</value>
   </data>
   <data name="InstallationsPage_BypassRegistration.Content" xml:space="preserve">
-    <value>Bypass package registration</value>
+    <value>تجاوز تسجيل الحزمة</value>
   </data>
   <data name="InstallationsPage_CreateStartMenuShortcut.Content" xml:space="preserve">
-    <value>Create Start Menu shortcut</value>
+    <value>إنشاء اختصار في قائمة ابدأ</value>
   </data>
   <data name="InstallationsPage_CreateDesktopShortcut.Content" xml:space="preserve">
-    <value>Create Desktop shortcut</value>
+    <value>إنشاء اختصار على سطح المكتب</value>
   </data>
   <data name="InstallationsPage_SelectDependenciesBtn.Content" xml:space="preserve">
-    <value>Select dependencies</value>
+    <value>تحديد التبعيات</value>
   </data>
   <data name="InstallationsPage_FolderPicker_Title" xml:space="preserve">
-    <value>Choose the install location</value>
+    <value>اختيار موقع التثبيت</value>
   </data>
   <data name="InstallationsPage_DependencyPicker_Title" xml:space="preserve">
-    <value>Select dependency packages</value>
+    <value>تحديد حزم التبعيات</value>
   </data>
   <data name="InstallationsPage_Dependencies_Count" xml:space="preserve">
-    <value>{0} selected</value>
+    <value>تم تحديد {0}</value>
   </data>
   <data name="Install_Error_NoFolderSelected" xml:space="preserve">
-    <value>Choose an install folder before installing.</value>
+    <value>اختر مجلد تثبيت قبل التثبيت.</value>
   </data>
   <data name="Install_Error_FolderExists" xml:space="preserve">
-    <value>A folder named "{0}" already exists in the chosen location. Choose another location or remove the existing folder.</value>
+    <value>يوجد مجلد باسم "{0}" بالفعل في الموقع المختار. اختر موقعاً آخر أو احذف المجلد الموجود.</value>
   </data>
   <data name="Install_Error_NoInstallableArch" xml:space="preserve">
-    <value>This bundle has no package compatible with your selected architecture.</value>
+    <value>لا تحتوي هذه الحزمة على حزمة متوافقة مع البنية المحددة.</value>
   </data>
   <data name="Install_Error_ManifestMissing" xml:space="preserve">
-    <value>Could not find AppxManifest.xml in the package.</value>
+    <value>تعذّر العثور على AppxManifest.xml في الحزمة.</value>
   </data>
   <data name="Install_Error_ExecutableNotFound" xml:space="preserve">
-    <value>Unable to find executable. This app might not be able to run unregistered.</value>
+    <value>تعذّر العثور على الملف التنفيذي. قد لا يتمكن هذا التطبيق من العمل دون تسجيل.</value>
   </data>
   <data name="DeveloperMode_DisabledTitle" xml:space="preserve">
-    <value>Developer Mode is required</value>
+    <value>وضع المطوّر مطلوب</value>
   </data>
   <data name="DeveloperMode_DisabledMessage" xml:space="preserve">
-    <value>Custom (loose) install registers an app from unpackaged files, which requires Developer Mode.
+    <value>يسجّل التثبيت المخصص (المفكّك) تطبيقاً من ملفات غير معبأة، وهو ما يتطلب وضع المطوّر.
 
-You can enable it by turning on Developer Mode in Windows Settings.</value>
+يمكنك تمكينه بتشغيل وضع المطوّر في إعدادات Windows.</value>
   </data>
   <data name="DeveloperMode_EnableButton" xml:space="preserve">
-    <value>Open Settings</value>
+    <value>فتح الإعدادات</value>
   </data>
   <data name="DeveloperMode_CancelButton" xml:space="preserve">
-    <value>Not now</value>
+    <value>ليس الآن</value>
   </data>
   <data name="InstallationsPage_ClearFolderBtn.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Clear install location</value>
+    <value>مسح موقع التثبيت</value>
   </data>
   <data name="InstallationsPage_ClearDepsBtn.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Clear selected dependencies</value>
+    <value>مسح التبعيات المحددة</value>
   </data>
   <data name="Updates_FailedBanner_Title.Text" xml:space="preserve">
-    <value>Some updates failed</value>
+    <value>فشلت بعض التحديثات</value>
   </data>
   <data name="Install_Error_AppInUse" xml:space="preserve">
-    <value>The App couldn't be installed because it's resources are currently being used. Close them and try again.</value>
+    <value>تعذّر تثبيت التطبيق لأن موارده قيد الاستخدام حالياً. أغلقها وحاول مرة أخرى.</value>
   </data>
   <data name="Install_Error_AppInUse_Processes" xml:space="preserve">
-    <value>The following apps need to be closed before the app can be installed:</value>
+    <value>يجب إغلاق التطبيقات التالية قبل تثبيت التطبيق:</value>
   </data>
   <data name="Install_Btn_Retry" xml:space="preserve">
-    <value>Retry</value>
+    <value>إعادة المحاولة</value>
   </data>
   <data name="Install_Btn_DeferredInstall" xml:space="preserve">
-    <value>Deferred Install</value>
+    <value>تثبيت مؤجّل</value>
   </data>
   <data name="Install_Error_DeferredInstallDescription" xml:space="preserve">
-    <value>Deferred Install will prepare the app now, and it will be installed automatically when its resources are released or the system is restarted.</value>
+    <value>سيُجهّز التثبيت المؤجّل التطبيق الآن، وسيُثبّت تلقائياً عند تحرير موارده أو إعادة تشغيل النظام.</value>
   </data>
   <data name="Install_Error_DependencyProvidedButNotUsed" xml:space="preserve">
-    <value>One or more dependencies provided were not required by the main package. You can try installing only the main package.</value>
+    <value>لم تكن تبعية واحدة أو أكثر من التبعيات المقدَّمة مطلوبة من قِبل الحزمة الرئيسية. يمكنك تجربة تثبيت الحزمة الرئيسية فقط.</value>
   </data>
   <data name="Install_Btn_InstallDependenciesSeparately" xml:space="preserve">
-    <value>Install dependencies separately</value>
+    <value>تثبيت التبعيات بشكل منفصل</value>
   </data>
   <data name="AppPage_InstallDependenciesSeparately.Text" xml:space="preserve">
-    <value>Separate Install</value>
+    <value>تثبيت منفصل</value>
   </data>
   <data name="InstallationsPage_InstallDependenciesSeparately.Content" xml:space="preserve">
-    <value>Install dependencies separately</value>
+    <value>تثبيت التبعيات بشكل منفصل</value>
   </data>
   <data name="Program_AlreadyRunningTitle" xml:space="preserve">
     <value>AppDepot</value>
   </data>
   <data name="Program_AlreadyRunningMessage" xml:space="preserve">
-    <value>Another instance of AppDepot is already running.
-Please close it before launching this one.</value>
+    <value>هناك نسخة أخرى من AppDepot قيد التشغيل بالفعل.
+يرجى إغلاقها قبل تشغيل هذه النسخة.</value>
   </data>
-  <data name="AI_Title.Text" xml:space="preserve"><value>AI translation</value></data>
-  <data name="AI_Privacy.Text" xml:space="preserve"><value>When you click Translate, the app description is sent to your configured service. Your provider may charge for requests. The original text is preserved.</value></data>
-  <data name="AI_Endpoint.Header" xml:space="preserve"><value>API base URL (OpenAI-compatible)</value></data>
-  <data name="AI_Model.Header" xml:space="preserve"><value>Model</value></data>
-  <data name="AI_Key.Header" xml:space="preserve"><value>API key (stored securely for this Windows user)</value></data>
-  <data name="AI_Prompt.Header" xml:space="preserve"><value>Translation instructions (optional)</value></data>
-  <data name="AI_Save.Content" xml:space="preserve"><value>Save translation settings</value></data>
-  <data name="AI_Saved" xml:space="preserve"><value>Translation settings saved.</value></data>
-  <data name="AI_InvalidSettings" xml:space="preserve"><value>Enter a valid API base URL and model. Use HTTPS, or HTTP for a local server.</value></data>
-  <data name="AI_Translate.Content" xml:space="preserve"><value>Translate description</value></data>
-  <data name="AI_Original.Content" xml:space="preserve"><value>Show original</value></data>
-  <data name="AI_Cancel.Content" xml:space="preserve"><value>Cancel translation</value></data>
-  <data name="AI_Working" xml:space="preserve"><value>Translating…</value></data>
-  <data name="AI_Failed" xml:space="preserve"><value>Translation failed. Check your endpoint, model, API key and network, then try again.</value></data>
-  <data name="AI_NotConfigured" xml:space="preserve"><value>Configure AI translation in Settings first.</value></data>
-  <data name="AI_TooLong" xml:space="preserve"><value>This description is too long to translate in one request.</value></data>
+  <data name="AI_Title.Text" xml:space="preserve"><value>الترجمة بالذكاء الاصطناعي</value></data>
+  <data name="AI_Privacy.Text" xml:space="preserve"><value>عند النقر على "ترجمة"، يُرسل وصف التطبيق إلى الخدمة التي قمت بتكوينها. قد تفرض جهة التزويد رسوماً على الطلبات. ويتم الاحتفاظ بالنص الأصلي.</value></data>
+  <data name="AI_Endpoint.Header" xml:space="preserve"><value>عنوان URL الأساسي لواجهة API (متوافق مع OpenAI)</value></data>
+  <data name="AI_Model.Header" xml:space="preserve"><value>الطراز</value></data>
+  <data name="AI_Key.Header" xml:space="preserve"><value>مفتاح API (يُخزَّن بشكل آمن لمستخدم Windows هذا)</value></data>
+  <data name="AI_Prompt.Header" xml:space="preserve"><value>إرشادات الترجمة (اختياري)</value></data>
+  <data name="AI_Save.Content" xml:space="preserve"><value>حفظ إعدادات الترجمة</value></data>
+  <data name="AI_Saved" xml:space="preserve"><value>تم حفظ إعدادات الترجمة.</value></data>
+  <data name="AI_InvalidSettings" xml:space="preserve"><value>أدخل عنوان URL أساسياً لواجهة API وطرازاً صالحين. استخدم HTTPS، أو HTTP لخادم محلي.</value></data>
+  <data name="AI_Translate.Content" xml:space="preserve"><value>ترجمة الوصف</value></data>
+  <data name="AI_Original.Content" xml:space="preserve"><value>عرض النص الأصلي</value></data>
+  <data name="AI_Cancel.Content" xml:space="preserve"><value>إلغاء الترجمة</value></data>
+  <data name="AI_Working" xml:space="preserve"><value>جارٍ الترجمة…</value></data>
+  <data name="AI_Failed" xml:space="preserve"><value>فشلت الترجمة. تحقق من نقطة النهاية والطراز ومفتاح API والشبكة، ثم حاول مرة أخرى.</value></data>
+  <data name="AI_NotConfigured" xml:space="preserve"><value>قم بتكوين الترجمة بالذكاء الاصطناعي في الإعدادات أولاً.</value></data>
+  <data name="AI_TooLong" xml:space="preserve"><value>هذا الوصف طويل جداً بحيث يتعذّر ترجمته في طلب واحد.</value></data>
 </root>

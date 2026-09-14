@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <root>
-  <!-- 
-    Microsoft ResX Schema 
-    
+  <!--
+    Microsoft ResX Schema
+
     Version 2.0
-    
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
+
+    The primary goals of this format is to allow a simple XML format
+    that is mostly human readable. The generation and parsing of the
+    various data types are done through the TypeConverter classes
     associated with the data types.
-    
+
     Example:
-    
+
     ... ado.net/XML headers & schema ...
     <resheader name="resmimetype">text/microsoft-resx</resheader>
     <resheader name="version">2.0</resheader>
@@ -26,36 +26,36 @@
         <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
         <comment>This is a comment</comment>
     </data>
-                
-    There are any number of "resheader" rows that contain simple 
+
+    There are any number of "resheader" rows that contain simple
     name/value pairs.
-    
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
+
+    Each data row contains a name, and value. The row also contains a
+    type or mimetype. Type corresponds to a .NET class that support
+    text/value conversion through the TypeConverter architecture.
+    Classes that don't support this are serialized and stored with the
     mimetype set.
-    
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
+
+    The mimetype is used for serialized objects, and tells the
+    ResXResourceReader how to depersist the object. This is currently not
     extensible. For a given mimetype the value must be set accordingly:
-    
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format
+    that the ResXResourceWriter will generate, however the reader can
     read any of the formats listed below.
-    
+
     mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
+    value   : The object must be serialized with
             : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
             : and then encoded with base64 encoding.
-    
+
     mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
+    value   : The object must be serialized with
             : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
             : and then encoded with base64 encoding.
 
     mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
+    value   : The object must be serialized into a byte array
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AppDisplayName" xml:space="preserve">
-    <value>Raven</value>
+    <value>AppDepot</value>
   </data>
   <data name="Shell_Main.Content" xml:space="preserve">
     <value>Kezdőlap</value>
@@ -135,6 +135,7 @@
   <data name="Shell_Downloads.Content" xml:space="preserve">
     <value>Letöltések</value>
   </data>
+  <data name="Shell_Settings.Content" xml:space="preserve"><value>Beállítások</value></data>
   <data name="Shell_App.Content" xml:space="preserve">
     <value>Alkalmazások</value>
   </data>
@@ -142,7 +143,7 @@
     <value>Keresés</value>
   </data>
   <data name="Shell_AppTitleBarText.Text" xml:space="preserve">
-    <value>Raven</value>
+    <value>AppDepot</value>
   </data>
   <data name="Settings_Title.Text" xml:space="preserve">
     <value>Beállítások</value>
@@ -159,6 +160,15 @@
   <data name="Settings_Theme_Default.Content" xml:space="preserve">
     <value>Rendszer alapértelmezett</value>
   </data>
+  <data name="Settings_Icon.Text" xml:space="preserve"><value>App icon</value></data>
+  <data name="Settings_IconDescription.Text" xml:space="preserve"><value>Choose the AppDepot icon. Custom icons must be ICO files.</value></data>
+  <data name="Settings_IconDefaultButton.Content" xml:space="preserve"><value>AppDepot</value></data>
+  <data name="Settings_IconOwlButton.Content" xml:space="preserve"><value>Owl</value></data>
+  <data name="Settings_IconCustomButton.Content" xml:space="preserve"><value>Choose ICO</value></data>
+  <data name="Settings_IconPickerTitle" xml:space="preserve"><value>Select a custom ICO file</value></data>
+  <data name="Settings_IconApplied" xml:space="preserve"><value>Icon applied.</value></data>
+  <data name="Settings_IconInvalid" xml:space="preserve"><value>That ICO file could not be applied.</value></data>
+  <data name="Settings_IconLoadFailed" xml:space="preserve"><value>Unable to preview the icon.</value></data>
   <data name="Settings_LocaleAndRegion.Text" xml:space="preserve">
     <value>Nyelv és régió</value>
   </data>
@@ -172,7 +182,7 @@
     <value>Újraindítás szükséges</value>
   </data>
   <data name="Settings_RelaunchInfoBar.Message" xml:space="preserve">
-    <value>Indítsa újra a Raven programot a nyelvi módosítások alkalmazásához.</value>
+    <value>Indítsa újra a AppDepot programot a nyelvi módosítások alkalmazásához.</value>
   </data>
   <data name="Settings_RelaunchButton.Content" xml:space="preserve">
     <value>Újraindítás</value>
@@ -187,7 +197,7 @@
     <value>Visszaállítás</value>
   </data>
   <data name="Settings_ResetDescription.Text" xml:space="preserve">
-    <value>Raven visszaállítása az alapértelmezett beállításokra.</value>
+    <value>AppDepot visszaállítása az alapértelmezett beállításokra.</value>
   </data>
   <data name="Settings_ResetButton.Content" xml:space="preserve">
     <value>Alkalmazás visszaállítása</value>
@@ -205,7 +215,7 @@
     <value>Mégse</value>
   </data>
   <data name="Settings_About.Text" xml:space="preserve">
-    <value>Raven névjegye</value>
+    <value>AppDepot névjegye</value>
   </data>
   <data name="Settings_AboutDescription.Text" xml:space="preserve">
     <value>Egy nyílt forráskódú, adatvédelem-központú alternatív kliens a Microsoft Store-hoz, amely lehetővé teszi az áruház alkalmazásainak böngészését, letöltését, telepítését és frissítését.</value>
@@ -478,7 +488,7 @@
     <value>Alkalmazás nem támogatott</value>
   </data>
   <data name="AppPage_Error_UnsupportedTypeMsg" xml:space="preserve">
-    <value>Ez az alkalmazás olyan telepítő típust használ, amelyet a Raven még nem támogat.</value>
+    <value>Ez az alkalmazás olyan telepítő típust használ, amelyet a AppDepot még nem támogat.</value>
   </data>
   <data name="AppPage_Error_FailedToInstall" xml:space="preserve">
     <value>Sikertelen telepítés.</value>
@@ -607,10 +617,10 @@
     <value>Windows telepítési hiba (0x{0:X8}). {1}</value>
   </data>
   <data name="Install_Error_PackageCorrupt" xml:space="preserve">
-    <value>The package file is corrupt or incomplete. Try re-downloading it.</value>
+    <value>A csomagfájl sérült vagy hiányos. Próbálja meg újra letölteni.</value>
   </data>
   <data name="Install_Error_MissingDependency" xml:space="preserve">
-    <value>A required component or dependency is missing. Try installing the app from the Microsoft Store instead.</value>
+    <value>Hiányzik egy szükséges összetevő vagy függőség. Próbálja meg inkább a Microsoft Store-ból telepíteni az alkalmazást.</value>
   </data>
   <data name="Install_Error_InvalidManifest" xml:space="preserve">
     <value>A csomag leírója (AppxManifest.xml) érvénytelen vagy hibás.</value>
@@ -619,16 +629,16 @@
     <value>A csomag aláírásának gyökértanúsítványa nem megbízható ezen a rendszeren.</value>
   </data>
   <data name="Install_Error_SignatureInvalid" xml:space="preserve">
-    <value>The package signature is invalid or untrusted.</value>
+    <value>A csomag aláírása érvénytelen vagy nem megbízható.</value>
   </data>
   <data name="Install_Error_SignatureVerificationHint" xml:space="preserve">
     <value>Az aláírás ellenőrzése meghiúsult. Próbálja meg engedélyezni az "Aláírás-ellenőrzés eltávolítása" opciót, majd próbálja újra.</value>
   </data>
   <data name="Install_Error_NotSigned" xml:space="preserve">
-    <value>The package is not digitally signed.</value>
+    <value>A csomag nincs digitálisan aláírva.</value>
   </data>
   <data name="Install_Error_NotSupported" xml:space="preserve">
-    <value>This operation is not supported on your system.</value>
+    <value>Ez a művelet nem támogatott a rendszeren.</value>
   </data>
   <data name="Install_Error_AccessDenied" xml:space="preserve">
     <value>Sikertelen: A hozzáférés megtagadva. Próbálja meg rendszergazdaként futtatni, vagy győződjön meg arról, hogy az oldalbetöltési házirend engedélyezi az alkalmazáscsomagokat. {0}</value>
@@ -932,9 +942,52 @@ A Windows beállításokban a Fejlesztői mód bekapcsolásával engedélyezheti
     <value>Újra</value>
   </data>
   <data name="Install_Btn_DeferredInstall" xml:space="preserve">
-    <value>Deferred Install</value>
+    <value>Halasztott telepítés</value>
   </data>
   <data name="Install_Error_DeferredInstallDescription" xml:space="preserve">
     <value>The application is currently running. We will securely prepare the update now, and it will be applied automatically the next time the app is closed or restarted.</value>
   </data>
+  <data name="Settings_Downloads.Text" xml:space="preserve"><value>Letöltések</value></data>
+  <data name="Settings_ParallelConnections.Header" xml:space="preserve"><value>Párhuzamos letöltési kapcsolatok</value></data>
+  <data name="Settings_ParallelConnectionsDescription.Text" xml:space="preserve"><value>Több kapcsolat használata felgyorsíthatja a nagy csomagok letöltését. Ha a kiszolgáló nem támogatja a szegmentált letöltést, a AppDepot automatikusan egyetlen kapcsolatot használ.</value></data>
+  <data name="Settings_ParallelConnections_Auto" xml:space="preserve"><value>Automatikus</value></data>
+  <data name="Settings_ParallelConnections_One" xml:space="preserve"><value>1 kapcsolat</value></data>
+  <data name="Settings_ParallelConnections_Two" xml:space="preserve"><value>2 kapcsolat</value></data>
+  <data name="Settings_ParallelConnections_Four" xml:space="preserve"><value>4 kapcsolat</value></data>
+  <data name="Settings_ParallelConnections_Eight" xml:space="preserve"><value>8 kapcsolat</value></data>
+  <data name="Settings_Network.Text" xml:space="preserve"><value>Hálózat</value></data>
+  <data name="Settings_ProxyDescription.Text" xml:space="preserve"><value>Válassza ki, hogyan kapcsolódjon a AppDepot a Microsoft csomagletöltési kiszolgálóihoz.</value></data>
+  <data name="Settings_ProxyMode.Header" xml:space="preserve"><value>Proxy</value></data>
+  <data name="Settings_ProxyMode_System" xml:space="preserve"><value>Rendszerproxy használata</value></data>
+  <data name="Settings_ProxyMode_Direct" xml:space="preserve"><value>Közvetlen kapcsolat</value></data>
+  <data name="Settings_ProxyMode_Custom" xml:space="preserve"><value>Egyéni proxy</value></data>
+  <data name="Settings_ProxyUri.Header" xml:space="preserve"><value>Proxy címe</value></data>
+  <data name="Settings_ProxyUri.PlaceholderText" xml:space="preserve"><value>http://127.0.0.1:7890</value></data>
+  <data name="Settings_ProxyInvalidUri" xml:space="preserve"><value>Az egyéni proxy címének érvényes HTTP- vagy HTTPS-URI-nak kell lennie.</value></data>
+  <data name="Common_NoInternetConnectionTitle" xml:space="preserve"><value>Nincs internetkapcsolat</value></data>
+  <data name="Common_NoInternetConnectionMessage" xml:space="preserve"><value>Ellenőrizze a hálózati beállításokat, majd próbálja újra.</value></data>
+  <data name="Common_ProgressPercent" xml:space="preserve"><value>{0}%</value></data>
+  <data name="Install_Error_DependencyProvidedButNotUsed" xml:space="preserve"><value>A megadott függőségek közül egy vagy több nem szükséges a főcsomaghoz. Próbálja meg csak a főcsomagot telepíteni.</value></data>
+  <data name="Install_Btn_InstallDependenciesSeparately" xml:space="preserve"><value>Függőségek külön telepítése</value></data>
+  <data name="AppPage_InstallDependenciesSeparately.Text" xml:space="preserve"><value>Külön telepítés</value></data>
+  <data name="InstallationsPage_InstallDependenciesSeparately.Content" xml:space="preserve"><value>Függőségek külön telepítése</value></data>
+  <data name="Program_AlreadyRunningTitle" xml:space="preserve"><value>AppDepot</value></data>
+  <data name="Program_AlreadyRunningMessage" xml:space="preserve"><value>A AppDepot egy másik példánya már fut.
+Először zárja be, majd indítsa újra ezt az alkalmazást.</value></data>
+  <data name="AI_Title.Text" xml:space="preserve"><value>AI-fordítás</value></data>
+  <data name="AI_Privacy.Text" xml:space="preserve"><value>Amikor a Fordítás gombra kattint, az alkalmazás leírása a beállított szolgáltatásba kerül. A szolgáltató díjat számíthat fel a kérésekért. Az eredeti szöveg megmarad.</value></data>
+  <data name="AI_Endpoint.Header" xml:space="preserve"><value>API alap URL (OpenAI-kompatibilis)</value></data>
+  <data name="AI_Model.Header" xml:space="preserve"><value>Modell</value></data>
+  <data name="AI_Key.Header" xml:space="preserve"><value>API-kulcs (biztonságosan tárolva ehhez a Windows-felhasználóhoz)</value></data>
+  <data name="AI_Prompt.Header" xml:space="preserve"><value>Fordítási utasítások (nem kötelező)</value></data>
+  <data name="AI_Save.Content" xml:space="preserve"><value>Fordítási beállítások mentése</value></data>
+  <data name="AI_Saved" xml:space="preserve"><value>A fordítási beállítások mentve.</value></data>
+  <data name="AI_InvalidSettings" xml:space="preserve"><value>Adjon meg érvényes API alap URL-t és modellt. Használjon HTTPS-t, helyi kiszolgálóhoz pedig HTTP-t.</value></data>
+  <data name="AI_Translate.Content" xml:space="preserve"><value>Leírás fordítása</value></data>
+  <data name="AI_Original.Content" xml:space="preserve"><value>Eredeti megjelenítése</value></data>
+  <data name="AI_Cancel.Content" xml:space="preserve"><value>Fordítás megszakítása</value></data>
+  <data name="AI_Working" xml:space="preserve"><value>Fordítás…</value></data>
+  <data name="AI_Failed" xml:space="preserve"><value>A fordítás nem sikerült. Ellenőrizze a végpontot, a modellt, az API-kulcsot és a hálózatot, majd próbálja újra.</value></data>
+  <data name="AI_NotConfigured" xml:space="preserve"><value>Először állítsa be az AI-fordítást a Beállításokban.</value></data>
+  <data name="AI_TooLong" xml:space="preserve"><value>Ez a leírás túl hosszú ahhoz, hogy egyetlen kérésben lefordítsuk.</value></data>
 </root>

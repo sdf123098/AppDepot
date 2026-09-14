@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 18
 VisualStudioVersion = 18.1.11312.151
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Raven", "Raven\Raven.csproj", "{E2EAD484-4606-4904-B318-E9E16AA8BD16}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppDepot", "Raven\Raven.csproj", "{E2EAD484-4606-4904-B318-E9E16AA8BD16}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StoreListings.Library", "StoreListings\StoreListings.Library\StoreListings.Library.csproj", "{7ECB8BE1-7A42-EEC6-1C6A-5A80FAF0B031}"
 EndProject

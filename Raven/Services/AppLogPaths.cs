@@ -4,7 +4,7 @@ public static class AppLogPaths
 {
     private static readonly string _baseLogRoot = ResolveBaseLogRoot();
 
-    public static string LogDirectory { get; } = Path.Combine(_baseLogRoot, "Raven", "Logs");
+    public static string LogDirectory { get; } = Path.Combine(_baseLogRoot, "AppDepot", "Logs");
 
     public static string RuntimeLogFilePath { get; } = Path.Combine(LogDirectory, "runtime-.log");
     public static string CrashLogFilePath { get; } = Path.Combine(LogDirectory, "crash-.log");

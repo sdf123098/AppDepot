@@ -11,7 +11,7 @@ namespace Raven.Services;
 
 public class LocalSettingsService : ILocalSettingsService
 {
-    private const string _defaultApplicationDataFolder = "Raven/ApplicationData";
+    private const string _defaultApplicationDataFolder = "AppDepot/ApplicationData";
     private const string _defaultLocalSettingsFile = "LocalSettings.json";
 
     private readonly IPersistentFileStore _fileStore;

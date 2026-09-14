@@ -480,12 +480,41 @@
                             Style="{ThemeResource SubtitleTextBlockStyle}" />
                         <!--  Divider  -->
                         <Rectangle Height="1" Fill="{ThemeResource DividerStrokeColorDefaultBrush}" />
-                        <TextBlock
-                            Margin="24,24"
-                            FontSize="14"
-                            Foreground="{ThemeResource TextFillColorSecondaryBrush}"
-                            Text="{x:Bind AppData.Description, Mode=OneWay}"
-                            TextWrapping="Wrap" />
+                        <StackPanel Margin="24,24" Spacing="12">
+                            <TextBlock
+                                x:Name="OriginalDescription"
+                                FontSize="14"
+                                Foreground="{ThemeResource TextFillColorSecondaryBrush}"
+                                Text="{x:Bind AppData.Description, Mode=OneWay}"
+                                TextWrapping="Wrap" />
+                            <TextBlock
+                                x:Name="TranslatedDescription"
+                                FontSize="14"
+                                Foreground="{ThemeResource TextFillColorSecondaryBrush}"
+                                TextWrapping="Wrap"
+                                Visibility="Collapsed" />
+                            <StackPanel Orientation="Horizontal" Spacing="8">
+                                <Button
+                                    x:Name="TranslateDescriptionButton"
+                                    x:Uid="AI_Translate"
+                                    Click="TranslateDescription_Click" />
+                                <Button
+                                    x:Name="ShowOriginalButton"
+                                    x:Uid="AI_Original"
+                                    Click="ShowOriginal_Click"
+                                    Visibility="Collapsed" />
+                                <Button
+                                    x:Name="CancelTranslationButton"
+                                    x:Uid="AI_Cancel"
+                                    Click="CancelTranslation_Click"
+                                    Visibility="Collapsed" />
+                            </StackPanel>
+                            <TextBlock
+                                x:Name="TranslationStatus"
+                                FontSize="12"
+                                Foreground="{ThemeResource TextFillColorSecondaryBrush}"
+                                TextWrapping="Wrap" />
+                        </StackPanel>
                     </StackPanel>
                     <!--  More Details Section  -->
                     <StackPanel

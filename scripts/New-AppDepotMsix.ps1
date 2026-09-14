@@ -16,6 +16,16 @@ param(
     [ValidatePattern('^\d+\.\d+\.\d+\.\d+$')]
     [string] $Version,
 
+    [string] $IdentityName = 'Micafic.AppDepot',
+
+    [string] $DisplayName = 'AppDepot',
+
+    [string] $PublisherDisplayName = 'Micafic',
+
+    [string] $Description = 'AppDepot Windows app store client',
+
+    [string] $Publisher = 'CN=0FC149E9-04DE-4659-A0F2-E17CB3171973',
+
     [string] $WindowsSdkRoot,
 
     [switch] $Sign,
@@ -66,7 +76,7 @@ if ($outputParent) {
     New-Item -ItemType Directory -Path $outputParent -Force | Out-Null
 }
 
-$publisher = 'CN=AppDepot'
+$publisher = $Publisher
 if ($Sign) {
     if (-not [string]::IsNullOrWhiteSpace($CertificatePath) -and
         -not [string]::IsNullOrWhiteSpace($CertificateThumbprint)) {
@@ -118,7 +128,15 @@ try {
 
     $manifest = [System.IO.File]::ReadAllText((Resolve-Path -LiteralPath $templatePath).Path)
     $publisherXml = [System.Security.SecurityElement]::Escape($publisher)
+    $identityNameXml = [System.Security.SecurityElement]::Escape($IdentityName)
+    $displayNameXml = [System.Security.SecurityElement]::Escape($DisplayName)
+    $publisherDisplayNameXml = [System.Security.SecurityElement]::Escape($PublisherDisplayName)
+    $descriptionXml = [System.Security.SecurityElement]::Escape($Description)
     $manifest = $manifest.Replace('__PUBLISHER__', $publisherXml)
+    $manifest = $manifest.Replace('__IDENTITY_NAME__', $identityNameXml)
+    $manifest = $manifest.Replace('__DISPLAY_NAME__', $displayNameXml)
+    $manifest = $manifest.Replace('__PUBLISHER_DISPLAY_NAME__', $publisherDisplayNameXml)
+    $manifest = $manifest.Replace('__DESCRIPTION__', $descriptionXml)
     $manifest = $manifest.Replace('__VERSION__', $Version)
     $manifest = $manifest.Replace('__ARCHITECTURE__', $Architecture)
     [System.IO.File]::WriteAllText(
@@ -147,7 +165,12 @@ try {
         }
     }
 
-    Write-Host "Created MSIX: $outputFullPath"
+    if ($Sign) {
+        Write-Host "Created signed MSIX: $outputFullPath"
+    }
+    else {
+        Write-Host "Created unsigned Store-ready MSIX: $outputFullPath"
+    }
 }
 finally {
     if (Test-Path -LiteralPath $stageRoot) {

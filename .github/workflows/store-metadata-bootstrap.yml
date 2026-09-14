@@ -1,0 +1,66 @@
+name: Export Microsoft Store Base Metadata
+
+on:
+  workflow_dispatch:
+    inputs:
+      store_product_id:
+        description: "Partner Center / Microsoft Store Product ID"
+        required: true
+        default: "9P15TS1PG7J8"
+        type: string
+      confirm_metadata_export:
+        description: "Type EXPORT to download the current metadata draft"
+        required: true
+        default: ""
+        type: string
+
+jobs:
+  export:
+    name: Export reviewed metadata source
+    runs-on: windows-latest
+    environment: microsoft-store-production
+    permissions:
+      contents: read
+    steps:
+      - name: Confirm read-only export
+        shell: pwsh
+        env:
+          CONFIRM: ${{ inputs.confirm_metadata_export }}
+        run: |
+          if ($env:CONFIRM -ne 'EXPORT') {
+            throw 'This read-only export requires confirm_metadata_export=EXPORT.'
+          }
+
+      - name: Configure Microsoft Store CLI
+        uses: microsoft/microsoft-store-apppublisher@v1.1
+
+      - name: Configure Store credentials
+        shell: pwsh
+        env:
+          TENANT_ID: ${{ secrets.AZURE_AD_TENANT_ID }}
+          SELLER_ID: ${{ secrets.SELLER_ID }}
+          CLIENT_ID: ${{ secrets.AZURE_AD_APPLICATION_CLIENT_ID }}
+          CLIENT_SECRET: ${{ secrets.AZURE_AD_APPLICATION_SECRET }}
+        run: >
+          msstore reconfigure --tenantId $env:TENANT_ID --sellerId $env:SELLER_ID
+          --clientId $env:CLIENT_ID --clientSecret $env:CLIENT_SECRET
+
+      - name: Download base metadata
+        shell: pwsh
+        env:
+          PRODUCT_ID: ${{ inputs.store_product_id }}
+        run: |
+          New-Item -ItemType Directory -Path ./metadata-export -Force | Out-Null
+          msstore submission get $env:PRODUCT_ID |
+            Out-File -FilePath ./metadata-export/metadata.json -Encoding utf8
+          $metadata = Get-Content -Raw ./metadata-export/metadata.json | ConvertFrom-Json
+          if (-not $metadata) { throw 'Microsoft Store CLI returned empty metadata.' }
+          Write-Host "Downloaded base metadata for Product ID $env:PRODUCT_ID. Review it locally before committing it as metadata/metadata.json."
+
+      - name: Upload metadata for developer review
+        uses: actions/upload-artifact@v7
+        with:
+          name: Store-Base-Metadata-${{ inputs.store_product_id }}
+          path: metadata-export/metadata.json
+          if-no-files-found: error
+          retention-days: 7

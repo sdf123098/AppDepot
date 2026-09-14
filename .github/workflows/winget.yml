@@ -1,23 +1,111 @@
-name: Publish to WinGet
+name: Verify WinGet Distribution
+
 on:
   release:
     types: [published]
   workflow_dispatch:
     inputs:
       tag:
-        description: "Release tag to publish (e.g. v1.0.0.0)"
+        description: "Published GitHub Release tag (for example v1.0.0.0)"
         required: true
         type: string
+      force_community:
+        description: "Generate a community manifest even when msstore is configured"
+        required: true
+        default: false
+        type: boolean
 
 jobs:
-  publish:
+  msstore-check:
+    name: Check msstore source
     runs-on: windows-latest
-    if: ${{ !github.event.release.prerelease }}
+    if: ${{ (vars.MSSTORE_PRODUCT_ID || '9P15TS1PG7J8') != '' && !github.event.release.prerelease }}
+    outputs:
+      found: ${{ steps.check.outputs.found }}
     steps:
-      - name: Submit update to WinGet
-        uses: vedantmgoyal9/winget-releaser@main
+      - name: Query and install from Microsoft Store source
+        id: check
+        shell: pwsh
+        env:
+          PRODUCT_ID: ${{ vars.MSSTORE_PRODUCT_ID || '9P15TS1PG7J8' }}
+        run: |
+          winget source update
+          winget search --id $env:PRODUCT_ID --exact --source msstore --accept-source-agreements
+          if ($LASTEXITCODE -ne 0) {
+            "found=false" | Out-File -FilePath $env:GITHUB_OUTPUT -Encoding utf8 -Append
+            Write-Warning "Product '$env:PRODUCT_ID' was not found in the msstore source."
+            exit 0
+          }
+
+          winget install --id $env:PRODUCT_ID --exact --source msstore --silent `
+            --accept-source-agreements --accept-package-agreements
+          if ($LASTEXITCODE -ne 0) {
+            "found=false" | Out-File -FilePath $env:GITHUB_OUTPUT -Encoding utf8 -Append
+            Write-Warning "Product '$env:PRODUCT_ID' was listed but could not be installed from msstore."
+            exit 0
+          }
+          "found=true" | Out-File -FilePath $env:GITHUB_OUTPUT -Encoding utf8 -Append
+
+  community-manifest:
+    name: Generate and validate community manifest
+    needs: msstore-check
+    if: ${{ always() && !github.event.release.prerelease && (inputs.force_community == true || (vars.MSSTORE_PRODUCT_ID || '9P15TS1PG7J8') == '' || needs.msstore-check.outputs.found != 'true') }}
+    runs-on: windows-latest
+    permissions:
+      contents: read
+    env:
+      RELEASE_TAG: ${{ inputs.tag || github.event.release.tag_name }}
+      REPOSITORY: ${{ github.repository }}
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v7
         with:
-          identifier: sdf123098.AppDepot
-          installers-regex: '\.msix$'
-          release-tag: ${{ inputs.tag || github.event.release.tag_name }}
-          token: ${{ secrets.WINGET_TOKEN }}
+          submodules: false
+      - name: Parse release version
+        shell: pwsh
+        run: |
+          $version = $env:RELEASE_TAG -replace '^v', ''
+          if ($version -notmatch '^\d+\.\d+\.\d+\.\d+$') {
+            throw "A stable four-part numeric release is required for WinGet manifests: $version"
+          }
+          "VERSION=$version" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
+      - name: Download portable release assets
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Path ./release-assets -Force | Out-Null
+          gh release download $env:RELEASE_TAG --repo $env:REPOSITORY `
+            --pattern "AppDepot-$env:VERSION-windows-*.zip" --dir ./release-assets --clobber
+      - name: Generate manifest with repository script
+        shell: pwsh
+        run: >
+          ./scripts/New-AppDepotWingetManifest.ps1 -Version $env:VERSION
+          -ReleaseTag $env:RELEASE_TAG -Repository $env:REPOSITORY
+          -AssetDirectory ./release-assets -OutputDirectory ./winget-manifests
+      - name: Use wingetcreate when a checked-in community manifest exists
+        shell: pwsh
+        env:
+          WINGET_TOKEN: ${{ secrets.WINGET_TOKEN }}
+        run: |
+          if ((Test-Path './packaging/winget') -and
+              (Get-ChildItem './packaging/winget' -Filter '*.yaml' -File -ErrorAction SilentlyContinue) -and
+              -not [string]::IsNullOrWhiteSpace($env:WINGET_TOKEN)) {
+            Invoke-WebRequest https://aka.ms/wingetcreate/latest -OutFile ./wingetcreate.exe
+            # This updates a checked-in package definition locally only. No PR or
+            # third-party repository submission is performed by this workflow.
+            ./wingetcreate.exe update sdf123098.AppDepot --out ./winget-manifests `
+              --version $env:VERSION --token $env:WINGET_TOKEN
+            if ($LASTEXITCODE -ne 0) { throw "wingetcreate update failed with exit code $LASTEXITCODE." }
+          }
+      - name: Validate generated manifest
+        shell: pwsh
+        run: |
+          $manifestPath = Join-Path $PWD "winget-manifests\sdf123098\AppDepot\$env:VERSION"
+          winget validate --manifest $manifestPath
+          if ($LASTEXITCODE -ne 0) { throw "winget validate failed with exit code $LASTEXITCODE." }
+      - name: Upload manifest for review or submission
+        uses: actions/upload-artifact@v7
+        with:
+          name: Winget-Manifest
+          path: winget-manifests
+          if-no-files-found: error

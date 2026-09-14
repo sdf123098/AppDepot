@@ -47,7 +47,7 @@ foreach (var language in languages)
     }
 
     // Brand name must survive translation.
-    if ("AppDisplayName".GetLocalized() != "Raven")
+    if ("AppDisplayName".GetLocalized() != "AppDepot")
     {
         failures++;
         Console.WriteLine($"FAIL {language} AppDisplayName: [{"AppDisplayName".GetLocalized()}]");

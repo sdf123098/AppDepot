@@ -76,8 +76,14 @@ Built with **WinUI 3** and **.NET 10**, AppDepot delivers a clean, fluent UI tha
 ```ps1
 winget install sdf123098.AppDepot
 ```
+- WinGet installs the signed MSIX package, so AppDepot is registered in Windows and appears in the Start menu automatically.
 - If you encounter a false antivirus positive, download `raven_cert.zip` from [releases](https://github.com/sdf123098/AppDepot/releases), extract the contents and install `raven.cer` or run `install_raven_cert.bat`.
 - Search for `AppDepot` in the start menu and run it.
+
+#### 3. Recording ZIP
+- Download the `*-self-contained.zip` archive from [releases](https://github.com/sdf123098/AppDepot/releases) when you want a portable recording build.
+- This archive targets `win-x64`/`win-x86`/`win-arm64` and includes the .NET 10 runtime plus the Windows App Runtime; no separate .NET 10 installation is required.
+- Extract the archive and run `AppDepot.exe`.
 
 ### ▶️ Video Guide
 [<img width="996" height="543" alt="IMM-WZsVCt5_E" src="https://github.com/user-attachments/assets/80fd984c-8587-49a0-ae13-07bee72d9a9d" />

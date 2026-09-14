@@ -80,6 +80,15 @@ jobs:
         with:
           dotnet-version: "10.0.x"
 
+      - name: Verify .NET 10 SDK
+        shell: pwsh
+        run: |
+          $sdkVersion = (& dotnet --version).Trim()
+          Write-Host ".NET SDK: $sdkVersion"
+          if (-not $sdkVersion.StartsWith('10.')) {
+            throw "Expected .NET 10 SDK, found '$sdkVersion'."
+          }
+
       - name: Ensure VC++ ARM64 Tools
         if: matrix.arch == 'arm64'
         shell: pwsh
@@ -139,6 +148,8 @@ jobs:
           -r win-$env:ARCH
           --self-contained false
           -o ./publish_output
+          -p:DebugSymbols=false
+          -p:DebugType=None
           -p:Version=$env:NUMERIC_VERSION
           -p:AssemblyVersion=$env:NUMERIC_VERSION
           -p:FileVersion=$env:NUMERIC_VERSION
@@ -163,6 +174,8 @@ jobs:
           --self-contained true
           -p:WindowsAppSDKSelfContained=true
           -o ./publish_output_full
+          -p:DebugSymbols=false
+          -p:DebugType=None
           -p:Version=$env:NUMERIC_VERSION
           -p:AssemblyVersion=$env:NUMERIC_VERSION
           -p:FileVersion=$env:NUMERIC_VERSION
@@ -220,6 +233,43 @@ jobs:
           $certBytes = $cert.Export([System.Security.Cryptography.X509Certificates.X509ContentType]::Cert)
           [System.IO.File]::WriteAllBytes("RavenCert.cer", $certBytes)
 
+      - name: Verify Self-Contained .NET 10 Payload
+        shell: pwsh
+        run: |
+          $runtimeConfig = "./publish_output_full/AppDepot.runtimeconfig.json"
+          if (-not (Test-Path $runtimeConfig)) {
+            throw "Self-contained runtime config is missing: $runtimeConfig"
+          }
+          $runtimeConfigText = Get-Content -Raw -Path $runtimeConfig
+          if ($runtimeConfigText -notmatch '"tfm"\s*:\s*"net10\.0') {
+            throw "Self-contained payload is not targeting .NET 10."
+          }
+          foreach ($requiredFile in @(
+              "./publish_output_full/AppDepot.exe",
+              "./publish_output_full/AppDepot.dll",
+              "./publish_output_full/coreclr.dll",
+              "./publish_output_full/hostfxr.dll",
+              "./publish_output_full/Microsoft.WindowsAppRuntime.Bootstrap.dll"
+            )) {
+            if (-not (Test-Path $requiredFile)) {
+              throw "Self-contained payload is missing: $requiredFile"
+            }
+          }
+
+      - name: Create and Sign MSIX
+        shell: pwsh
+        env:
+          CERT_PASSWORD: ${{ secrets.CERT_PASSWORD }}
+        run: >
+          pwsh -NoProfile -ExecutionPolicy Bypass
+          -File ./scripts/New-AppDepotMsix.ps1
+          -PublishDirectory ./publish_output_full
+          -OutputPath "./AppDepot-${{ needs.prepare.outputs.release_tag }}-win-${{ matrix.arch }}.msix"
+          -Architecture $env:ARCH
+          -Version $env:NUMERIC_VERSION
+          -Sign
+          -CertificatePath ./RavenCert.pfx
+
       - name: Create Zip Archives
         shell: pwsh
         run: |
@@ -244,6 +294,7 @@ jobs:
           path: |
             AppDepot-${{ needs.prepare.outputs.release_tag }}-win-${{ matrix.arch }}.zip
             AppDepot-${{ needs.prepare.outputs.release_tag }}-win-${{ matrix.arch }}-self-contained.zip
+            AppDepot-${{ needs.prepare.outputs.release_tag }}-win-${{ matrix.arch }}.msix
 
       - name: Upload Auto Install Certificate Artifact
         if: matrix.arch == 'x64'
@@ -284,4 +335,5 @@ jobs:
             ./artifacts/AppDepot-*-win-x86.zip
             ./artifacts/AppDepot-*-win-arm64.zip
             ./artifacts/*-self-contained.zip
+            ./artifacts/AppDepot-*-win-*.msix
             ./artifacts/raven_cert.zip

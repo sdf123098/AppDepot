@@ -18,6 +18,6 @@ jobs:
         uses: vedantmgoyal9/winget-releaser@main
         with:
           identifier: sdf123098.AppDepot
-          installers-regex: '-self-contained\.zip$'
+          installers-regex: '\.msix$'
           release-tag: ${{ inputs.tag || github.event.release.tag_name }}
           token: ${{ secrets.WINGET_TOKEN }}

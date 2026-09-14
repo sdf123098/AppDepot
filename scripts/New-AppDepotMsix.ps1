@@ -1,4 +1,6 @@
 [CmdletBinding()]
+# Pass -WindowsSdkRoot when the Windows SDK is installed outside the default
+# Program Files location, for example: -WindowsSdkRoot D:\Winsdk.
 param(
     [Parameter(Mandatory)]
     [string] $PublishDirectory,
@@ -14,25 +16,40 @@ param(
     [ValidatePattern('^\d+\.\d+\.\d+\.\d+$')]
     [string] $Version,
 
+    [string] $WindowsSdkRoot,
+
     [switch] $Sign,
 
-    [string] $CertificatePath
+    [string] $CertificatePath,
+
+    [string] $CertificateThumbprint
 )
 
 $ErrorActionPreference = 'Stop'
 
-function Find-WindowsSdkTool([string] $toolName) {
+function Find-WindowsSdkTool([string] $toolName, [string] $sdkRoot) {
     $command = Get-Command $toolName -ErrorAction SilentlyContinue
     if ($command) {
         return $command.Source
     }
 
-    $kitsRoot = Join-Path ${env:ProgramFiles(x86)} 'Windows Kits\10\bin'
-    $candidate = Get-ChildItem -Path $kitsRoot -Filter $toolName -Recurse -File -ErrorAction SilentlyContinue |
-        Sort-Object FullName -Descending |
-        Select-Object -First 1
-    if ($candidate) {
-        return $candidate.FullName
+    $searchRoots = @()
+    if (-not [string]::IsNullOrWhiteSpace($sdkRoot)) {
+        $searchRoots += $sdkRoot
+    }
+    $searchRoots += Join-Path ${env:ProgramFiles(x86)} 'Windows Kits\10\bin'
+
+    foreach ($searchRoot in $searchRoots | Select-Object -Unique) {
+        if (-not (Test-Path -LiteralPath $searchRoot -PathType Container)) {
+            continue
+        }
+
+        $candidate = Get-ChildItem -Path $searchRoot -Filter $toolName -Recurse -File -ErrorAction SilentlyContinue |
+            Sort-Object FullName -Descending |
+            Select-Object -First 1
+        if ($candidate) {
+            return $candidate.FullName
+        }
     }
 
     throw "Windows SDK tool '$toolName' was not found. Install the Windows 10/11 SDK."
@@ -51,24 +68,38 @@ if ($outputParent) {
 
 $publisher = 'CN=AppDepot'
 if ($Sign) {
-    if ([string]::IsNullOrWhiteSpace($CertificatePath) -or
-        -not (Test-Path -LiteralPath $CertificatePath -PathType Leaf)) {
-        throw 'A valid -CertificatePath is required when -Sign is specified.'
+    if (-not [string]::IsNullOrWhiteSpace($CertificatePath) -and
+        -not [string]::IsNullOrWhiteSpace($CertificateThumbprint)) {
+        throw 'Specify either -CertificatePath or -CertificateThumbprint, not both.'
     }
 
-    $certificatePassword = $env:CERT_PASSWORD
-    if ([string]::IsNullOrWhiteSpace($certificatePassword)) {
-        throw 'CERT_PASSWORD must be set when signing an MSIX.'
+    if (-not [string]::IsNullOrWhiteSpace($CertificateThumbprint)) {
+        $normalizedThumbprint = $CertificateThumbprint.Replace(' ', '').ToUpperInvariant()
+        $certificate = Get-ChildItem "Cert:\CurrentUser\My\$normalizedThumbprint" -ErrorAction SilentlyContinue
+        if (-not $certificate -or -not $certificate.HasPrivateKey) {
+            throw "A certificate with a private key was not found in Cert:\CurrentUser\My: $normalizedThumbprint"
+        }
     }
+    else {
+        if ([string]::IsNullOrWhiteSpace($CertificatePath) -or
+            -not (Test-Path -LiteralPath $CertificatePath -PathType Leaf)) {
+            throw 'A valid -CertificatePath or -CertificateThumbprint is required when -Sign is specified.'
+        }
 
-    $certificate = [System.Security.Cryptography.X509Certificates.X509Certificate2]::new(
-        (Resolve-Path -LiteralPath $CertificatePath).Path,
-        $certificatePassword)
+        $certificatePassword = $env:CERT_PASSWORD
+        if ([string]::IsNullOrWhiteSpace($certificatePassword)) {
+            throw 'CERT_PASSWORD must be set when signing an MSIX from a PFX.'
+        }
+
+        $certificate = [System.Security.Cryptography.X509Certificates.X509Certificate2]::new(
+            (Resolve-Path -LiteralPath $CertificatePath).Path,
+            $certificatePassword)
+    }
     $publisher = $certificate.Subject
 }
 
-$makeAppx = Find-WindowsSdkTool 'makeappx.exe'
-$signtool = if ($Sign) { Find-WindowsSdkTool 'signtool.exe' }
+$makeAppx = Find-WindowsSdkTool 'makeappx.exe' $WindowsSdkRoot
+$signtool = if ($Sign) { Find-WindowsSdkTool 'signtool.exe' $WindowsSdkRoot }
 $templatePath = Join-Path $PSScriptRoot '..\packaging\AppxManifest.xml.template'
 if (-not (Test-Path -LiteralPath $templatePath -PathType Leaf)) {
     throw "MSIX manifest template not found: $templatePath"
@@ -105,7 +136,12 @@ try {
     }
 
     if ($Sign) {
-        & $signtool sign /fd SHA256 /a /f (Resolve-Path -LiteralPath $CertificatePath).Path /p $certificatePassword /tr http://timestamp.digicert.com /td SHA256 $outputFullPath
+        if (-not [string]::IsNullOrWhiteSpace($CertificateThumbprint)) {
+            & $signtool sign /fd SHA256 /sha1 $normalizedThumbprint /tr http://timestamp.digicert.com /td SHA256 $outputFullPath
+        }
+        else {
+            & $signtool sign /fd SHA256 /a /f (Resolve-Path -LiteralPath $CertificatePath).Path /p $certificatePassword /tr http://timestamp.digicert.com /td SHA256 $outputFullPath
+        }
         if ($LASTEXITCODE -ne 0) {
             throw "SignTool failed with exit code $LASTEXITCODE."
         }

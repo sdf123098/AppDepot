@@ -338,9 +338,10 @@ jobs:
           $ErrorActionPreference = 'Stop'
           $upload = Get-ChildItem -LiteralPath './store-msix' -Filter '*.msixupload' | Select-Object -First 1
           if (-not $upload) { throw 'Store MSIX upload package was not found.' }
-          # The official package publish command uploads the package and submits
-          # the resulting Store submission for certification.
-          msstore publish $upload.FullName --appId $env:PRODUCT_ID
+          # The current Microsoft Store CLI expects the project root as the
+          # positional argument and the directory containing the .msixupload
+          # through --inputDirectory.
+          msstore publish "$PWD\Raven" --inputDirectory "$PWD\store-msix" --appId $env:PRODUCT_ID
           if ($LASTEXITCODE -ne 0) { throw "msstore publish failed with exit code $LASTEXITCODE." }
           msstore submission status $env:PRODUCT_ID
           if ($LASTEXITCODE -ne 0) { throw "msstore submission status failed with exit code $LASTEXITCODE." }

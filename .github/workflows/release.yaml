@@ -338,12 +338,9 @@ jobs:
           $ErrorActionPreference = 'Stop'
           $upload = Get-ChildItem -LiteralPath './store-msix' -Filter '*.msixupload' | Select-Object -First 1
           if (-not $upload) { throw 'Store MSIX upload package was not found.' }
-          # Upload the package while keeping the submission draft, then publish
-          # that exact draft explicitly. This follows the official CLI flow and
-          # makes the irreversible certification submission visible in logs.
-          msstore publish "$PWD\Raven" --inputDirectory $upload.DirectoryName --appId $env:PRODUCT_ID --noCommit
+          # The official package publish command uploads the package and submits
+          # the resulting Store submission for certification.
+          msstore publish $upload.FullName --appId $env:PRODUCT_ID
           if ($LASTEXITCODE -ne 0) { throw "msstore publish failed with exit code $LASTEXITCODE." }
-          msstore submission publish $env:PRODUCT_ID
-          if ($LASTEXITCODE -ne 0) { throw "msstore submission publish failed with exit code $LASTEXITCODE." }
           msstore submission status $env:PRODUCT_ID
           if ($LASTEXITCODE -ne 0) { throw "msstore submission status failed with exit code $LASTEXITCODE." }

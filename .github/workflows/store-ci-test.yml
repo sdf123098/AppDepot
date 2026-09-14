@@ -1,0 +1,451 @@
+name: Microsoft Store CI Experiment
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Four-part package version (for example 1.0.0.0)"
+        required: true
+        default: "1.0.0.0"
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  prepare:
+    name: Prepare package version
+    runs-on: windows-latest
+    outputs:
+      release_version: ${{ steps.version.outputs.release_version }}
+      numeric_version: ${{ steps.version.outputs.numeric_version }}
+      release_tag: ${{ steps.version.outputs.release_tag }}
+    steps:
+      - name: Normalize and validate version
+        id: version
+        shell: pwsh
+        env:
+          VERSION_INPUT: ${{ inputs.version }}
+        run: |
+          $raw = "$env:VERSION_INPUT".Trim()
+          if ([string]::IsNullOrWhiteSpace($raw)) { throw "Version input cannot be empty." }
+
+          $normalized = if ($raw.StartsWith('v', [System.StringComparison]::OrdinalIgnoreCase)) {
+            $raw.Substring(1)
+          }
+          else {
+            $raw
+          }
+
+          if ($normalized -notmatch '^([\d\.]+)(-[A-Za-z0-9\.\-]+)?$') {
+            throw "Invalid version format. Use four numeric components, optionally followed by a prerelease suffix."
+          }
+
+          $numericPart = $Matches[1]
+          if ($numericPart.Split('.').Count -ne 4) {
+            throw "Version must contain exactly four numeric components."
+          }
+
+          $parsed = $null
+          if (-not [System.Version]::TryParse($numericPart, [ref]$parsed)) {
+            throw "Invalid numeric package version."
+          }
+
+          "release_version=$normalized" | Out-File -FilePath $env:GITHUB_OUTPUT -Encoding utf8 -Append
+          "numeric_version=$numericPart" | Out-File -FilePath $env:GITHUB_OUTPUT -Encoding utf8 -Append
+          "release_tag=v$normalized" | Out-File -FilePath $env:GITHUB_OUTPUT -Encoding utf8 -Append
+          Write-Host "Package version: $numericPart"
+
+  build-msix:
+    name: Build ${{ matrix.arch }} Store MSIX
+    needs: prepare
+    runs-on: windows-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        arch: [x64, x86, arm64]
+    env:
+      RELEASE_VERSION: ${{ needs.prepare.outputs.release_version }}
+      NUMERIC_VERSION: ${{ needs.prepare.outputs.numeric_version }}
+      RELEASE_TAG: ${{ needs.prepare.outputs.release_tag }}
+      ARCH: ${{ matrix.arch }}
+      STORE_IDENTITY_NAME: ${{ vars.STORE_IDENTITY_NAME }}
+      STORE_PUBLISHER: ${{ vars.STORE_PUBLISHER }}
+      STORE_PUBLISHER_DISPLAY_NAME: ${{ vars.STORE_PUBLISHER_DISPLAY_NAME }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v7
+        with:
+          submodules: recursive
+
+      - name: Set up .NET
+        uses: actions/setup-dotnet@v6
+        with:
+          dotnet-version: "10.0.x"
+
+      - name: Verify .NET SDK
+        shell: pwsh
+        run: |
+          $sdkVersion = (& dotnet --version).Trim()
+          if (-not $sdkVersion.StartsWith('10.')) {
+            throw "Expected .NET 10 SDK, found '$sdkVersion'."
+          }
+
+      - name: Ensure VC++ ARM64 tools
+        if: matrix.arch == 'arm64'
+        shell: pwsh
+        run: |
+          $vswhere = "${env:ProgramFiles(x86)}\Microsoft Visual Studio\Installer\vswhere.exe"
+          $vsPath = & $vswhere -latest -property installationPath
+          $msvcRoot = Join-Path $vsPath 'VC\Tools\MSVC'
+          $hasArm64Tools = Get-ChildItem -Path $msvcRoot -Filter link.exe -Recurse -File -ErrorAction SilentlyContinue |
+            Where-Object FullName -match '\\bin\\Hostx64\\arm64\\link\.exe$' |
+            Select-Object -First 1
+          if (-not $hasArm64Tools) {
+            $installer = "${env:ProgramFiles(x86)}\Microsoft Visual Studio\Installer\vs_installer.exe"
+            $proc = Start-Process -FilePath $installer -Wait -PassThru -ArgumentList @(
+              'modify', '--installPath', "`"$vsPath`"", '--add', 'Microsoft.VisualStudio.Component.VC.Tools.ARM64',
+              '--quiet', '--norestart', '--force', '--nocache')
+            if ($proc.ExitCode -notin 0, 3010) {
+              throw "VS installer failed with exit code $($proc.ExitCode)."
+            }
+          }
+
+      - name: Set up MSVC toolchain
+        uses: ilammy/msvc-dev-cmd@v1
+        with:
+          arch: ${{ matrix.arch == 'arm64' && 'amd64_arm64' || matrix.arch == 'x86' && 'amd64_x86' || 'amd64' }}
+
+      - name: Cache NuGet packages
+        uses: actions/cache@v6
+        with:
+          path: ~/.nuget/packages
+          key: nuget-${{ runner.os }}-${{ hashFiles('**/*.csproj', '**/packages.lock.json') }}
+          restore-keys: nuget-${{ runner.os }}-
+
+      - name: Publish self-contained app
+        shell: pwsh
+        run: |
+          Write-Host "Actual build command:"
+          Write-Host "dotnet publish Raven/Raven.csproj -c Release -r win-$env:ARCH --self-contained true -p:WindowsAppSDKSelfContained=true -p:DebugSymbols=false -p:DebugType=None -p:Version=$env:NUMERIC_VERSION -p:AssemblyVersion=$env:NUMERIC_VERSION -p:FileVersion=$env:NUMERIC_VERSION -p:InformationalVersion=$env:RELEASE_TAG -o ./publish_output"
+          dotnet publish Raven/Raven.csproj -c Release -r win-$env:ARCH --self-contained true `
+            -p:WindowsAppSDKSelfContained=true -p:DebugSymbols=false -p:DebugType=None `
+            -p:Version=$env:NUMERIC_VERSION -p:AssemblyVersion=$env:NUMERIC_VERSION `
+            -p:FileVersion=$env:NUMERIC_VERSION -p:InformationalVersion=$env:RELEASE_TAG `
+            -o ./publish_output
+
+      - name: Publish NativeAOT updater
+        shell: pwsh
+        run: |
+          Write-Host "Actual updater build command:"
+          Write-Host "dotnet publish Raven.Updater/Raven.Updater.csproj -c Release -r win-$env:ARCH --property:PublishAot=true --property:IlcUseEnvironmentalTools=true --property:Version=$env:NUMERIC_VERSION --property:AssemblyVersion=$env:NUMERIC_VERSION --property:FileVersion=$env:NUMERIC_VERSION -o ./updater_aot"
+          dotnet publish Raven.Updater/Raven.Updater.csproj -c Release -r win-$env:ARCH `
+            -p:PublishAot=true -p:IlcUseEnvironmentalTools=true -p:Version=$env:NUMERIC_VERSION `
+            -p:AssemblyVersion=$env:NUMERIC_VERSION -p:FileVersion=$env:NUMERIC_VERSION -o ./updater_aot
+
+      - name: Replace updater with NativeAOT build
+        shell: pwsh
+        run: |
+          $aotUpdater = './updater_aot/Raven.Updater.exe'
+          if (-not (Test-Path -LiteralPath $aotUpdater)) {
+            throw "NativeAOT updater was not produced at $aotUpdater."
+          }
+          Get-ChildItem -Path './publish_output' -Filter 'Raven.Updater.*' -File | Remove-Item -Force
+          Copy-Item -LiteralPath $aotUpdater -Destination './publish_output/Raven.Updater.exe' -Force
+
+      - name: Check Store package identity variables
+        shell: pwsh
+        run: |
+          $expectedIdentityName = 'Micaftic.AppDepot'
+          $expectedPublisher = 'CN=0FC149E9-04DE-4659-A0F2-E17CB3171973'
+          $expectedPublisherDisplayName = 'Micaftic'
+          if ([string]::IsNullOrWhiteSpace($env:STORE_IDENTITY_NAME) -or
+              [string]::IsNullOrWhiteSpace($env:STORE_PUBLISHER) -or
+              [string]::IsNullOrWhiteSpace($env:STORE_PUBLISHER_DISPLAY_NAME)) {
+            throw 'Set STORE_IDENTITY_NAME, STORE_PUBLISHER, and STORE_PUBLISHER_DISPLAY_NAME repository Variables from Partner Center before creating a Store package.'
+          }
+          if ($env:STORE_IDENTITY_NAME -cne $expectedIdentityName -or
+              $env:STORE_PUBLISHER -cne $expectedPublisher -or
+              $env:STORE_PUBLISHER_DISPLAY_NAME -cne $expectedPublisherDisplayName) {
+            throw 'Store identity Variables do not match the repository''s configured Partner Center identity.'
+          }
+
+      - name: Create Store-ready MSIX
+        shell: pwsh
+        run: |
+          ./scripts/New-AppDepotMsix.ps1 -PublishDirectory ./publish_output `
+            -OutputPath "./store-msix/AppDepot-$env:RELEASE_VERSION-win-$env:ARCH.msix" `
+            -Architecture $env:ARCH -Version $env:NUMERIC_VERSION `
+            -IdentityName $env:STORE_IDENTITY_NAME -Publisher $env:STORE_PUBLISHER `
+            -PublisherDisplayName $env:STORE_PUBLISHER_DISPLAY_NAME
+
+      - name: Validate Store-ready MSIX
+        shell: pwsh
+        run: |
+          $package = Get-ChildItem -LiteralPath './store-msix' -Filter '*.msix' -File | Select-Object -First 1
+          if (-not $package) { throw 'No MSIX package was generated.' }
+
+          $makeAppx = Get-ChildItem -Path "${env:ProgramFiles(x86)}\Windows Kits\10\bin" `
+            -Filter 'makeappx.exe' -Recurse -File -ErrorAction SilentlyContinue |
+            Sort-Object FullName -Descending | Select-Object -First 1
+          if (-not $makeAppx) { throw 'Windows SDK makeappx.exe was not found.' }
+
+          $validationRoot = Join-Path $env:RUNNER_TEMP "store-msix-validation-$env:ARCH"
+          New-Item -ItemType Directory -Path $validationRoot -Force | Out-Null
+          try {
+            & $makeAppx.FullName unpack /p $package.FullName /d $validationRoot
+            if ($LASTEXITCODE -ne 0) { throw "MSIX unpack validation failed with exit code $LASTEXITCODE." }
+
+            $manifestPath = Join-Path $validationRoot 'AppxManifest.xml'
+            if (-not (Test-Path -LiteralPath $manifestPath -PathType Leaf)) {
+              throw 'MSIX validation did not produce AppxManifest.xml.'
+            }
+            [xml]$manifest = Get-Content -Raw -LiteralPath $manifestPath
+            $identity = $manifest.SelectSingleNode("/*[local-name()='Package']/*[local-name()='Identity']")
+            $packageVersion = [string]$identity.Version
+            if ($packageVersion -ne $env:NUMERIC_VERSION) {
+              throw "MSIX manifest version '$packageVersion' does not match '$env:NUMERIC_VERSION'."
+            }
+
+            $relativePath = [System.IO.Path]::GetRelativePath($PWD.Path, $package.FullName).Replace('\', '/')
+            $artifactName = "Store-CI-MSIX-$env:ARCH"
+            Write-Host "Validated Store-ready MSIX: $relativePath"
+            Write-Host "Package version: $packageVersion"
+            Write-Host "Artifact name: $artifactName"
+            @(
+              "- Store-ready MSIX: `$relativePath`"
+              "- Package version: `$packageVersion`"
+              "- Artifact name: `$artifactName`"
+            ) | Add-Content -LiteralPath $env:GITHUB_STEP_SUMMARY
+          }
+          finally {
+            if (Test-Path -LiteralPath $validationRoot) {
+              Remove-Item -LiteralPath $validationRoot -Recurse -Force -ErrorAction SilentlyContinue
+            }
+          }
+
+      - name: Upload Store MSIX artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: Store-CI-MSIX-${{ matrix.arch }}
+          path: store-msix/*.msix
+          if-no-files-found: error
+          retention-days: 14
+
+  bundle-msix:
+    name: Assemble Store MSIXBundle
+    needs: [prepare, build-msix]
+    runs-on: windows-latest
+    env:
+      RELEASE_VERSION: ${{ needs.prepare.outputs.release_version }}
+      NUMERIC_VERSION: ${{ needs.prepare.outputs.numeric_version }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v7
+
+      - name: Download architecture MSIX artifacts
+        uses: actions/download-artifact@v8
+        with:
+          pattern: Store-CI-MSIX-*
+          path: store-msix
+          merge-multiple: true
+
+      - name: Create Store-ready MSIXBundle
+        shell: pwsh
+        run: |
+          $packages = @(Get-ChildItem -LiteralPath './store-msix' -Filter '*.msix' -File | Sort-Object Name)
+          if ($packages.Count -ne 3) {
+            throw "Expected three architecture MSIX packages, found $($packages.Count)."
+          }
+
+          Write-Host "Actual bundle command:"
+          Write-Host "./scripts/New-AppDepotMsixBundle.ps1 -InputDirectory ./store-msix -OutputPath ./store-msix/AppDepot-$env:RELEASE_VERSION-windows.msixbundle -Version $env:NUMERIC_VERSION"
+          ./scripts/New-AppDepotMsixBundle.ps1 -InputDirectory ./store-msix `
+            -OutputPath "./store-msix/AppDepot-$env:RELEASE_VERSION-windows.msixbundle" `
+            -Version $env:NUMERIC_VERSION
+
+      - name: Validate Store-ready MSIXBundle
+        shell: pwsh
+        run: |
+          $bundle = Get-ChildItem -LiteralPath './store-msix' -Filter '*.msixbundle' -File | Select-Object -First 1
+          if (-not $bundle) { throw 'No MSIXBundle was generated.' }
+
+          $makeAppx = Get-ChildItem -Path "${env:ProgramFiles(x86)}\Windows Kits\10\bin" `
+            -Filter 'makeappx.exe' -Recurse -File -ErrorAction SilentlyContinue |
+            Sort-Object FullName -Descending | Select-Object -First 1
+          if (-not $makeAppx) { throw 'Windows SDK makeappx.exe was not found.' }
+
+          $validationRoot = Join-Path $env:RUNNER_TEMP 'store-msixbundle-validation'
+          New-Item -ItemType Directory -Path $validationRoot -Force | Out-Null
+          try {
+            & $makeAppx.FullName unbundle /p $bundle.FullName /d $validationRoot
+            if ($LASTEXITCODE -ne 0) { throw "MSIXBundle unbundle validation failed with exit code $LASTEXITCODE." }
+
+            $unbundledPackages = @(Get-ChildItem -LiteralPath $validationRoot -Filter '*.msix' -File -Recurse)
+            if ($unbundledPackages.Count -ne 3) {
+              throw "MSIXBundle validation produced $($unbundledPackages.Count) MSIX packages instead of three."
+            }
+
+            foreach ($package in $unbundledPackages) {
+              $packageValidationRoot = Join-Path $env:RUNNER_TEMP ([guid]::NewGuid().ToString('N'))
+              New-Item -ItemType Directory -Path $packageValidationRoot -Force | Out-Null
+              try {
+                & $makeAppx.FullName unpack /p $package.FullName /d $packageValidationRoot
+                if ($LASTEXITCODE -ne 0) { throw "Nested MSIX validation failed for '$($package.Name)'." }
+                $manifestPath = Join-Path $packageValidationRoot 'AppxManifest.xml'
+                [xml]$manifest = Get-Content -Raw -LiteralPath $manifestPath
+                $identity = $manifest.SelectSingleNode("/*[local-name()='Package']/*[local-name()='Identity']")
+                $packageVersion = [string]$identity.Version
+                if ($packageVersion -ne $env:NUMERIC_VERSION) {
+                  throw "Nested MSIX '$($package.Name)' has version '$packageVersion', expected '$env:NUMERIC_VERSION'."
+                }
+              }
+              finally {
+                if (Test-Path -LiteralPath $packageValidationRoot) {
+                  Remove-Item -LiteralPath $packageValidationRoot -Recurse -Force -ErrorAction SilentlyContinue
+                }
+              }
+            }
+
+            $relativePath = [System.IO.Path]::GetRelativePath($PWD.Path, $bundle.FullName).Replace('\', '/')
+            $artifactName = 'Store-CI-MSIXBundle'
+            Write-Host "Validated Store-ready MSIXBundle: $relativePath"
+            Write-Host "Bundle version: $env:NUMERIC_VERSION"
+            Write-Host "Artifact name: $artifactName"
+            @(
+              "- Store-ready MSIXBundle: `$relativePath`"
+              "- Bundle version: `$env:NUMERIC_VERSION`"
+              "- Artifact name: `$artifactName`"
+            ) | Add-Content -LiteralPath $env:GITHUB_STEP_SUMMARY
+          }
+          finally {
+            if (Test-Path -LiteralPath $validationRoot) {
+              Remove-Item -LiteralPath $validationRoot -Recurse -Force -ErrorAction SilentlyContinue
+            }
+          }
+
+      - name: Upload Store MSIXBundle artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: Store-CI-MSIXBundle
+          path: store-msix/*.msixbundle
+          if-no-files-found: error
+          retention-days: 14
+
+  verify-store-authorization:
+    name: Verify read-only Store authorization
+    needs: bundle-msix
+    runs-on: windows-latest
+    environment: production
+    steps:
+      - name: Set up Microsoft Store CLI
+        uses: microsoft/microsoft-store-apppublisher@v1.1
+
+      - name: Configure CLI and verify read-only access
+        shell: pwsh
+        env:
+          STORE_TENANT_ID: ${{ secrets.AZURE_AD_TENANT_ID }}
+          STORE_CLIENT_ID: ${{ secrets.AZURE_AD_APPLICATION_CLIENT_ID }}
+          STORE_CLIENT_SECRET: ${{ secrets.AZURE_AD_APPLICATION_SECRET }}
+          STORE_SELLER_ID: ${{ secrets.SELLER_ID }}
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $secretValues = @(
+            $env:STORE_TENANT_ID,
+            $env:STORE_CLIENT_ID,
+            $env:STORE_CLIENT_SECRET,
+            $env:STORE_SELLER_ID
+          )
+
+          function Remove-SecretValues([string] $text) {
+            $safeText = if ($null -eq $text) { '' } else { $text }
+            foreach ($secretValue in $secretValues) {
+              if (-not [string]::IsNullOrEmpty($secretValue)) {
+                $safeText = $safeText.Replace($secretValue, '[REDACTED]')
+              }
+            }
+            return $safeText
+          }
+
+          $required = @{
+            STORE_TENANT_ID = $env:STORE_TENANT_ID
+            STORE_CLIENT_ID = $env:STORE_CLIENT_ID
+            STORE_CLIENT_SECRET = $env:STORE_CLIENT_SECRET
+            STORE_SELLER_ID = $env:STORE_SELLER_ID
+          }
+          $missing = @($required.GetEnumerator() | Where-Object { [string]::IsNullOrWhiteSpace($_.Value) } | ForEach-Object Key)
+          if ($missing.Count -gt 0) {
+            $missingNames = $missing -join ', '
+            Write-Host "Read-only authorization verification: FAILED"
+            Write-Host "Error summary (secrets removed): required Environment secret(s) are missing: $missingNames."
+            Write-Host 'Next steps: add the missing values to the production Environment Secrets and run this workflow again.'
+            throw 'Read-only authorization verification could not start because required Environment secrets are missing.'
+          }
+
+          try {
+            & msstore reconfigure `
+              --tenantId $env:STORE_TENANT_ID `
+              --sellerId $env:STORE_SELLER_ID `
+              --clientId $env:STORE_CLIENT_ID `
+              --clientSecret $env:STORE_CLIENT_SECRET 2>&1 | Out-Null
+            $configureExitCode = $LASTEXITCODE
+            if ($configureExitCode -ne 0) {
+              throw "msstore reconfigure failed with exit code $configureExitCode."
+            }
+
+            # This is the only Partner Center operation in this workflow: account listing is read-only.
+            & msstore apps list 2>&1 | Out-Null
+            $listExitCode = $LASTEXITCODE
+            if ($listExitCode -ne 0) {
+              throw "Read-only application listing failed with exit code $listExitCode."
+            }
+
+            Write-Host 'Read-only authorization verification: SUCCESS'
+            Write-Host 'msstore apps list completed successfully; application data was not printed.'
+            @(
+              '- Read-only authorization verification: SUCCESS'
+              '- Command: `msstore apps list`'
+              '- Only read-only account listing was invoked; no Partner Center write operation was invoked.'
+            ) | Add-Content -LiteralPath $env:GITHUB_STEP_SUMMARY
+          }
+          catch {
+            $safeSummary = Remove-SecretValues $_.Exception.Message
+            if ([string]::IsNullOrWhiteSpace($safeSummary)) {
+              $safeSummary = 'The CLI returned an empty error message.'
+            }
+            Write-Host 'Read-only authorization verification: FAILED'
+            Write-Host "Error summary (secrets removed): $safeSummary"
+            Write-Host 'Next steps: verify the production Environment Secrets, Entra app consent/permissions, Seller ID, and Partner Center account association; then rerun this workflow.'
+            @(
+              '- Read-only authorization verification: FAILED'
+              "- Error summary (secrets removed): $safeSummary"
+              '- Next steps: verify production Environment Secrets, Entra app consent/permissions, Seller ID, and Partner Center account association.'
+            ) | Add-Content -LiteralPath $env:GITHUB_STEP_SUMMARY
+            throw 'Read-only authorization verification failed; see the sanitized error summary above.'
+          }
+
+  final-report:
+    name: Report Store CI experiment result
+    if: ${{ always() }}
+    needs: [prepare, build-msix, bundle-msix, verify-store-authorization]
+    runs-on: windows-latest
+    steps:
+      - name: Print final report
+        shell: pwsh
+        env:
+          BUILD_RESULT: ${{ needs.build-msix.result }}
+          BUNDLE_RESULT: ${{ needs.bundle-msix.result }}
+          AUTH_RESULT: ${{ needs.verify-store-authorization.result }}
+          VERSION: ${{ needs.prepare.outputs.numeric_version }}
+        run: |
+          Write-Host 'Microsoft Store CI experiment report'
+          Write-Host "Package version: $env:VERSION"
+          Write-Host 'Architecture artifact names: Store-CI-MSIX-x64, Store-CI-MSIX-x86, Store-CI-MSIX-arm64'
+          Write-Host 'Bundle artifact name: Store-CI-MSIXBundle'
+          Write-Host "Build result: $env:BUILD_RESULT"
+          Write-Host "Bundle result: $env:BUNDLE_RESULT"
+          Write-Host "Read-only authorization verification: $env:AUTH_RESULT"
+
+          if ($env:BUILD_RESULT -ne 'success' -or $env:BUNDLE_RESULT -ne 'success' -or $env:AUTH_RESULT -ne 'success') {
+            Write-Host 'Next steps: inspect the failed job for its sanitized error summary; correct the build/package setup or production Environment configuration, then rerun manually.'
+          }

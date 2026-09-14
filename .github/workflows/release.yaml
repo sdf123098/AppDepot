@@ -79,7 +79,9 @@ jobs:
         run: dotnet restore Raven.sln
       - name: Restore localization smoke test
         shell: pwsh
-        run: dotnet restore tests/LocalizationSmoke/LocalizationSmoke.csproj -p:RavenPublishDir=./test-publish
+        run: |
+          $publishDir = Join-Path $PWD 'test-publish'
+          dotnet restore tests/LocalizationSmoke/LocalizationSmoke.csproj -p:RavenPublishDir="$publishDir"
       - name: Publish x64 test payload
         shell: pwsh
         run: >
@@ -89,9 +91,9 @@ jobs:
           -o ./test-publish
       - name: Run localization smoke test
         shell: pwsh
-        run: >
-          dotnet run --project tests/LocalizationSmoke/LocalizationSmoke.csproj --no-restore
-          -p:RavenPublishDir=./test-publish
+        run: |
+          $publishDir = Join-Path $PWD 'test-publish'
+          dotnet run --project tests/LocalizationSmoke/LocalizationSmoke.csproj --no-restore -p:RavenPublishDir="$publishDir"
 
   build:
     name: Build ${{ matrix.arch }} artifacts

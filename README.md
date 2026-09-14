@@ -1,11 +1,11 @@
 <p align="center">
-  <img src="Raven/Assets/AppDepot.ico" alt="AppDepot Logo" width="128" height="128">
+  <img src="Raven/Assets/AppDepot.ico" alt="AppDepot logo" width="128" height="128">
 </p>
 
 <h1 align="center">AppDepot</h1>
 
 <p align="center">
-  <b>A free, open-source alternative Microsoft Store client for Windows</b>
+  <b>A native, open-source Microsoft Store client for Windows</b>
 </p>
 
 <p align="center">
@@ -16,186 +16,208 @@
   <a href="https://discord.gg/9eeN2Wve4T"><img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fdiscord.com%2Fapi%2Fv10%2Finvites%2F9eeN2Wve4T%3Fwith_counts%3Dtrue&query=%24.approximate_member_count&label=Discord&logo=discord&logoColor=white&color=5865F2&style=flat-square&suffix=%20members&cacheSeconds=3600" alt="Discord"></a>
 </p>
 
+<p align="center">
+  <a href="README.md">English</a> ·
+  <a href="README.zh-CN.md">简体中文</a> ·
+  <a href="README.zh-TW.md">繁體中文</a> ·
+  <a href="README.ja-JP.md">日本語</a> ·
+  <a href="README.ko-KR.md">한국어</a> ·
+  <a href="README.de-DE.md">Deutsch</a> ·
+  <a href="README.es-ES.md">Español</a> ·
+  <a href="README.fr-FR.md">Français</a> ·
+  <a href="README.pt-BR.md">Português</a> ·
+  <a href="README.ru-RU.md">Русский</a> ·
+  <a href="README.hu-HU.md">Magyar</a> ·
+  <a href="README.ar-SA.md">العربية</a>
+</p>
+
 ---
 
-AppDepot is a modern, native Windows application that serves as a fully-featured alternative to the Microsoft Store. It can do everything the official store does — **search, download, install, and update apps** — while also adding powerful capabilities like **sideloading external UWP/MSIX packages**, **exporting Store apps for offline use**, and **bandwidth-saving delta downloads**.
+AppDepot is a modern Windows application for discovering, downloading, installing, exporting, and updating Microsoft Store apps. It also supports sideloading external UWP/MSIX packages and bandwidth-saving block-level delta updates.
 
-Built with **WinUI 3** and **.NET 10**, AppDepot delivers a clean, fluent UI that feels right at home on Windows 10 and 11.
+The app is built with **WinUI 3** and **.NET 10**, with a fluent interface designed for Windows 10 and Windows 11.
 
-<img width="996" height="543" alt="raven" src="https://github.com/user-attachments/assets/40229b36-df5e-419d-aea7-ca374f6e2108" />
+<img width="996" height="543" alt="AppDepot home page" src="docs/screenshots/home.png" />
+
+## 🖼️ Screenshots
+
+<p><img width="700" alt="AppDepot home page" src="docs/screenshots/home.png" /></p>
+<p><img width="700" alt="Advanced Search navigation menu" src="docs/screenshots/advanced-search-menu.png" /></p>
+<p><img width="700" alt="Advanced Search page" src="docs/screenshots/advanced-search.png" /></p>
+<p><img width="700" alt="AppDepot settings" src="docs/screenshots/settings.png" /></p>
 
 ## ✨ Features
 
-### 🔍 Search & Browse
-- **Store Search** — search the Microsoft Store catalog directly from the title bar with real-time auto-suggest (including app icons and titles).
-- **Advanced Search** — filter and query apps with more granular control over results.
-- **App Details** — full app detail pages with descriptions, screenshots, version info, and dependency listings.
-- **Market & Language Selection** — browse the Store as it appears in any region/language combination.
+### 🔍 Discover and search
 
-### ⬇️ Downloads & Export
-- **Download Store Apps** — download any app package directly from Microsoft's CDN for offline installation or archival.
-- **Delta Downloads** — save bandwidth with intelligent block-level delta downloads. Only changed blocks are fetched using BlockMap diffing, drastically reducing download sizes for updates.
-- **Export Packages** — download `.appx`, `.msix`, `.appxbundle`, and `.msixbundle` files for external use, backup, or redistribution to other machines.
-- **Download Manager** — a full download queue with progress tracking, pause/resume, and status animations.
+- Browse Microsoft Store recommendations such as **Top Free** apps.
+- Search from the title bar with real-time suggestions, app icons, and titles.
+- Use **Advanced Search** with a Store URL, product ID, or package family name.
+- Open detail pages with descriptions, screenshots, versions, and dependencies.
+- Select a Store market and language independently in Settings.
 
-### 📦 Install & Sideload
-- **Install Store Apps** — install downloaded packages directly, just like the Microsoft Store.
-- **Sideload External Packages** — install `.appx`, `.msix`, `.appxbundle`, or `.msixbundle` files from anywhere — not just the Store. Drag-and-drop or browse to select.
-- **Dependency Resolution** — automatic detection and installation of required framework dependencies.
-- **Force Install** — option to forcibly reinstall or downgrade packages when a newer version is already present.
+### ⬇️ Download and export
 
-### 🔄 Updates
-- **Update Checking** — scans all installed Store-signed packaged apps and compares them against the latest available versions.
-- **Delta Updates** — applies block-level differential updates to minimize download sizes.
-- **Batch & Individual Updates** — update all apps at once or pick and choose which ones to update.
-- **Version Comparison** — intelligently determines the latest available version per architecture and OS build.
+- Download Store packages directly from Microsoft's content delivery network.
+- Use BlockMap-based delta downloads to fetch only changed blocks when possible.
+- Export `.appx`, `.msix`, `.appxbundle`, and `.msixbundle` packages for backup or offline use.
+- Manage queued downloads with progress, pause/resume, and status information.
 
-### ⚙️ General
-- **Unpackaged Deployment** — runs as a standalone `.exe` without requiring MSIX packaging or Windows App Installer.
-- **Theme Support** — light, dark, and system-default themes with seamless switching.
-- **Structured Logging** — separate log files for runtime events, installations, and crashes via Serilog.
-- **Localization-Ready** — UI strings use a resource-based localization system (`x:Uid`).
-- **Self-Update Check** — checks GitHub for newer releases of AppDepot itself.
-- **Custom App Icon** — choose the AppDepot icon, the bundled owl icon, or another local ICO file.
+### 📦 Install and sideload
 
-##  🛑 System requirements
+- Install downloaded Store packages directly from AppDepot.
+- Sideload packages from any local path by browsing or dragging and dropping.
+- Detect and install required framework dependencies automatically.
+- Force a reinstall or downgrade when the installed package is newer.
 
-- **Windows 10** Version 2004, Build 19041+
-- [**.NET 10**](https://dotnet.microsoft.com/en-us/download/dotnet/10.0) (Not needed for self-contained)
-- [**Windows App SDK Runtime**](https://learn.microsoft.com/en-us/windows/apps/windows-app-sdk/downloads#windows-app-sdk) (Not needed for self-contained)
+### 🔄 Keep apps updated
 
-## 🌐 How to Run
-#### 1. Releases
-- Statisfy all [system requirements](#-system-requirements) (excluding runtimes if running self contained version)
-- Download the latest version of AppDepot from [releases](https://github.com/sdf123098/AppDepot/releases) according to your system architecture.
-- Extract the contents of the zip and run `AppDepot.exe`.
-- If you encounter a false antivirus positive, download `raven_cert.zip` from [releases](https://github.com/sdf123098/AppDepot/releases), extract the contents and install `raven.cer` or run `install_raven_cert.bat`.
+- Compare installed Store-signed packages with the latest available versions.
+- Apply differential updates to reduce download size.
+- Update everything in one batch or choose individual apps.
+- Compare versions by architecture and Windows build.
 
-#### 2. Winget
-- Install [winget](https://learn.microsoft.com/en-us/windows/package-manager/winget/) and run
-```ps1
-winget install sdf123098.AppDepot
+### ⚙️ Comfortable desktop experience
+
+- Choose between two distribution options: a no-install portable build that runs as a standalone `.exe`, or a Microsoft Store version installed and updated through the Store.
+- Switch between light, dark, and system-default themes.
+- Choose the AppDepot icon, the bundled owl icon, or a local `.ico` file.
+- Use localized resource strings across the UI.
+- Review separate runtime, installation, and crash logs.
+- Check GitHub for AppDepot updates.
+
+## 🌐 Supported languages
+
+The application currently ships with: English (`en-us`), Arabic (`ar-SA`), German (`de-DE`), Spanish (`es-ES`), French (`fr-FR`), Hungarian (`hu-HU`), Japanese (`ja-JP`), Korean (`ko-kr`), Brazilian Portuguese (`pt-BR`), Russian (`ru-RU`), Simplified Chinese (`zh-cn`), and Traditional Chinese (`zh-TW`).
+
+## 🛑 System requirements
+
+- Windows 10 version 2004, build 19041 or later
+- [.NET 10](https://dotnet.microsoft.com/en-us/download/dotnet/10.0), unless using a self-contained build
+- [Windows App SDK Runtime](https://learn.microsoft.com/en-us/windows/apps/windows-app-sdk/downloads#windows-app-sdk), unless using a self-contained build
+
+## 🚀 Install and run
+
+### Microsoft Store (recommended)
+
+After publication, use the app's Microsoft Store listing. The Store signs the MSIX package and manages delivery and updates:
+
+```text
+https://apps.microsoft.com/detail/9P15TS1PG7J8
 ```
-- WinGet installs the signed MSIX package, so AppDepot is registered in Windows and appears in the Start menu automatically.
-- If you encounter a false antivirus positive, download `raven_cert.zip` from [releases](https://github.com/sdf123098/AppDepot/releases), extract the contents and install `raven.cer` or run `install_raven_cert.bat`.
-- Search for `AppDepot` in the start menu and run it.
 
-#### 3. Recording ZIP
-- Download the `*-self-contained.zip` archive from [releases](https://github.com/sdf123098/AppDepot/releases) when you want a portable recording build.
-- This archive targets `win-x64`/`win-x86`/`win-arm64` and includes the .NET 10 runtime plus the Windows App Runtime; no separate .NET 10 installation is required.
-- Extract the archive and run `AppDepot.exe`.
+The reserved Microsoft Store Product ID is `9P15TS1PG7J8`. Do not replace it with the WinGet community identifier.
 
-### ▶️ Video Guide
-[<img width="996" height="543" alt="IMM-WZsVCt5_E" src="https://github.com/user-attachments/assets/80fd984c-8587-49a0-ae13-07bee72d9a9d" />
-](https://www.youtube.com/watch?v=ZX__BaD6kr0)
+### WinGet via Microsoft Store
 
+Once the Store listing is discoverable, verify and install the same Store package:
 
-## 🏗️ Architecture
-
-AppDepot follows the **MVVM pattern** and uses dependency injection via `Microsoft.Extensions.Hosting`.
-
+```powershell
+winget search 9P15TS1PG7J8 --source msstore
+winget install 9P15TS1PG7J8 --source msstore
 ```
+
+WinGet's `msstore` source is preferred. The community source is only a fallback if the Store listing cannot be found there.
+
+### Portable GitHub Release
+
+Download `AppDepot-<version>-windows-<architecture>.zip` from [Releases](https://github.com/sdf123098/AppDepot/releases), verify it with `SHA256SUMS.txt`, extract it, and run `AppDepot.exe`. The ZIP is self-contained for `win-x64`, `win-x86`, and `win-arm64`; no commercial code-signing certificate is required.
+
+## 📦 Windows release automation
+
+The `Build and Draft Release` workflow builds the app, runs the localization smoke test, creates unsigned Store-ready MSIX files and a combined `Store-MSIXBundle` artifact, creates portable ZIPs, and writes `SHA256SUMS.txt`. Microsoft re-signs MSIX packages after Store certification; no commercial certificate is used or required.
+
+Store publishing is opt-in. After Partner Center registration, app-name reservation, identity verification, and GitHub Secrets setup, run the release workflow with `publish_store=true`, the exact Store Product ID, and `confirm_store_publish=PUBLISH`. The workflow prints the version, Product ID, package, and metadata scope before calling the official `msstore` CLI. The `microsoft-store-production` environment can add a second GitHub approval gate.
+
+Required Store publishing secrets are `AZURE_AD_TENANT_ID`, `SELLER_ID`, `AZURE_AD_APPLICATION_CLIENT_ID`, and `AZURE_AD_APPLICATION_SECRET`. Store identity values used inside the MSIX manifest are repository Variables (`STORE_IDENTITY_NAME`, `STORE_PUBLISHER`, and `STORE_PUBLISHER_DISPLAY_NAME`), not guessed credentials.
+
+The `Publish Microsoft Store Metadata` workflow only operates when a developer-reviewed `metadata/metadata.json` exists. Obtain the base metadata with `msstore submission get`, review legal/listing fields yourself, then commit it. The workflow never invents privacy, age-rating, legal, or account information.
+
+The `Verify WinGet Distribution` workflow first tests `msstore` discovery and installation. If that fails, it generates and validates a multi-file community manifest for the GitHub portable ZIP (`InstallerType: zip` plus `NestedInstallerType: portable`) and uploads it as an artifact for review. It does not submit pull requests automatically. If a checked-in community manifest is added later, the workflow can use Microsoft's `wingetcreate` locally to update it before validation.
+
+### Video guide
+
+[Watch the AppDepot video guide](https://www.youtube.com/watch?v=ZX__BaD6kr0)
+
+## 🏗️ Project structure
+
+AppDepot follows **MVVM** and uses dependency injection through `Microsoft.Extensions.Hosting`.
+
+```text
 Raven.sln
-├── Raven/                    # AppDepot WinUI 3 Application (UI layer)
-│   ├── Views/                # XAML pages: Shell, Search, App Details,
-│   │                         #   Downloads, Installations, Updates, Settings
-│   ├── ViewModels/           # MVVM view models (CommunityToolkit.Mvvm)
-│   ├── Services/             # App-level services: navigation, downloads,
-│   │                         #   package installation, update checking
-│   ├── Helpers/              # Utilities: delta downloads, BlockMap parsing,
-│   │                         #   download URL resolution, version comparison
-│   ├── Models/               # Data models: AppInfo, DownloadItem, UpdateItem
+├── Raven/                    # WinUI 3 application
+│   ├── Views/                # Shell, search, details, downloads, updates, settings
+│   ├── ViewModels/           # CommunityToolkit.Mvvm view models
+│   ├── Services/             # Navigation, download, install, and update services
+│   ├── Helpers/              # Delta downloads, BlockMap, URLs, and version helpers
+│   ├── Models/               # AppInfo, DownloadItem, and UpdateItem
 │   ├── Contracts/            # Service interfaces
-│   ├── Layouts/              # Custom WinUI layouts (VirtualGridLayout)
+│   ├── Layouts/              # Custom WinUI layouts
 │   ├── Styles/               # XAML resource dictionaries
-│   └── Strings/              # Localized string resources (en-us)
-│
-├── Raven.Updater/            # Self-update helper executable
-│   └── Program.cs            # Copies update payload and relaunches AppDepot
-│
-└── StoreListings/            # Git submodule — Microsoft Store API wrapper
-    └── StoreListings.Library/
-        ├── StoreEdgeFDProduct.cs   # Store product queries
-        ├── DCATPackage.cs          # Dependency catalog lookups
-        └── FE3Handler.cs           # Package download link resolution
+│   └── Strings/              # Localized .resw resources
+├── Raven.Updater/            # Self-update helper
+└── StoreListings/            # Store API wrapper submodule
 ```
 
-### Key Dependencies
+### Main dependencies
 
 | Package | Purpose |
 |---|---|
 | [Microsoft.WindowsAppSDK](https://github.com/microsoft/WindowsAppSDK) | WinUI 3 framework |
-| [CommunityToolkit.Mvvm](https://github.com/CommunityToolkit/dotnet) | MVVM source generators & helpers |
-| [CommunityToolkit.WinUI](https://github.com/CommunityToolkit/Windows) | WinUI media controls & effects |
-| [Downloader](https://github.com/bezzad/Downloader) | Multi-part file download engine |
-| [WinUIEx](https://github.com/dotMorten/WinUIEx) | Window management extensions |
+| [CommunityToolkit.Mvvm](https://github.com/CommunityToolkit/dotnet) | MVVM helpers and source generators |
+| [CommunityToolkit.WinUI](https://github.com/CommunityToolkit/Windows) | WinUI controls and effects |
+| [Downloader](https://github.com/bezzad/Downloader) | Multi-part downloads |
+| [WinUIEx](https://github.com/dotMorten/WinUIEx) | Window management |
 | [Serilog](https://serilog.net/) | Structured logging |
-| [StoreListings](https://github.com/mjishnu/StoreListings) | Microsoft Store API wrapper (submodule) |
+| [StoreListings](https://github.com/mjishnu/StoreListings) | Microsoft Store API wrapper |
 
-## 📋 Build Prerequisites
+## 🧰 Build from source
 
-- **.NET 10 SDK**
-- **Visual Studio 2026** with the following workloads:
-  - .NET Desktop Development
-  - Windows App SDK / WinUI Development
-  - Windows 10 SDK (26100)
+### Prerequisites
 
-## 🚀 Getting Started
+- .NET 10 SDK
+- Visual Studio 2026 with .NET Desktop Development and Windows App SDK/WinUI workloads
+- Windows 10 SDK (26100)
 
-### 1. Clone the Repository
+### Clone
 
 ```bash
 git clone --recurse-submodules https://github.com/sdf123098/AppDepot.git
 cd AppDepot
 ```
 
-> If you've already cloned without `--recurse-submodules`, initialize the submodule manually:
-> ```bash
-> git submodule update --init --recursive
-> ```
+If the repository was cloned without submodules:
 
-### 2. Build & Run
+```bash
+git submodule update --init --recursive
+```
 
-**From Visual Studio:**
-1. Open `Raven.sln`
-2. Set `AppDepot` as the startup project
-3. Select your target platform (`x64`, `x86`, or `arm64`)
-4. Press **F5** to build and run
+### Build and run
 
-**From the command line:**
+From Visual Studio, open `Raven.sln`, set `AppDepot` as the startup project, choose `x64`, `x86`, or `arm64`, and press **F5**.
+
+From a terminal:
+
 ```bash
 dotnet build Raven.sln -c Debug -p:Platform=x64
 dotnet run --project Raven -c Debug
 ```
 
-### Supported Platforms
-
-| Architecture | Status |
-|---|---|
-| x64 | ✅ Supported |
-| x86 | ✅ Supported |
-| ARM64 | ✅ Supported |
+All three architectures are supported: `x64`, `x86`, and `arm64`.
 
 ## 🤝 Contributing
 
-Contributions are welcome! Here's how you can help:
-
-1. **Fork** the repository
-2. **Create a branch** for your feature or fix (`git checkout -b feature/my-feature`)
-3. **Commit** your changes (`git commit -m "Add my feature"`)
-4. **Push** to your branch (`git push origin feature/my-feature`)
-5. **Open a Pull Request**
-
-### Code Style
-
-- Use `x:Uid`-based localized strings in XAML — no hardcoded text
-- Follow existing MVVM patterns and DI conventions
+1. Fork the repository.
+2. Create a focused branch for your change.
+3. Follow the existing MVVM and dependency-injection conventions.
+4. Keep user-facing XAML text localized with `x:Uid` resources.
+5. Open a pull request with a clear description and validation steps.
 
 ## ⭐ Acknowledgements
 
 - [StoreListings](https://github.com/dongle-the-gadget/StoreListings) for the Microsoft Store API wrapper.
-- [Alt App Installer](https://github.com/mjishnu/alt-app-installer) the predecessor to this project.
+- [Alt App Installer](https://github.com/mjishnu/alt-app-installer), the predecessor to this project.
 
 ## 📜 License
 
-This project is licensed under the **Apache License 2.0** — see the [LICENSE](LICENSE) file for details.
+AppDepot is released under the **Apache License 2.0**. See [LICENSE](LICENSE) for the full text.

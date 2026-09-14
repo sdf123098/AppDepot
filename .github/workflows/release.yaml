@@ -330,6 +330,12 @@ jobs:
         run: >
           msstore reconfigure --tenantId $env:TENANT_ID --sellerId $env:SELLER_ID
           --clientId $env:CLIENT_ID --clientSecret $env:CLIENT_SECRET
+      - name: Verify Store application lookup
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          msstore apps list
+          if ($LASTEXITCODE -ne 0) { throw "msstore apps list failed with exit code $LASTEXITCODE." }
       - name: Upload package and submit certification
         shell: pwsh
         env:

@@ -4,9 +4,24 @@ on:
   workflow_dispatch:
     inputs:
       version:
-        description: "Release version (e.g. 1.2.3.4, v1.2.3.4, 1.0.0.1-beta, v2.0.0.0-rc1)"
+        description: "Release version (e.g. 1.2.3.4, v1.2.3.4, 1.0.0.1-beta)"
         required: true
         default: "1.0.0.0"
+        type: string
+      publish_store:
+        description: "After review, upload this package and submit Store certification"
+        required: true
+        default: false
+        type: boolean
+      store_product_id:
+        description: "Partner Center / Microsoft Store Product ID (required when publishing)"
+        required: false
+        default: "9P15TS1PG7J8"
+        type: string
+      confirm_store_publish:
+        description: "Type PUBLISH to authorize the irreversible Store submission"
+        required: false
+        default: ""
         type: string
 
 jobs:
@@ -24,41 +39,60 @@ jobs:
         shell: pwsh
         env:
           VERSION_INPUT: ${{ github.event.inputs.version }}
+          PUBLISH_STORE: ${{ github.event.inputs.publish_store }}
+          STORE_PRODUCT_ID: ${{ github.event.inputs.store_product_id }}
+          CONFIRM_STORE_PUBLISH: ${{ github.event.inputs.confirm_store_publish }}
         run: |
           $raw = "$env:VERSION_INPUT".Trim()
-          if ([string]::IsNullOrWhiteSpace($raw)) {
-            throw "Version input cannot be empty."
-          }
-
-          # Strip optional 'v' prefix
-          $normalized = if ($raw.StartsWith('v', [System.StringComparison]::OrdinalIgnoreCase)) {
-            $raw.Substring(1)
-          } else {
-            $raw
-          }
-
-          # Split into numeric part and optional pre-release suffix (e.g. "1.0.0.1-beta" -> "1.0.0.1" + "-beta")
-          if ($normalized -match '^([\d\.]+)(-[A-Za-z0-9\.\-]+)?$') {
-            $numericPart = $Matches[1]
-            # $Matches[2] is the suffix including the dash, or $null
-          } else {
-            throw "Invalid version '$raw'. Expected format: Major.Minor.Build.Revision[-suffix] (e.g. 1.0.0.1, 1.0.0.1-beta, 1.0.0.1-rc1)."
-          }
-
+          if ([string]::IsNullOrWhiteSpace($raw)) { throw "Version input cannot be empty." }
+          $normalized = if ($raw.StartsWith('v', [System.StringComparison]::OrdinalIgnoreCase)) { $raw.Substring(1) } else { $raw }
+          if ($normalized -notmatch '^([\d\.]+)(-[A-Za-z0-9\.\-]+)?$') { throw "Invalid version '$raw'." }
+          $numericPart = $Matches[1]
+          $parts = $numericPart.Split('.')
+          if ($parts.Count -ne 4) { throw "Version must contain exactly four numeric components." }
           $parsed = $null
-          if (-not [System.Version]::TryParse($numericPart, [ref]$parsed)) {
-            throw "Invalid numeric version '$numericPart' from input '$raw'. The numeric portion must be a valid version like 1.2.3.4."
-          }
-
-          # release_version = full version with suffix (e.g. "1.0.0.1-beta")
-          # numeric_version = just the numeric part (e.g. "1.0.0.1") for AssemblyVersion/FileVersion
+          if (-not [System.Version]::TryParse($numericPart, [ref]$parsed)) { throw "Invalid numeric version '$numericPart'." }
           "release_version=$normalized" | Out-File -FilePath $env:GITHUB_OUTPUT -Encoding utf8 -Append
           "numeric_version=$numericPart" | Out-File -FilePath $env:GITHUB_OUTPUT -Encoding utf8 -Append
           "release_tag=v$normalized" | Out-File -FilePath $env:GITHUB_OUTPUT -Encoding utf8 -Append
+          if ($env:PUBLISH_STORE -eq 'true' -and ([string]::IsNullOrWhiteSpace($env:STORE_PRODUCT_ID) -or $env:CONFIRM_STORE_PUBLISH -ne 'PUBLISH')) {
+            throw "Store publication requires a Product ID and confirm_store_publish=PUBLISH."
+          }
+
+  test:
+    name: Build and test
+    needs: prepare
+    runs-on: windows-latest
+    env:
+      VERSION: ${{ needs.prepare.outputs.numeric_version }}
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v7
+        with:
+          submodules: recursive
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v6
+        with:
+          dotnet-version: "10.0.x"
+      - name: Restore
+        shell: pwsh
+        run: dotnet restore Raven.sln
+      - name: Publish x64 test payload
+        shell: pwsh
+        run: >
+          dotnet publish Raven/Raven.csproj -c Release -r win-x64 --self-contained true
+          -p:WindowsAppSDKSelfContained=true -p:DebugSymbols=false -p:DebugType=None
+          -p:Version=$env:VERSION -p:AssemblyVersion=$env:VERSION -p:FileVersion=$env:VERSION
+          -o ./test-publish
+      - name: Run localization smoke test
+        shell: pwsh
+        run: >
+          dotnet run --project tests/LocalizationSmoke/LocalizationSmoke.csproj --no-restore
+          -p:RavenPublishDir=./test-publish
 
   build:
-    name: Build ${{ matrix.arch }}
-    needs: prepare
+    name: Build ${{ matrix.arch }} artifacts
+    needs: [prepare, test]
     runs-on: windows-latest
     strategy:
       matrix:
@@ -68,255 +102,170 @@ jobs:
       NUMERIC_VERSION: ${{ needs.prepare.outputs.numeric_version }}
       RELEASE_TAG: ${{ needs.prepare.outputs.release_tag }}
       ARCH: ${{ matrix.arch }}
-
+      STORE_IDENTITY_NAME: ${{ vars.STORE_IDENTITY_NAME }}
+      STORE_PUBLISHER: ${{ vars.STORE_PUBLISHER }}
+      STORE_PUBLISHER_DISPLAY_NAME: ${{ vars.STORE_PUBLISHER_DISPLAY_NAME }}
     steps:
       - name: Checkout Code
         uses: actions/checkout@v7
         with:
           submodules: recursive
-
       - name: Setup .NET
         uses: actions/setup-dotnet@v6
         with:
           dotnet-version: "10.0.x"
-
       - name: Verify .NET 10 SDK
         shell: pwsh
         run: |
           $sdkVersion = (& dotnet --version).Trim()
-          Write-Host ".NET SDK: $sdkVersion"
-          if (-not $sdkVersion.StartsWith('10.')) {
-            throw "Expected .NET 10 SDK, found '$sdkVersion'."
-          }
-
+          if (-not $sdkVersion.StartsWith('10.')) { throw "Expected .NET 10 SDK, found '$sdkVersion'." }
       - name: Ensure VC++ ARM64 Tools
         if: matrix.arch == 'arm64'
         shell: pwsh
         run: |
           $vswhere = "${env:ProgramFiles(x86)}\Microsoft Visual Studio\Installer\vswhere.exe"
           $vsPath = & $vswhere -latest -property installationPath
-          function Test-Arm64Tools {
-            $msvcRoot = Join-Path $vsPath 'VC\Tools\MSVC'
-            if (-not (Test-Path $msvcRoot)) { return $false }
-            return [bool](Get-ChildItem $msvcRoot -Directory |
-              Where-Object { Test-Path (Join-Path $_.FullName 'bin\Hostx64\arm64\link.exe') } |
-              Select-Object -First 1)
-          }
-
-          if (Test-Arm64Tools) {
-            Write-Host "VC++ ARM64 tools already present."
-          } else {
-            Write-Host "Installing VC++ ARM64 tools into '$vsPath'..."
+          $msvcRoot = Join-Path $vsPath 'VC\Tools\MSVC'
+          $hasArm64Tools = Get-ChildItem -Path $msvcRoot -Filter link.exe -Recurse -File -ErrorAction SilentlyContinue |
+            Where-Object FullName -match '\\bin\\Hostx64\\arm64\\link\.exe$' | Select-Object -First 1
+          if (-not $hasArm64Tools) {
             $installer = "${env:ProgramFiles(x86)}\Microsoft Visual Studio\Installer\vs_installer.exe"
             $proc = Start-Process -FilePath $installer -Wait -PassThru -ArgumentList @(
-              'modify', '--installPath', "`"$vsPath`"",
-              '--add', 'Microsoft.VisualStudio.Component.VC.Tools.ARM64',
-              '--quiet', '--norestart', '--force', '--nocache'
-            )
-            Write-Host "vs_installer exit code: $($proc.ExitCode)"
-            # 0 = success, 3010 = success/reboot-required.
-            if ($proc.ExitCode -notin 0, 3010) {
-              throw "VS installer failed with exit code $($proc.ExitCode)."
-            }
-            if (-not (Test-Arm64Tools)) {
-              throw "VC++ ARM64 tools still missing after install."
-            }
-            Write-Host "VC++ ARM64 tools installed."
+              'modify', '--installPath', "`"$vsPath`"", '--add', 'Microsoft.VisualStudio.Component.VC.Tools.ARM64',
+              '--quiet', '--norestart', '--force', '--nocache')
+            if ($proc.ExitCode -notin 0, 3010) { throw "VS installer failed with exit code $($proc.ExitCode)." }
           }
-
       - name: Setup MSVC Toolchain (for NativeAOT)
-        # NativeAOT links a native binary, so it needs the MSVC linker and the
-        # target-architecture libraries on PATH/LIB. The runner is x64, so x86 and
-        # arm64 are cross-compiled (amd64_x86 / amd64_arm64). The AOT publish below
-        # consumes this environment via -p:IlcUseEnvironmentalTools=true.
         uses: ilammy/msvc-dev-cmd@v1
         with:
           arch: ${{ matrix.arch == 'arm64' && 'amd64_arm64' || matrix.arch == 'x86' && 'amd64_x86' || 'amd64' }}
-
       - name: Cache NuGet Packages
         uses: actions/cache@v6
         with:
           path: ~/.nuget/packages
           key: nuget-${{ runner.os }}-${{ hashFiles('**/*.csproj', '**/packages.lock.json') }}
           restore-keys: nuget-${{ runner.os }}-
-
-      - name: Publish WinUI 3 App (Framework-Dependent)
+      - name: Publish self-contained app
         shell: pwsh
         run: >
-          dotnet publish Raven/Raven.csproj
-          -c Release
-          -r win-$env:ARCH
-          --self-contained false
+          dotnet publish Raven/Raven.csproj -c Release -r win-$env:ARCH --self-contained true
+          -p:WindowsAppSDKSelfContained=true -p:DebugSymbols=false -p:DebugType=None
+          -p:Version=$env:NUMERIC_VERSION -p:AssemblyVersion=$env:NUMERIC_VERSION
+          -p:FileVersion=$env:NUMERIC_VERSION -p:InformationalVersion=$env:RELEASE_TAG
           -o ./publish_output
-          -p:DebugSymbols=false
-          -p:DebugType=None
-          -p:Version=$env:NUMERIC_VERSION
-          -p:AssemblyVersion=$env:NUMERIC_VERSION
-          -p:FileVersion=$env:NUMERIC_VERSION
-          -p:InformationalVersion=$env:RELEASE_TAG
-
-      - name: Clean Intermediates Before Self-Contained Publish
-        shell: pwsh
-        run: |
-          # The framework-dependent publish leaves a thin resources.pri in obj/.
-          # MSBuild's incremental PRI step does not treat WindowsAppSDKSelfContained
-          # as a changed input, so without this clean the self-contained publish
-          # reuses that thin PRI and ships without the bundled WinUI framework
-          # resources, crashing at startup with a missing themeresources.xaml.
-          Remove-Item -Path Raven/obj, Raven/bin -Recurse -Force -ErrorAction SilentlyContinue
-
-      - name: Publish WinUI 3 App (Self-Contained)
+      - name: Publish NativeAOT updater
         shell: pwsh
         run: >
-          dotnet publish Raven/Raven.csproj
-          -c Release
-          -r win-$env:ARCH
-          --self-contained true
-          -p:WindowsAppSDKSelfContained=true
-          -o ./publish_output_full
-          -p:DebugSymbols=false
-          -p:DebugType=None
-          -p:Version=$env:NUMERIC_VERSION
-          -p:AssemblyVersion=$env:NUMERIC_VERSION
-          -p:FileVersion=$env:NUMERIC_VERSION
-          -p:InformationalVersion=$env:RELEASE_TAG
-
-      - name: Publish Updater (NativeAOT)
+          dotnet publish Raven.Updater/Raven.Updater.csproj -c Release -r win-$env:ARCH
+          -p:PublishAot=true -p:IlcUseEnvironmentalTools=true -p:Version=$env:NUMERIC_VERSION
+          -p:AssemblyVersion=$env:NUMERIC_VERSION -p:FileVersion=$env:NUMERIC_VERSION -o ./updater_aot
+      - name: Replace updater with NativeAOT build
+        shell: pwsh
+        run: |
+          $aotUpdater = './updater_aot/Raven.Updater.exe'
+          if (-not (Test-Path -LiteralPath $aotUpdater)) { throw "NativeAOT updater was not produced at $aotUpdater." }
+          Get-ChildItem -Path './publish_output' -Filter 'Raven.Updater.*' -File | Remove-Item -Force
+          Copy-Item -LiteralPath $aotUpdater -Destination './publish_output/Raven.Updater.exe' -Force
+      - name: Create unsigned Store MSIX
+        shell: pwsh
+        run: |
+          if ([string]::IsNullOrWhiteSpace($env:STORE_IDENTITY_NAME) -or
+              [string]::IsNullOrWhiteSpace($env:STORE_PUBLISHER) -or
+              [string]::IsNullOrWhiteSpace($env:STORE_PUBLISHER_DISPLAY_NAME)) {
+            throw 'Set STORE_IDENTITY_NAME, STORE_PUBLISHER, and STORE_PUBLISHER_DISPLAY_NAME repository Variables from Partner Center before creating a Store package.'
+          }
+        env:
+          STORE_IDENTITY_NAME: ${{ vars.STORE_IDENTITY_NAME }}
+          STORE_PUBLISHER: ${{ vars.STORE_PUBLISHER }}
+          STORE_PUBLISHER_DISPLAY_NAME: ${{ vars.STORE_PUBLISHER_DISPLAY_NAME }}
+      - name: Package unsigned Store MSIX
         shell: pwsh
         run: >
-          dotnet publish Raven.Updater/Raven.Updater.csproj
-          -c Release
-          -r win-$env:ARCH
-          -p:PublishAot=true
-          -p:IlcUseEnvironmentalTools=true
-          -o ./updater_aot
-          -p:Version=$env:NUMERIC_VERSION
-          -p:AssemblyVersion=$env:NUMERIC_VERSION
-          -p:FileVersion=$env:NUMERIC_VERSION
-
-      - name: Replace Updater With NativeAOT Build
+          ./scripts/New-AppDepotMsix.ps1 -PublishDirectory ./publish_output
+          -OutputPath "./store-msix/AppDepot-$env:RELEASE_VERSION-win-$env:ARCH.msix"
+          -Architecture $env:ARCH -Version $env:NUMERIC_VERSION
+          -IdentityName $env:STORE_IDENTITY_NAME -Publisher $env:STORE_PUBLISHER
+          -PublisherDisplayName $env:STORE_PUBLISHER_DISPLAY_NAME
+      - name: Create portable ZIP
         shell: pwsh
-        run: |
-          $aotUpdater = "./updater_aot/Raven.Updater.exe"
-          if (-not (Test-Path $aotUpdater)) {
-            throw "NativeAOT updater was not produced at $aotUpdater."
-          }
-          foreach ($dir in @('./publish_output', './publish_output_full')) {
-            # Drop the framework-dependent updater payload copied in via ProjectReference
-            # (.exe/.dll/.deps.json/.runtimeconfig.json/.pdb), then drop in the self-sufficient AOT exe.
-            Get-ChildItem -Path $dir -Filter 'Raven.Updater.*' -File | Remove-Item -Force
-            Copy-Item -Path $aotUpdater -Destination (Join-Path $dir 'Raven.Updater.exe') -Force
-          }
-
-      - name: Decode Certificate
-        shell: pwsh
-        env:
-          CERT_BASE64: ${{ secrets.CERT_BASE64 }}
-        run: |
-          $pfxCertBytes = [System.Convert]::FromBase64String($env:CERT_BASE64)
-          [System.IO.File]::WriteAllBytes("RavenCert.pfx", $pfxCertBytes)
-
-      - name: Sign App Files and Export Public Certificate
-        shell: pwsh
-        env:
-          CERT_PASSWORD: ${{ secrets.CERT_PASSWORD }}
-        run: |
-          $cert = [System.Security.Cryptography.X509Certificates.X509Certificate2]::new(
-            "RavenCert.pfx",
-            $env:CERT_PASSWORD
-          )
-
-          Get-ChildItem -Path ./publish_output, ./publish_output_full -Include *.exe,*.dll -Recurse | ForEach-Object {
-            Set-AuthenticodeSignature -FilePath $_.FullName -Certificate $cert -TimestampServer "http://timestamp.digicert.com" | Out-Null
-          }
-
-          $certBytes = $cert.Export([System.Security.Cryptography.X509Certificates.X509ContentType]::Cert)
-          [System.IO.File]::WriteAllBytes("RavenCert.cer", $certBytes)
-
-      - name: Verify Self-Contained .NET 10 Payload
-        shell: pwsh
-        run: |
-          $runtimeConfig = "./publish_output_full/AppDepot.runtimeconfig.json"
-          if (-not (Test-Path $runtimeConfig)) {
-            throw "Self-contained runtime config is missing: $runtimeConfig"
-          }
-          $runtimeConfigText = Get-Content -Raw -Path $runtimeConfig
-          if ($runtimeConfigText -notmatch '"tfm"\s*:\s*"net10\.0') {
-            throw "Self-contained payload is not targeting .NET 10."
-          }
-          foreach ($requiredFile in @(
-              "./publish_output_full/AppDepot.exe",
-              "./publish_output_full/AppDepot.dll",
-              "./publish_output_full/coreclr.dll",
-              "./publish_output_full/hostfxr.dll",
-              "./publish_output_full/Microsoft.WindowsAppRuntime.Bootstrap.dll"
-            )) {
-            if (-not (Test-Path $requiredFile)) {
-              throw "Self-contained payload is missing: $requiredFile"
-            }
-          }
-
-      - name: Create and Sign MSIX
-        shell: pwsh
-        env:
-          CERT_PASSWORD: ${{ secrets.CERT_PASSWORD }}
         run: >
-          pwsh -NoProfile -ExecutionPolicy Bypass
-          -File ./scripts/New-AppDepotMsix.ps1
-          -PublishDirectory ./publish_output_full
-          -OutputPath "./AppDepot-${{ needs.prepare.outputs.release_tag }}-win-${{ matrix.arch }}.msix"
-          -Architecture $env:ARCH
-          -Version $env:NUMERIC_VERSION
-          -Sign
-          -CertificatePath ./RavenCert.pfx
-
-      - name: Create Zip Archives
-        shell: pwsh
-        run: |
-          Get-ChildItem -Path ./publish_output, ./publish_output_full -Include *.cer,*.pfx -Recurse -File -ErrorAction SilentlyContinue | Remove-Item -Force -ErrorAction SilentlyContinue
-          Compress-Archive -Path ./publish_output/* -DestinationPath "AppDepot-$($env:RELEASE_TAG)-win-$($env:ARCH).zip"
-          Compress-Archive -Path ./publish_output_full/* -DestinationPath "AppDepot-$($env:RELEASE_TAG)-win-$($env:ARCH)-self-contained.zip"
-
-      - name: Create Auto Install Certificate Zip
-        if: matrix.arch == 'x64'
-        shell: pwsh
-        run: |
-          $bundleDir = Join-Path $PWD "auto_install_cert"
-          New-Item -ItemType Directory -Path $bundleDir -Force | Out-Null
-          Copy-Item -Path "RavenCert.cer" -Destination (Join-Path $bundleDir "raven.cer") -Force
-          Copy-Item -Path ".github/scripts/Install-RavenCert.bat" -Destination (Join-Path $bundleDir "install_raven_cert.bat") -Force
-          Compress-Archive -Path (Join-Path $bundleDir "*") -DestinationPath "raven_cert.zip" -Force
-
-      - name: Upload App Artifact
+          ./scripts/New-AppDepotPortableZip.ps1 -PublishDirectory ./publish_output
+          -OutputPath "./portable/AppDepot-$env:RELEASE_VERSION-windows-$env:ARCH.zip"
+      - name: Upload Store package artifact
         uses: actions/upload-artifact@v7
         with:
-          name: AppDepot-${{ matrix.arch }}
-          path: |
-            AppDepot-${{ needs.prepare.outputs.release_tag }}-win-${{ matrix.arch }}.zip
-            AppDepot-${{ needs.prepare.outputs.release_tag }}-win-${{ matrix.arch }}-self-contained.zip
-            AppDepot-${{ needs.prepare.outputs.release_tag }}-win-${{ matrix.arch }}.msix
-
-      - name: Upload Auto Install Certificate Artifact
-        if: matrix.arch == 'x64'
+          name: Store-MSIX-${{ matrix.arch }}
+          path: store-msix/*.msix
+          if-no-files-found: error
+          retention-days: 90
+      - name: Upload portable artifact
         uses: actions/upload-artifact@v7
         with:
-          name: Auto-Install-Cert
-          path: raven_cert.zip
+          name: Portable-${{ matrix.arch }}
+          path: portable/*.zip
+          if-no-files-found: error
+
+  store-bundle:
+    name: Assemble Store MSIXBundle
+    needs: [prepare, build]
+    runs-on: windows-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v7
+      - name: Download architecture packages
+        uses: actions/download-artifact@v8
+        with:
+          pattern: Store-MSIX-*
+          path: store-msix
+          merge-multiple: true
+      - name: Create unsigned Store MSIXBundle
+        shell: pwsh
+        env:
+          VERSION: ${{ needs.prepare.outputs.numeric_version }}
+          RELEASE_VERSION: ${{ needs.prepare.outputs.release_version }}
+        run: >
+          ./scripts/New-AppDepotMsixBundle.ps1 -InputDirectory ./store-msix
+          -OutputPath "./store-msix/AppDepot-$env:RELEASE_VERSION-windows.msixbundle"
+          -Version $env:VERSION
+      - name: Create Store upload package
+        shell: pwsh
+        env:
+          RELEASE_VERSION: ${{ needs.prepare.outputs.release_version }}
+        run: >
+          ./scripts/New-AppDepotMsixUpload.ps1
+          -BundlePath "./store-msix/AppDepot-$env:RELEASE_VERSION-windows.msixbundle"
+          -OutputPath "./store-msix/AppDepot-$env:RELEASE_VERSION-windows.msixupload"
+      - name: Upload Store bundle artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: Store-MSIXBundle
+          path: store-msix/*
+          if-no-files-found: error
+          retention-days: 90
 
   release:
-    name: Create Draft Release
-    needs: [prepare, build]
+    name: Create Draft GitHub Release
+    needs: [prepare, build, store-bundle]
     runs-on: ubuntu-latest
     permissions:
       contents: write
-
     steps:
-      - name: Download Artifacts
+      - name: Download portable artifacts
         uses: actions/download-artifact@v8
         with:
+          pattern: Portable-*
           path: ./artifacts
           merge-multiple: true
-
+      - name: Calculate SHA-256 checksums
+        shell: pwsh
+        run: |
+          $files = @(Get-ChildItem -LiteralPath './artifacts' -Filter '*.zip' -File | Sort-Object Name)
+          if ($files.Count -ne 3) { throw "Expected three portable ZIP artifacts, found $($files.Count)." }
+          $lines = foreach ($file in $files) {
+            $hash = (Get-FileHash -LiteralPath $file.FullName -Algorithm SHA256).Hash.ToLowerInvariant()
+            "$hash  $($file.Name)"
+          }
+          [System.IO.File]::WriteAllLines('./artifacts/SHA256SUMS.txt', $lines, [System.Text.UTF8Encoding]::new($false))
       - name: Create Draft GitHub Release
         uses: softprops/action-gh-release@v3
         with:
@@ -326,14 +275,66 @@ jobs:
           prerelease: ${{ needs.prepare.outputs.release_version != needs.prepare.outputs.numeric_version }}
           generate_release_notes: true
           body: |
-            > Note: [Read installation instruction](https://github.com/sdf123098/AppDepot/blob/main/README.md#-how-to-run)
-            > 
-            > - Normal version you need to download the runtimes (runtimes are usually shared by multiple apps)
-            > - Self-contained version contains all the runtimes inbuild (larger size, runtimes can't be shared with other apps)
+            ## Windows distribution
+
+            - Microsoft Store: submit the `Store-MSIXBundle` workflow artifact to Partner Center. Microsoft signs Store MSIX packages after certification.
+            - Portable fallback: download the architecture-specific ZIP below and verify `SHA256SUMS.txt`.
+            - WinGet: use the Microsoft Store source when the Store listing is available. A community manifest is only needed if the Store package is not discoverable there.
           files: |
-            ./artifacts/AppDepot-*-win-x64.zip
-            ./artifacts/AppDepot-*-win-x86.zip
-            ./artifacts/AppDepot-*-win-arm64.zip
-            ./artifacts/*-self-contained.zip
-            ./artifacts/AppDepot-*-win-*.msix
-            ./artifacts/raven_cert.zip
+            ./artifacts/AppDepot-*-windows-*.zip
+            ./artifacts/SHA256SUMS.txt
+
+  store-publish:
+    name: Submit package to Microsoft Store
+    needs: [prepare, build, store-bundle]
+    if: ${{ inputs.publish_store == true && inputs.confirm_store_publish == 'PUBLISH' && inputs.store_product_id != '' }}
+    runs-on: windows-latest
+    environment: microsoft-store-production
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v7
+      - name: Download Store bundle
+        uses: actions/download-artifact@v8
+        with:
+          name: Store-MSIXBundle
+          path: store-msix
+      - name: Show publication plan
+        shell: pwsh
+        env:
+          VERSION: ${{ needs.prepare.outputs.numeric_version }}
+          PRODUCT_ID: ${{ inputs.store_product_id }}
+        run: |
+          Write-Host "Store publication plan"
+          Write-Host "Version: $env:VERSION"
+          Write-Host "Store Product ID: $env:PRODUCT_ID"
+          Get-ChildItem -LiteralPath './store-msix' -Include '*.msixbundle', '*.msixupload' -File |
+            Select-Object FullName, Length
+          Write-Host "Metadata: existing Partner Center listing is preserved; no guessed legal/listing fields are changed."
+          Write-Host "Authorization: workflow_dispatch publish_store=true and confirm_store_publish=PUBLISH."
+      - name: Configure Microsoft Store CLI
+        uses: microsoft/microsoft-store-apppublisher@v1.1
+      - name: Configure Store credentials
+        shell: pwsh
+        env:
+          TENANT_ID: ${{ secrets.AZURE_AD_TENANT_ID }}
+          SELLER_ID: ${{ secrets.SELLER_ID }}
+          CLIENT_ID: ${{ secrets.AZURE_AD_APPLICATION_CLIENT_ID }}
+          CLIENT_SECRET: ${{ secrets.AZURE_AD_APPLICATION_SECRET }}
+        run: >
+          msstore reconfigure --tenantId $env:TENANT_ID --sellerId $env:SELLER_ID
+          --clientId $env:CLIENT_ID --clientSecret $env:CLIENT_SECRET
+      - name: Upload package and submit certification
+        shell: pwsh
+        env:
+          PRODUCT_ID: ${{ inputs.store_product_id }}
+        run: |
+          $upload = Get-ChildItem -LiteralPath './store-msix' -Filter '*.msixupload' | Select-Object -First 1
+          if (-not $upload) { throw 'Store MSIX upload package was not found.' }
+          # Upload the package while keeping the submission draft, then publish
+          # that exact draft explicitly. This follows the official CLI flow and
+          # makes the irreversible certification submission visible in logs.
+          msstore publish "$PWD\Raven" --inputFile $upload.FullName --appId $env:PRODUCT_ID --noCommit
+          msstore submission publish $env:PRODUCT_ID
+          msstore submission status $env:PRODUCT_ID

@@ -10,6 +10,6 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.WindowsAppSDK" Version="2.4.0" />
     <Compile Include="../../Raven/Helpers/ResourceExtensions.cs" Link="ResourceExtensions.cs" />
-    <Content Include="$(RavenPublishDir)/Raven.pri" Link="LocalizationSmoke.pri" CopyToOutputDirectory="Always" />
+    <Content Include="$(RavenPublishDir)/AppDepot.pri" Link="LocalizationSmoke.pri" CopyToOutputDirectory="Always" />
   </ItemGroup>
 </Project>

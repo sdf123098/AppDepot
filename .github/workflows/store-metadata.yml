@@ -1,0 +1,58 @@
+name: Publish Microsoft Store Metadata
+
+on:
+  workflow_dispatch:
+    inputs:
+      store_product_id:
+        description: "Microsoft Store Product ID"
+        required: true
+        type: string
+      confirm_metadata_publish:
+        description: "Type PUBLISH to authorize metadata submission"
+        required: true
+        default: ""
+        type: string
+
+jobs:
+  publish:
+    name: Update and submit Store metadata
+    if: ${{ inputs.confirm_metadata_publish == 'PUBLISH' }}
+    runs-on: windows-latest
+    environment: microsoft-store-production
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v7
+      - name: Require checked-in metadata
+        shell: pwsh
+        run: |
+          if (-not (Test-Path -LiteralPath './metadata/metadata.json' -PathType Leaf)) {
+            throw 'metadata/metadata.json is missing. Obtain the base metadata with msstore submission get and review it before committing it.'
+          }
+          $metadata = Get-Content -Raw -LiteralPath './metadata/metadata.json' | ConvertFrom-Json
+          Write-Host "Metadata publication plan for Product ID: $env:PRODUCT_ID"
+          Write-Host "Top-level metadata fields: $(( $metadata.PSObject.Properties.Name -join ', ' ))"
+        env:
+          PRODUCT_ID: ${{ inputs.store_product_id }}
+      - name: Configure Microsoft Store CLI
+        uses: microsoft/microsoft-store-apppublisher@v1.1
+      - name: Configure Store credentials
+        shell: pwsh
+        env:
+          TENANT_ID: ${{ secrets.AZURE_AD_TENANT_ID }}
+          SELLER_ID: ${{ secrets.SELLER_ID }}
+          CLIENT_ID: ${{ secrets.AZURE_AD_APPLICATION_CLIENT_ID }}
+          CLIENT_SECRET: ${{ secrets.AZURE_AD_APPLICATION_SECRET }}
+        run: >
+          msstore reconfigure --tenantId $env:TENANT_ID --sellerId $env:SELLER_ID
+          --clientId $env:CLIENT_ID --clientSecret $env:CLIENT_SECRET
+      - name: Update metadata and submit certification
+        shell: pwsh
+        env:
+          PRODUCT_ID: ${{ inputs.store_product_id }}
+        run: |
+          $metadata = Get-Content -Raw -LiteralPath './metadata/metadata.json'
+          msstore submission updateMetadata $env:PRODUCT_ID $metadata
+          msstore submission publish $env:PRODUCT_ID
+          msstore submission status $env:PRODUCT_ID

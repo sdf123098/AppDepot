@@ -81,7 +81,7 @@ jobs:
         shell: pwsh
         run: |
           $publishDir = Join-Path $PWD 'test-publish'
-          dotnet restore tests/LocalizationSmoke/LocalizationSmoke.csproj -p:RavenPublishDir="$publishDir"
+          dotnet restore tests/LocalizationSmoke/LocalizationSmoke.csproj -p:RavenPublishDir="$publishDir" -p:WindowsAppSDKSelfContained=true
       - name: Publish x64 test payload
         shell: pwsh
         run: >
@@ -93,7 +93,7 @@ jobs:
         shell: pwsh
         run: |
           $publishDir = Join-Path $PWD 'test-publish'
-          dotnet run --project tests/LocalizationSmoke/LocalizationSmoke.csproj --no-restore -p:RavenPublishDir="$publishDir"
+          dotnet run --project tests/LocalizationSmoke/LocalizationSmoke.csproj --no-restore -p:RavenPublishDir="$publishDir" -p:WindowsAppSDKSelfContained=true
 
   build:
     name: Build ${{ matrix.arch }} artifacts

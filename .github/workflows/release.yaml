@@ -77,6 +77,9 @@ jobs:
       - name: Restore
         shell: pwsh
         run: dotnet restore Raven.sln
+      - name: Restore localization smoke test
+        shell: pwsh
+        run: dotnet restore tests/LocalizationSmoke/LocalizationSmoke.csproj -p:RavenPublishDir=./test-publish
       - name: Publish x64 test payload
         shell: pwsh
         run: >

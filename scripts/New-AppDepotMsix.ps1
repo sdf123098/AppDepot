@@ -16,11 +16,11 @@ param(
     [ValidatePattern('^\d+\.\d+\.\d+\.\d+$')]
     [string] $Version,
 
-    [string] $IdentityName = 'Micafic.AppDepot',
+    [string] $IdentityName = 'Micaftic.AppDepot',
 
     [string] $DisplayName = 'AppDepot',
 
-    [string] $PublisherDisplayName = 'Micafic',
+    [string] $PublisherDisplayName = 'Micaftic',
 
     [string] $Description = 'AppDepot Windows app store client',
 

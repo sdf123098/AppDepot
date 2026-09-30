@@ -129,7 +129,7 @@ The `Build and Draft Release` workflow builds the app, runs the localization smo
 
 Store publishing is opt-in. After Partner Center registration, app-name reservation, identity verification, and GitHub Secrets setup, run the release workflow with `publish_store=true`, the exact Store Product ID, and `confirm_store_publish=PUBLISH`. The workflow prints the version, Product ID, package, and metadata scope before calling the official `msstore` CLI. The `microsoft-store-production` environment can add a second GitHub approval gate.
 
-Required Store publishing secrets are `AZURE_AD_TENANT_ID`, `SELLER_ID`, `AZURE_AD_APPLICATION_CLIENT_ID`, and `AZURE_AD_APPLICATION_SECRET`. Store identity values used inside the MSIX manifest are repository Variables (`STORE_IDENTITY_NAME`, `STORE_PUBLISHER`, and `STORE_PUBLISHER_DISPLAY_NAME`), not guessed credentials. The current Partner Center values are `Micafic.AppDepot`, `CN=0FC149E9-04DE-4659-A0F2-E17CB3171973`, and `Micafic`, respectively.
+Required Store publishing secrets are `AZURE_AD_TENANT_ID`, `SELLER_ID`, `AZURE_AD_APPLICATION_CLIENT_ID`, and `AZURE_AD_APPLICATION_SECRET`. Store identity values used inside the MSIX manifest are repository Variables (`STORE_IDENTITY_NAME`, `STORE_PUBLISHER`, and `STORE_PUBLISHER_DISPLAY_NAME`), not guessed credentials. The current Partner Center values are `Micaftic.AppDepot`, `CN=0FC149E9-04DE-4659-A0F2-E17CB3171973`, and `Micaftic`, respectively.
 
 The `Publish Microsoft Store Metadata` workflow only operates when a developer-reviewed `metadata/metadata.json` exists. Obtain the base metadata with `msstore submission get`, review legal/listing fields yourself, then commit it. The workflow never invents privacy, age-rating, legal, or account information.
 
